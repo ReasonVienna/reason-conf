@@ -2,4 +2,6 @@ node_modules
 .merlin
 lib/
 build/
+public/
+-public/index.html
 *.bs.js
