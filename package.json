@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "bsb -make-world",
+    "build": "bsb -make-world && webpack",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
     "test": "echo \"Error: no test specified\" && exit 1",
