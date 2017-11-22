@@ -3,14 +3,9 @@
   comma. If this screws with your editor highlighting, please tell us by filing
   an issue! */
 {
-  "name": "react-template",
+  "name": "reason-conf",
   "reason": {"react-jsx" : 2},
+  "refmt": 3,
   "bs-dependencies": ["reason-react"],
-  "package-specs": [{
-    "module": "commonjs",
-    "in-source": true
-  }],
-  "sources": ["src"],
-  "namespace": true,
-  "suffix": ".bs.js"
+  "sources": ["src"]
 }
