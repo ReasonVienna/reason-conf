@@ -4,3 +4,9 @@ node_modules
 public/
 *.bs.js
 .cache/
+.bsb.lock
+
+# ignore reason output files
+src/gatsby.js
+src/pages/coc.js
+lib/

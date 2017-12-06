@@ -4,17 +4,18 @@
   "version": "1.0.0",
   "dependencies": {
     "gatsby-link": "^1.6.28",
-    "gatsby-plugin-react-helmet": "^1.0.8"
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "reason-react": "^0.3.0"
   },
   "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gatsby develop",
+    "re:build": "bsb -make-world",
+    "re:start": "bsb -make-world -w",
+    "re:clean": "bsb -clean-world"
   },
   "devDependencies": {
     "bs-platform": "^2.1.0",
