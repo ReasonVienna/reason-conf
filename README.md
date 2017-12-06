@@ -1,13 +1,13 @@
-# reason-conf
+# gatsby-starter-default
+The default Gatsby starter
 
-Run this project:
+For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
 
+Install this starter (assuming Gatsby is installed) by running from your CLI:
 ```
-npm link bs-platform
-npm install
-npm start
-# in another tab
-npm run webpack
+gatsby new gatsby-example-site
 ```
 
-After you see the webpack compilation succeed (the `npm run webpack` step), open up the nested html files in `src/*` (**no server needed!**). Then modify whichever file in `src` and refresh the page to see the changes.
+## Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
