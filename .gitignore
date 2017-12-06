@@ -1,9 +1,6 @@
 node_modules
 .DS_Store
 .merlin
-lib/
-build/
 public/
--public/index.html
 *.bs.js
 .cache/
