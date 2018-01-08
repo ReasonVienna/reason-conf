@@ -1,13 +1,15 @@
 let component = ReasonReact.statelessComponent("CodeOfConduct");
+module Link = Gatsby.Link;
 
-let make = (_children) => {
+let ste = ReasonReact.stringToElement;
+
+let make = _children => {
   ...component,
-  render: (_self) =>
-    <div> <h1> (ReasonReact.stringToElement("Code of Conduct")) </h1> </div>
-  /* <Gatsby.Link destination="/">
-       (ReasonReact.stringToElement("Go back to the homepage"))
-     </Gatsby.Link> */
+  render: _self =>
+    <div>
+      <h1> (ste("Code of Conduct")) </h1>
+      <Link to_="/"> "[back]" </Link>
+    </div>
 };
 
-let default =
-  ReasonReact.wrapReasonForJs(~component, (_jsProps) => make([||]));
+let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));

@@ -1,9 +1,10 @@
 module Link = {
-  [@bs.module] external gatsbyLink : ReasonReact.reactClass = "gatsby-link";
-  let make = (~destination: string, children) =>
+  [@bs.module "gatsby-link"]
+  external gatsbyLink : ReasonReact.reactClass = "default";
+  let make = (~to_: string, children) =>
     ReasonReact.wrapJsForReason(
       ~reactClass=gatsbyLink,
-      ~props={"to": destination},
+      ~props={"to": to_},
       children
     );
 };
