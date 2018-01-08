@@ -4,7 +4,7 @@ let ste = ReasonReact.stringToElement;
 
 let make = (_children) => {
   ...component,
-  render: (_self) => <div> <h1> (ste("Code of Conduct")) </h1> </div>
+  render: (_self) => <div> <h1> (ste("Imprint")) </h1> </div>
 };
 
 let default =

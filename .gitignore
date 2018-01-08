@@ -11,4 +11,5 @@ src/gatsby.js
 src/assets.js
 src/pages/coc.js
 src/pages/index.js
+src/pages/imprint.js
 lib/
