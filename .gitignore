@@ -9,4 +9,5 @@ public/
 # ignore reason output files
 src/gatsby.js
 src/pages/coc.js
+src/pages/index.js
 lib/
