@@ -66,6 +66,16 @@ let make = (_children) => {
         </div>
       </div>
       <h2> (ste("Speakers")) </h2>
+      <div>
+        <img src=Assets.chengLou width="225" height="225" />
+        (ste("Cheng Lou"))
+        <img src=Assets.lauraGaetano width="225" height="225" />
+        (ste("Laura Gaetano"))
+        <img src=Assets.lauraGaetano width="225" height="225" />
+        (ste("Keira"))
+        <img src=Assets.cristianoCalcagno width="225" height="225" />
+        (ste("Cristiano Calcagno"))
+      </div>
       <h2> (ste("Sponsors")) </h2>
       <div>
         <img src=Assets.patrick width="28" height="28" />
@@ -89,7 +99,7 @@ let make = (_children) => {
           <a href="https://www.example.com"> (ste("Contact Us")) </a>
         </div>
         <div>
-          <a href="https://www.twitter.com"> (ste("Twitter")) </a>
+          <a href="https://twitter.com/reasonconf"> (ste("Twitter")) </a>
           <a href="https://www.facebook.com"> (ste("Facebook")) </a>
           <a href="https://www.github.com"> (ste("Github")) </a>
         </div>
