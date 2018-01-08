@@ -1,4 +1,4 @@
-let component = ReasonReact.statelessComponent("CodeOfConduct");
+let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
 
