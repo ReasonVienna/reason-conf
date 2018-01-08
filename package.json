@@ -5,6 +5,7 @@
   "dependencies": {
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-react-helmet": "^1.0.8",
+    "normalize.css": "^7.0.0",
     "reason-react": "^0.3.0"
   },
   "keywords": ["gatsby"],
