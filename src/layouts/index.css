@@ -3,21 +3,53 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Assistant", sans-serif;
+  font-size: 16pt;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Hammersmith One", Arial, sans-serif;
+}
+
+.container {
+}
+
+.container--centered {
+  margin: 0 auto;
+  max-width: 960px;
 }
 
 /* Main grid layout */
-.container {
+.grid {
   display: grid;
-  justify-content: center;
-  min-width: 960px;
+}
+.grid-4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid-6col {
+  grid-template-columns: repeat(6, 1fr);
 }
 
 /* Home page header section */
 .teaser {
+  background-color: #99d1de;
+  background: url(../assets/vienna.jpg) no-repeat;
+  background-size: cover;
+}
+
+.teaser--wrapper {
   display: grid;
   grid-template-columns: 70% 30%;
-  grid-template-rows: auto;
+}
+.teaser--main {
+}
+.teaser--aside {
+  font-family: "Hammersmith One", Arial, sans-serif;
 }
 
 /* Speakers list grid */
@@ -57,4 +89,19 @@ body {
 .speaker--company {
   margin: 0;
   font-size: 0.75rem;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  font-size: 0.9rem;
+}
+
+.footer--about {
+  grid-column: 1 / span 2;
+}
+
+.copyright {
+  grid-column-end: span 2;
+  text-align: right;
 }

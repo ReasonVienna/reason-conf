@@ -16,7 +16,11 @@ const TemplateWrapper = ({ children }) => (
           content: "Reason, Conference, ReasonML, Conf, Vienna, Austria"
         }
       ]}
-    />
+    >
+      <style type="text/css">{`
+        @import url('https://fonts.googleapis.com/css?family=Assistant|Hammersmith+One');
+    `}</style>
+    </Helmet>
     <main>{children()}</main>
     <Footer />
   </article>
