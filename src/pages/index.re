@@ -10,10 +10,10 @@ let make = _children => {
     <article>
       <header className="teaser">
         <section className="teaser--wrapper container--centered">
+          <h1 className="teaser--logo">
+            <img src=Assets.logo alt="Reason Conf Logo" />
+          </h1>
           <main className="teaser--main">
-            <h1 className="teaser--logo">
-              <img src=Assets.logo alt="Reason Conf Logo" />
-            </h1>
             <h2 className="teaser--tagline">
               (
                 ste(
@@ -30,10 +30,14 @@ let make = _children => {
             </p>
           </main>
           <aside className="teaser--aside">
-            <p> (ste({j|11–13 May 2018|j})) </p>
-            <p> (ste("Vienna, Austria")) </p>
-            <a href="#tickets"> (ste("Buy Tickets")) </a>
+            <p className="teaser--dates"> (ste({j|11–13 May 2018|j})) </p>
+            <p className="teaser--location"> (ste("Vienna, Austria")) </p>
           </aside>
+          <nav>
+            <a className="teaser--button" href="#tickets">
+              (ste("Buy Tickets"))
+            </a>
+          </nav>
         </section>
       </header>
       <section className="timeline">
