@@ -14,6 +14,11 @@ h4,
 h5,
 h6 {
   font-family: "Hammersmith One", Arial, sans-serif;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 2.25rem;
 }
 
 .container {
