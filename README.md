@@ -2,13 +2,19 @@
 
 ## Develop
 
-Run BuckleScript
+Install all depedencies via
+
+```sh
+yarn install
+```
+
+Run BuckleScript in one Shell
 
 ```sh
 npm run re:start
 ```
 
-Run Gatsby
+Run Gatsby in another Shell
 
 ```sh
 npm run start
