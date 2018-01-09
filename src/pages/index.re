@@ -86,7 +86,7 @@ let make = _children => {
               <figure className="speaker">
                 <img src=Assets.chengLou width="225" height="225" />
                 <figcaption>
-                  <p className="speaker--name"> (ste("Cheng Lou")) </p>
+                  <h3 className="speaker--name"> (ste("Cheng Lou")) </h3>
                   <p className="speaker--company"> (ste("Facebook")) </p>
                 </figcaption>
               </figure>
@@ -95,7 +95,7 @@ let make = _children => {
               <figure className="speaker">
                 <img src=Assets.lauraGaetano width="225" height="225" />
                 <figcaption>
-                  <p className="speaker--name"> (ste("Laura Gaetano")) </p>
+                  <h3 className="speaker--name"> (ste("Laura Gaetano")) </h3>
                   <p className="speaker--company">
                     (ste("Travis Foundation"))
                   </p>
@@ -106,7 +106,7 @@ let make = _children => {
               <figure className="speaker">
                 <img src=Assets.keiraHodgkison width="225" height="225" />
                 <figcaption>
-                  <p className="speaker--name"> (ste("Keira Hodgkison")) </p>
+                  <h3 className="speaker--name"> (ste("Keira Hodgkison")) </h3>
                   <p className="speaker--company"> (ste("Culture Amp")) </p>
                 </figcaption>
               </figure>
@@ -115,9 +115,9 @@ let make = _children => {
               <figure className="speaker">
                 <img src=Assets.cristianoCalcagno width="225" height="225" />
                 <figcaption>
-                  <p className="speaker--name">
+                  <h3 className="speaker--name">
                     (ste("Cristiano Calcagno"))
-                  </p>
+                  </h3>
                   <p className="speaker--company"> (ste("Facebook")) </p>
                 </figcaption>
               </figure>

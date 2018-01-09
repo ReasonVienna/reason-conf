@@ -1,0 +1,17 @@
+<svg width="1440" height="915" viewBox="0 0 1440 915" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group 16</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(627 -553)">
+<g id="Group 16">
+<g id="Rectangle">
+<use xlink:href="#path0_fill" transform="matrix(0.999959 0.00907019 -0.00907019 0.999959 -828.578 757.308)" fill="#EF867A" fill-opacity="0.25"/>
+</g>
+<g id="Rectangle">
+<use xlink:href="#path0_fill" transform="matrix(0.999193 -0.0401553 0.0401553 0.999193 -806 623.925)" fill="#EFD57A" fill-opacity="0.45"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 0L 1728.59 276.419L 1750.65 694.789L 8.63492 163.773L 0 0Z"/>
+</defs>
+</svg>

@@ -83,9 +83,21 @@ h2 {
 .teaser--button {
 }
 
+/* Speakers section */
+.speakers::before {
+  position: absolute;
+  margin-top: -80px;
+  background: url("../assets/speakers-bg.svg");
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  content: "";
+}
+
 /* Speakers list grid */
 .speaker-list {
   display: grid;
+  justify-items: start;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   margin: 0;
@@ -104,22 +116,22 @@ h2 {
 }
 .speaker > img {
   position: relative;
-  z-index: 1;
+  width: 200px;
+  height: 200px;
+  filter: grayscale(1) drop-shadow(10px 75px white);
 }
 .speaker > figcaption {
   position: relative;
-  top: -2rem;
-  left: 20px;
-  padding: 2rem 20px 20px 20px;
-  background: #fff;
+  padding: 0 20px;
 }
 .speaker--name {
-  margin: 0.5em 0;
-  font-size: 1rem;
+  margin: 0.25em 0;
+  font-size: 1.25rem;
 }
 .speaker--company {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
+  color: #888;
 }
 
 /* Footer */
