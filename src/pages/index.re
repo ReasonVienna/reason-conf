@@ -12,12 +12,7 @@ let make = _children => {
         <section className="teaser--wrapper container--centered">
           <main className="teaser--main">
             <h1 className="teaser--logo">
-              <img
-                src=Assets.logo
-                width="507"
-                height="132"
-                alt="Reason Conf Logo"
-              />
+              <img src=Assets.logo alt="Reason Conf Logo" />
             </h1>
             <h2 className="teaser--tagline">
               (
