@@ -14,6 +14,9 @@
 [@bs.module] external cristianoCalcagnoImport : string =
   "./assets/cristiano-calcagno.jpg";
 
+[@bs.module] external keiraHodgkisonImport : string =
+  "./assets/keira-hodgkison.jpg";
+
 let logo = logoImport;
 
 let nik = nikImport;
@@ -27,3 +30,5 @@ let chengLou = chengLouImport;
 let lauraGaetano = lauraGaetanoImport;
 
 let cristianoCalcagno = cristianoCalcagnoImport;
+
+let keiraHodgkison = keiraHodgkisonImport;

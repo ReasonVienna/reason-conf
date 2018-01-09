@@ -69,13 +69,17 @@ let make = (_children) => {
       <h2> (ste("Speakers")) </h2>
       <div>
         <img src=Assets.chengLou width="225" height="225" />
-        (ste("Cheng Lou"))
+        <div> (ste("Cheng Lou")) </div>
+        <div> (ste("Facebook")) </div>
         <img src=Assets.lauraGaetano width="225" height="225" />
-        (ste("Laura Gaetano"))
+        <div> (ste("Laura Gaetano")) </div>
+        <div> (ste("Travis Foundation")) </div>
         <img src=Assets.lauraGaetano width="225" height="225" />
-        (ste("Keira"))
+        <div> (ste("Keira Hodgkison")) </div>
+        <div> (ste("Culture Amp")) </div>
         <img src=Assets.cristianoCalcagno width="225" height="225" />
-        (ste("Cristiano Calcagno"))
+        <div> (ste("Cristiano Calcagno")) </div>
+        <div> (ste("Facebook")) </div>
       </div>
       <h2> (ste("Sponsors")) </h2>
       <p> (ste({j|Reason Conf is looking for amazing sponsors …|j})) </p>
