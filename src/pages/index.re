@@ -74,7 +74,7 @@ let make = (_children) => {
         <img src=Assets.lauraGaetano width="225" height="225" />
         <div> (ste("Laura Gaetano")) </div>
         <div> (ste("Travis Foundation")) </div>
-        <img src=Assets.lauraGaetano width="225" height="225" />
+        <img src=Assets.keiraHodgkison width="225" height="225" />
         <div> (ste("Keira Hodgkison")) </div>
         <div> (ste("Culture Amp")) </div>
         <img src=Assets.cristianoCalcagno width="225" height="225" />
