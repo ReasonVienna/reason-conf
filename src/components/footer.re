@@ -13,17 +13,36 @@ let make = _children => {
           <p>
             (
               ste(
-                "ReasonConf is the not-for-profit conference\norganized by community efforts by people\nbehind React Vienna community."
+                "Reason Conf is the not-for-profit conference\norganized by community efforts by people\nbehind React Vienna community: "
               )
             )
-          </p>
-          <p>
-            <img src=Assets.patrick width="28" height="28" />
-            (ste("Patrick"))
-            <img src=Assets.nik width="28" height="28" />
-            (ste("Nik &"))
-            <img src=Assets.andrey width="28" height="28" />
-            (ste("Andrey"))
+            <a href="https://twitter.com/ryyppy" className="footer--creator">
+              <img
+                src=Assets.patrick
+                alt="Photo of Patrick"
+                className="footer--userpic"
+              />
+              (ste("Patrick"))
+            </a>
+            <a href="https://twitter.com/nikgraf" className="footer--creator">
+              <img
+                src=Assets.nik
+                alt="Photo of Nik"
+                className="footer--userpic"
+              />
+              (ste("Nik"))
+            </a>
+            (ste(" & "))
+            <a
+              href="https://twitter.com/okonetchnikov"
+              className="footer--creator">
+              <img
+                src=Assets.andrey
+                alt="Photo of Andrey"
+                className="footer--userpic"
+              />
+              (ste("Andrey"))
+            </a>
           </p>
         </section>
         <nav>
