@@ -37,8 +37,9 @@ h6 {
 
 /* Home page header section */
 .teaser {
+  padding-bottom: 120px;
   background-color: #99d1de;
-  background: url(../assets/vienna.jpg) no-repeat;
+  background: url(../assets/teaser-bg.png) no-repeat;
   background-size: cover;
 }
 
