@@ -4,16 +4,10 @@ let component = ReasonReact.statelessComponent("Footer");
 
 let ste = ReasonReact.stringToElement;
 
-let make = (_children) => {
+let make = _children => {
   ...component,
-  render: (_self) =>
-    <div>
-      <img src=Assets.patrick width="28" height="28" />
-      (ste("Patrick"))
-      <img src=Assets.nik width="28" height="28" />
-      (ste("Nik &"))
-      <img src=Assets.andrey width="28" height="28" />
-      (ste("Andrey"))
+  render: _self =>
+    <footer>
       <p>
         (
           ste(
@@ -21,24 +15,41 @@ let make = (_children) => {
           )
         )
       </p>
-      <div>
-        <a href="https://www.example.com">
-          (ste("Subscribe to Newsletter"))
-        </a>
-        <Link to_="/coc/"> (ste("Code of Conduct")) </Link>
-        <a href="https://www.example.com"> (ste("Contact Us")) </a>
-      </div>
-      <div>
-        <a href="https://twitter.com/reasonconf"> (ste("Twitter")) </a>
-        <a href="https://www.facebook.com"> (ste("Facebook")) </a>
-        <a href="https://www.github.com"> (ste("Github")) </a>
-      </div>
-      <div>
+      <p>
+        <img src=Assets.patrick width="28" height="28" />
+        (ste("Patrick"))
+        <img src=Assets.nik width="28" height="28" />
+        (ste("Nik &"))
+        <img src=Assets.andrey width="28" height="28" />
+        (ste("Andrey"))
+      </p>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.example.com">
+              (ste("Subscribe to Newsletter"))
+            </a>
+          </li>
+          <li> <Link to_="/coc/"> (ste("Code of Conduct")) </Link> </li>
+          <li>
+            <a href="https://www.example.com"> (ste("Contact Us")) </a>
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://twitter.com/reasonconf"> (ste("Twitter")) </a>
+          </li>
+          <li> <a href="https://www.facebook.com"> (ste("Facebook")) </a> </li>
+          <li> <a href="https://www.github.com"> (ste("Github")) </a> </li>
+        </ul>
+      </nav>
+      <section className="copyright">
         <Link to_="/imprint/"> (ste("Imprint")) </Link>
-        <div> (ste({j|© Atrium, 2018|j})) </div>
-      </div>
-    </div>
+        <p> (ste({j|© Atrium, 2018|j})) </p>
+      </section>
+    </footer>
 };
 
-let default =
-  ReasonReact.wrapReasonForJs(~component, (_jsProps) => make([||]));
+let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));
