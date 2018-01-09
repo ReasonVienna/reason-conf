@@ -11,13 +11,13 @@ let make = (_children) => {
       <div className="teaser">
         <div>
           <img src=Assets.logo width="507" height="132" />
-          <div>
+          <p>
             (
               ste(
                 "World's first Reason conference for web-developers & OCaml enthusiasts"
               )
             )
-          </div>
+          </p>
           <p>
             (
               ste(
@@ -27,43 +27,44 @@ let make = (_children) => {
           </p>
         </div>
         <div>
-          <div> (ste("11-13 May 2018")) </div>
+          <div> (ste({j|11–13 May 2018|j})) </div>
           <div> (ste("Vienna, Austria")) </div>
+          <a href="#tickets"> (ste("Buy Tickets")) </a>
         </div>
       </div>
       <h2> (ste("Get productive with Reason in 3 days")) </h2>
       <div>
         <div> (ste("Day 1")) </div>
         <h3> (ste("Get started")) </h3>
-        <div>
+        <p>
           (
             ste(
               "Full day workshop to get every attendee into the language & platform."
             )
           )
-        </div>
+        </p>
       </div>
       <div>
         <div> (ste("Day 2")) </div>
         <h3> (ste("Get inspired")) </h3>
-        <div>
+        <p>
           (
             ste(
               "Great speakers & trainers of the Reason community with special guests of the Reason & ReasonReact project team will inspire attendees about more advanced topics.\n"
             )
           )
-        </div>
+        </p>
       </div>
       <div>
         <div> (ste("Day 3")) </div>
         <h3> (ste("Get productive")) </h3>
-        <div>
+        <p>
           (
             ste(
               "Attendees apply their learnings in a hackathon, working on a project they are interested in, aided by our mentors, speakers and volunteers."
             )
           )
-        </div>
+        </p>
       </div>
       <h2> (ste("Speakers")) </h2>
       <div>
@@ -77,6 +78,9 @@ let make = (_children) => {
         (ste("Cristiano Calcagno"))
       </div>
       <h2> (ste("Sponsors")) </h2>
+      <p> (ste({j|Reason Conf is looking for amazing sponsors …|j})) </p>
+      <h2 id="tickets"> (ste("Tickets")) </h2>
+      <p> (ste({j|Coming soon …|j})) </p>
       <div>
         <img src=Assets.patrick width="28" height="28" />
         (ste("Patrick"))
@@ -105,7 +109,7 @@ let make = (_children) => {
         </div>
         <div>
           <Link to_="/imprint/"> (ste("Imprint")) </Link>
-          <div> (ste("Atrium, 2018")) </div>
+          <div> (ste({j|© Atrium, 2018|j})) </div>
         </div>
       </div>
     </div>
