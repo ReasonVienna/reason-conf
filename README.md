@@ -11,13 +11,13 @@ yarn install
 Run BuckleScript in one Shell
 
 ```sh
-npm run re:start
+yarn re:start
 ```
 
 Run Gatsby in another Shell
 
 ```sh
-npm run start
+yarn start
 ```
 
 Visit `http://localhost:8000` in your browser
@@ -25,5 +25,5 @@ Visit `http://localhost:8000` in your browser
 ## Build
 
 ```sh
-npm run re:build && npm run build
+yarn re:build && yarn build
 ```
