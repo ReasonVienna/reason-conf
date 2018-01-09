@@ -1,4 +1,4 @@
-[@bs.module] external logoImport : string = "./assets/logo.png";
+[@bs.module] external logoImport : string = "./assets/logo.svg";
 
 [@bs.module] external nikImport : string = "./assets/nik.jpg";
 
@@ -8,14 +8,14 @@
 
 [@bs.module] external chengLouImport : string = "./assets/cheng-lou.jpg";
 
-[@bs.module] external lauraGaetanoImport : string =
-  "./assets/laura-gaetano.jpg";
+[@bs.module]
+external lauraGaetanoImport : string = "./assets/laura-gaetano.jpg";
 
-[@bs.module] external cristianoCalcagnoImport : string =
-  "./assets/cristiano-calcagno.jpg";
+[@bs.module]
+external cristianoCalcagnoImport : string = "./assets/cristiano-calcagno.jpg";
 
-[@bs.module] external keiraHodgkisonImport : string =
-  "./assets/keira-hodgkison.jpg";
+[@bs.module]
+external keiraHodgkisonImport : string = "./assets/keira-hodgkison.jpg";
 
 let logo = logoImport;
 
