@@ -16,11 +16,18 @@
     "start": "gatsby develop",
     "re:build": "bsb -make-world",
     "re:start": "bsb -make-world -w",
-    "re:clean": "bsb -clean-world"
+    "re:clean": "bsb -clean-world",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "bs-platform": "^2.1.0",
     "gatsby": "^1.9.128",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
     "prettier": "^1.8.2"
+  },
+  "lint-staged": {
+    "*.re": ["refmt --in-place", "git add"],
+    "*.{js,json,md,css}": ["prettier --write", "git add"]
   }
 }
