@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import './index.css';
+import Footer from '../components/footer';
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -17,6 +18,7 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     {children()}
+    <Footer />
   </div>
 );
 
