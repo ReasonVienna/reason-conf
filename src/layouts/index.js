@@ -9,8 +9,11 @@ const TemplateWrapper = ({ children }) => (
     <Helmet
       title="ReasonConf 2018"
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
+        { name: 'description', content: 'Reason Conf' },
+        {
+          name: 'keywords',
+          content: 'Reason, Conference, ReasonML, Conf, Vienna, Austria'
+        }
       ]}
     />
     {children()}
