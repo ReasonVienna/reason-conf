@@ -11,7 +11,7 @@ let make = _children => {
   render: _self =>
     <article>
       <header className="teaser">
-        <section className="teaser--wrapper container--centered">
+        <section className="container--centered grid grid-6col">
           <h1 className="teaser--logo">
             <img src=Assets.logo alt="Reason Conf Logo" />
           </h1>
@@ -34,12 +34,12 @@ let make = _children => {
           <aside className="teaser--aside">
             <p className="teaser--dates"> (ste({j|11–13 May 2018|j})) </p>
             <p className="teaser--location"> (ste("Vienna, Austria")) </p>
+            <nav>
+              <a className="teaser--button" href="#tickets">
+                (ste("Buy Tickets"))
+              </a>
+            </nav>
           </aside>
-          <nav>
-            <a className="teaser--button" href="#tickets">
-              (ste("Buy Tickets"))
-            </a>
-          </nav>
         </section>
       </header>
       <section className="offering">

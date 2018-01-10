@@ -43,32 +43,40 @@ h2 {
 
 /* Home page header section */
 .teaser {
+  padding-top: 60px;
   padding-bottom: 120px;
   background: url(../assets/teaser-bg.jpg) no-repeat;
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
 
-  &--wrapper {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 260px auto;
-    grid-template-areas:
-      "logo dates"
-      "text ....";
-  }
   &--logo {
-    grid-area: logo;
+    grid-column: 1 / span 4;
+    grid-row: 1;
     align-self: end;
     margin: 0;
   }
+  &--main {
+    grid-column: 1 / span 4;
+  }
   &--text {
+    grid-row: 2;
     font-size: 1.5rem;
   }
   &--aside {
+    grid-column: 5 / span 2;
+    grid-row: 1;
     align-self: end;
-    grid-area: dates;
+    position: relative;
     font-family: "Hammersmith One", Arial, sans-serif;
+
+    &::before {
+      position: absolute;
+      left: -20px;
+      width: 5px;
+      height: 100%;
+      background: #dd4b39;
+      content: "";
+    }
   }
   &--dates {
     margin: 0;
