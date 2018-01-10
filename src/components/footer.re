@@ -76,5 +76,3 @@ let make = _children => {
       </div>
     </footer>
 };
-
-let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));
