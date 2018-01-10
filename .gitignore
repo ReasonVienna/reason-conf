@@ -10,6 +10,7 @@ public/
 src/gatsby.js
 src/assets.js
 src/tito.js
+src/layouts/*.js
 src/components/*.js
 src/pages/*.js
 
