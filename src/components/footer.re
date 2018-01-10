@@ -1,5 +1,7 @@
 module Link = Gatsby.Link;
 
+[@bs.module] external style : Js.t({..}) = "./footer.module.scss";
+
 let component = ReasonReact.statelessComponent("Footer");
 
 let ste = ReasonReact.stringToElement;
