@@ -9,6 +9,7 @@ public/
 # ignore reason output files
 src/gatsby.js
 src/assets.js
+src/tito.js
 src/components/*.js
 src/pages/*.js
 lib/

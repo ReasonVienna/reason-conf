@@ -20,6 +20,7 @@ const TemplateWrapper = ({ children }) => (
       <style type="text/css">{`
         @import url('https://fonts.googleapis.com/css?family=Assistant|Hammersmith+One');
     `}</style>
+      <script src="https://js.tito.io/v1" async />
     </Helmet>
     <main>{children()}</main>
     <Footer />

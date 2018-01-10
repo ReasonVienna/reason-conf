@@ -2,24 +2,20 @@ let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
 
+module Tickets = Tito.Tickets;
+
 let ste = ReasonReact.stringToElement;
 
-let make = _children => {
+let make = (_children) => {
   ...component,
-  render: _self =>
+  render: (_self) =>
     <article>
       <header className="teaser">
         <section className="teaser--wrapper container--centered">
-          <h1 className="teaser--logo">
-            <img src=Assets.logo alt="Reason Conf Logo" />
-          </h1>
+          <h1 className="teaser--logo"> <img src=Assets.logo alt="Reason Conf Logo" /> </h1>
           <main className="teaser--main">
             <h2 className="teaser--tagline">
-              (
-                ste(
-                  {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
-                )
-              )
+              (ste({j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}))
             </h2>
             <p className="teaser--text">
               (
@@ -33,18 +29,12 @@ let make = _children => {
             <p className="teaser--dates"> (ste({j|11–13 May 2018|j})) </p>
             <p className="teaser--location"> (ste("Vienna, Austria")) </p>
           </aside>
-          <nav>
-            <a className="teaser--button" href="#tickets">
-              (ste("Buy Tickets"))
-            </a>
-          </nav>
+          <nav> <a className="teaser--button" href="#tickets"> (ste("Buy Tickets")) </a> </nav>
         </section>
       </header>
       <section className="offering">
         <div className="container--centered grid grid-6col">
-          <h2 className="offering--heading">
-            (ste("Get productive with Reason in 3 days"))
-          </h2>
+          <h2 className="offering--heading"> (ste("Get productive with Reason in 3 days")) </h2>
           <p className="offering--text">
             (
               ste(
@@ -63,11 +53,7 @@ let make = _children => {
             <dd className="timeline--content">
               <h3> (ste("Get started")) </h3>
               <p>
-                (
-                  ste(
-                    "Full day workshop to get every attendee into the language & platform."
-                  )
-                )
+                (ste("Full day workshop to get every attendee into the language & platform."))
               </p>
             </dd>
             <dt className="timeline--date">
@@ -125,9 +111,7 @@ let make = _children => {
                 <img src=Assets.lauraGaetano width="225" height="225" />
                 <figcaption>
                   <h3 className="speaker--name"> (ste("Laura Gaetano")) </h3>
-                  <p className="speaker--company">
-                    (ste("Travis Foundation"))
-                  </p>
+                  <p className="speaker--company"> (ste("Travis Foundation")) </p>
                 </figcaption>
               </figure>
             </li>
@@ -144,9 +128,7 @@ let make = _children => {
               <figure className="speaker">
                 <img src=Assets.cristianoCalcagno width="225" height="225" />
                 <figcaption>
-                  <h3 className="speaker--name">
-                    (ste("Cristiano Calcagno"))
-                  </h3>
+                  <h3 className="speaker--name"> (ste("Cristiano Calcagno")) </h3>
                   <p className="speaker--company"> (ste("Facebook")) </p>
                 </figcaption>
               </figure>
@@ -163,10 +145,10 @@ let make = _children => {
       <section className="tickets">
         <div className="container--centered">
           <h2 id="tickets"> (ste("Tickets")) </h2>
-          <p> (ste({j|Coming soon …|j})) </p>
+          <Tickets event="reason-conf/reason-conf-2018" />
         </div>
       </section>
     </article>
 };
 
-let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));
+let default = ReasonReact.wrapReasonForJs(~component, (_jsProps) => make([||]));
