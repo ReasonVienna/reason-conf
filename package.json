@@ -3,8 +3,6 @@
   "description": "Reason Conf 2018",
   "version": "1.0.0",
   "dependencies": {
-    "gatsby-link": "^1.6.28",
-    "gatsby-plugin-react-helmet": "^1.0.8",
     "normalize.css": "^7.0.0",
     "reason-react": "^0.3.0"
   },
@@ -20,8 +18,12 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
+    "autoprefixer": "^7.2.4",
     "bs-platform": "^2.1.0",
     "gatsby": "^1.9.128",
+    "gatsby-link": "^1.6.28",
+    "gatsby-plugin-postcss-sass": "^1.0.15",
+    "gatsby-plugin-react-helmet": "^1.0.8",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
     "prettier": "^1.8.2"
@@ -29,5 +31,6 @@
   "lint-staged": {
     "*.re": ["refmt --in-place", "git add"],
     "*.{js,json,md,css}": ["prettier --write", "git add"]
-  }
+  },
+  "browserslist": ["> 1%", "last 2 versions", "IE 11"]
 }
