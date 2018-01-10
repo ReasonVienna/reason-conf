@@ -44,8 +44,9 @@ h2 {
 /* Home page header section */
 .teaser {
   padding-bottom: 120px;
-  background: url(../assets/teaser-bg.png) no-repeat;
+  background: url(../assets/teaser-bg.jpg) no-repeat;
   background-size: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
 
   &--wrapper {
     display: grid;
