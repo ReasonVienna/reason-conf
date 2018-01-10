@@ -40,42 +40,71 @@ let make = _children => {
           </nav>
         </section>
       </header>
-      <section className="timeline">
-        <div className="container--centered">
-          <h2> (ste("Get productive with Reason in 3 days")) </h2>
-          <div>
-            <div> (ste("Day 1")) </div>
-            <h3> (ste("Get started")) </h3>
-            <p>
-              (
-                ste(
-                  "Full day workshop to get every attendee into the language & platform."
-                )
+      <section className="offering">
+        <div className="container--centered grid grid-6col">
+          <h2 className="offering--heading">
+            (ste("Get productive with Reason in 3 days"))
+          </h2>
+          <p className="offering--text">
+            (
+              ste(
+                "We want to motivate you to introduce Reason & OCaml in your production environment and make you feel  comfortable with the existing tools. For that, the conference will be focused on practice rather than theory. Enjoy 3 days of workshop / hackathon style conference with the leading speakers from around the world.\n"
               )
-            </p>
-          </div>
-          <div>
-            <div> (ste("Day 2")) </div>
-            <h3> (ste("Get inspired")) </h3>
-            <p>
-              (
-                ste(
-                  "Great speakers & trainers of the Reason community with special guests of the Reason & ReasonReact project team will inspire attendees about more advanced topics.\n"
+            )
+          </p>
+          <dl className="timeline">
+            <dt className="timeline--date">
+              <time dateTime="2018-05-11">
+                (ste("11"))
+                <sup> (ste("th")) </sup>
+                (ste(" May, Friday"))
+              </time>
+            </dt>
+            <dd className="timeline--content">
+              <h3> (ste("Get started")) </h3>
+              <p>
+                (
+                  ste(
+                    "Full day workshop to get every attendee into the language & platform."
+                  )
                 )
-              )
-            </p>
-          </div>
-          <div>
-            <div> (ste("Day 3")) </div>
-            <h3> (ste("Get productive")) </h3>
-            <p>
-              (
-                ste(
-                  "Attendees apply their learnings in a hackathon, working on a project they are interested in, aided by our mentors, speakers and volunteers."
+              </p>
+            </dd>
+            <dt className="timeline--date">
+              <time dateTime="2018-05-12">
+                (ste("12"))
+                <sup> (ste("th")) </sup>
+                (ste(" May, Saturday"))
+              </time>
+            </dt>
+            <dd className="timeline--content">
+              <h3> (ste("Get inspired")) </h3>
+              <p>
+                (
+                  ste(
+                    "Great speakers & trainers of the Reason community with special guests of the Reason & ReasonReact project team will inspire attendees about more advanced topics.\n"
+                  )
                 )
-              )
-            </p>
-          </div>
+              </p>
+            </dd>
+            <dt className="timeline--date">
+              <time dateTime="2018-05-13">
+                (ste("13"))
+                <sup> (ste("th")) </sup>
+                (ste(" May, Sunday"))
+              </time>
+            </dt>
+            <dd className="timeline--content">
+              <h3> (ste("Get productive")) </h3>
+              <p>
+                (
+                  ste(
+                    "Attendees apply their learnings in a hackathon, working on a project they are interested in, aided by our mentors, speakers and volunteers."
+                  )
+                )
+              </p>
+            </dd>
+          </dl>
         </div>
       </section>
       <section className="speakers">
