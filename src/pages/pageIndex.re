@@ -19,6 +19,18 @@ let make = _children => {
               className="teaser--image"
             />
           </h1>
+          <aside className="teaser--dates">
+            <time dateTime="2018-05-11/2018-05-13" className="teaser--date">
+              (
+                ste(
+                  {j|11–13
+                       May
+                      2018|j}
+                )
+              )
+            </time>
+            <p className="teaser--location"> (ste("Vienna, Austria")) </p>
+          </aside>
           <main className="teaser--main">
             <h2 className="teaser--tagline">
               (
@@ -30,15 +42,11 @@ let make = _children => {
             <p className="teaser--text">
               (
                 ste(
-                  "We believe Reason is the next big thing and we think it is time to bring the community together, learn about the language and talk about new innovations.\n"
+                  "Reason is the next big thing and it is time to bring the community together. Come and learn about the language and get inspired for innovation.\n"
                 )
               )
             </p>
           </main>
-          <aside className="teaser--aside">
-            <p className="teaser--dates"> (ste({j|11–13 May 2018|j})) </p>
-            <p className="teaser--location"> (ste("Vienna, Austria")) </p>
-          </aside>
           <nav>
             <a className="teaser--button" href="#tickets">
               (ste("Buy Tickets"))
