@@ -38,7 +38,10 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
 }
 .grid-6col {
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 100%;
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 
 /* Home page header section */
@@ -50,32 +53,48 @@ h2 {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
 
   &--logo {
-    grid-column: 1 / span 4;
-    grid-row: 1;
-    align-self: end;
     margin: 0;
+    @media (min-width: 960px) {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+      align-self: end;
+    }
+  }
+  &--image {
+    width: 100%;
+    @media (min-width: 640px) {
+      width: auto;
+    }
   }
   &--main {
-    grid-column: 1 / span 4;
+    @media (min-width: 960px) {
+      grid-column: 1 / span 4;
+    }
   }
   &--text {
-    grid-row: 2;
     font-size: 1.5rem;
+
+    @media (min-width: 960px) {
+      grid-row: 2;
+    }
   }
   &--aside {
-    grid-column: 5 / span 2;
-    grid-row: 1;
-    align-self: end;
     position: relative;
     font-family: "Hammersmith One", Arial, sans-serif;
 
-    &::before {
-      position: absolute;
-      left: -20px;
-      width: 5px;
-      height: 100%;
-      background: #dd4b39;
-      content: "";
+    @media (min-width: 960px) {
+      grid-column: 5 / span 2;
+      grid-row: 1;
+      align-self: end;
+
+      &::before {
+        position: absolute;
+        left: -20px;
+        width: 5px;
+        height: 100%;
+        background: #dd4b39;
+        content: "";
+      }
     }
   }
   &--dates {
