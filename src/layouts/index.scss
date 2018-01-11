@@ -46,10 +46,15 @@ h2 {
   grid-gap: 20px;
 }
 .grid-4col {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 100%;
+
+  @media (min-width: 960px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .grid-6col {
   grid-template-columns: 100%;
+
   @media (min-width: 960px) {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -133,30 +138,38 @@ h2 {
 /* Offering & Timeline */
 .offering {
   &--heading {
-    grid-column: 1 / span 2;
-    grid-row: 1;
     margin: 0;
+    @media (min-width: 960px) {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
   }
   &--text {
-    grid-column: 1 / span 2;
-    grid-row: 2;
+    @media (min-width: 960px) {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
   }
 }
 
 .timeline {
-  grid-column: 3 / span 4;
-  grid-row: 1 / span 2;
+  @media (min-width: 960px) {
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 2;
+  }
   display: grid;
-  grid-template-columns: 157px auto;
+  grid-template-columns: 1fr auto;
   grid-gap: 20px;
 
   &--date {
-    margin: 0;
+    margin: 0.1em 0;
     font-size: 0.9rem;
     text-align: right;
+    @media (min-width: 960px) {
+      width: 157px;
+    }
   }
   &--date > time {
-    line-height: 2rem;
     color: #888;
   }
   &--content {
