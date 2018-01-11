@@ -9,6 +9,7 @@ html {
   color: #333;
   @media (min-width: 768px) {
     font-size: 18px;
+    line-height: 1.5;
   }
 }
 
@@ -28,7 +29,7 @@ h6 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .container {
@@ -64,7 +65,7 @@ h2 {
   padding-bottom: 30px;
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 98%);
   text-align: center;
 
   @media (min-width: 768px) {
@@ -93,9 +94,6 @@ h2 {
     @media (min-width: 768px) {
       grid-column: 1 / span 4;
     }
-  }
-  &--tagline {
-    font-size: 1.75rem;
   }
   &--text {
     display: none;
@@ -184,32 +182,16 @@ h2 {
 }
 
 /* Speakers section */
-.speakers {
-  position: relative;
-}
-.speakers::before,
-.speakers::after {
-  position: absolute;
-  width: 100%;
-  content: "";
-  z-index: -1;
-  transform: rotate(6deg) scale(2);
-  transform-origin: left top;
-}
 .speakers::before {
-  top: 50px;
-  background: #efd57a;
-  opacity: 0.5;
-  height: 150px;
-}
-.speakers::after {
-  top: 300px;
-  background: #da998b;
-  opacity: 0.35;
-  height: 150px;
-  transform: rotate(9deg) scale(2);
+  position: absolute;
+  background: url("../assets/speakers-bg.svg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  content: "";
   @media (min-width: 425px) {
-    top: 150px;
+    margin-top: -50px;
   }
 }
 
