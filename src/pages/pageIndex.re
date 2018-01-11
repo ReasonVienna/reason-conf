@@ -12,7 +12,7 @@ let make = _children => {
     <article>
       <header className="teaser">
         <Navigation />
-        <section className="container--centered grid grid-6col">
+        <section className="container_centered grid grid-6col">
           <h1 className="teaser--logo">
             <img
               src=Assets.logo
@@ -56,7 +56,7 @@ let make = _children => {
         </section>
       </header>
       <section className="offering">
-        <div className="container--centered grid grid-6col">
+        <div className="container_centered grid grid-6col">
           <h2 className="offering--heading">
             (ste("Get productive with Reason in 3 days"))
           </h2>
@@ -123,7 +123,7 @@ let make = _children => {
         </div>
       </section>
       <section className="speakers">
-        <div className="container--centered">
+        <div className="container_centered">
           <h2> (ste("Speakers")) </h2>
           <ul className="speaker-list">
             <li className="speaker-list--item">
@@ -170,13 +170,13 @@ let make = _children => {
         </div>
       </section>
       <section className="sponsors">
-        <div className="container--centered">
+        <div className="container_centered">
           <h2> (ste("Sponsors")) </h2>
           <p> (ste({j|Reason Conf is looking for amazing sponsors …|j})) </p>
         </div>
       </section>
       <section className="tickets">
-        <div className="container--centered">
+        <div className="container_centered">
           <h2 id="tickets"> (ste("Tickets")) </h2>
           <Tickets event="reason-conf/reason-conf-2018" />
         </div>

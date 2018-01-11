@@ -5,9 +5,9 @@
 }
 
 html {
-  font: 14px/1.3 "Assistant", sans-serif;
+  font: 16px/1.3 "Assistant", sans-serif;
   color: #333;
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     font-size: 18px;
   }
 }
@@ -32,7 +32,7 @@ h2 {
 }
 
 .container {
-  &--centered {
+  &_centered {
     margin: 0 auto;
     padding: 20px;
     max-width: 1080px;
@@ -47,28 +47,27 @@ h2 {
 .grid-4col {
   grid-template-columns: 100%;
 
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 .grid-6col {
   grid-template-columns: 100%;
 
-  @media (min-width: 960px) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(6, 1fr);
   }
 }
 
 /* Home page header section */
 .teaser {
-  padding-top: 60px;
   padding-bottom: 30px;
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 92%);
   text-align: center;
 
-  @media (min-width: 960px) {
+  @media (min-width: 768px) {
     padding-bottom: 120px;
     text-align: left;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
@@ -76,7 +75,7 @@ h2 {
 
   &--logo {
     margin: 0;
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 1 / span 4;
       grid-row: 1;
       align-self: end;
@@ -84,12 +83,14 @@ h2 {
   }
   &--image {
     width: 100%;
-    @media (min-width: 640px) {
+    max-width: 400px;
+    @media (min-width: 768px) {
       width: auto;
+      max-width: 100%;
     }
   }
   &--main {
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 1 / span 4;
     }
   }
@@ -100,7 +101,7 @@ h2 {
     display: none;
     font-size: 1.5rem;
 
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       display: block;
       grid-row: 2;
     }
@@ -109,14 +110,14 @@ h2 {
     position: relative;
     font-family: "Hammersmith One", Arial, sans-serif;
 
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 5 / span 2;
       grid-row: 1;
       align-self: end;
 
       &::before {
         position: absolute;
-        left: -20px;
+        left: -15px;
         width: 5px;
         height: 100%;
         background: #dd4b39;
@@ -141,13 +142,13 @@ h2 {
 .offering {
   &--heading {
     margin: 0;
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 1 / span 2;
       grid-row: 1;
     }
   }
   &--text {
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 1 / span 2;
       grid-row: 2;
     }
@@ -155,7 +156,7 @@ h2 {
 }
 
 .timeline {
-  @media (min-width: 960px) {
+  @media (min-width: 768px) {
     grid-column: 3 / span 4;
     grid-row: 1 / span 2;
   }
@@ -167,7 +168,7 @@ h2 {
     margin: 0.1em 0;
     font-size: 0.9rem;
     text-align: right;
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
       width: 157px;
     }
   }
@@ -207,7 +208,7 @@ h2 {
   opacity: 0.35;
   height: 150px;
   transform: rotate(9deg) scale(2);
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     top: 150px;
   }
 }
@@ -222,7 +223,7 @@ h2 {
   padding: 0;
   width: 100%;
 
-  @media (min-width: 640px) {
+  @media (min-width: 425px) {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 60px;
   }

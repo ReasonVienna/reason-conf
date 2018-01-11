@@ -9,8 +9,8 @@ let s = ReasonReact.stringToElement;
 let make = _children => {
   ...component,
   render: _self =>
-    <nav className=style##navigation>
-      <ul className=style##header>
+    <nav className="container container_centered grid grid-col6">
+      <ul className=style##list>
         <li> <Link to_="/schedule/"> (s("Schedule")) </Link> </li>
         <li> <Link to_="/speakers/"> (s("Speakers")) </Link> </li>
         <li> <Link to_="/sponsors/"> (s("Sponsors")) </Link> </li>

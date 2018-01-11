@@ -1,7 +1,13 @@
-.navigation {
-  border: 1px solid red;
-}
-.header {
+.list {
   list-style-type: none;
-  columns: 5;
+  justify-self: center;
+  @media (min-width: 768px) {
+    grid-column: 3 / span 4;
+    justify-self: end;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 1em;
+  }
 }
