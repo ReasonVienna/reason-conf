@@ -2,6 +2,8 @@
 
 [%%raw "require('./index.scss')"];
 
+open Util;
+
 module Helmet = Gatsby.Helmet;
 
 let component = ReasonReact.statelessComponent("TemplateWrapper");
@@ -19,17 +21,21 @@ let styleImport =
     {js| @import url('https://fonts.googleapis.com/css?family=Assistant|Hammersmith+One'); |js}
   );
 
-let make = children => {
+let make = (~location, children) => {
   ...component,
-  render: _self =>
+  render: _self => {
+    let isHomepage = location##pathname == "/";
     <article className="container">
       <Helmet title="ReasonConf 2018" meta=metaData />
       <style _type="text/css"> styleImport </style>
-      <Navigation />
+      (componentOrNull(! isHomepage, <Navigation />))
       <main> (children()) </main>
       <Footer />
-    </article>
+    </article>;
+  }
 };
 
 let default =
-  ReasonReact.wrapReasonForJs(~component, jsProps => make(jsProps##children));
+  ReasonReact.wrapReasonForJs(~component, jsProps =>
+    make(~location=jsProps##location, jsProps##children)
+  );
