@@ -7,7 +7,7 @@
 html {
   font: 14px/1.3 "Assistant", sans-serif;
   color: #333;
-  @media (min-width: 960px) {
+  @media (min-width: 640px) {
     font-size: 18px;
     line-height: 1.5;
   }
@@ -48,7 +48,7 @@ h2 {
 .grid-4col {
   grid-template-columns: 100%;
 
-  @media (min-width: 960px) {
+  @media (min-width: 640px) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -165,7 +165,7 @@ h2 {
     margin: 0.1em 0;
     font-size: 0.9rem;
     text-align: right;
-    @media (min-width: 960px) {
+    @media (min-width: 640px) {
       width: 157px;
     }
   }
@@ -183,25 +183,34 @@ h2 {
 /* Speakers section */
 .speakers::before {
   position: absolute;
-  margin-top: -150px;
   background: url("../assets/speakers-bg.svg") no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
   z-index: -1;
   content: "";
+  @media (min-width: 640px) {
+    margin-top: -50px;
+  }
 }
 
 /* Speakers list grid */
 .speaker-list {
   display: grid;
   justify-items: start;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin: 0;
   padding: 0;
+  width: 100%;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 60px;
+  }
 
   &--item {
+    position: relative;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -212,31 +221,38 @@ h2 {
 .speaker {
   position: relative;
   margin: 0;
+  width: 100%;
 
   & > img {
     position: relative;
-    width: 200px;
-    height: 200px;
-    filter: grayscale(1) drop-shadow(10px 75px white);
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+    z-index: 1;
   }
   & > figcaption {
     position: relative;
-    padding: 0 20px;
+    top: -50px;
+    left: -10px;
+    padding: 50px 10px 10px;
+    background: #fff;
+    overflow: hidden;
+    z-index: 0;
   }
   &--name {
     margin: 0.25em 0;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    line-height: 1;
   }
   &--company {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: #888;
   }
 }
 
 /* Footer */
 footer {
-  grid-area: footer;
   font-size: 0.9rem;
 }
 
