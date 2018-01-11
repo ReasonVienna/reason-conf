@@ -16,18 +16,12 @@ let metaData = [|
   }
 |];
 
-let styleImport =
-  ReasonReact.stringToElement(
-    {js| @import url('https://fonts.googleapis.com/css?family=Assistant|Hammersmith+One'); |js}
-  );
-
 let make = (~location, children) => {
   ...component,
   render: _self => {
     let isHomepage = location##pathname == "/";
     <article className="container">
       <Helmet title="ReasonConf 2018" meta=metaData />
-      <style _type="text/css"> styleImport </style>
       (componentOrNull(! isHomepage, <Navigation />))
       <main> (children()) </main>
       <Footer />
