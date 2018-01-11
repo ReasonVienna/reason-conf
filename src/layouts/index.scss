@@ -208,7 +208,7 @@ h2 {
   opacity: 0.35;
   height: 150px;
   transform: rotate(9deg) scale(2);
-  @media (min-width: 768px) {
+  @media (min-width: 425px) {
     top: 150px;
   }
 }
