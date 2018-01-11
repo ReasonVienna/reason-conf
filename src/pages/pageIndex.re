@@ -11,6 +11,7 @@ let make = _children => {
   render: _self =>
     <article>
       <header className="teaser">
+        <Navigation />
         <section className="container--centered grid grid-6col">
           <h1 className="teaser--logo">
             <img
