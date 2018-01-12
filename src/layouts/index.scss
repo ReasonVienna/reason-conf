@@ -4,9 +4,18 @@
   box-sizing: border-box;
 }
 
-body {
-  font: 18px/1.5 "Assistant", sans-serif;
+html {
+  font: 16px/1.3 "Assistant", sans-serif;
   color: #333;
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -20,11 +29,11 @@ h6 {
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2rem;
 }
 
 .container {
-  &--centered {
+  &_centered {
     margin: 0 auto;
     padding: 20px;
     max-width: 1080px;
@@ -37,26 +46,37 @@ h2 {
   grid-gap: 20px;
 }
 .grid-4col {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 100%;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 .grid-6col {
   grid-template-columns: 100%;
-  @media (min-width: 960px) {
+
+  @media (min-width: 768px) {
     grid-template-columns: repeat(6, 1fr);
   }
 }
 
 /* Home page header section */
 .teaser {
-  padding-top: 60px;
-  padding-bottom: 120px;
-  background: url(../assets/teaser-bg.jpg) no-repeat;
+  padding-bottom: 30px;
+  background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 98%);
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding-bottom: 120px;
+    text-align: left;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  }
 
   &--logo {
     margin: 0;
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 1 / span 4;
       grid-row: 1;
       align-self: end;
@@ -64,34 +84,38 @@ h2 {
   }
   &--image {
     width: 100%;
-    @media (min-width: 640px) {
+    max-width: 400px;
+    @media (min-width: 768px) {
       width: auto;
+      max-width: 100%;
     }
   }
   &--main {
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 1 / span 4;
     }
   }
   &--text {
+    display: none;
     font-size: 1.5rem;
 
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
+      display: block;
       grid-row: 2;
     }
   }
-  &--aside {
+  &--dates {
     position: relative;
     font-family: "Hammersmith One", Arial, sans-serif;
 
-    @media (min-width: 960px) {
+    @media (min-width: 768px) {
       grid-column: 5 / span 2;
       grid-row: 1;
       align-self: end;
 
       &::before {
         position: absolute;
-        left: -20px;
+        left: -15px;
         width: 5px;
         height: 100%;
         background: #dd4b39;
@@ -99,13 +123,13 @@ h2 {
       }
     }
   }
-  &--dates {
+  &--date {
     margin: 0;
     font-size: 2.35rem;
     letter-spacing: -2px;
   }
   &--location {
-    margin: 0 0 1rem;
+    margin: 0;
     font-size: 1.25rem;
   }
   &--button {
@@ -115,30 +139,38 @@ h2 {
 /* Offering & Timeline */
 .offering {
   &--heading {
-    grid-column: 1 / span 2;
-    grid-row: 1;
     margin: 0;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
   }
   &--text {
-    grid-column: 1 / span 2;
-    grid-row: 2;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
   }
 }
 
 .timeline {
-  grid-column: 3 / span 4;
-  grid-row: 1 / span 2;
+  @media (min-width: 768px) {
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 2;
+  }
   display: grid;
-  grid-template-columns: 157px auto;
+  grid-template-columns: 1fr auto;
   grid-gap: 20px;
 
   &--date {
-    margin: 0;
+    margin: 0.1em 0;
     font-size: 0.9rem;
     text-align: right;
+    @media (min-width: 768px) {
+      width: 157px;
+    }
   }
   &--date > time {
-    line-height: 2rem;
     color: #888;
   }
   &--content {
@@ -152,25 +184,34 @@ h2 {
 /* Speakers section */
 .speakers::before {
   position: absolute;
-  margin-top: -150px;
   background: url("../assets/speakers-bg.svg") no-repeat;
   background-size: cover;
   width: 100%;
   height: 100%;
   z-index: -1;
   content: "";
+  @media (min-width: 425px) {
+    margin-top: -50px;
+  }
 }
 
 /* Speakers list grid */
 .speaker-list {
   display: grid;
   justify-items: start;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   margin: 0;
   padding: 0;
+  width: 100%;
+
+  @media (min-width: 425px) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 60px;
+  }
 
   &--item {
+    position: relative;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -179,7 +220,6 @@ h2 {
 
 /* Footer */
 footer {
-  grid-area: footer;
   font-size: 0.9rem;
 }
 

@@ -14,7 +14,8 @@ let make = _children => {
   render: _self =>
     <article>
       <header className="teaser">
-        <section className="container--centered grid grid-6col">
+        <Navigation />
+        <section className="container_centered grid grid-6col">
           <h1 className="teaser--logo">
             <img
               src=Assets.logo
@@ -22,6 +23,18 @@ let make = _children => {
               className="teaser--image"
             />
           </h1>
+          <aside className="teaser--dates">
+            <time dateTime="2018-05-11/2018-05-13" className="teaser--date">
+              (
+                ste(
+                  {j|11–13
+                       May
+                      2018|j}
+                )
+              )
+            </time>
+            <p className="teaser--location"> (ste("Vienna, Austria")) </p>
+          </aside>
           <main className="teaser--main">
             <h2 className="teaser--tagline">
               (
@@ -31,15 +44,12 @@ let make = _children => {
             </h2>
             <p className="teaser--text">
               (
-                "We believe Reason is the next big thing and we think it is time to bring the community together, learn about the language and talk about new innovations.\n"
-                |> s
+
+                  "Reason is the next big thing and it is time to bring the community together. Come and learn about the language and get inspired for innovation.\n"
+                  |> s
               )
-            </p>
+            
           </main>
-          <aside className="teaser--aside">
-            <p className="teaser--dates"> ({j|11–13 May 2018|j} |> s) </p>
-            <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
-          </aside>
           <nav>
             <a className="teaser--button" href="#tickets">
               ("Buy Tickets" |> s)
@@ -48,7 +58,7 @@ let make = _children => {
         </section>
       </header>
       <section className="offering">
-        <div className="container--centered grid grid-6col">
+        <div className="container_centered grid grid-6col">
           <h2 className="offering--heading">
             ("Get productive with Reason in 3 days" |> s)
           </h2>
@@ -111,7 +121,7 @@ let make = _children => {
         </div>
       </section>
       <section className="speakers">
-        <div className="container--centered">
+        <div className="container_centered">
           <h2> ("Speakers" |> s) </h2>
           <ul className="speaker-list">
             (
@@ -123,7 +133,7 @@ let make = _children => {
         </div>
       </section>
       <section className="sponsors">
-        <div className="container--centered">
+        <div className="container_centered">
           <h2> ("Sponsors" |> s) </h2>
           <p> ({j|Reason Conf is looking for amazing sponsors …|j} |> s) </p>
         </div>
