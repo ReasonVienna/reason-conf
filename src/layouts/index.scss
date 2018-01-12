@@ -168,8 +168,10 @@ a {
   }
   &--navigation {
     grid-row: 1;
-    grid-column: 1 / span 6;
     margin-bottom: 20px;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 6;
+    }
   }
 }
 
