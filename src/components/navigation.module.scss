@@ -1,6 +1,8 @@
 .root {
   display: block;
-  text-align: right;
+  @media (min-width: 768px) {
+    text-align: right;
+  }
 }
 .root_home {
   composes: root;
