@@ -42,18 +42,17 @@ h2 {
 /* Main grid layout */
 .grid {
   display: grid;
-  grid-gap: 25px;
+
+  @media (min-width: 768px) {
+    grid-gap: 25px;
+  }
 }
 .grid-4col {
-  grid-template-columns: 100%;
-
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 .grid-6col {
-  grid-template-columns: 100%;
-
   @media (min-width: 768px) {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -61,20 +60,19 @@ h2 {
 
 /* Home page header section */
 .teaser {
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 98%);
   text-align: center;
 
   @media (min-width: 768px) {
-    padding-bottom: 120px;
     text-align: left;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
   }
 
   &--logo {
-    margin: 0;
+    margin: 40px 0 0;
     @media (min-width: 768px) {
       grid-column: 1 / span 4;
       grid-row: 1;
@@ -146,7 +144,11 @@ h2 {
     font-size: 1.25em;
   }
   &--navigation {
-    grid-column: 5 / span 2;
+    grid-row: 1;
+    @media (min-width: 768px) {
+      grid-column: 5 / span 2;
+      grid-row: 2;
+    }
   }
 }
 
