@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Assistant|Hammersmith+One");
 
-$accentColor: #dd4b39;
+$primaryColor: #dd4b39;
+$secondaryColor: #99d1de;
 $bgColor: rgba(255, 255, 255, 0.9);
 
 * {
@@ -35,8 +36,8 @@ h2 {
 }
 
 a {
-  $linkColor: $accentColor;
-  $underlineColor: transparentize(adjust_hue($accentColor, 0), 0.65);
+  $linkColor: $primaryColor;
+  $underlineColor: transparentize(adjust_hue($primaryColor, 0), 0.65);
   color: $linkColor;
   text-decoration: none;
   background-image: linear-gradient(
@@ -49,7 +50,7 @@ a {
   background-repeat: repeat-x;
 
   &:hover {
-    $linkColor: darken(adjust_hue($accentColor, 0), 5%);
+    $linkColor: darken(adjust_hue($primaryColor, 0), 5%);
     $underlineColor: transparentize(adjust_hue($linkColor, 0), 0.65);
     color: $linkColor;
     background-image: linear-gradient(
@@ -89,9 +90,10 @@ a {
 
 /* Home page header section */
 .teaser {
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
+  color: transparentize(darken($secondaryColor, 55%), 0.1);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 98%);
   text-align: center;
 
@@ -125,6 +127,7 @@ a {
     }
   }
   &--tagline {
+    margin: 0;
     font-size: 1.5em;
   }
   &--text {
@@ -148,15 +151,6 @@ a {
       grid-column: 5 / span 2;
       grid-row: 1;
       align-self: end;
-
-      &::before {
-        position: absolute;
-        left: -15px;
-        width: 5px;
-        height: 100%;
-        background: $accentColor;
-        content: "";
-      }
     }
     @media (max-width: 767px) {
       font-size: small;
@@ -174,10 +168,8 @@ a {
   }
   &--navigation {
     grid-row: 1;
-    @media (min-width: 768px) {
-      grid-column: 5 / span 2;
-      grid-row: 2;
-    }
+    grid-column: 1 / span 6;
+    margin-bottom: 20px;
   }
 }
 

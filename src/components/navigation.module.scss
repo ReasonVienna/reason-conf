@@ -1,11 +1,21 @@
 .root {
   display: block;
+  text-align: right;
 }
 .root_home {
   composes: root;
-
   .linkHome {
     display: none;
+  }
+}
+
+:global(.active) {
+  background: darken(#99d1de, 5%);
+  color: #000;
+  &:hover {
+    background: darken(#99d1de, 5%) !important;
+    color: #000;
+    cursor: default;
   }
 }
 
@@ -22,41 +32,12 @@
     display: inline-block;
     margin: 0 1em 0 0;
   }
-}
 
-@media (min-width: 768px) {
-  .root_home {
-    li {
-      display: block;
-      margin: 0;
-    }
-    a {
-      position: relative;
-      display: block;
-      padding: 0.25em;
-
-      &::before {
-        position: absolute;
-        left: -15px;
-        width: 5px;
-        height: 100%;
-        background: #dd4b39;
-        content: "";
-        opacity: 0;
-        transform: scaleX(0);
-        transition: transform 0.5s, opacity 0.35s;
-      }
-      &:hover::before {
-        opacity: 1;
-        transform: scaleX(1);
-        transition: all 1ms;
-      }
-    }
-    .ticketsButton {
-      margin-top: 1em;
-      a::before {
-        display: none;
-      }
+  a {
+    padding: 0.125em 0.25em;
+    &:hover {
+      background: transparentize(darken(#99d1de, 5%), 0.5);
+      background-size: auto auto;
     }
   }
 }

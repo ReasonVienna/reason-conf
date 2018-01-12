@@ -12,6 +12,9 @@ let make = _children => {
     <article>
       <header className="teaser">
         <section className="container_centered grid grid-6col">
+          <nav className="teaser--navigation">
+            <Navigation pathName="/" />
+          </nav>
           <h1 className="teaser--logo">
             <img
               src=Assets.logo
@@ -48,9 +51,6 @@ let make = _children => {
               )
             </p>
           </main>
-          <nav className="teaser--navigation">
-            <Navigation pathName="/" />
-          </nav>
         </section>
       </header>
       <section className="offering">
