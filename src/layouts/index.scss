@@ -145,7 +145,8 @@ h2 {
     margin: 0;
     font-size: 1.25em;
   }
-  &--button {
+  &--navigation {
+    grid-column: 5 / span 2;
   }
 }
 

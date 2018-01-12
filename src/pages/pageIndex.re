@@ -11,7 +11,6 @@ let make = _children => {
   render: _self =>
     <article>
       <header className="teaser">
-        <Navigation />
         <section className="container_centered grid grid-6col">
           <h1 className="teaser--logo">
             <img
@@ -49,10 +48,8 @@ let make = _children => {
               )
             </p>
           </main>
-          <nav>
-            <a className="teaser--button" href="#tickets">
-              (ste("Buy Tickets"))
-            </a>
+          <nav className="teaser--navigation">
+            <Navigation pathName="/" />
           </nav>
         </section>
       </header>

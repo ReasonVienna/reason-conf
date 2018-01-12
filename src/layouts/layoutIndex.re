@@ -25,7 +25,7 @@ let make = (~location, children) => {
           <main> (children()) </main>;
         } else {
           <div className="container container_centered grid grid-col6">
-            <Navigation />
+            <Navigation pathName=location##pathname />
             <main> (children()) </main>
           </div>;
         }

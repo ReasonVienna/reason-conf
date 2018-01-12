@@ -1,9 +1,12 @@
 .root {
-  font-family: avenir;
-  font-weight: bolder;
-  border: solid red thin;
-  background-color: #dd4c39;
-  width: 6em;
+  display: inline-block;
+  padding: 0.5em;
   color: white;
+  text-decoration: none;
   text-align: center;
+  background-color: #dd4c39;
+
+  &:hover {
+    background-color: darken(#dd4c39, 10%);
+  }
 }

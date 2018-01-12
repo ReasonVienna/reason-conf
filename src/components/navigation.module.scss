@@ -1,3 +1,14 @@
+.root {
+  display: block;
+}
+.root_home {
+  composes: root;
+
+  .linkHome {
+    display: none;
+  }
+}
+
 .list {
   margin: 0;
   padding: 0;
@@ -10,5 +21,40 @@
   li {
     display: inline-block;
     margin: 0 1em 0 0;
+  }
+}
+
+.root_home {
+  li {
+    display: block;
+    margin: 0;
+  }
+  a {
+    position: relative;
+    display: block;
+    padding: 0.25em;
+
+    &::before {
+      position: absolute;
+      left: -15px;
+      width: 5px;
+      height: 100%;
+      background: #dd4b39;
+      content: "";
+      opacity: 0;
+      transform: scaleX(0);
+      transition: transform 0.5s, opacity 0.35s;
+    }
+    &:hover::before {
+      opacity: 1;
+      transform: scaleX(1);
+      transition: all 1ms;
+    }
+  }
+  .ticketsButton {
+    margin-top: 1em;
+    a::before {
+      display: none;
+    }
   }
 }
