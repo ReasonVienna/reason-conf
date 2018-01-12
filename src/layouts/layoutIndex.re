@@ -2,8 +2,6 @@
 
 [%%raw "require('./index.scss')"];
 
-open Util;
-
 module Helmet = Gatsby.Helmet;
 
 let component = ReasonReact.statelessComponent("TemplateWrapper");
@@ -22,8 +20,16 @@ let make = (~location, children) => {
     let isHomepage = location##pathname == "/";
     <article className="container">
       <Helmet title="ReasonConf 2018" meta=metaData />
-      (componentOrNull(! isHomepage, <Navigation />))
-      <main> (children()) </main>
+      (
+        if (isHomepage) {
+          <main> (children()) </main>;
+        } else {
+          <div className="container container_centered grid grid-col6">
+            <Navigation />
+            <main> (children()) </main>
+          </div>;
+        }
+      )
       <Footer />
     </article>;
   }
