@@ -42,7 +42,7 @@ h2 {
 /* Main grid layout */
 .grid {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 25px;
 }
 .grid-4col {
   grid-template-columns: 100%;
@@ -85,18 +85,23 @@ h2 {
     width: 100%;
     max-width: 400px;
     @media (min-width: 768px) {
+      display: block;
       width: auto;
       max-width: 100%;
     }
   }
   &--main {
+    font-size: small;
     @media (min-width: 768px) {
       grid-column: 1 / span 4;
+      font-size: 1em;
     }
   }
+  &--tagline {
+    font-size: 1.5em;
+  }
   &--text {
-    display: none;
-    font-size: 1.5rem;
+    font-size: 1.25em;
 
     @media (min-width: 768px) {
       display: block;
@@ -106,7 +111,12 @@ h2 {
   &--dates {
     position: relative;
     font-family: "Hammersmith One", Arial, sans-serif;
+    font-size: 1.5vmax;
 
+    @media (min-width: 1024px) {
+      font-size: 1rem;
+      align-self: end;
+    }
     @media (min-width: 768px) {
       grid-column: 5 / span 2;
       grid-row: 1;
@@ -121,15 +131,19 @@ h2 {
         content: "";
       }
     }
+    @media (max-width: 767px) {
+      font-size: small;
+    }
   }
-  &--date {
-    margin: 0;
-    font-size: 2.35rem;
+  &--datetime {
+    display: block;
+    padding: 0.25em 0 0;
+    font-size: 2.35em;
     letter-spacing: -2px;
   }
   &--location {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.25em;
   }
   &--button {
   }

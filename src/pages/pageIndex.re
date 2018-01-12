@@ -20,8 +20,9 @@ let make = _children => {
               className="teaser--image"
             />
           </h1>
-          <aside className="teaser--dates">
-            <time dateTime="2018-05-11/2018-05-13" className="teaser--date">
+          <section className="teaser--dates">
+            <time
+              dateTime="2018-05-11/2018-05-13" className="teaser--datetime">
               (
                 ste(
                   {j|11–13
@@ -31,7 +32,7 @@ let make = _children => {
               )
             </time>
             <p className="teaser--location"> (ste("Vienna, Austria")) </p>
-          </aside>
+          </section>
           <main className="teaser--main">
             <h2 className="teaser--tagline">
               (
