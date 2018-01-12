@@ -2,7 +2,7 @@
 
 ## Design mockup
 
-<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/fVvLR4MkLxslAkTsl2En07TY/Reason-Conf-2018" allowfullscreen></iframe>
+https://www.figma.com/file/fVvLR4MkLxslAkTsl2En07TY/Reason-Conf-2018
 
 ## Develop
 
