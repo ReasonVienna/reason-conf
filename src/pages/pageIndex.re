@@ -26,14 +26,13 @@ let make = _children => {
           <aside className="teaser--dates">
             <time dateTime="2018-05-11/2018-05-13" className="teaser--date">
               (
-                ste(
-                  {j|11–13
+                {j|11–13
                        May
                       2018|j}
-                )
+                |> s
               )
             </time>
-            <p className="teaser--location"> (ste("Vienna, Austria")) </p>
+            <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
           </aside>
           <main className="teaser--main">
             <h2 className="teaser--tagline">
@@ -44,11 +43,10 @@ let make = _children => {
             </h2>
             <p className="teaser--text">
               (
-
-                  "Reason is the next big thing and it is time to bring the community together. Come and learn about the language and get inspired for innovation.\n"
-                  |> s
+                "Reason is the next big thing and it is time to bring the community together. Come and learn about the language and get inspired for innovation.\n"
+                |> s
               )
-            
+            </p>
           </main>
           <nav>
             <a className="teaser--button" href="#tickets">
