@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Assistant|Hammersmith+One");
 
+$accentColor: #dd4b39;
+$bgColor: rgba(255, 255, 255, 0.9);
+
 * {
   box-sizing: border-box;
 }
@@ -29,6 +32,32 @@ h6 {
 
 h2 {
   font-size: 2rem;
+}
+
+a {
+  $linkColor: $accentColor;
+  $underlineColor: transparentize(adjust_hue($accentColor, 0), 0.65);
+  color: $linkColor;
+  text-decoration: none;
+  background-image: linear-gradient(
+    $underlineColor,
+    $underlineColor 1px,
+    transparent 1px
+  );
+  background-size: 1px 0.2em;
+  background-position: -9px 100%;
+  background-repeat: repeat-x;
+
+  &:hover {
+    $linkColor: darken(adjust_hue($accentColor, 0), 5%);
+    $underlineColor: transparentize(adjust_hue($linkColor, 0), 0.65);
+    color: $linkColor;
+    background-image: linear-gradient(
+      $underlineColor,
+      $underlineColor 2px,
+      transparent 1px
+    );
+  }
 }
 
 .container {
@@ -125,7 +154,7 @@ h2 {
         left: -15px;
         width: 5px;
         height: 100%;
-        background: #dd4b39;
+        background: $accentColor;
         content: "";
       }
     }
