@@ -15,7 +15,7 @@ let make = _children => {
           <p>
             (
               ste(
-                "Reason Conf is the not-for-profit conference\norganized by community efforts by people\nbehind React Vienna community: "
+                "Reason Conf is the not-for-profit conference\norganized by community efforts by people\nbehind ReactVienna community: "
               )
             )
             <a href="https://twitter.com/ryyppy" className="footer--creator">

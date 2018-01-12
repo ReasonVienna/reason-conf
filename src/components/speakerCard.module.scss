@@ -1,0 +1,27 @@
+/* Single speaker block */
+.root {
+  position: relative;
+  margin: 0;
+
+  & > img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    filter: grayscale(1) drop-shadow(10px 75px white);
+  }
+  & > figcaption {
+    position: relative;
+    padding: 0 20px;
+  }
+}
+
+.name {
+  margin: 0.25em 0;
+  font-size: 1.25rem;
+}
+
+.company {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #888;
+}

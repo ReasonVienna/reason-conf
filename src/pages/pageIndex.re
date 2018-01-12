@@ -1,10 +1,13 @@
+open Util;
+
 let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
 
 module Tickets = Tito.Tickets;
 
-let ste = ReasonReact.stringToElement;
+let speakerColumn = (i, speaker) =>
+  <SpeakerCard speaker key=(string_of_int(i)) />;
 
 let make = _children => {
   ...component,
@@ -22,26 +25,24 @@ let make = _children => {
           <main className="teaser--main">
             <h2 className="teaser--tagline">
               (
-                ste(
-                  {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
-                )
+                {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
+                |> s
               )
             </h2>
             <p className="teaser--text">
               (
-                ste(
-                  "We believe Reason is the next big thing and we think it is time to bring the community together, learn about the language and talk about new innovations.\n"
-                )
+                "We believe Reason is the next big thing and we think it is time to bring the community together, learn about the language and talk about new innovations.\n"
+                |> s
               )
             </p>
           </main>
           <aside className="teaser--aside">
-            <p className="teaser--dates"> (ste({j|11–13 May 2018|j})) </p>
-            <p className="teaser--location"> (ste("Vienna, Austria")) </p>
+            <p className="teaser--dates"> ({j|11–13 May 2018|j} |> s) </p>
+            <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
           </aside>
           <nav>
             <a className="teaser--button" href="#tickets">
-              (ste("Buy Tickets"))
+              ("Buy Tickets" |> s)
             </a>
           </nav>
         </section>
@@ -49,64 +50,60 @@ let make = _children => {
       <section className="offering">
         <div className="container--centered grid grid-6col">
           <h2 className="offering--heading">
-            (ste("Get productive with Reason in 3 days"))
+            ("Get productive with Reason in 3 days" |> s)
           </h2>
           <p className="offering--text">
             (
-              ste(
-                "We want to motivate you to introduce Reason & OCaml in your production environment and make you feel  comfortable with the existing tools. For that, the conference will be focused on practice rather than theory. Enjoy 3 days of workshop / hackathon style conference with the leading speakers from around the world.\n"
-              )
+              "We want to motivate you to introduce Reason & OCaml in your production environment and make you feel  comfortable with the existing tools. For that, the conference will be focused on practice rather than theory. Enjoy 3 days of workshop / hackathon style conference with the leading speakers from around the world.\n"
+              |> s
             )
           </p>
           <dl className="timeline">
             <dt className="timeline--date">
               <time dateTime="2018-05-11">
-                (ste("11"))
-                <sup> (ste("th")) </sup>
-                (ste(" May, Friday"))
+                ("11" |> s)
+                <sup> ("th" |> s) </sup>
+                (" May, Friday" |> s)
               </time>
             </dt>
             <dd className="timeline--content">
-              <h3> (ste("Get started")) </h3>
+              <h3> ("Get started" |> s) </h3>
               <p>
                 (
-                  ste(
-                    "Full day workshop to get every attendee into the language & platform."
-                  )
+                  "Full day workshop to get every attendee into the language & platform."
+                  |> s
                 )
               </p>
             </dd>
             <dt className="timeline--date">
               <time dateTime="2018-05-12">
-                (ste("12"))
-                <sup> (ste("th")) </sup>
-                (ste(" May, Saturday"))
+                ("12" |> s)
+                <sup> ("th" |> s) </sup>
+                (" May, Saturday" |> s)
               </time>
             </dt>
             <dd className="timeline--content">
-              <h3> (ste("Get inspired")) </h3>
+              <h3> ("Get inspired" |> s) </h3>
               <p>
                 (
-                  ste(
-                    "Great speakers & trainers of the Reason community with special guests of the Reason & ReasonReact project team will inspire attendees about more advanced topics.\n"
-                  )
+                  "Great speakers & trainers of the Reason community with special guests of the Reason & ReasonReact project team will inspire attendees about more advanced topics.\n"
+                  |> s
                 )
               </p>
             </dd>
             <dt className="timeline--date">
               <time dateTime="2018-05-13">
-                (ste("13"))
-                <sup> (ste("th")) </sup>
-                (ste(" May, Sunday"))
+                ("13" |> s)
+                <sup> ("th" |> s) </sup>
+                (" May, Sunday" |> s)
               </time>
             </dt>
             <dd className="timeline--content">
-              <h3> (ste("Get productive")) </h3>
+              <h3> ("Get productive" |> s) </h3>
               <p>
                 (
-                  ste(
-                    "Attendees apply their learnings in a hackathon, working on a project they are interested in, aided by our mentors, speakers and volunteers."
-                  )
+                  "Attendees apply their learnings in a hackathon, working on a project they are interested in, aided by our mentors, speakers and volunteers."
+                  |> s
                 )
               </p>
             </dd>
@@ -115,60 +112,25 @@ let make = _children => {
       </section>
       <section className="speakers">
         <div className="container--centered">
-          <h2> (ste("Speakers")) </h2>
+          <h2> ("Speakers" |> s) </h2>
           <ul className="speaker-list">
-            <li className="speaker-list--item">
-              <figure className="speaker">
-                <img src=Assets.chengLou width="225" height="225" />
-                <figcaption>
-                  <h3 className="speaker--name"> (ste("Cheng Lou")) </h3>
-                  <p className="speaker--company"> (ste("Facebook")) </p>
-                </figcaption>
-              </figure>
-            </li>
-            <li className="speaker-list--item">
-              <figure className="speaker">
-                <img src=Assets.lauraGaetano width="225" height="225" />
-                <figcaption>
-                  <h3 className="speaker--name"> (ste("Laura Gaetano")) </h3>
-                  <p className="speaker--company">
-                    (ste("Travis Foundation"))
-                  </p>
-                </figcaption>
-              </figure>
-            </li>
-            <li className="speaker-list--item">
-              <figure className="speaker">
-                <img src=Assets.keiraHodgkison width="225" height="225" />
-                <figcaption>
-                  <h3 className="speaker--name"> (ste("Keira Hodgkison")) </h3>
-                  <p className="speaker--company"> (ste("Culture Amp")) </p>
-                </figcaption>
-              </figure>
-            </li>
-            <li className="speaker-list--item">
-              <figure className="speaker">
-                <img src=Assets.cristianoCalcagno width="225" height="225" />
-                <figcaption>
-                  <h3 className="speaker--name">
-                    (ste("Cristiano Calcagno"))
-                  </h3>
-                  <p className="speaker--company"> (ste("Facebook")) </p>
-                </figcaption>
-              </figure>
-            </li>
+            (
+              Data.speakers
+              |> Array.mapi(speakerColumn)
+              |> ReasonReact.arrayToElement
+            )
           </ul>
         </div>
       </section>
       <section className="sponsors">
         <div className="container--centered">
-          <h2> (ste("Sponsors")) </h2>
-          <p> (ste({j|Reason Conf is looking for amazing sponsors …|j})) </p>
+          <h2> ("Sponsors" |> s) </h2>
+          <p> ({j|Reason Conf is looking for amazing sponsors …|j} |> s) </p>
         </div>
       </section>
       <section className="tickets">
         <div className="container--centered">
-          <h2 id="tickets"> (ste("Tickets")) </h2>
+          <h2 id="tickets"> ("Tickets" |> s) </h2>
           <Tickets event="reason-conf/reason-conf-2018" />
         </div>
       </section>
