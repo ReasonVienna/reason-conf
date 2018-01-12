@@ -14,8 +14,10 @@ let make = _children => {
   render: _self =>
     <article>
       <header className="teaser">
-        <Navigation />
         <section className="container_centered grid grid-6col">
+          <nav className="teaser--navigation">
+            <Navigation pathName="/" />
+          </nav>
           <h1 className="teaser--logo">
             <img
               src=Assets.logo
@@ -23,8 +25,9 @@ let make = _children => {
               className="teaser--image"
             />
           </h1>
-          <aside className="teaser--dates">
-            <time dateTime="2018-05-11/2018-05-13" className="teaser--date">
+          <section className="teaser--dates">
+            <time
+              dateTime="2018-05-11/2018-05-13" className="teaser--datetime">
               (
                 {j|11–13
                        May
@@ -33,7 +36,7 @@ let make = _children => {
               )
             </time>
             <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
-          </aside>
+          </section>
           <main className="teaser--main">
             <h2 className="teaser--tagline">
               (
@@ -48,11 +51,6 @@ let make = _children => {
               )
             </p>
           </main>
-          <nav>
-            <a className="teaser--button" href="#tickets">
-              ("Buy Tickets" |> s)
-            </a>
-          </nav>
         </section>
       </header>
       <section className="offering">

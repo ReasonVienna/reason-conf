@@ -1,3 +1,24 @@
+.root {
+  display: block;
+  text-align: right;
+}
+.root_home {
+  composes: root;
+  .linkHome {
+    display: none;
+  }
+}
+
+:global(.active) {
+  background: darken(#99d1de, 5%);
+  color: #000;
+  &:hover {
+    background: darken(#99d1de, 5%) !important;
+    color: #000;
+    cursor: default;
+  }
+}
+
 .list {
   margin: 0;
   padding: 0;
@@ -10,5 +31,13 @@
   li {
     display: inline-block;
     margin: 0 1em 0 0;
+  }
+
+  a {
+    padding: 0.125em 0.25em;
+    &:hover {
+      background: transparentize(darken(#99d1de, 5%), 0.5);
+      background-size: auto auto;
+    }
   }
 }
