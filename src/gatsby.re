@@ -5,20 +5,32 @@ module Link = {
       (
         ~to_: string,
         ~className: option(string)=?,
-        ~activeStyle: option(string)=?,
+        ~activeStyle: option(Js.t({..}))=?,
         ~activeClassName: option(string)=?,
         children
-      ) =>
-    ReasonReact.wrapJsForReason(
-      ~reactClass=linkClass,
-      ~props={
-        "to": to_,
-        "className": Js.Nullable.from_opt(className),
-        "activeStyle": Js.Nullable.from_opt(activeStyle),
-        "activeClassName": Js.Nullable.from_opt(activeClassName)
-      },
-      children
-    );
+      ) => {
+    /*
+        React is complaining if activeStyle & activeClassName are translated
+        to e.g. activeClassName=undefined inside a JSX tag
+     */
+    let props =
+      {"to": to_, "className": Js.Nullable.from_opt(className)}
+      |> (
+        p =>
+          switch activeStyle {
+          | Some(v) => Js.Obj.assign(p, {"activeStyle": v})
+          | None => p
+          }
+      )
+      |> (
+        p =>
+          switch activeClassName {
+          | Some(v) => Js.Obj.assign(p, {"activeClassName": v})
+          | None => p
+          }
+      );
+    ReasonReact.wrapJsForReason(~reactClass=linkClass, ~props, children);
+  };
 };
 
 module Helmet = {

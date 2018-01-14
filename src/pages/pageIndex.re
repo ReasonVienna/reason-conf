@@ -121,7 +121,7 @@ let make = _children => {
           <h2> ("Speakers" |> s) </h2>
           <ul className="speaker-list">
             (
-              Data.speakers
+              Data.headlineSpeakers
               |> Array.map(speakerColumn)
               |> ReasonReact.arrayToElement
             )

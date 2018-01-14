@@ -249,36 +249,3 @@ a {
     grid-gap: 60px;
   }
 }
-
-/* Footer */
-footer {
-  font-size: 0.9rem;
-}
-
-.footer--about {
-  grid-column: 1 / span 2;
-}
-
-.footer--creator {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.footer--userpic {
-  margin: 0 0.25em;
-  width: 21px;
-  height: 21px;
-  vertical-align: -0.35em;
-  border-radius: 50%;
-}
-
-.copyright {
-  grid-column-end: span 2;
-  align-self: end;
-  text-align: right;
-  color: #888;
-}
-
-.copyright > p {
-  margin: 0;
-}
