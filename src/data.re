@@ -86,6 +86,18 @@ let headlineSpeakers = [|
     }
   },
   {
+    name: "Cristiano Calcagno",
+    company: "Facebook",
+    imgUrl: cristianoCalcagnoImg,
+    description: {j|Engineer at Facebook.\nCo-creator of @fbinfer, founder of Monoidics, reformed academic.\nInto developer experience, front-end, static analysis, language design.\nEarly @reasonml adopter, co-creator of ReasonReact.|j},
+    talk: None,
+    social: {
+      githubUser: Some("cristianoc"),
+      twitterUser: Some("ccrisccris"),
+      website: None
+    }
+  },
+  {
     name: "Keira Hodgkison",
     company: "Culture Amp",
     imgUrl: keiraHodgkisonImg,
@@ -95,18 +107,6 @@ let headlineSpeakers = [|
     social: {
       githubUser: Some("keirah"),
       twitterUser: Some("keirasaid"),
-      website: None
-    }
-  },
-  {
-    name: "Cristiano Calcagno",
-    company: "Facebook",
-    imgUrl: cristianoCalcagnoImg,
-    description: {j|Engineer at Facebook.\nCo-creator of @fbinfer, founder of Monoidics, reformed academic.\nInto developer experience, front-end, static analysis, language design.\nEarly @reasonml adopter, co-creator of ReasonReact.|j},
-    talk: None,
-    social: {
-      githubUser: Some("cristianoc"),
-      twitterUser: Some("ccrisccris"),
       website: None
     }
   }
