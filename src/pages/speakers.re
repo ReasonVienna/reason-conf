@@ -24,11 +24,5 @@ let make = _children => {
     </div>
 };
 
-let foo = (~test: option(string)=?, ()) =>
-  switch test {
-  | Some(v) => Js.log(v)
-  | None => Js.log("empty")
-  };
-
 let default =
   ReasonReact.wrapReasonForJs(~component, jsProps => make(jsProps##children));
