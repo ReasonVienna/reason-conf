@@ -7,6 +7,7 @@
   background-color: #dd4c39;
 
   &:hover {
-    background-color: darken(#dd4c39, 10%);
+    color: white;
+    background: darken(#dd4c39, 10%);
   }
 }
