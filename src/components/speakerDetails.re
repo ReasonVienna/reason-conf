@@ -12,7 +12,7 @@ let make = (~speaker: Data.speakerData, _children) => {
     <div className=style##root key=speaker.name>
       <img src=speaker.imgUrl />
       <div>
-        <h3> (speaker.name |> s) </h3>
+        <h2> (speaker.name |> s) </h2>
         <p> (speaker.description |> s) </p>
         (
           switch speaker.talk {

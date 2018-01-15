@@ -45,7 +45,7 @@ type speakerData = {
 
 module Schedule = {
   type timeslot = string;
-  type lecture = {
+  type talk = {
     timeslot,
     speaker: option(speakerData)
   };
@@ -54,7 +54,7 @@ module Schedule = {
     description: string
   };
   type t =
-    | Talk(lecture)
+    | Talk(talk)
     | Misc(misc)
     | Break(misc);
 };
