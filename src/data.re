@@ -19,8 +19,7 @@ external keiraHodgkisonImg : string = "./assets/keira-hodgkison.jpg";
 type organizerData = {
   name: string,
   imgUrl: string,
-  href: string,
-  altText: string
+  href: string
 };
 
 type social = {
@@ -131,24 +130,13 @@ let speakers: array(speakerData) =
   Array.concat([headlineSpeakers, otherSpeakers]);
 
 let organizers = (
-  {
-    name: "Nik",
-    imgUrl: nikImg,
-    href: "https://twitter.com/nikgraf",
-    altText: "Photo of Nik"
-  },
+  {name: "Nik", imgUrl: nikImg, href: "https://twitter.com/nikgraf"},
   {
     name: "Andrey",
     imgUrl: andreyImg,
-    href: "https://twitter.com/okonetchnikov",
-    altText: "Photo of Andrey"
+    href: "https://twitter.com/okonetchnikov"
   },
-  {
-    name: "Patrick",
-    imgUrl: patrickImg,
-    href: "https://twitter.com/ryyppy",
-    altText: "Photo of Patrick"
-  }
+  {name: "Patrick", imgUrl: patrickImg, href: "https://twitter.com/ryyppy"}
 );
 
 /* List.find_opt is not supported by this BuckleScript version yet */

@@ -8,10 +8,10 @@ module Link = Gatsby.Link;
 
 let component = ReasonReact.statelessComponent("Footer");
 
-let organizerWithPic = (organizer: Data.organizerData) =>
-  <a href=organizer.href className=style##creator key=organizer.name>
-    <img src=organizer.imgUrl alt=organizer.altText className=style##userpic />
-    (organizer.name |> s)
+let organizerWithPic = ({imgUrl, name, href}: Data.organizerData) =>
+  <a href className=style##creator key=name>
+    <img src=imgUrl alt={j|Photo of $(name)|j} className=style##userpic />
+    (name |> s)
   </a>;
 
 let make = _children => {
