@@ -9,7 +9,7 @@ let component = ReasonReact.statelessComponent("SpeakerDetails");
 let make = (~speaker: Data.speakerData, _children) => {
   ...component,
   render: _self =>
-    <div className=style##root key=speaker.name>
+    <div className=style##root>
       <img src=speaker.imgUrl />
       <div>
         <h2> (speaker.name |> s) </h2>
