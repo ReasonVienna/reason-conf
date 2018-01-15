@@ -28,10 +28,14 @@ let make = _children => {
           </p>
           (
             switch Data.organizers {
-            | (o1, o2, o3) =>
+            | [] => ReasonReact.nullElement
+            | [o3, ...rest] =>
               <p>
                 (
-                  Array.map(organizerWithPic, [|o1, o2|])
+                  /* Lists are only tail-spreadable, so we consider
+                     the first element to be the last to be rendered */
+                  Array.of_list(rest)
+                  |> Array.map(organizerWithPic)
                   |> ReasonReact.arrayToElement
                 )
                 (" & " |> s)

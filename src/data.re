@@ -129,15 +129,16 @@ let otherSpeakers = [|
 let speakers: array(speakerData) =
   Array.concat([headlineSpeakers, otherSpeakers]);
 
-let organizers = (
+/* First in this list should be rendered last */
+let organizers = [
+  {name: "Patrick", imgUrl: patrickImg, href: "https://twitter.com/ryyppy"},
   {name: "Nik", imgUrl: nikImg, href: "https://twitter.com/nikgraf"},
   {
     name: "Andrey",
     imgUrl: andreyImg,
     href: "https://twitter.com/okonetchnikov"
-  },
-  {name: "Patrick", imgUrl: patrickImg, href: "https://twitter.com/ryyppy"}
-);
+  }
+];
 
 /* List.find_opt is not supported by this BuckleScript version yet */
 let find_opt = (fn, l) =>
