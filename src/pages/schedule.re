@@ -4,19 +4,25 @@ open Data;
 
 let component = ReasonReact.statelessComponent("Schedule");
 
-let s = ReasonReact.stringToElement;
+let miscRow = (misc: Schedule.misc) =>
+  <tr>
+    <td> (misc.timeslot |> s) </td>
+    <td> (misc.description |> s) </td>
+  </tr>;
 
-let miscRow = (v: Schedule.misc) =>
-  <tr> <td> (v.timeslot |> s) </td> <td> (v.description |> s) </td> </tr>;
-
+/*
+ A Break and a Misc type are structurally the same (for now).
+ For semantic reasons, we still keep a different function
+ name, in case we need to write a different render impl
+ */
 let breakRow = miscRow;
 
-let talkRow = (v: Schedule.talk) =>
+let talkRow = (lecture: Schedule.lecture) =>
   <tr>
-    <td> (v.timeslot |> s) </td>
+    <td> (lecture.timeslot |> s) </td>
     <td>
       (
-        switch v.speaker {
+        switch lecture.speaker {
         | Some(speaker) =>
           <div>
             (

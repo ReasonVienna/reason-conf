@@ -44,7 +44,7 @@ type speakerData = {
 
 module Schedule = {
   type timeslot = string;
-  type talk = {
+  type lecture = {
     timeslot,
     speaker: option(speakerData)
   };
@@ -53,7 +53,7 @@ module Schedule = {
     description: string
   };
   type t =
-    | Talk(talk)
+    | Talk(lecture)
     | Misc(misc)
     | Break(misc);
 };
@@ -165,5 +165,3 @@ let schedule: array(Schedule.t) = [|
   Misc({timeslot: "19:30", description: "Talk 7"}),
   Misc({timeslot: "20:30", description: "Open End / Party"})
 |];
-
-Js.log(schedule);
