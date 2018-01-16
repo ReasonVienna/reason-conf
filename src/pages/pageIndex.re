@@ -142,7 +142,7 @@ let make = _children => {
       </section>
       <section className="subscribe">
         <div className="container_centered">
-          <h2 id="tickets"> (ste("Subscribe to Newsletter")) </h2>
+          <h2 id="tickets"> ("Subscribe to Newsletter" |> s) </h2>
           <SubscribeForm />
         </div>
       </section>
