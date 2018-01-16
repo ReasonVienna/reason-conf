@@ -48,7 +48,6 @@ a {
   background-size: 1px 0.2em;
   background-position: -9px 100%;
   background-repeat: repeat-x;
-  transition: all 0.25s;
 
   &:hover {
     $linkColor: darken(adjust_hue($primaryColor, 0), 20%);

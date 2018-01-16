@@ -17,47 +17,19 @@ let organizerWithPic = ({imgUrl, name, href}: Data.organizerData) =>
 let make = _children => {
   ...component,
   render: _self =>
-    <footer>
+    <footer className=style##root>
       <div className="container_centered grid grid-6col">
-        <section className=style##about>
-          <p>
-            (
-              "Reason Conf is the not-for-profit conference\norganized by community efforts by people\nbehind ReactVienna community"
-              |> s
-            )
-          </p>
-          (
-            switch Data.organizers {
-            | [] => ReasonReact.nullElement
-            | [o3, ...rest] =>
-              <p>
-                (
-                  /* Lists are only tail-spreadable, so we consider
-                     the first element to be the last to be rendered */
-                  Array.of_list(rest)
-                  |> Array.map(organizerWithPic)
-                  |> ReasonReact.arrayToElement
-                )
-                (" & " |> s)
-                (organizerWithPic(o3))
-              </p>
-            }
-          )
-        </section>
-        <nav>
+        <section className=style##subscribe> <SubscribeForm /> </section>
+        <nav className=style##additional>
           <ul>
-            <li>
-              <a href="https://www.example.com">
-                ("Subscribe to Newsletter" |> s)
-              </a>
-            </li>
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>
             <li>
               <a href="https://www.example.com"> ("Contact Us" |> s) </a>
             </li>
+            <li> <Link to_="/imprint/"> ("Imprint" |> s) </Link> </li>
           </ul>
         </nav>
-        <nav>
+        <nav className=style##social>
           <ul>
             <li>
               <a href="https://twitter.com/reasonconf"> ("Twitter" |> s) </a>
@@ -69,7 +41,29 @@ let make = _children => {
           </ul>
         </nav>
         <section className=style##copyright>
-          <Link to_="/imprint/"> ("Imprint" |> s) </Link>
+          <p className=style##about>
+            (
+              "Reason Conf is the not-for-profit conference organized by React Vienna organizers:"
+              |> s
+            )
+            (
+              switch Data.organizers {
+              | [] => ReasonReact.nullElement
+              | [o3, ...rest] =>
+                <span>
+                  (
+                    /* Lists are only tail-spreadable, so we consider
+                       the first element to be the last to be rendered */
+                    Array.of_list(rest)
+                    |> Array.map(organizerWithPic)
+                    |> ReasonReact.arrayToElement
+                  )
+                  (" & " |> s)
+                  (organizerWithPic(o3))
+                </span>
+              }
+            )
+          </p>
           <p> ({j|© Atrium, 2018|j} |> s) </p>
         </section>
       </div>
