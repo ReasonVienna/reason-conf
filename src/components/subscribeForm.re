@@ -26,9 +26,7 @@ let make = _children => {
             placeholder="name@domain.com"
             className=style##input
           />
-          <Button _type="submit" className=style##button>
-            (s("Subscribe"))
-          </Button>
+          <Button _type="submit"> (s("Subscribe")) </Button>
         </div>
       </form>,
       ~props={"data-netlify": true},
