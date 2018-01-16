@@ -33,8 +33,10 @@ let make = (~pathName, _children) => {
         <li className=style##listItem>
           <Link to_="/blog/" activeClassName> (s("Blog")) </Link>
         </li>
-        <li className=style##ticketsButton>
-          <Button text="Buy a ticket" />
+        <li>
+          <a href="#tickets" className=style##ticketsButton>
+            (s("Buy a ticket"))
+          </a>
         </li>
       </ul>
     </nav>;
