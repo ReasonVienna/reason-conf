@@ -2,28 +2,20 @@
 .root {
   position: relative;
   margin: 0;
+  padding: 0;
 
   & > img {
-    width: 100px;
-    height: 100px;
-    @media (min-width: 468px) {
-      width: 200px;
-      height: 200px;
-    }
-
-    @media (min-width: 768px) {
-      width: 225px;
-      height: 225px;
-    }
-
     position: relative;
     filter: grayscale(1);
     z-index: 1;
+    width: 100%;
+    height: 100%;
   }
 
   & > figcaption {
     position: relative;
     top: -50px;
+    margin-bottom: -50px;
     left: 10px;
     padding: 50px 10px 10px;
     background: #fff;

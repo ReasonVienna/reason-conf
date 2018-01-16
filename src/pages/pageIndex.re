@@ -4,10 +4,10 @@ let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
 
-module Tickets = Tito.Tickets;
-
 let speakerColumn = (speaker: Data.speakerData) =>
-  <SpeakerCard speaker key=speaker.name />;
+  <li className="speaker-list--item">
+    <SpeakerCard speaker key=speaker.name />
+  </li>;
 
 let make = _children => {
   ...component,
@@ -132,12 +132,6 @@ let make = _children => {
         <div className="container_centered">
           <h2> ("Sponsors" |> s) </h2>
           <p> ({j|Reason Conf is looking for amazing sponsors …|j} |> s) </p>
-        </div>
-      </section>
-      <section className="tickets">
-        <div className="container_centered">
-          <h2 id="tickets"> ("Tickets" |> s) </h2>
-          <Tickets event="reason-conf/reason-conf-2018" />
         </div>
       </section>
     </article>

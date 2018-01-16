@@ -240,12 +240,23 @@ a {
   justify-items: start;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
+  position: relative;
   margin: 0;
   padding: 0;
+  list-style: none;
   width: 100%;
 
-  @media (min-width: 425px) {
+  @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 60px;
   }
+
+  &--item {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.tickets {
+  background: #284ba6;
 }
