@@ -19,7 +19,9 @@ let make = (~location, children) => {
   render: _self => {
     let isHomepage = location##pathname == "/";
     <article className="container">
-      <Helmet title="ReasonConf 2018" meta=metaData />
+      <Helmet title="ReasonConf 2018" meta=metaData>
+        <script src="https://js.tito.io/v1" async=Js.true_ />
+      </Helmet>
       (
         if (isHomepage) {
           <main> (children()) </main>;
