@@ -135,7 +135,7 @@ let make = _children => {
         </div>
       </section>
       <section className="tickets">
-        <div className="container--centered">
+        <div className="container_centered">
           <h2 id="tickets"> ("Tickets" |> s) </h2>
           <Tickets event="reason-conf/reason-conf-2018" />
         </div>
