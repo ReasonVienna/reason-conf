@@ -21,6 +21,11 @@ let make = (~location, children) => {
     <article className="container">
       <Helmet title="ReasonConf 2018" meta=metaData>
         <script src="https://js.tito.io/v1" async=Js.true_ />
+        <link
+          rel="stylesheet"
+          _type="text/css"
+          href="https://css.tito.io/v1.1"
+        />
       </Helmet>
       (
         if (isHomepage) {
