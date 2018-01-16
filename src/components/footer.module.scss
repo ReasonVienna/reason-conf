@@ -1,1 +1,31 @@
+.root {
+  font-size: 0.9rem;
+}
 
+.about {
+  grid-column: 1 / span 2;
+}
+
+.creator {
+  display: inline-block;
+  white-space: nowrap;
+
+  & > img {
+    margin: 0 0.25em;
+    width: 21px;
+    height: 21px;
+    vertical-align: -0.35em;
+    border-radius: 50%;
+  }
+}
+
+.copyright {
+  grid-column-end: span 2;
+  align-self: end;
+  text-align: right;
+  color: #888;
+
+  & > p {
+    margin: 0;
+  }
+}

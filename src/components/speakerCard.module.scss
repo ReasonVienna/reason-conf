@@ -1,0 +1,45 @@
+/* Single speaker block */
+.root {
+  position: relative;
+  margin: 0;
+
+  & > img {
+    width: 100px;
+    height: 100px;
+    @media (min-width: 468px) {
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (min-width: 768px) {
+      width: 225px;
+      height: 225px;
+    }
+
+    position: relative;
+    filter: grayscale(1);
+    z-index: 1;
+  }
+
+  & > figcaption {
+    position: relative;
+    top: -50px;
+    left: 10px;
+    padding: 50px 10px 10px;
+    background: #fff;
+    overflow: hidden;
+    z-index: 0;
+  }
+}
+
+.name {
+  margin: 0.25em 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.company {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #888;
+}

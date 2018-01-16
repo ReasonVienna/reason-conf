@@ -1,0 +1,10 @@
+.root {
+  & > img {
+    height: 200px;
+    width: 200px;
+  }
+
+  & > p {
+    float: right;
+  }
+}
