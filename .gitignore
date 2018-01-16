@@ -2,6 +2,7 @@ node_modules
 .DS_Store
 .merlin
 public/
+*.swp
 *.bs.js
 .cache/
 .bsb.lock
