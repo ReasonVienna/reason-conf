@@ -2,6 +2,10 @@
 
 [%%raw "require('./index.scss')"];
 
+open Util;
+
+module Tickets = Tito.Tickets;
+
 module Helmet = Gatsby.Helmet;
 
 let component = ReasonReact.statelessComponent("TemplateWrapper");
@@ -18,7 +22,7 @@ let make = (~location, children) => {
   ...component,
   render: _self => {
     let isHomepage = location##pathname == "/";
-    <article className="container">
+    <article className="page">
       <Helmet title="ReasonConf 2018" meta=metaData>
         <script src="https://js.tito.io/v1" async=Js.true_ />
         <link
@@ -37,6 +41,12 @@ let make = (~location, children) => {
           </div>;
         }
       )
+      <section className="tickets">
+        <div className="container_centered">
+          <h2 id="tickets"> ("Tickets" |> s) </h2>
+          <Tickets event="reason-conf/reason-conf-2018" />
+        </div>
+      </section>
       <Footer />
     </article>;
   }
