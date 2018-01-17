@@ -6,7 +6,7 @@ let component = ReasonReact.statelessComponent("Header");
 
 let s = ReasonReact.stringToElement;
 
-let activeClassName = "active";
+let activeClassName = style##link_active;
 
 let make = (~pathName, _children) => {
   ...component,
@@ -14,24 +14,34 @@ let make = (~pathName, _children) => {
     let isHomePage = pathName == "/";
     let rootClassName = isHomePage ? style##root_home : style##root;
     <nav className=rootClassName>
+      <Link to_="/" className=style##link_home>
+        <img src=Assets.logo alt="Home" className=style##logo />
+      </Link>
       <ul className=style##list>
-        <li className=style##linkHome>
-          <Link to_="/" activeClassName> (s("Home")) </Link>
+        <li className=style##listItem>
+          <Link to_="/schedule/" className=style##link activeClassName>
+            (s("Schedule"))
+          </Link>
         </li>
         <li className=style##listItem>
-          <Link to_="/schedule/" activeClassName> (s("Schedule")) </Link>
+          <Link to_="/speakers/" className=style##link activeClassName>
+            (s("Speakers"))
+          </Link>
         </li>
         <li className=style##listItem>
-          <Link to_="/speakers/" activeClassName> (s("Speakers")) </Link>
+          <Link to_="/sponsors/" className=style##link activeClassName>
+            (s("Sponsors"))
+          </Link>
         </li>
         <li className=style##listItem>
-          <Link to_="/sponsors/" activeClassName> (s("Sponsors")) </Link>
+          <Link to_="/about/" className=style##link activeClassName>
+            (s("About"))
+          </Link>
         </li>
         <li className=style##listItem>
-          <Link to_="/about/" activeClassName> (s("About")) </Link>
-        </li>
-        <li className=style##listItem>
-          <Link to_="/blog/" activeClassName> (s("Blog")) </Link>
+          <Link to_="/blog/" className=style##link activeClassName>
+            (s("Blog"))
+          </Link>
         </li>
         <li>
           <a href="#tickets" className=style##ticketsButton>
