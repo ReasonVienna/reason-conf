@@ -15,7 +15,7 @@ body {
   font: 16px/1.3 "Assistant", sans-serif;
   color: #333;
   @media (min-width: 768px) {
-    //font-size: 18px;
+    font-size: 18px;
   }
 }
 
@@ -252,4 +252,8 @@ a {
 }
 
 .tickets {
+}
+
+.subscribe {
+  grid-column: 2 / span 4;
 }

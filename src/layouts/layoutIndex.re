@@ -4,8 +4,6 @@
 
 open Util;
 
-module Tickets = Tito.Tickets;
-
 module Helmet = Gatsby.Helmet;
 
 let component = ReasonReact.statelessComponent("TemplateWrapper");
@@ -41,10 +39,10 @@ let make = (~location, children) => {
           </div>;
         }
       )
-      <section className="tickets">
+      <section className="subscribe">
         <div className="container_centered">
-          <h2 id="tickets"> ("Tickets" |> s) </h2>
-          <Tickets event="reason-conf/reason-conf-2018" />
+          <h2> ("Subscribe to Newsletter" |> s) </h2>
+          <SubscribeForm />
         </div>
       </section>
       <Footer />

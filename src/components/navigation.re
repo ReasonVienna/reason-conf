@@ -2,21 +2,35 @@ module Link = Gatsby.Link;
 
 [@bs.module] external style : Js.t({..}) = "./navigation.module.scss";
 
-let component = ReasonReact.statelessComponent("Header");
+open Util;
 
-let s = ReasonReact.stringToElement;
+let component = ReasonReact.statelessComponent("Navigation");
 
-let activeClassName = style##link_active;
+type navigationLocation =
+  | Header
+  | Footer;
 
-let make = (~pathName, _children) => {
+let make = (~pathName, ~navigationLocation=Header, _children) => {
   ...component,
   render: _self => {
     let isHomePage = pathName == "/";
-    let rootClassName = isHomePage ? style##root_home : style##root;
+    let rootClassName =
+      switch navigationLocation {
+      | Header => style##root_header
+      | Footer => style##root_footer
+      };
+    /* We don't need active class named in the footer */
+    let activeClassName =
+      navigationLocation == Header ? style##link_active : "";
     <nav className=rootClassName>
-      <Link to_="/" className=style##link_home>
-        <img src=Assets.logo alt="Home" className=style##logo />
-      </Link>
+      (
+        componentOrNull(
+          ! isHomePage,
+          <Link to_="/" className=style##link_home>
+            <img src=Assets.logo alt="Home" className=style##logo />
+          </Link>
+        )
+      )
       <ul className=style##list>
         <li className=style##listItem>
           <Link to_="/schedule/" className=style##link activeClassName>
@@ -43,7 +57,7 @@ let make = (~pathName, _children) => {
             (s("Blog"))
           </Link>
         </li>
-        <li>
+        <li className=style##listItemBuy>
           <a href="#tickets" className=style##ticketsButton>
             (s("Buy a ticket"))
           </a>

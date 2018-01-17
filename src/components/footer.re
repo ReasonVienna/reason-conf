@@ -19,7 +19,7 @@ let make = _children => {
   render: _self =>
     <footer className=style##root>
       <div className="container_centered grid grid-6col">
-        <section className=style##subscribe> <SubscribeForm /> </section>
+        <Navigation pathName="/" navigationLocation=Footer />
         <nav className=style##additional>
           <ul>
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>

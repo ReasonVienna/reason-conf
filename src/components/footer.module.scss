@@ -7,13 +7,9 @@
 }
 
 nav > ul {
-  margin: 1em 0;
+  margin: 0;
   padding: 0;
   list-style: none;
-
-  > li {
-    margin-bottom: 1.5em;
-  }
 }
 
 .about {
@@ -33,12 +29,12 @@ nav > ul {
   }
 }
 
-.subscribe {
-  grid-column: span 2;
-}
-
 .copyright {
-  grid-column: span 2;
+  grid-column: span 3;
   align-self: end;
   text-align: right;
+
+  p {
+    margin-top: 0;
+  }
 }
