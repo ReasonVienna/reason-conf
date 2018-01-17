@@ -44,12 +44,6 @@ let make = _children => {
                 |> s
               )
             </h2>
-            <p className="teaser--text">
-              (
-                "Reason is the next big thing and it is time to bring the community together. Come and learn about the language and get inspired for innovation.\n"
-                |> s
-              )
-            </p>
           </main>
         </section>
       </header>
@@ -58,12 +52,20 @@ let make = _children => {
           <h2 className="offering--heading">
             ("Get productive with Reason in 3 days" |> s)
           </h2>
-          <p className="offering--text">
-            (
-              "We want to motivate you to introduce Reason & OCaml in your production environment and make you feel  comfortable with the existing tools. For that, the conference will be focused on practice rather than theory. Enjoy 3 days of workshop / hackathon style conference with the leading speakers from around the world.\n"
-              |> s
-            )
-          </p>
+          <section className="offering--text">
+            <p>
+              (
+                "Reason is the next big thing and it is time to bring the community together. Come and learn about the language and get inspired for innovation.\n"
+                |> s
+              )
+            </p>
+            <p>
+              (
+                "We want to motivate you to introduce Reason & OCaml in your production environment and make you feel  comfortable with the existing tools. For that, the conference will be focused on practice rather than theory. Enjoy 3 days of workshop / hackathon style conference with the leading speakers from around the world.\n"
+                |> s
+              )
+            </p>
+          </section>
           <dl className="timeline">
             <dt className="timeline--date">
               <time dateTime="2018-05-11">

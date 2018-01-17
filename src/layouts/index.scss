@@ -92,17 +92,26 @@ a {
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
   color: transparentize(darken($secondaryColor, 55%), 0.1);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 98%);
-  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 7vw));
+  //text-align: center;
 
   @media (min-width: 768px) {
     text-align: left;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+  }
+
+  &--navigation {
+    grid-row: 2;
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
   }
 
   &--logo {
-    margin: 40px 0 0;
+    margin: 10px 0 0;
     @media (min-width: 768px) {
+      margin-top: 40px;
       grid-column: 1 / span 4;
       grid-row: 1;
       align-self: end;
@@ -118,23 +127,17 @@ a {
     }
   }
   &--main {
+    margin-top: 1em;
     font-size: small;
     @media (min-width: 768px) {
       grid-column: 1 / span 4;
+      margin-top: 0;
       font-size: 1em;
     }
   }
   &--tagline {
-    margin: 0;
+    margin-top: 0;
     font-size: 1.5em;
-  }
-  &--text {
-    font-size: 1.25em;
-
-    @media (min-width: 768px) {
-      display: block;
-      grid-row: 2;
-    }
   }
   &--dates {
     position: relative;
@@ -163,13 +166,6 @@ a {
   &--location {
     margin: 0;
     font-size: 1.25em;
-  }
-  &--navigation {
-    grid-row: 1;
-    margin-bottom: 20px;
-    @media (min-width: 768px) {
-      grid-column: 1 / span 6;
-    }
   }
 }
 

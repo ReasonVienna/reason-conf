@@ -1,7 +1,9 @@
 .root {
+  padding-top: 2em;
   color: #859ca6;
   font-size: smaller;
   background: rgb(35, 50, 57);
+  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
 }
 
 nav > ul {
