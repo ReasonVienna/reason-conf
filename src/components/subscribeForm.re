@@ -30,7 +30,7 @@ let make = _children => {
           <Button _type="submit"> (s("Subscribe")) </Button>
         </div>
       </form>,
-      ~props={"data-netlify": true},
+      ~props={"data-netlify": Js.true_},
       [||]
     )
 };
