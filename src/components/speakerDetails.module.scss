@@ -1,10 +1,16 @@
 .root {
-  & > img {
-    height: 200px;
-    width: 200px;
-  }
+}
 
-  & > p {
-    float: right;
-  }
+.figure {
+  margin: 0;
+}
+
+.image {
+  display: block;
+  width: 200px;
+  filter: grayscale(1);
+}
+
+.name {
+  font-size: 1.5em;
 }

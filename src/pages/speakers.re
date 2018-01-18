@@ -7,14 +7,16 @@ open Data;
 let component = ReasonReact.statelessComponent("Speakers");
 
 let toSpeakerDetail = (speaker: Data.speakerData) =>
-  <li key=speaker.name> <SpeakerDetails speaker /> </li>;
+  <li key=speaker.name className=style##listItem>
+    <SpeakerDetails speaker />
+  </li>;
 
 let make = _children => {
   ...component,
   render: _self =>
     <div className=style##root>
       <h1> ("Speakers" |> s) </h1>
-      <ul className=style##speaker_rows>
+      <ul className=style##list>
         (
           Data.speakers
           |> Array.map(toSpeakerDetail)
