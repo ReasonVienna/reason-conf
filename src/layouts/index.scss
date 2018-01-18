@@ -246,25 +246,15 @@ img {
 }
 
 .partners {
-  display: flex;
-  a:link {
-    text-decoration: none;
+  align-items: center;
+  a {
+    background: none;
   }
   & > img {
+    grid-column: span 2;
     margin: 10px;
+    width: 300px;
   }
-}
-
-img.scriptConf {
-  width: 300px;
-}
-
-img.reactVienna {
-  width: 300px;
-}
-
-img.reasonVienna {
-  width: 300px;
 }
 
 .tickets {
