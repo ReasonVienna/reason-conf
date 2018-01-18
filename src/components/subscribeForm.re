@@ -10,7 +10,7 @@ let make = _children => {
   ...component,
   render: _self =>
     ReasonReact.cloneElement(
-      <form name="newsletter" action="/" className=style##root>
+      <form name="newsletter" className=style##root>
         <p>
           (
             s(
@@ -21,7 +21,7 @@ let make = _children => {
         <label htmlFor="email" className=style##label> (s("Email: ")) </label>
         <div className=style##formRow>
           <input
-            _type="email"
+            _type="submit"
             name="email"
             id="email"
             placeholder="name@domain.com"
