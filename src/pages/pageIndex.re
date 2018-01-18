@@ -17,36 +17,28 @@ let make = _children => {
     <article>
       <header className="teaser">
         <section className="container_centered grid grid-6col">
-          <nav className="teaser--navigation">
-            <Navigation pathName="/" />
-          </nav>
           <h1 className="teaser--logo">
             <img
               src=Assets.logo
-              alt="Reason Conf Logo"
+              alt="Reason Conf 2018"
               className="teaser--image"
             />
           </h1>
-          <section className="teaser--dates">
-            <time
-              dateTime="2018-05-11/2018-05-13" className="teaser--datetime">
-              (
-                {j|11–13
-                       May
-                      2018|j}
-                |> s
-              )
+          <nav className="teaser--navigation">
+            <Navigation pathName="/" />
+          </nav>
+          <h2 className="teaser--dates">
+            <time dateTime="2018-05-11/2018-05-13">
+              ({j|11–13 May 2018|j} |> s)
             </time>
-            <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
-          </section>
-          <main className="teaser--main">
-            <h2 className="teaser--tagline">
-              (
-                {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
-                |> s
-              )
-            </h2>
-          </main>
+          </h2>
+          <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
+          <p className="teaser--tagline">
+            (
+              {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
+              |> s
+            )
+          </p>
         </section>
       </header>
       <section className="offering">

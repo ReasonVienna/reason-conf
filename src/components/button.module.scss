@@ -5,7 +5,8 @@
   color: lighten($color, 50);
   text-decoration: none;
   text-align: center;
-  font-family: -apple-system, "Assistant", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+    sans-serif;
   background-color: $color;
   border: none;
 

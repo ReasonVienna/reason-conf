@@ -47,8 +47,8 @@ $primaryColor: #dd4b39;
 
   .link {
     display: inline-block;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
-      "Assistant", sans-serif;
+    font-family: Trueno, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      "Segoe UI", sans-serif;
   }
 }
 
@@ -78,6 +78,7 @@ $primaryColor: #dd4b39;
 
 .ticketsButton {
   composes: root from "./button.module.scss";
+  composes: link;
   line-height: 1.3;
 }
 

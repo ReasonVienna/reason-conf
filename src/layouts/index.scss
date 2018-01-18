@@ -1,8 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Assistant|Hammersmith+One");
+@import url("https://fonts.googleapis.com/css?family=Assistant");
+@import "../assets/variables";
 
-$primaryColor: #dd4b39;
-$secondaryColor: #99d1de;
-$bgColor: rgba(255, 255, 255, 0.9);
+@font-face {
+  font-family: "Trueno";
+  src: url("../assets/truenosbd-webfont.woff2") format("woff2"),
+    url("../assets/truenosbd-webfont.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
@@ -12,7 +17,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font: 16px/1.3 "Assistant", sans-serif;
+  font: 16px/1.3 $mainFontFamily;
   color: #333;
   @media (min-width: 768px) {
     font-size: 18px;
@@ -25,8 +30,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Hammersmith One", Arial, sans-serif;
-  font-weight: normal;
+  font-family: $displayFontFamily;
+  font-weight: 600;
 }
 
 h2 {
@@ -92,29 +97,34 @@ a {
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
   color: transparentize(darken($secondaryColor, 55%), 0.1);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 7vw));
-  //text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 8vmin));
+  min-height: 34vmin;
 
   @media (min-width: 768px) {
     text-align: left;
   }
 
+  .grid {
+    position: relative;
+    grid-gap: 10px;
+  }
+
   &--navigation {
-    grid-row: 2;
     margin-bottom: 20px;
     @media (min-width: 768px) {
-      grid-column: 1 / span 6;
-      grid-row: 1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px 0;
     }
   }
 
   &--logo {
     margin: 10px 0 0;
     @media (min-width: 768px) {
-      margin-top: 40px;
       grid-column: 1 / span 4;
       grid-row: 1;
-      align-self: end;
+      align-self: start;
     }
   }
   &--image {
@@ -129,43 +139,36 @@ a {
   &--main {
     margin-top: 1em;
     font-size: small;
-    @media (min-width: 768px) {
-      grid-column: 1 / span 4;
-      margin-top: 0;
-      font-size: 1em;
-    }
   }
   &--tagline {
-    margin-top: 0;
-    font-size: 1.5em;
+    margin-top: 0.5rem;
+    font-size: xx-large;
+    @media (min-width: 768px) {
+      grid-column: 1 / span 3;
+      margin: 0.5rem 0 2rem;
+    }
   }
   &--dates {
-    position: relative;
-    font-family: "Hammersmith One", Arial, sans-serif;
-    font-size: 1.5vmax;
+    margin: 0;
+    white-space: nowrap;
 
-    @media (min-width: 1024px) {
-      font-size: 1rem;
-      align-self: end;
-    }
     @media (min-width: 768px) {
       grid-column: 5 / span 2;
       grid-row: 1;
       align-self: end;
+      font-size: 4.5vmin;
+      line-height: 2.5rem;
     }
-    @media (max-width: 767px) {
-      font-size: small;
-    }
-  }
-  &--datetime {
-    display: block;
-    padding: 0.25em 0 0;
-    font-size: 2.35em;
-    letter-spacing: -2px;
   }
   &--location {
     margin: 0;
-    font-size: 1.25em;
+    font-size: 1.5em;
+    @media (min-width: 768px) {
+      grid-column: 5 / span 2;
+      grid-row: 2;
+      align-self: start;
+      margin-top: 0.5rem;
+    }
   }
 }
 
