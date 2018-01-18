@@ -1,5 +1,7 @@
 open Util;
 
+[@bs.module] external scriptLogo : string = "../assets/script18-logo.svg";
+
 let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
@@ -22,10 +24,9 @@ let make = _children => {
               className="teaser--image"
             />
           </h1>
-          <nav
-            className="teaser--navigation"
-            /*<Navigation pathName="/" />*/
-          />
+          <nav className="teaser--navigation">
+            <Navigation pathName="/" />
+          </nav>
           <h2 className="teaser--dates">
             <time dateTime="2018-05-11/2018-05-13">
               ({j|11–13 May 2018|j} |> s)
@@ -48,13 +49,30 @@ let make = _children => {
           <section className="offering--text">
             <p>
               (
-                "Reason is the next big thing and it is time to bring the community together. Come and learn about the language and get inspired for innovation.\n"
+                {js|
+                  Reason is the next big thing and it is time to bring
+                  the community together. Come and learn about the
+                  language and get inspired for innovation.
+                |js}
                 |> s
               )
             </p>
             <p>
               (
-                "We want to motivate you to introduce Reason & OCaml in your production environment and make you feel  comfortable with the existing tools. For that, the conference will be focused on practice rather than theory. Enjoy 3 days of workshop / hackathon style conference with the leading speakers from around the world.\n"
+                {js|
+                  We want to motivate you to add Reason & OCaml to
+                  your professional toolbelt and make you
+                  feel comfortable in the ecosystem.
+                |js}
+                |> s
+              )
+            </p>
+            <p>
+              (
+                {js|
+                  This conference is aiming for a well-balanced schedule
+                  with a practical, social and theoretical context.
+                |js}
                 |> s
               )
             </p>
@@ -68,10 +86,14 @@ let make = _children => {
               </time>
             </dt>
             <dd className="timeline--content">
-              <h3> ("Get started" |> s) </h3>
+              <h3> ("Day 1: Get started" |> s) </h3>
               <p>
                 (
-                  "Full day workshop to get every attendee into the language & platform."
+                  {js|
+                    An optional workshop day to get every beginner and
+                    intermediate attendee into the language &
+                    platform.
+                  |js}
                   |> s
                 )
               </p>
@@ -84,10 +106,15 @@ let make = _children => {
               </time>
             </dt>
             <dd className="timeline--content">
-              <h3> ("Get inspired" |> s) </h3>
+              <h3> ("Day 2: Get inspired" |> s) </h3>
               <p>
                 (
-                  "Great speakers & trainers of the Reason community with special guests of the Reason & ReasonReact project team will inspire attendees about more advanced topics.\n"
+                  {js|
+                    This is the main conference day with lectures and talks.
+                    Speakers of the Reason / OCaml community (with special guests
+                    from the Reason & ReasonReact project) will inspire attendees for
+                    more advanced topics.
+                  |js}
                   |> s
                 )
               </p>
@@ -100,10 +127,16 @@ let make = _children => {
               </time>
             </dt>
             <dd className="timeline--content">
-              <h3> ("Get productive" |> s) </h3>
+              <h3> ("Day 3: Get productive" |> s) </h3>
               <p>
                 (
-                  "Attendees apply their learnings in a hackathon, working on a project they are interested in, aided by our mentors, speakers and volunteers."
+                  {js|
+                    On the last day we encourage attendees to start
+                    their first Reason projects, aided by our mentors,
+                    speakers and volunteers. Alternatively for those
+                    who want to relax, we offer a local-guided tour
+                    through the beautiful city Vienna!
+                  |js}
                   |> s
                 )
               </p>
@@ -113,7 +146,7 @@ let make = _children => {
       </section>
       <section className="speakers">
         <div className="container_centered">
-          <h2> ("Speakers" |> s) </h2>
+          <h2> ("Featured Speakers" |> s) </h2>
           <ul className="speaker-list">
             (
               Data.headlineSpeakers
@@ -121,12 +154,21 @@ let make = _children => {
               |> ReasonReact.arrayToElement
             )
           </ul>
+          <p className="speakerTeaser">
+            (
+              "... and many more to come. The finale schedule will be announced soon."
+              |> s
+            )
+          </p>
         </div>
       </section>
       <section className="sponsors">
         <div className="container_centered">
-          <h2> ("Sponsors" |> s) </h2>
-          <p> ({j|Reason Conf is looking for amazing sponsors …|j} |> s) </p>
+          <h2> ("Sponsors & Partners" |> s) </h2>
+          <div className="partners">
+            <img src=scriptLogo className="scriptConf" />
+          </div>
+          <p> ({js||js} |> s) </p>
         </div>
       </section>
     </article>

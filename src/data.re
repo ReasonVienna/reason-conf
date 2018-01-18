@@ -64,7 +64,7 @@ let headlineSpeakers = [|
     company: "Facebook",
     imgUrl: chengLouImg,
     description: {j|I work on Reason and Facebook Messenger|j},
-    talk: Some({title: "This is a Test title", abstract: "Foo"}),
+    talk: None,
     social: {
       githubUser: Some("chenglou"),
       twitterUser: Some("_chenglou"),

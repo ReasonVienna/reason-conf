@@ -1,5 +1,7 @@
 open Util;
 
+[@bs.module] external style : Js.t({..}) = "./about.module.scss";
+
 [@bs.module]
 external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
 
@@ -70,7 +72,9 @@ let make = _children => {
         <img src=reasonViennaLogo alt="ReasonVienna Logo" />
         <img src=reactViennaLogo alt="ReactVienna Logo" />
       </div>
-      <div> <Organizers organizers=Data.organizers /> </div>
+      <div>
+        <Organizers organizers=Data.organizers className=style##creator />
+      </div>
     </section>
 };
 

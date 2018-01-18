@@ -22,19 +22,6 @@
   grid-column: span 2;
 }
 
-.creator {
-  display: inline-block;
-  white-space: nowrap;
-
-  & > img {
-    margin: 0 0.25em;
-    width: 21px;
-    height: 21px;
-    vertical-align: -0.35em;
-    border-radius: 50%;
-  }
-}
-
 .copyright {
   grid-column: span 3;
   align-self: end;
