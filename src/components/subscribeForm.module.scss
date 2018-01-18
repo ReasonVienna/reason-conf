@@ -2,15 +2,20 @@
   position: relative;
 }
 
-.label {
-  display: block;
-  margin-bottom: 0.5em;
-  font-weight: bold;
-  font-size: 0.9em;
+.text {
+  font-size: 1.25em;
+  line-height: 1.5;
 }
 
 .formRow {
   display: flex;
+}
+
+.label {
+  display: block;
+  margin-right: 0.5em;
+  line-height: 2;
+  font-weight: bold;
 }
 
 .input {
