@@ -1,6 +1,8 @@
-let component = ReasonReact.statelessComponent("Tickets");
+open Util;
 
-let s = ReasonReact.stringToElement;
+module Tickets = Tito.Tickets;
+
+let component = ReasonReact.statelessComponent("Tickets");
 
 let make = _children => {
   ...component,

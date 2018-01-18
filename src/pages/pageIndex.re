@@ -4,8 +4,6 @@ let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
 
-module Tickets = Tito.Tickets;
-
 let speakerColumn = (speaker: Data.speakerData) =>
   <li className="speaker-list--item">
     <SpeakerCard speaker key=speaker.name />
