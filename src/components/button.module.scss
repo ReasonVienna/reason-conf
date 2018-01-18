@@ -1,17 +1,17 @@
+@import "../assets/variables.scss";
+
 .root {
-  $color: #dd4c39;
   display: inline-block;
   padding: 0.25em 0.5em;
-  color: lighten($color, 50);
+  color: lighten($primaryColor, 50);
   text-decoration: none;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
-    sans-serif;
-  background-color: $color;
+  font-family: $displayFontFamily, sans-serif;
+  background-color: $primaryColor;
   border: none;
 
   &:hover {
     color: white;
-    background: lighten($color, 5);
+    background: lighten($primaryColor, 5);
   }
 }

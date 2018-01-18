@@ -5,3 +5,29 @@ $mainFontFamily: "Assistant", -apple-system, BlinkMacSystemFont,
   "Helvetica Neue", "Segoe UI", sans-serif;
 $displayFontFamily: Trueno, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
   "Segoe UI", sans-serif;
+
+@mixin link($color) {
+  $linkColor: $color;
+  $underlineColor: transparentize(adjust_hue($linkColor, 0), 0.75);
+  color: $linkColor;
+  text-decoration: none;
+  background-image: linear-gradient(
+    $underlineColor,
+    $underlineColor 1px,
+    transparent 1px
+  );
+  background-size: 1px 0.15em;
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+
+  &:hover {
+    $linkColor: lighten(adjust_hue($linkColor, 0), 10%);
+    $underlineColor: transparentize(adjust_hue($linkColor, 0), 0.5);
+    color: $linkColor;
+    background-image: linear-gradient(
+      $underlineColor,
+      $underlineColor 1px,
+      transparent 1px
+    );
+  }
+}

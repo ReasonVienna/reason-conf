@@ -39,29 +39,7 @@ h2 {
 }
 
 a {
-  $linkColor: $primaryColor;
-  $underlineColor: transparentize(adjust_hue($primaryColor, 0), 0.5);
-  color: $linkColor;
-  text-decoration: none;
-  background-image: linear-gradient(
-    $underlineColor,
-    $underlineColor 1px,
-    transparent 1px
-  );
-  background-size: 1px 0.2em;
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-
-  &:hover {
-    $linkColor: darken(adjust_hue($primaryColor, 0), 20%);
-    $underlineColor: transparentize(adjust_hue($linkColor, 0), 0.5);
-    color: $linkColor;
-    background-image: linear-gradient(
-      $underlineColor,
-      $underlineColor 1px,
-      transparent 1px
-    );
-  }
+  @include link($primaryColor);
 }
 
 .container {

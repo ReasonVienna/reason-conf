@@ -1,15 +1,21 @@
+@import "../assets/variables.scss";
+
 .root {
   padding-top: 2em;
-  color: #859ca6;
+  color: desaturate(darken($secondaryColor, 30), 30);
   font-size: smaller;
   background: rgb(35, 50, 57);
   clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
-}
 
-nav > ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    @include link(desaturate(darken($secondaryColor, 10), 30));
+  }
 }
 
 .about {
