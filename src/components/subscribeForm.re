@@ -10,7 +10,7 @@ let make = _children => {
   ...component,
   render: _self =>
     ReasonReact.cloneElement(
-      <form name="newsletter" className=style##root>
+      <form name="newsletter" action="/" className=style##root>
         <p>
           (
             s(
