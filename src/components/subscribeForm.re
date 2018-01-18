@@ -1,20 +1,17 @@
 module Link = Gatsby.Link;
 
+open Util;
+
 [@bs.module] external style : Js.t({..}) = "./subscribeForm.module.scss";
 
 let component = ReasonReact.statelessComponent("SubscribeForm");
-
-let s = ReasonReact.stringToElement;
 
 let make = _children => {
   ...component,
   render: _self =>
     ReasonReact.cloneElement(
       <form
-        name="newsletter"
-        action="/speakers"
-        className=style##root
-        method="post">
+        name="newsletter" action="/thanks" className=style##root method="post">
         <p className=style##text>
           (
             s(

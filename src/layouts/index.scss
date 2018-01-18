@@ -252,3 +252,10 @@ a {
     }
   }
 }
+
+.thanks {
+  margin: 3rem 0;
+  &--grid {
+    grid-column: 2 / span 4;
+  }
+}

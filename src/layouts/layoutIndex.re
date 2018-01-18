@@ -20,6 +20,7 @@ let make = (~location, children) => {
   ...component,
   render: _self => {
     let isHomepage = location##pathname == "/";
+    let isThanksPage = location##pathname == "/thanks/";
     <article className="page">
       <Helmet title="ReasonConf 2018" meta=metaData>
         <script src="https://js.tito.io/v1" async=Js.true_ />
@@ -39,12 +40,17 @@ let make = (~location, children) => {
           </div>;
         }
       )
-      <section className="subscribe">
-        <div className="container_centered grid grid-6col">
-          <h2> ("Subscribe to Newsletter" |> s) </h2>
-          <SubscribeForm />
-        </div>
-      </section>
+      (
+        componentOrNull(
+          ! isThanksPage,
+          <section className="subscribe">
+            <div className="container_centered grid grid-6col">
+              <h2> ("Subscribe to Newsletter" |> s) </h2>
+              <SubscribeForm />
+            </div>
+          </section>
+        )
+      )
       <Footer />
     </article>;
   }
