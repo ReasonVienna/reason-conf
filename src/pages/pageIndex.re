@@ -162,7 +162,7 @@ let make = _children => {
           </ul>
           <p className="extraText">
             (
-              "... and many more to come. The finale schedule will be announced soon."
+              "...and many more to come. The final schedule will be announced soon."
               |> s
             )
           </p>
