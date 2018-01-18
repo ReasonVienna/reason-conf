@@ -20,6 +20,7 @@ let make = _children => {
             id="name"
             placeholder="John Appleseed"
             className=style##input
+            required=Js.true_
           />
         </div>
         <div className=style##formRow>
@@ -32,13 +33,19 @@ let make = _children => {
             id="email"
             placeholder="name@domain.com"
             className=style##input
+            required=Js.true_
           />
         </div>
         <div className=style##formRow>
           <label htmlFor="message" className=style##label>
             (s("Message: "))
           </label>
-          <textarea id="message" name="message" className=style##testarea />
+          <textarea
+            id="message"
+            name="message"
+            className=style##textarea
+            required=Js.true_
+          />
         </div>
         <Button _type="submit" className=style##submit> (s("Submit")) </Button>
         <input _type="hidden" name="form-name" value="contact" />
