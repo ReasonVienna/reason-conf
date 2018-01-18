@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="888px" height="262px" viewBox="0 0 888 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
+<svg width="889px" height="262px" viewBox="0 0 889 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>ReasonVienna Banner</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Export" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="ReasonVienna-Banner" transform="translate(-363.000000, -71.000000)">
             <g id="Group" transform="translate(363.000000, 71.000000)">
                 <g id="Reason-Vienna-Logo">
                     <g id="reasonvienna_square">
                         <rect id="background" fill="#607096" fill-rule="nonzero" x="0" y="0" width="261" height="262"></rect>
-                        <g id="typography" transform="translate(61.714286, 144.551724)" fill-rule="nonzero" fill="#FFFFFF">
+                        <g id="typography" transform="translate(61.714286, 144.551724)" fill="#FFFFFF" fill-rule="nonzero">
                             <path d="M61.0714286,102.154187 L46.2857143,73.9924138 L26.6464286,73.9924138 L26.6464286,102.154187 L0.18,102.154187 L0.18,0.406551724 L45.7264286,0.406551724 C59.1235714,0.406551724 69.51,3.52775041 76.8857143,9.77014778 C84.2614286,16.0125452 87.9514286,24.8018062 87.9557143,36.137931 C87.9557143,43.7828243 86.4128571,50.386601 83.3271429,55.9492611 C80.2299723,61.5247927 75.5478746,66.0473424 69.8785714,68.9395567 L90.99,102.18 L61.0714286,102.154187 Z M26.6592857,52.8000985 L45.8935714,52.8000985 C51.2892857,52.8000985 55.4592857,51.4449261 58.4035714,48.7345813 C61.3478571,46.0242365 62.8178571,42.1049918 62.8135714,36.9768473 C62.8135714,32.0422989 61.3435714,28.243514 58.4035714,25.5804926 C55.4635714,22.9174713 51.2935714,21.5859606 45.8935714,21.5859606 L26.6464286,21.5859606 L26.6592857,52.8000985 Z" id="Shape"></path>
                             <polygon id="Shape" points="104.869286 0.406551724 184.834286 0.406551724 184.834286 21.598867 131.329286 21.598867 131.329286 40.6164532 179.627143 40.6164532 179.627143 61.6603448 131.329286 61.8087685 131.329286 80.9683251 186.274286 80.9683251 186.274286 102.154187 104.869286 102.154187"></polygon>
                         </g>
                     </g>
                 </g>
-                <text id="VIENNA" font-family="Montserrat-Bold, Montserrat" font-size="150" font-weight="bold" fill="#FF6363">
-                    <tspan x="277" y="250">VIENNA</tspan>
-                </text>
+                <path d="M276.7,144.85 L306.25,144.85 L332.5,220.9 L358.9,144.85 L387.1,144.85 L346,250 L317.5,250 L276.7,144.85 Z M397,144.85 L424.45,144.85 L424.45,250 L397,250 L397,144.85 Z M444.85,144.85 L527.8,144.85 L527.8,166.75 L472.3,166.75 L472.3,186.4 L522.4,186.4 L522.4,208.15 L472.3,208.3 L472.3,228.1 L529.3,228.1 L529.3,250 L444.85,250 L444.85,144.85 Z M617.95,144.85 L643.45,144.85 L643.45,250 L619.45,250 L571.75,187.15 L571.75,250 L546.1,250 L546.1,144.85 L570.25,144.85 L618.1,208.15 L617.95,144.85 Z M735.85,144.85 L761.35,144.85 L761.35,250 L737.35,250 L689.65,187.15 L689.65,250 L664,250 L664,144.85 L688.15,144.85 L736,208.15 L735.85,144.85 Z M859.15,250 L851.95,231.4 L806.5,231.4 L799.15,250 L770.95,250 L816.1,144.85 L844.3,144.85 L888.4,250 L859.15,250 Z M814.75,210.4 L843.85,210.4 L829.45,172.9 L814.75,210.4 Z" id="VIENNA" fill="#FF6363"></path>
             </g>
         </g>
     </g>
