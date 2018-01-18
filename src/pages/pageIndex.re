@@ -172,9 +172,9 @@ let make = _children => {
         <div className="container_centered">
           <h2> ("Sponsors & Partners" |> s) </h2>
           <div className="partners grid grid-6col">
-            <img src=reactViennaLogo className="partners--reactVienna" />
-            <img src=scriptLogo className="partners--scriptConf" />
-            <img src=reasonViennaLogo className="partners--reasonVienna" />
+            <img src=reactViennaLogo className="partners--logo" />
+            <img src=scriptLogo className="partners--logo" />
+            <img src=reasonViennaLogo className="partners--logo" />
           </div>
           <p className="extraText">
             (
