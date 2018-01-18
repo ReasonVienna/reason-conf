@@ -23,9 +23,7 @@ let make = _children => {
         <nav className=style##additional>
           <ul>
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>
-            <li>
-              <a href="https://www.example.com"> ("Contact Us" |> s) </a>
-            </li>
+            <li> <a href="/contact/"> ("Contact Us" |> s) </a> </li>
             <li> <Link to_="/imprint/"> ("Imprint" |> s) </Link> </li>
           </ul>
         </nav>
