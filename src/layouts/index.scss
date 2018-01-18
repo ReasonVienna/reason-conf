@@ -232,7 +232,7 @@ a {
   }
 }
 
-.speakerTeaser {
+.extraText {
   font-weight: bolder;
 }
 
@@ -240,11 +240,21 @@ a {
   a:link {
     text-decoration: none;
   }
+  & > img {
+    margin: 10px;
+  }
 }
 
-.scriptConf {
+img.scriptConf {
   width: 300px;
-  border: none;
+}
+
+img.reactVienna {
+  width: 300px;
+}
+
+img.reasonVienna {
+  width: 300px;
 }
 
 .tickets {

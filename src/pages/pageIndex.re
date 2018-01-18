@@ -2,6 +2,12 @@ open Util;
 
 [@bs.module] external scriptLogo : string = "../assets/script18-logo.svg";
 
+[@bs.module]
+external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
+
+[@bs.module]
+external reactViennaLogo : string = "../assets/reactvienna-logo.svg";
+
 let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
@@ -154,7 +160,7 @@ let make = _children => {
               |> ReasonReact.arrayToElement
             )
           </ul>
-          <p className="speakerTeaser">
+          <p className="extraText">
             (
               "... and many more to come. The finale schedule will be announced soon."
               |> s
@@ -166,9 +172,17 @@ let make = _children => {
         <div className="container_centered">
           <h2> ("Sponsors & Partners" |> s) </h2>
           <div className="partners">
+            <img src=reactViennaLogo className="reactVienna" />
             <img src=scriptLogo className="scriptConf" />
+            <img src=reasonViennaLogo className="reasonVienna" />
+            <p className="extraText">
+              (
+                "We are happily collaborating with research institutes and businesses. "
+                |> s
+              )
+              <a href="/contact"> ("Get in touch!" |> s) </a>
+            </p>
           </div>
-          <p> ({js||js} |> s) </p>
         </div>
       </section>
     </article>

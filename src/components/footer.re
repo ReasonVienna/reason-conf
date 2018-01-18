@@ -34,9 +34,16 @@ let make = _children => {
                 <a href="https://twitter.com/reasonconf"> ("Twitter" |> s) </a>
               </li>
               <li>
-                <a href="https://www.facebook.com"> ("Facebook" |> s) </a>
+                <a
+                  href="https://www.facebook.com/ReasonConf-1334078980027448/">
+                  ("Facebook" |> s)
+                </a>
               </li>
-              <li> <a href="https://www.github.com"> ("Github" |> s) </a> </li>
+              <li>
+                <a href="https://www.github.com/reasonvienna">
+                  ("Github" |> s)
+                </a>
+              </li>
             </ul>
           </nav>
           <section className=style##copyright>
