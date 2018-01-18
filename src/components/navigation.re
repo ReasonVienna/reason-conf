@@ -37,17 +37,17 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
         /*     (s("Schedule")) */
         /*   </Link> */
         /* </li> */
-        /* <li className=style##listItem> */
-        /*   <Link to_="/speakers/" className=style##link activeClassName> */
-        /*     (s("Speakers")) */
-        /*   </Link> */
-        /* </li> */
-        /* <li className=style##listItem> */
-        /*   <Link to_="/sponsors/" className=style##link activeClassName> */
-        /*     (s("Sponsors")) */
-        /*   </Link> */
-        /* </li> */
 
+          <li className=style##listItem>
+            <Link to_="/speakers/" className=style##link activeClassName>
+              (s("Speakers"))
+            </Link>
+          </li>
+          /* <li className=style##listItem> */
+          /*   <Link to_="/sponsors/" className=style##link activeClassName> */
+          /*     (s("Sponsors")) */
+          /*   </Link> */
+          /* </li> */
           <li className=style##listItem>
             <Link to_="/about/" className=style##link activeClassName>
               (s("About"))

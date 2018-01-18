@@ -73,16 +73,16 @@ let headlineSpeakers = [|
     }
   },
   {
-    name: "Laura Gaetano",
-    company: "Travis Foundation",
-    imgUrl: lauraGaetanoImg,
-    /* TODO: CHECK BACK WITH LAURA TO UPDATE THE DESCRIPTION */
-    description: {j|Laura is a manager at Travis Foundation and the organiser of Rails Girls Summer of Code (https://railsgirlssummerofcode.org/) — a 3-month scholarship program to support women in the Open Source community. With a background in the visual arts and a non-traditional career path, she landed in tech as a web developer somewhat by accident. Laura is passionate about making things, coaching at programming workshops, Open Source software, feminism, music and space (as in rockets).|j},
+    name: "Keira Hodgkison",
+    company: "Culture Amp",
+    imgUrl: keiraHodgkisonImg,
+    /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
+    description: {j|Keira is a developer at Culture Amp, the world's leading culture analytics platform. She works with React, Flow, and Rails on solutions to help customers share, and act upon company employee engagement data. Keira is an advocate for using functional programming techniques to improve the JavaScript coding and refactoring experience. When she's not writing code, she can be found under a large cat.|j},
     talk: None,
     social: {
-      githubUser: Some("alicetragedy"),
-      twitterUser: Some("alicetragedy"),
-      website: Some("http://www.alicetragedy.org/")
+      githubUser: Some("keirah"),
+      twitterUser: Some("keirasaid"),
+      website: None
     }
   },
   {
@@ -98,16 +98,16 @@ let headlineSpeakers = [|
     }
   },
   {
-    name: "Keira Hodgkison",
-    company: "Culture Amp",
-    imgUrl: keiraHodgkisonImg,
-    /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
-    description: {j|Keira is a developer at Culture Amp, the world's leading culture analytics platform. She works with React, Flow, and Rails on solutions to help customers share, and act upon company employee engagement data. Keira is an advocate for using functional programming techniques to improve the JavaScript coding and refactoring experience. When she's not writing code, she can be found under a large cat.|j},
+    name: "Laura Gaetano",
+    company: "Travis Foundation",
+    imgUrl: lauraGaetanoImg,
+    /* TODO: CHECK BACK WITH LAURA TO UPDATE THE DESCRIPTION */
+    description: {j|Laura is a manager at Travis Foundation and the organiser of Rails Girls Summer of Code (https://railsgirlssummerofcode.org/) — a 3-month scholarship program to support women in the Open Source community. With a background in the visual arts and a non-traditional career path, she landed in tech as a web developer somewhat by accident. Laura is passionate about making things, coaching at programming workshops, Open Source software, feminism, music and space (as in rockets).|j},
     talk: None,
     social: {
-      githubUser: Some("keirah"),
-      twitterUser: Some("keirasaid"),
-      website: None
+      githubUser: Some("alicetragedy"),
+      twitterUser: Some("alicetragedy"),
+      website: Some("http://www.alicetragedy.org/")
     }
   }
 |];
