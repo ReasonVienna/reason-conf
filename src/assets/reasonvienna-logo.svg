@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="888px" height="262px" viewBox="0 0 888 262" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ReasonVienna-Banner" transform="translate(-363.000000, -71.000000)">
+            <g id="Group" transform="translate(363.000000, 71.000000)">
+                <g id="Reason-Vienna-Logo">
+                    <g id="reasonvienna_square">
+                        <rect id="background" fill="#607096" fill-rule="nonzero" x="0" y="0" width="261" height="262"></rect>
+                        <g id="typography" transform="translate(61.714286, 144.551724)" fill-rule="nonzero" fill="#FFFFFF">
+                            <path d="M61.0714286,102.154187 L46.2857143,73.9924138 L26.6464286,73.9924138 L26.6464286,102.154187 L0.18,102.154187 L0.18,0.406551724 L45.7264286,0.406551724 C59.1235714,0.406551724 69.51,3.52775041 76.8857143,9.77014778 C84.2614286,16.0125452 87.9514286,24.8018062 87.9557143,36.137931 C87.9557143,43.7828243 86.4128571,50.386601 83.3271429,55.9492611 C80.2299723,61.5247927 75.5478746,66.0473424 69.8785714,68.9395567 L90.99,102.18 L61.0714286,102.154187 Z M26.6592857,52.8000985 L45.8935714,52.8000985 C51.2892857,52.8000985 55.4592857,51.4449261 58.4035714,48.7345813 C61.3478571,46.0242365 62.8178571,42.1049918 62.8135714,36.9768473 C62.8135714,32.0422989 61.3435714,28.243514 58.4035714,25.5804926 C55.4635714,22.9174713 51.2935714,21.5859606 45.8935714,21.5859606 L26.6464286,21.5859606 L26.6592857,52.8000985 Z" id="Shape"></path>
+                            <polygon id="Shape" points="104.869286 0.406551724 184.834286 0.406551724 184.834286 21.598867 131.329286 21.598867 131.329286 40.6164532 179.627143 40.6164532 179.627143 61.6603448 131.329286 61.8087685 131.329286 80.9683251 186.274286 80.9683251 186.274286 102.154187 104.869286 102.154187"></polygon>
+                        </g>
+                    </g>
+                </g>
+                <text id="VIENNA" font-family="Montserrat-Bold, Montserrat" font-size="150" font-weight="bold" fill="#FF6363">
+                    <tspan x="277" y="250">VIENNA</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -46,23 +46,7 @@ let make = _children => {
               "Reason Conf is the not-for-profit conference organized by React Vienna organizers:"
               |> s
             )
-            (
-              switch Data.organizers {
-              | [] => ReasonReact.nullElement
-              | [o3, ...rest] =>
-                <span>
-                  (
-                    /* Lists are only tail-spreadable, so we consider
-                       the first element to be the last to be rendered */
-                    Array.of_list(rest)
-                    |> Array.map(organizerWithPic)
-                    |> ReasonReact.arrayToElement
-                  )
-                  (" & " |> s)
-                  (organizerWithPic(o3))
-                </span>
-              }
-            )
+            <Organizers organizers=Data.organizers />
           </p>
           <p> ({j|© Atrium, 2018|j} |> s) </p>
         </section>
