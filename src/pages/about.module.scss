@@ -1,11 +1,10 @@
-.creator {
-  & > span a {
-    white-space: nowrap;
+.logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  grid-gap: 20px;
 
-    & > img {
-      margin: 0 0.25em;
-      vertical-align: -0.35em;
-      border-radius: 50%;
-    }
+  a {
+    background: none;
   }
 }

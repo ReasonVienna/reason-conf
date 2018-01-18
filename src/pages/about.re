@@ -69,12 +69,16 @@ let make = _children => {
             |> s
           )
         </p>
-        <img src=reasonViennaLogo alt="ReasonVienna Logo" />
-        <img src=reactViennaLogo alt="ReactVienna Logo" />
+        <section className=style##logos>
+          <a href="https://twitter.com/reactvienna">
+            <img src=reasonViennaLogo alt="Reason Vienna Logo" />
+          </a>
+          <a href="https://twitter.com/reasonvienna">
+            <img src=reactViennaLogo alt="React Vienna Logo" />
+          </a>
+        </section>
       </div>
-      <div>
-        <Organizers organizers=Data.organizers className=style##creator />
-      </div>
+      <div> <Organizers organizers=Data.organizers /> </div>
     </section>
 };
 

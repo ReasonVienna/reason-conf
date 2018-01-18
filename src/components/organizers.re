@@ -2,33 +2,30 @@ open Util;
 
 open Data;
 
-let organizerWithPic = ({imgUrl, name, href}: Data.organizerData) =>
-  <a href key=name>
-    <img src=imgUrl alt={j|Photo of $(name)|j} />
-    (name |> s)
-  </a>;
+[@bs.module] external style : Js.t({..}) = "./organizers.module.scss";
+
+let organizerWithPic = ({imgUrl, name, href, twitter}: Data.organizerData) =>
+  <figure key=name className=style##organizer>
+    <img src=imgUrl className=style##photo alt={j|Photo of $(name)|j} />
+    <figcaption className=style##info>
+      <p className=style##name> (name |> s) </p>
+      <a href className=style##twitter> ("@" |> s) (twitter |> s) </a>
+    </figcaption>
+  </figure>;
 
 let component = ReasonReact.statelessComponent("Organizers");
 
-let make = (~organizers: list(organizerData), ~className: string, _children) => {
+let make = (~organizers: list(organizerData), _children) => {
   ...component,
   render: _self =>
-    <div className>
+    <div className=style##root>
       (
         switch organizers {
         | [] => ReasonReact.nullElement
-        | [o3, ...rest] =>
-          <span>
-            (
-              /* Lists are only tail-spreadable, so we consider
-                 the first element to be the last to be rendered */
-              Array.of_list(rest)
-              |> Array.map(organizerWithPic)
-              |> ReasonReact.arrayToElement
-            )
-            (" & " |> s)
-            (organizerWithPic(o3))
-          </span>
+        | orgs =>
+          Array.of_list(orgs)
+          |> Array.map(organizerWithPic)
+          |> ReasonReact.arrayToElement
         }
       )
     </div>

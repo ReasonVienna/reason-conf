@@ -19,7 +19,8 @@ external keiraHodgkisonImg : string = "./assets/keira-hodgkison.jpg";
 type organizerData = {
   name: string,
   imgUrl: string,
-  href: string
+  href: string,
+  twitter: string
 };
 
 type social = {
@@ -131,12 +132,23 @@ let speakers: array(speakerData) =
 
 /* First in this list should be rendered last */
 let organizers = [
-  {name: "Patrick", imgUrl: patrickImg, href: "https://twitter.com/ryyppy"},
-  {name: "Nik", imgUrl: nikImg, href: "https://twitter.com/nikgraf"},
   {
-    name: "Andrey",
+    name: "Patrick Stapfer",
+    imgUrl: patrickImg,
+    href: "https://twitter.com/ryyppy",
+    twitter: "ryyppy"
+  },
+  {
+    name: "Nik Graf",
+    imgUrl: nikImg,
+    href: "https://twitter.com/nikgraf",
+    twitter: "nikgraf"
+  },
+  {
+    name: "Andrey Okonetchnikov",
     imgUrl: andreyImg,
-    href: "https://twitter.com/okonetchnikov"
+    href: "https://twitter.com/okonetchnikov",
+    twitter: "okonetchnikov"
   }
 ];
 

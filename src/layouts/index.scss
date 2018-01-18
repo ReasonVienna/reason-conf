@@ -42,6 +42,11 @@ a {
   @include link($primaryColor);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .container {
   &_centered {
     margin: 0 auto;
