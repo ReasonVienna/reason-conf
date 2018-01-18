@@ -58,7 +58,7 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
           </Link>
         </li>
         <li className=style##listItemBuy>
-          <a href="#tickets" className=style##ticketsButton>
+          <a href="/tickets" className=style##ticketsButton>
             (s("Buy a ticket"))
           </a>
         </li>

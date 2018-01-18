@@ -130,12 +130,6 @@ let make = _children => {
           <p> ({j|Reason Conf is looking for amazing sponsors …|j} |> s) </p>
         </div>
       </section>
-      <section className="tickets">
-        <div className="container_centered">
-          <h2 id="tickets"> ("Tickets" |> s) </h2>
-          <Tickets event="reason-conf/reason-conf-2018" />
-        </div>
-      </section>
     </article>
 };
 
