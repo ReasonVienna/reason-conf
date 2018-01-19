@@ -1,13 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Assistant");
+@import url("https://fonts.googleapis.com/css?family=Assistant|Montserrat:700");
 @import "../assets/variables";
-
-@font-face {
-  font-family: "Trueno";
-  src: url("../assets/truenosbd-webfont.woff2") format("woff2"),
-    url("../assets/truenosbd-webfont.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
 
 * {
   box-sizing: border-box;
@@ -31,7 +23,7 @@ h4,
 h5,
 h6 {
   font-family: $displayFontFamily;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h1 {
