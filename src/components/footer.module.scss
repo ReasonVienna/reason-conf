@@ -1,11 +1,17 @@
 @import "../assets/variables.scss";
 
+$footerTextColor: desaturate(darken($secondaryColor, 30), 30);
+$footerLinkColor: desaturate(darken($secondaryColor, 10), 30);
 .root {
   padding-top: 2em;
-  color: desaturate(darken($secondaryColor, 30), 30);
+  color: $footerTextColor;
   font-size: smaller;
   background: rgb(35, 50, 57);
   clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+
+  :global(.grid) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   nav > ul {
     margin: 0;
@@ -14,20 +20,24 @@
   }
 
   a {
-    @include link(desaturate(darken($secondaryColor, 10), 30));
+    @include link($footerLinkColor);
   }
 }
 
-.about {
-  grid-column: span 2;
+.socialIcon {
+  background: none !important;
+  :global(svg g.social-svg-mask path) {
+    fill: none;
+  }
+  :global(svg g.social-svg-icon path) {
+    fill: $footerTextColor;
+  }
+  &:hover :global(svg g.social-svg-icon path) {
+    fill: lighten($footerLinkColor, 10%);
+  }
 }
 
 .copyright {
   grid-column: span 3;
   align-self: end;
-  text-align: right;
-
-  p {
-    margin-top: 0;
-  }
 }

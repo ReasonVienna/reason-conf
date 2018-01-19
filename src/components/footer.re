@@ -6,7 +6,17 @@ open Data;
 
 module Link = Gatsby.Link;
 
+module SocialIcons = Gatsby.SocialIcons;
+
+module SocialIcon = Gatsby.SocialIcon;
+
 let component = ReasonReact.statelessComponent("Footer");
+
+let socialUrls = [|
+  "https://twitter.com/reasonconf",
+  "https://www.facebook.com/ReasonConf-1334078980027448/",
+  "https://www.github.com/reasonvienna"
+|];
 
 let organizerWithPic = ({imgUrl, name, href}: Data.organizerData) =>
   <a href className=style##creator key=name>
@@ -18,30 +28,20 @@ let make = _children => {
   ...component,
   render: _self =>
     <footer className=style##root>
-      <div className="container_centered grid grid-6col">
+      <div className="container_centered grid">
         <Navigation pathName="/" navigationLocation=Footer />
+        <nav className=style##social>
+          <SocialIcons
+            urls=socialUrls
+            color="#8eaeb6"
+            className=style##socialIcon
+          />
+        </nav>
         <nav className=style##additional>
           <ul>
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>
             <li> <a href="/contact/"> ("Contact Us" |> s) </a> </li>
             <li> <Link to_="/imprint/"> ("Imprint" |> s) </Link> </li>
-          </ul>
-        </nav>
-        <nav className=style##social>
-          <ul>
-            <li>
-              <a href="https://twitter.com/reasonconf"> ("Twitter" |> s) </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/ReasonConf-1334078980027448/">
-                ("Facebook" |> s)
-              </a>
-            </li>
-            <li>
-              <a href="https://www.github.com/reasonvienna">
-                ("Github" |> s)
-              </a>
-            </li>
           </ul>
         </nav>
         <section className=style##copyright>
