@@ -5,8 +5,7 @@ open Util;
 [@bs.module]
 external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
 
-[@bs.module]
-external reactViennaLogo : string = "../assets/reactvienna-logo.svg";
+[@bs.module] external reactViennaLogo : string = "../assets/React-Vienna.svg";
 
 [@bs.module] external agentLogo : string = "../assets/agent-logo.svg";
 
@@ -175,25 +174,32 @@ let make = _children => {
           <h2> ("Sponsors & Partners" |> s) </h2>
           <ul className="partners">
             <li className="partners--listItem">
-              <a href="https://www.agent.sh/" className="partners--logo">
-                <img src=agentLogo />
+              <a
+                href="https://www.agent.sh/"
+                className="partners--logo"
+                title="Agent Conf">
+                <img src=agentLogo alt="Agent Conf" />
               </a>
             </li>
             <li className="partners--listItem">
               <a
                 href="https://www.meetup.com/ReactVienna/"
-                className="partners--logo">
-                <img src=reactViennaLogo />
+                className="partners--logo"
+                title="ReactVienna">
+                <img src=reactViennaLogo alt="ReactVienna" />
               </a>
             </li>
             <li className="partners--listItem">
-              <a href="https://scriptconf.org" className="partners--logo">
-                <img src=scriptLogo />
+              <a
+                href="https://scriptconf.org"
+                className="partners--logo"
+                title="ScriptConf">
+                <img src=scriptLogo alt="ScriptConf" />
               </a>
             </li>
             <li className="partners--listItem">
-              <a href="" className="partners--logo">
-                <img src=reasonViennaLogo />
+              <a href="" className="partners--logo" title="ReasonVienna">
+                <img src=reasonViennaLogo alt="ReasonVienna" />
               </a>
             </li>
           </ul>
