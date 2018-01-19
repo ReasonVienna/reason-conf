@@ -13,12 +13,11 @@ let component = ReasonReact.statelessComponent("About");
 let make = _children => {
   ...component,
   render: _self =>
-    <section>
-      <div>
-        <h1> ("Mission" |> s) </h1>
-        <p>
-          (
-            {js|
+    <section className=style##root>
+      <h1> ("Mission" |> s) </h1>
+      <p>
+        (
+          {js|
               This conference aims to demonstrate that ReasonML is able
               to be more than a niche language in the space of frontend
               languages.  Attendees should feel motivated to introduce
@@ -27,12 +26,12 @@ let make = _children => {
               this event will provide a well balanced schedule with
               practical & theoretical content.
             |js}
-            |> s
-          )
-        </p>
-        <p>
-          (
-            {js|
+          |> s
+        )
+      </p>
+      <p>
+        (
+          {js|
               Another goal is to bring together contributors, lead developers and
               community drivers of the Reason, ReasonReact and OCaml
               platform. During the conference there will be enough time to discuss,
@@ -40,23 +39,23 @@ let make = _children => {
               formalities, this is also a great opportunity to finally meet people
               in person instead of chatting on Twitter or Discord.
             |js}
-            |> s
-          )
-        </p>
-        <p>
-          (
-            {js|
+          |> s
+        )
+      </p>
+      <p>
+        (
+          {js|
             To close our mission statement, attendees demonstrate that the Reason
             community is for everyone. We encourage diversity, establish a strong
             community guideline for a harassment free, more diverse environment
             and want to offer our platform to give a voice to everybody.
           |js}
-            |> s
-          )
-        </p>
-      </div>
-      <div>
-        <h1> ("About the Organizers" |> s) </h1>
+          |> s
+        )
+      </p>
+      <h1> ("About the Organizers" |> s) </h1>
+      <Organizers organizers=Data.organizers />
+      <section className=style##about>
         <p>
           (
             {js|
@@ -77,8 +76,7 @@ let make = _children => {
             <img src=reactViennaLogo alt="React Vienna Logo" />
           </a>
         </section>
-      </div>
-      <div> <Organizers organizers=Data.organizers /> </div>
+      </section>
     </section>
 };
 
