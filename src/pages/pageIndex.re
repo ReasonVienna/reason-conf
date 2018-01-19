@@ -154,7 +154,7 @@ let make = _children => {
       </section>
       <section className="speakers">
         <div className="container_centered">
-          <h2> ("Featured Speakers" |> s) </h2>
+          <h2> ("Speakers" |> s) </h2>
           <ul className="speaker-list">
             (
               Data.headlineSpeakers
