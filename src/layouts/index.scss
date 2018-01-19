@@ -246,17 +246,27 @@ img {
 }
 
 .partners {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-around;
+  list-style: none;
 
-  a {
-    background: none;
+  &--listItem {
+    flex: 1 1 auto;
+    max-width: 200px;
+    margin: 10px;
+    padding: 0;
   }
 
   &--logo {
-    grid-column: span 2;
-    margin: 10px;
-    width: 300px;
-    max-width: 100%;
+    display: block;
+    text-align: center;
+    background: none !important;
+
+    img {
+      display: inline-block;
+    }
   }
 
   &--agentlogo {
