@@ -40,4 +40,5 @@ $footerLinkColor: desaturate(darken($secondaryColor, 10), 30);
 .copyright {
   grid-column: span 3;
   align-self: end;
+  font-size: 0.9em;
 }

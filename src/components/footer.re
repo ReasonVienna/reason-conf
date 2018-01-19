@@ -46,11 +46,9 @@ let make = _children => {
         </nav>
         <section className=style##copyright>
           <p className=style##about>
-            <a href="/about">
-              ("Reason Conf 2018 is a not-for-profit conference. " |> s)
-            </a>
-            <br />
-            <span> ("by developers for developers" |> s) </span>
+            ("Reason Conf 2018 is a " |> s)
+            <a href="/about"> ("not-for-profit conference " |> s) </a>
+            ("made by developers for developers." |> s)
           </p>
           <p />
           <p> ({j|© Atrium, 2018|j} |> s) </p>

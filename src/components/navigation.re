@@ -22,6 +22,9 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
     /* We don't need active class named in the footer */
     let activeClassName =
       navigationLocation == Header ? style##link_active : "";
+    /* Use link style for tickets link in the footer */
+    let ticketsClassName =
+      navigationLocation == Header ? style##ticketsButton : "";
     <nav className=rootClassName>
       (
         componentOrNull(
@@ -59,7 +62,7 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
           /*   </Link> */
           /* </li> */
           <li className=style##listItemBuy>
-            <a href="/tickets" className=style##ticketsButton>
+            <a href="/tickets" className=ticketsClassName>
               (s("Buy a ticket"))
             </a>
           </li>
