@@ -247,13 +247,22 @@ img {
 
 .partners {
   align-items: center;
+
   a {
     background: none;
   }
+
   &--logo {
     grid-column: span 2;
     margin: 10px;
     width: 300px;
+    max-width: 100%;
+  }
+
+  &--agentlogo {
+    grid-column: span 2;
+    margin: 10px;
+    height: 100px;
     max-width: 100%;
   }
 }

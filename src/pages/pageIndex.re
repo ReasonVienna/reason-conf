@@ -8,6 +8,8 @@ external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
 [@bs.module]
 external reactViennaLogo : string = "../assets/reactvienna-logo.svg";
 
+[@bs.module] external agentLogo : string = "../assets/agent-logo.svg";
+
 let component = ReasonReact.statelessComponent("Home");
 
 module Link = Gatsby.Link;
@@ -172,9 +174,20 @@ let make = _children => {
         <div className="container_centered">
           <h2> ("Sponsors & Partners" |> s) </h2>
           <div className="partners grid grid-6col">
-            <img src=reactViennaLogo className="partners--logo" />
-            <img src=scriptLogo className="partners--logo" />
-            <img src=reasonViennaLogo className="partners--logo" />
+            <a
+              href="https://www.meetup.com/ReactVienna/"
+              className="partners--logo">
+              <img src=reactViennaLogo />
+            </a>
+            <a href="https://scriptconf.org" className="partners--logo">
+              <img src=scriptLogo />
+            </a>
+            <a href="" className="partners--logo">
+              <img src=reasonViennaLogo />
+            </a>
+            <a href="https://www.agent.sh/" className="partners--agentlogo">
+              <img src=agentLogo />
+            </a>
           </div>
           <p className="extraText">
             (
