@@ -17,6 +17,9 @@ $footerLinkColor: desaturate(darken($secondaryColor, 10), 30);
     margin: 0;
     padding: 0;
     list-style: none;
+    > li {
+      margin-bottom: 0.5em;
+    }
   }
 
   a {
