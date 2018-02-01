@@ -34,7 +34,7 @@ let make = (~location, children) => {
         if (isHomepage) {
           <main> (children()) </main>;
         } else {
-          <div className="container container_centered grid grid-col6">
+          <div className="container container_centered">
             <Navigation pathName=location##pathname />
             <main> (children()) </main>
           </div>;
@@ -43,12 +43,12 @@ let make = (~location, children) => {
       (
         componentOrNull(
           ! isThanksPage,
-          <section className="subscribe">
+          <footer className="subscribe">
             <div className="container_centered grid grid-6col">
               <h2> ("Subscribe to Newsletter" |> s) </h2>
               <SubscribeForm />
             </div>
-          </section>
+          </footer>
         )
       )
       <Footer />

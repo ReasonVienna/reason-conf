@@ -43,11 +43,25 @@ img {
   max-width: 100%;
 }
 
+// Fixed footer
+article.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer.subscribe {
+  margin-top: auto;
+}
+
 .container {
   &_centered {
     margin: 0 auto;
     padding: 20px;
-    max-width: 1080px;
+    width: 1080px;
+    @media (max-width: 1080px) {
+      width: auto;
+      max-width: 1080px;
+    }
   }
 }
 

@@ -8,17 +8,15 @@ let make = _children => {
   ...component,
   render: _self =>
     <section className="tickets">
-      <div className="container_centered">
-        <h1> ("Tickets will be available soon!" |> s) </h1>
-        <p>
-          ("Please stay tuned until we open our ticket sales." |> s)
-          <br />
-          (
-            "We recommend to subscribe to our newsletter so that we can notify you as soon as tickets are available."
-            |> s
-          )
-        </p>
-      </div>
+      <h1> ("Tickets will be available soon!" |> s) </h1>
+      <p>
+        ("Please stay tuned until we open our ticket sales." |> s)
+        <br />
+        (
+          "We recommend to subscribe to our newsletter so that we can notify you as soon as tickets are available."
+          |> s
+        )
+      </p>
     </section>
   /* <Tickets event="reason-conf/reason-conf-2018" /> */
 };
