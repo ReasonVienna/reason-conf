@@ -61,11 +61,26 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
           /*     (s("Blog")) */
           /*   </Link> */
           /* </li> */
-          <li className=style##listItemBuy>
-            <Link to_="/tickets/" className=ticketsClassName>
-              (s("Buy a ticket"))
-            </Link>
+          <li className=style##listItem>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSefBd8jbN99Mb5zrk7UePo3GQXgMI0nPSQlMnQ3WQPJtuaIEA/viewform?usp=sf_link"
+              target="_blank"
+              className=style##link>
+              (s("CFP"))
+            </a>
           </li>
+          <li className=style##listItemBuy>
+
+              <a
+                href="https://ti.to/reason-conf/reason-conf-2018"
+                target="_blank"
+                className=ticketsClassName>
+                (s("Buy a ticket"))
+              </a>
+            </li>
+            /* <Link to_="/tickets/" className=ticketsClassName> */
+            /*   (s("Buy a ticket")) */
+            /* </Link> */
         </ul>
     </nav>;
   }
