@@ -42,7 +42,8 @@ let make = _children => {
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>
             <li>
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSefBd8jbN99Mb5zrk7UePo3GQXgMI0nPSQlMnQ3WQPJtuaIEA/viewform?usp=sf_link">
+                href="https://docs.google.com/forms/d/e/1FAIpQLSefBd8jbN99Mb5zrk7UePo3GQXgMI0nPSQlMnQ3WQPJtuaIEA/viewform?usp=sf_link"
+                target="_blank">
                 ("Apply for a talk" |> s)
               </a>
             </li>
