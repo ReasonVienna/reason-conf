@@ -11,6 +11,8 @@ external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
 
 let component = ReasonReact.statelessComponent("Home");
 
+module Tickets = Tito.Tickets;
+
 module Link = Gatsby.Link;
 
 let speakerColumn = (speaker: Data.speakerData) =>
@@ -163,10 +165,21 @@ let make = _children => {
           </ul>
           <p className="extraText">
             (
-              "...and many more to come. The final schedule will be announced soon."
+              "...and many more to come. The final schedule will be announced soon. "
               |> s
             )
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSefBd8jbN99Mb5zrk7UePo3GQXgMI0nPSQlMnQ3WQPJtuaIEA/viewform?usp=sf_link"
+              target="_blank">
+              (s("Apply for a talk"))
+            </a>
           </p>
+        </div>
+      </section>
+      <section className="tickets">
+        <div className="container_centered">
+          <h2 id="tickets"> ("Tickets" |> s) </h2>
+          <Tickets event="reason-conf/reason-conf-2018" />
         </div>
       </section>
       <section className="sponsors">

@@ -26,47 +26,54 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
     let ticketsClassName =
       navigationLocation == Header ? style##ticketsButton : "";
     <nav className=rootClassName>
-      (
-        componentOrNull(
-          ! isHomePage,
-          <Link to_="/" className=style##link_home>
-            <img src=Assets.logo alt="Home" className=style##logo />
-          </Link>
-        )
-      )
-      <ul className=style##list>
-        /* <li className=style##listItem> */
-        /*   <Link to_="/schedule/" className=style##link activeClassName> */
-        /*     (s("Schedule")) */
-        /*   </Link> */
-        /* </li> */
 
-          <li className=style##listItem>
-            <Link to_="/speakers/" className=style##link activeClassName>
-              (s("Speakers"))
+        (
+          componentOrNull(
+            ! isHomePage,
+            <Link to_="/" className=style##link_home>
+              <img src=Assets.logo alt="Home" className=style##logo />
             </Link>
-          </li>
+          )
+        )
+        <ul className=style##list>
           /* <li className=style##listItem> */
-          /*   <Link to_="/sponsors/" className=style##link activeClassName> */
-          /*     (s("Sponsors")) */
+          /*   <Link to_="/schedule/" className=style##link activeClassName> */
+          /*     (s("Schedule")) */
           /*   </Link> */
           /* </li> */
-          <li className=style##listItem>
-            <Link to_="/about/" className=style##link activeClassName>
-              (s("About"))
-            </Link>
-          </li>
-          /* <li className=style##listItem> */
-          /*   <Link to_="/blog/" className=style##link activeClassName> */
-          /*     (s("Blog")) */
-          /*   </Link> */
-          /* </li> */
-          <li className=style##listItemBuy>
-            <Link to_="/tickets/" className=ticketsClassName>
-              (s("Buy a ticket"))
-            </Link>
-          </li>
-        </ul>
-    </nav>;
+
+            <li className=style##listItem>
+              <Link to_="/speakers/" className=style##link activeClassName>
+                (s("Speakers"))
+              </Link>
+            </li>
+            /* <li className=style##listItem> */
+            /*   <Link to_="/sponsors/" className=style##link activeClassName> */
+            /*     (s("Sponsors")) */
+            /*   </Link> */
+            /* </li> */
+            <li className=style##listItem>
+              <Link to_="/about/" className=style##link activeClassName>
+                (s("About"))
+              </Link>
+            </li>
+            /* <li className=style##listItem> */
+            /*   <Link to_="/blog/" className=style##link activeClassName> */
+            /*     (s("Blog")) */
+            /*   </Link> */
+            /* </li> */
+            <li className=style##listItemBuy>
+              <a
+                href="https://ti.to/reason-conf/reason-conf-2018"
+                target="_blank"
+                className=ticketsClassName>
+                (s("Buy a ticket"))
+              </a>
+            </li>
+          </ul>
+      </nav>;
+      /* <Link to_="/tickets/" className=ticketsClassName> */
+      /*   (s("Buy a ticket")) */
+      /* </Link> */
   }
 };
