@@ -1,20 +1,18 @@
 .root {
   display: flex;
   margin: 1em 0;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .organizer {
-  flex: 1 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex: 1 33%;
+  //text-align: center;
   margin: 0 10px 0 0;
   padding: 0;
 }
 
 .photo {
-  display: block;
+  display: inline-block;
   min-width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -25,14 +23,10 @@
 
 .info {
   display: block;
-  text-align: center;
-  @media (min-width: 768px) {
-    text-align: left;
-  }
 }
 
 .name {
-  font-weight: bold;
+  font-size: 90%;
 }
 
 .twitter {

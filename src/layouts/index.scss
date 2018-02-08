@@ -23,6 +23,8 @@ h3,
 h4,
 h5,
 h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0;
   font-family: $displayFontFamily;
   font-weight: 700;
 }
@@ -44,13 +46,45 @@ img {
   max-width: 100%;
 }
 
+article {
+  > section {
+    @extend .grid;
+    @extend .grid-6col;
+    @media (min-width: 768px) {
+      grid-row-gap: 0 !important;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        grid-column: 1 / span 6;
+      }
+      h2 {
+        grid-column-start: 1;
+        grid-column-end: 5;
+      }
+      main {
+        grid-column: 1 / span 4;
+        //border: 1px solid #000;
+        //width: 768px;
+        //margin: 0 auto;
+        &.full {
+          grid-column: 1 / span 6;
+        }
+      }
+      aside {
+        grid-column: 5 / span 2;
+      }
+    }
+  }
+}
+
 // Fixed footer
-article.page {
+.page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-footer.subscribe {
+.subscribe {
   margin-top: auto;
 }
 

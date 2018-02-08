@@ -13,8 +13,9 @@ let make = (~speaker: Data.speakerData, _children) => {
       <figure className=style##figure>
         <img src=speaker.imgUrl alt=speaker.name className=style##image />
       </figure>
-      <div>
+      <section className=style##description>
         <h2 className=style##name> (speaker.name |> s) </h2>
+        <p className=style##company> (speaker.company |> s) </p>
         <p> (speaker.description |> s) </p>
         (
           switch speaker.talk {
@@ -22,6 +23,6 @@ let make = (~speaker: Data.speakerData, _children) => {
           | None => ReasonReact.nullElement
           }
         )
-      </div>
+      </section>
     </div>
 };

@@ -30,7 +30,7 @@ let partnerCard = (partner: Partners.partnerT) =>
 let make = _children => {
   ...component,
   render: _self =>
-    <article>
+    <div>
       <header className="teaser">
         <section className="container_centered grid grid-6col">
           <h1 className="teaser--logo">
@@ -208,7 +208,7 @@ let make = _children => {
           </p>
         </div>
       </section>
-    </article>
+    </div>
 };
 
 let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));

@@ -1,14 +1,26 @@
 .root {
+  margin: 2rem 0;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.description {
+  grid-column: 2 / span 4;
 }
 
 .figure {
+  grid-row-start: 1;
+  grid-column-start: 1;
   margin: 0;
 }
 
 .image {
   display: block;
-  width: 200px;
-  filter: grayscale(1);
+  width: 150px;
+  border-radius: 50%;
 }
 
 .name {

@@ -8,7 +8,7 @@ let organizerWithPic = ({imgUrl, name, href, twitter}: Data.organizerData) =>
   <figure key=name className=style##organizer>
     <img src=imgUrl className=style##photo alt={j|Photo of $(name)|j} />
     <figcaption className=style##info>
-      <p className=style##name> (name |> s) </p>
+      <h3 className=style##name> (name |> s) </h3>
       <a href className=style##twitter> ("@" |> s) (twitter |> s) </a>
     </figcaption>
   </figure>;
