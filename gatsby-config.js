@@ -1,7 +1,14 @@
 const autoprefixer = require("autoprefixer");
+const { withPrefix } = require("gatsby-link");
+
 module.exports = {
   siteMetadata: {
-    title: "Reason Conf 2018"
+    title: "ReasonConf 2018",
+    siteUrl: "https://reason-conf.com",
+    description:
+      "World's first Reason conference for web-developers & OCaml enthusiasts",
+    image: withPrefix("/open-graph.jpg"),
+    keywords: "Reason, ReasonML, Conference, ReasonML, Conf, Vienna, Austria"
   },
   plugins: [
     "gatsby-plugin-react-helmet",

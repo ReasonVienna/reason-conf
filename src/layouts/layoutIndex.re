@@ -8,13 +8,7 @@ module Helmet = Gatsby.Helmet;
 
 let component = ReasonReact.statelessComponent("TemplateWrapper");
 
-let metaData = [|
-  {"name": "description", "content": "Reason Conf"},
-  {
-    "name": "keywords",
-    "content": "Reason, ReasonML, Conference, ReasonML, Conf, Vienna, Austria"
-  }
-|];
+let title = "ReasonConf 2018";
 
 let make = (~location, children) => {
   ...component,
@@ -22,7 +16,7 @@ let make = (~location, children) => {
     let isHomepage = location##pathname == "/";
     let isThanksPage = location##pathname == "/thanks/";
     <article className="page">
-      <Helmet title="ReasonConf 2018" meta=metaData>
+      <Helmet title>
         <script src="https://js.tito.io/v1" async=Js.true_ />
         <link
           rel="stylesheet"
