@@ -1,0 +1,65 @@
+@import "./variables.scss";
+
+.tickets {
+  .tito-wrapper {
+    padding: 0;
+    background: rgba(white, 0.5);
+    border: none;
+    font-family: inherit;
+  }
+
+  .tito-ticket-name-wrapper {
+    width: 70%;
+  }
+
+  .tito-ticket-price-quantity-wrapper {
+    width: 30%;
+  }
+
+  .tito-ticket-name {
+    font-size: 120%;
+  }
+
+  .tito-previous .tito-ticket-name-wrapper {
+    text-decoration: line-through;
+    color: #888;
+  }
+  .tito-ticket-description {
+    color: inherit;
+    font-size: 75%;
+  }
+
+  .tito-ticket-price span {
+    font-size: 120%;
+    line-height: 1.4;
+  }
+
+  .tito-badge-link {
+    display: none;
+  }
+
+  .tito-submit-wrapper {
+  }
+
+  .tito-tickets-remaining {
+    background-color: $primaryColor !important;
+    border: none !important;
+    color: #fff !important;
+    border-radius: 0;
+  }
+
+  .tito-submit {
+    padding: 0.5em 2em !important;
+    font-size: 1em !important;
+    font-family: $displayFontFamily;
+    background-color: $primaryColor !important;
+    border-color: $primaryColor !important;
+    border-radius: 0 !important;
+    height: auto !important;
+    width: auto !important;
+    &:hover {
+      background-color: lighten($primaryColor, 10%) !important;
+      border-color: lighten($primaryColor, 10%) !important;
+    }
+  }
+}
