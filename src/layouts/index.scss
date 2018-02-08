@@ -338,3 +338,9 @@ article {
     grid-column: 2 / span 4;
   }
 }
+
+.sponsor-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+}

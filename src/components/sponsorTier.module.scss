@@ -1,0 +1,25 @@
+.root {
+  padding: 0 1rem;
+  background: white;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+}
+
+.bronze,
+.silver,
+.gold {
+  composes: root;
+}
+
+.gold {
+  color: #e79a00;
+  box-shadow: 0 10px 32px rgba(#e79a00, 0.25);
+}
+.silver {
+  color: #333;
+  box-shadow: 0 10px 32px rgba(#8f8f8f, 0.25);
+}
+
+.bronze {
+  color: #932f00;
+  box-shadow: 0 10px 32px rgba(#932f00, 0.25);
+}

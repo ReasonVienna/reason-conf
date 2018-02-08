@@ -178,3 +178,39 @@ let schedule: array(Schedule.t) = [|
   Misc({timeslot: "19:30", description: "Talk 7"}),
   Misc({timeslot: "20:30", description: "Open End / Party"})
 |];
+
+type tierData = {
+  name: string,
+  amount: string,
+  description: string
+};
+
+let sponsorTiers = [|
+  {
+    name: "Bronze",
+    amount: "2000",
+    description: {js|
+    2× conference tickets,
+    Logo on slides between the talks,
+    Visibility on social media and website
+    |js}
+  },
+  {
+    name: "Silver",
+    amount: "5000",
+    description: {js|
+    4× conference tickets,
+    Item in the goodie bag,
+    Job announcements
+    |js}
+  },
+  {
+    name: "Gold",
+    amount: "10000",
+    description: {js|
+    6× conference tickets,
+    Banner on stage,
+    Branded booth
+    |js}
+  }
+|];
