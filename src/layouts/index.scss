@@ -272,15 +272,8 @@ footer.subscribe {
 
     img {
       display: inline-block;
-      max-height: 100px;
+      height: 80px;
     }
-  }
-
-  &--agentlogo {
-    grid-column: span 2;
-    margin: 10px;
-    height: 100px;
-    max-width: 100%;
   }
 }
 

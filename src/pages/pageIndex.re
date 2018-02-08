@@ -20,6 +20,13 @@ let speakerColumn = (speaker: Data.speakerData) =>
     <SpeakerCard speaker key=speaker.name />
   </li>;
 
+let partnerCard = (partner: Partners.partnerT) =>
+  <li className="partners--listItem">
+    <a href=partner.href className="partners--logo" title=partner.name>
+      <img src=partner.logoUrl alt=partner.name />
+    </a>
+  </li>;
+
 let make = _children => {
   ...component,
   render: _self =>
@@ -186,35 +193,11 @@ let make = _children => {
         <div className="container_centered">
           <h2> ("Sponsors & Partners" |> s) </h2>
           <ul className="partners">
-            <li className="partners--listItem">
-              <a
-                href="https://www.agent.sh/"
-                className="partners--logo"
-                title="Agent Conf">
-                <img src=agentLogo alt="Agent Conf" />
-              </a>
-            </li>
-            <li className="partners--listItem">
-              <a
-                href="https://www.meetup.com/ReactVienna/"
-                className="partners--logo"
-                title="ReactVienna">
-                <img src=reactViennaLogo alt="ReactVienna" />
-              </a>
-            </li>
-            <li className="partners--listItem">
-              <a
-                href="https://scriptconf.org"
-                className="partners--logo"
-                title="ScriptConf">
-                <img src=scriptLogo alt="ScriptConf" />
-              </a>
-            </li>
-            <li className="partners--listItem">
-              <a href="" className="partners--logo" title="ReasonVienna">
-                <img src=reasonViennaLogo alt="ReasonVienna" />
-              </a>
-            </li>
+            (
+              Partners.partners
+              |> Array.map(partnerCard)
+              |> ReasonReact.arrayToElement
+            )
           </ul>
           <p className="extraText">
             (
