@@ -180,37 +180,49 @@ let schedule: array(Schedule.t) = [|
 |];
 
 type tierData = {
+  id: string,
   name: string,
-  amount: string,
+  cost: int,
+  amount: int,
   description: string
 };
 
 let sponsorTiers = [|
   {
-    name: "Bronze",
-    amount: "2000",
+    id: "main",
+    name: "Main Sponsor",
+    cost: 10000,
+    amount: 1,
     description: {js|
-    2× conference tickets,
-    Logo on slides between the talks,
-    Visibility on social media and website
+- Banner next to the stage and entrance
+- Headline your logo on the website
+- Mention in every talk recording including voice over
+- Tweet mention
+- 5 tickets included
+- Special cooperation with ideas on the Event
+  |js}
+  },
+  {
+    id: "regular",
+    name: "Coffee & Food",
+    cost: 2500,
+    amount: 4,
+    description: {js|
+- Banner next to catering
+- Logo on the Website
+- Logo shown in every talk recording
+- Tweet mention
+- 2 tickets included
     |js}
   },
   {
-    name: "Silver",
-    amount: "5000",
+    id: "supporter",
+    name: "Local Supporter",
+    cost: 500,
+    amount: 10,
     description: {js|
-    4× conference tickets,
-    Item in the goodie bag,
-    Job announcements
-    |js}
-  },
-  {
-    name: "Gold",
-    amount: "10000",
-    description: {js|
-    6× conference tickets,
-    Banner on stage,
-    Branded booth
+- Logo on the Website
+- 1 tickets included
     |js}
   }
 |];

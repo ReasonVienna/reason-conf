@@ -9,30 +9,27 @@ let make = _children => {
   render: _self =>
     <section>
       <h1> (s("Sponsors")) </h1>
-      <h2> ("Why sponsoring" |> s) </h2>
       <main>
-        <p>
-          (
-            {js|
-                    This conference aims to demonstrate that ReasonML is able
-                    to be more than a niche language in the space of frontend
-                    languages.  Attendees should feel motivated to introduce
-                    Reason & OCaml in their professional context and also feel
-                    comfortable with the currently existing tools. For that,
-                    this event will provide a well balanced schedule with
-                    practical & theoretical content.
+        (
+          {js|
+## Why sponsoring
+
+This conference aims to demonstrate that ReasonML is able
+to be more than a niche language in the space of frontend
+languages.  Attendees should feel motivated to introduce
+Reason & OCaml in their professional context and also feel
+comfortable with the currently existing tools. For that,
+this event will provide a well balanced schedule with
+practical & theoretical content.
                   |js}
-            |> s
-          )
-        </p>
+          |> md
+        )
       </main>
       <h2> ("Sponsor Tiers" |> s) </h2>
       <main className="full sponsor-tiers">
         (
           Data.sponsorTiers
-          |> Array.map((tier: Data.tierData) =>
-               <SponsorTier tier key=tier.name />
-             )
+          |> Array.map(tier => <SponsorTier tier key=tier.id />)
           |> ReasonReact.arrayToElement
         )
       </main>

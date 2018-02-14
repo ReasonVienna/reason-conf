@@ -8,16 +8,27 @@ let make = (~tier: Data.tierData, _children) => {
   ...component,
   render: _self => {
     let className =
-      switch tier.name {
-      | "Bronze" => style##bronze
-      | "Silver" => style##silver
-      | "Gold" => style##gold
+      switch tier.id {
+      | "main" => style##main
+      | "regular" => style##regular
+      | "supporter" => style##supporter
+      | "*" => style##root
       | "" => style##root
       };
-    <div className>
-      <h3 className=style##name> (tier.name |> s) </h3>
-      <p className=style##amount> (tier.amount |> s) ({js|€|js} |> s) </p>
-      <p className=style##description> (tier.description |> s) </p>
-    </div>;
+    let href = "mailto:hi@reason-conf.com?subject=Sponsoring: " ++ tier.name;
+    <a href className>
+      <header className=style##header>
+        <h3 className=style##name> (tier.name |> s) </h3>
+        <p className=style##amount>
+          (tier.amount |> string_of_int |> s)
+          ({js| × |js} |> s)
+          <h4 className=style##cost> (tier.cost |> string_of_int |> s) </h4>
+          ({js|€|js} |> s)
+        </p>
+      </header>
+      <section className=style##description>
+        (tier.description |> md)
+      </section>
+    </a>;
   }
 };
