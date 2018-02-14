@@ -139,8 +139,8 @@ footer.subscribe {
     font-size: xx-large;
     font-weight: bold;
     @media (min-width: 768px) {
-      grid-column: 1 / span 3;
-      margin: 0.5rem 0 2rem;
+      grid-column: 1 / span 4;
+      margin: 0.5rem 1rem 2rem 0;
     }
   }
   &--dates {
