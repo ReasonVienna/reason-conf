@@ -15,7 +15,7 @@ let make = (~location, children) => {
   render: _self => {
     let isHomepage = location##pathname == "/";
     let isThanksPage = location##pathname == "/thanks/";
-    <article className="page">
+    <div className="page">
       <Helmet title>
         <script src="https://js.tito.io/v1" async=Js.true_ />
         <link
@@ -29,8 +29,8 @@ let make = (~location, children) => {
           <main> (children()) </main>;
         } else {
           <div className="container container_centered">
-            <Navigation pathName=location##pathname />
-            <main> (children()) </main>
+            <header> <Navigation pathName=location##pathname /> </header>
+            <article> (children()) </article>
           </div>;
         }
       )
@@ -46,7 +46,7 @@ let make = (~location, children) => {
         )
       )
       <Footer />
-    </article>;
+    </div>;
   }
 };
 

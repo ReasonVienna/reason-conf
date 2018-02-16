@@ -1,16 +1,36 @@
+@import "../layouts/variables.scss";
+
 .root {
+  margin: 2rem 0;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.description {
+  grid-column: 2 / span 4;
+  margin-top: 1rem;
 }
 
 .figure {
+  grid-row-start: 1;
+  grid-column-start: 1;
   margin: 0;
 }
 
 .image {
   display: block;
-  width: 200px;
-  filter: grayscale(1);
+  width: 150px;
+  border-radius: 50%;
 }
 
 .name {
-  font-size: 1.5em;
+  margin: 0;
+}
+
+.company {
+  margin: 0;
+  color: lighten($textColor, 40);
 }

@@ -1,0 +1,91 @@
+@import "../layouts/variables.scss";
+
+$mainColor: $primaryColor;
+$regularColor: #f0a453;
+$supporterColor: #eec642;
+
+.root {
+  margin: 1rem 0;
+  padding: 0;
+  background: white;
+  border-radius: 3px;
+  transition: 0.125s transform ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.125s transform ease-out;
+  }
+
+  .header {
+    border-radius: 3px 3px 0 0;
+  }
+}
+
+.main,
+.regular,
+.supporter {
+  composes: root;
+}
+
+.main {
+  // box-shadow: 0 10px 32px rgba($mainColor, 0.25);
+  color: darken($mainColor, 10) !important;
+  border: 1px solid $mainColor;
+
+  .header {
+    background-color: $mainColor;
+    color: lighten($mainColor, 40);
+  }
+}
+.regular {
+  // box-shadow: 0 10px 32px rgba($regularColor, 0.25);
+  color: darken($regularColor, 20) !important;
+  border: 1px solid $regularColor;
+
+  .header {
+    background-color: $regularColor;
+    color: lighten($regularColor, 45);
+  }
+}
+
+.supporter {
+  // box-shadow: 0 10px 32px rgba($supporterColor, 0.25);
+  color: darken($supporterColor, 20) !important;
+  border: 1px solid $supporterColor;
+
+  .header {
+    background-color: $supporterColor;
+    color: lighten($supporterColor, 55);
+  }
+}
+
+.header {
+  padding: 1rem;
+}
+
+.name {
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.amount {
+  margin: 0;
+  // color: #888;
+}
+.cost {
+  display: inline-block;
+  margin: 0;
+  // color: #333;
+  font-size: 150%;
+}
+
+.description {
+  ul {
+    margin: 1.5rem;
+    padding: 0 0 0 1rem;
+    list-style: square;
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+}
