@@ -1,7 +1,7 @@
 @import "../layouts/variables.scss";
 
-$footerTextColor: desaturate(darken($secondaryColor, 30), 30);
-$footerLinkColor: desaturate(darken($secondaryColor, 10), 30);
+$footerTextColor: desaturate(darken($secondaryColor, 35), 30);
+$footerLinkColor: desaturate(darken($secondaryColor, 20), 30);
 .root {
   padding-top: 2em;
   color: $footerTextColor;
@@ -19,6 +19,10 @@ $footerLinkColor: desaturate(darken($secondaryColor, 10), 30);
     list-style: none;
     > li {
       margin-bottom: 0.5em;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
   }
 

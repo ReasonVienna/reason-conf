@@ -30,13 +30,6 @@ let make = _children => {
     <footer className=style##root>
       <div className="container_centered grid">
         <Navigation pathName="/" navigationLocation=Footer />
-        <nav className=style##social>
-          <SocialIcons
-            urls=socialUrls
-            color="#8eaeb6"
-            className=style##socialIcon
-          />
-        </nav>
         <nav className=style##additional>
           <ul>
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>
@@ -51,14 +44,23 @@ let make = _children => {
             <li> <Link to_="/imprint/"> ("Imprint" |> s) </Link> </li>
           </ul>
         </nav>
+        <nav className=style##social>
+          <SocialIcons
+            urls=socialUrls
+            color="#8eaeb6"
+            className=style##socialIcon
+          />
+        </nav>
         <section className=style##copyright>
-          <p className=style##about>
-            ("ReasonConf is a " |> s)
-            <Link to_="/about"> ("not-for-profit conference " |> s) </Link>
-            ("event by ReasonVienna and ReactVienna communities." |> s)
-          </p>
-          <p />
-          <p> ({j|© ReasonConf, 2018|j} |> s) </p>
+          (
+            {j|
+ReasonConf is a [not-for-profit conference](/about/) event by ReasonVienna and ReactVienna communities.
+
+Design by [Andrey Okonetchnikov](http://okonet.ru)
+
+© ReasonConf, 2018|j}
+            |> md
+          )
         </section>
       </div>
     </footer>
