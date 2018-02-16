@@ -1,3 +1,5 @@
+@import "../layouts/variables.scss";
+
 .root {
   margin: 2rem 0;
   @media (min-width: 768px) {
@@ -9,6 +11,7 @@
 
 .description {
   grid-column: 2 / span 4;
+  margin-top: 1rem;
 }
 
 .figure {
@@ -24,5 +27,10 @@
 }
 
 .name {
-  font-size: 1.5em;
+  margin: 0;
+}
+
+.company {
+  margin: 0;
+  color: lighten($textColor, 40);
 }
