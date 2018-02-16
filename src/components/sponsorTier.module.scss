@@ -5,6 +5,7 @@ $regularColor: #f0a453;
 $supporterColor: #eec642;
 
 .root {
+  display: block;
   margin: 1rem 0;
   padding: 0;
   background: white;
@@ -31,6 +32,7 @@ $supporterColor: #eec642;
   // box-shadow: 0 10px 32px rgba($mainColor, 0.25);
   color: darken($mainColor, 10) !important;
   border: 1px solid $mainColor;
+  background-color: lighten($mainColor, 45);
 
   .header {
     background-color: $mainColor;
@@ -41,6 +43,7 @@ $supporterColor: #eec642;
   // box-shadow: 0 10px 32px rgba($regularColor, 0.25);
   color: darken($regularColor, 20) !important;
   border: 1px solid $regularColor;
+  background-color: lighten($regularColor, 36);
 
   .header {
     background-color: $regularColor;
@@ -52,6 +55,7 @@ $supporterColor: #eec642;
   // box-shadow: 0 10px 32px rgba($supporterColor, 0.25);
   color: darken($supporterColor, 20) !important;
   border: 1px solid $supporterColor;
+  background-color: lighten($supporterColor, 39);
 
   .header {
     background-color: $supporterColor;
