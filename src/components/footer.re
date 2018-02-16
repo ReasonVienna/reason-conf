@@ -53,9 +53,9 @@ let make = _children => {
         </nav>
         <section className=style##copyright>
           <p className=style##about>
-            ("Reason Conf 2018 is a " |> s)
-            <a href="/about"> ("not-for-profit conference " |> s) </a>
-            ("made by developers for developers." |> s)
+            ("ReasonConf is a " |> s)
+            <Link to_="/about"> ("not-for-profit conference " |> s) </Link>
+            ("event by ReasonVienna and ReactVienna communities." |> s)
           </p>
           <p />
           <p> ({j|© ReasonConf, 2018|j} |> s) </p>

@@ -36,7 +36,7 @@ let make = _children => {
           <h1 className="teaser--logo">
             <img
               src=Assets.logo
-              alt="Reason Conf 2018"
+              alt="ReasonConf 2018"
               className="teaser--image"
             />
           </h1>

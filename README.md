@@ -1,4 +1,4 @@
-# Reason Conf 2018
+# ReasonConf 2018
 
 ## Design mockup
 

@@ -18,7 +18,7 @@ let make = _children => {
         <p className=style##text>
           (
             s(
-              "Get Reason Conf news straight to your inbox. No spam, we promise!"
+              "Get ReasonConf news straight to your inbox. No spam, we promise!"
             )
           )
         </p>
