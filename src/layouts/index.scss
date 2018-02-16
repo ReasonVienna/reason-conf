@@ -46,6 +46,21 @@ img {
   max-width: 100%;
 }
 
+input,
+textarea {
+  border: 1px solid desaturate(darken($secondaryColor, 20), 30);
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $secondaryColor;
+  }
+}
+button {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px saturate(lighten($primaryColor, 20), 30);
+  }
+}
+
 article {
   > section {
     @extend .grid;
@@ -204,6 +219,9 @@ article {
 
 /* Offering & Timeline */
 .offering {
+  .grid {
+    grid-row-gap: 0;
+  }
   &--heading {
     margin: 0;
     @media (min-width: 768px) {
@@ -212,6 +230,7 @@ article {
     }
   }
   &--text {
+    margin: 0;
     @media (min-width: 768px) {
       grid-column: 1 / span 2;
       grid-row: 2;
