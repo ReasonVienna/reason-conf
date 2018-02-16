@@ -185,6 +185,9 @@ footer.subscribe {
 
 /* Offering & Timeline */
 .offering {
+  .grid {
+    grid-row-gap: 0;
+  }
   &--heading {
     margin: 0;
     @media (min-width: 768px) {
@@ -193,6 +196,7 @@ footer.subscribe {
     }
   }
   &--text {
+    margin: 0;
     @media (min-width: 768px) {
       grid-column: 1 / span 2;
       grid-row: 2;
