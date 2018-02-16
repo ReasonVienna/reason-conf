@@ -192,6 +192,10 @@ let make = _children => {
       <section className="sponsors">
         <div className="container_centered">
           <h2> ("Sponsors & Partners" |> s) </h2>
+          <p className="extraText">
+            ("Do you want to help us make a better conference? " |> s)
+            <Link to_="/sponsors"> ("Become a sponsor!" |> s) </Link>
+          </p>
           <ul className="partners">
             (
               Partners.partners
@@ -199,13 +203,6 @@ let make = _children => {
               |> ReasonReact.arrayToElement
             )
           </ul>
-          <p className="extraText">
-            (
-              "We are happily collaborating with research institutes and businesses. "
-              |> s
-            )
-            <a href="/contact"> ("Get in touch!" |> s) </a>
-          </p>
         </div>
       </section>
     </div>
