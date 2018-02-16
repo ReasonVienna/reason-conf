@@ -44,6 +44,21 @@ img {
   max-width: 100%;
 }
 
+input,
+textarea {
+  border: 1px solid desaturate(darken($secondaryColor, 20), 30);
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px $secondaryColor;
+  }
+}
+button {
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px saturate(lighten($primaryColor, 20), 30);
+  }
+}
+
 // Fixed footer
 article.page {
   display: flex;

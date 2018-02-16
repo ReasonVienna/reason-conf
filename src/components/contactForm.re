@@ -13,7 +13,7 @@ let make = _children => {
       <form
         name="contact" action="/thanks/" className=style##root method="post">
         <div className=style##formRow>
-          <label htmlFor="name" className=style##label> (s("Name: ")) </label>
+          <label htmlFor="name" className=style##label> ("Name" |> s) </label>
           <input
             _type="text"
             name="name"
@@ -25,7 +25,7 @@ let make = _children => {
         </div>
         <div className=style##formRow>
           <label htmlFor="email" className=style##label>
-            (s("Email: "))
+            ("Email" |> s)
           </label>
           <input
             _type="email"
@@ -38,7 +38,7 @@ let make = _children => {
         </div>
         <div className=style##formRow>
           <label htmlFor="message" className=style##label>
-            (s("Message: "))
+            ("Message" |> s)
           </label>
           <textarea
             id="message"
