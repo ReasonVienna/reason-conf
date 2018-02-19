@@ -17,7 +17,7 @@ community efforts](/about/). Our goal is to provide a great
 experience for attendees and speakers for an affordable
 price.
 
-## This is why we need your help!
+## Come work with us!
 
 By sponsoring this event, you're not only increasing your global
 visibility across a community of highly ambitous React / JavaScript
@@ -33,7 +33,7 @@ plans. We are open for collaboration!
 
 ## Some Facts
 
-We expect around **180 attendees**, including speakers, volunteers.
+We expect around **180 attendees**, including speakers and volunteers.
 Our Early Bird Tickets (40x) were sold out **after just 2 days**.
 
 This is the first conference for ReasonML, so we got some serious
