@@ -4,7 +4,7 @@ open Util;
 
 let component = ReasonReact.statelessComponent("SponsorTier");
 
-let make = (~tier: Data.tierData, _children) => {
+let make = (~tier: Data.Tier.t, _children) => {
   ...component,
   render: _self => {
     let className =

@@ -185,21 +185,14 @@ module Tier = {
     name: string,
     cost: int,
     amount: int,
-    taken: int,
     description: string
   };
-  let tiersLeft = (~amount, ~taken) =>
-    switch (amount - taken) {
-    | v when v < 0 => 0
-    | v => v
-    };
   let sponsorTiers: array(t) = [|
     {
       id: "main",
       name: "Main Sponsor",
       cost: 10000,
       amount: 1,
-      taken: 0,
       description: {js|
 - Banner placement of your choice (stage, entrance and / or catering)
 - Logo on our website in the sponsor headline
@@ -215,7 +208,6 @@ module Tier = {
       name: "Coffee & Food",
       cost: 2500,
       amount: 4,
-      taken: 0,
       description: {js|
 - Banner placement at our catering
 - Logo on our website
@@ -229,7 +221,6 @@ module Tier = {
       name: "Local Supporter",
       cost: 500,
       amount: 10,
-      taken: 0,
       description: {js|
 - Logo on the Website
 - 1 ticket included (350 EUR)
