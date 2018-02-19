@@ -1,7 +1,5 @@
 open Util;
 
-open Data;
-
 let component = ReasonReact.statelessComponent("Sponsors");
 
 let make = _children => {
@@ -17,19 +15,10 @@ community efforts](/about/). Our goal is to provide a great
 experience for attendees and speakers for an affordable
 price.
 
-## Come work with us!
-
 By sponsoring this event, you're not only increasing your global
 visibility across a community of highly ambitous React / JavaScript
 developers, but you are also empowering the Reason community to
 innovate in the OCaml / React / JavaScript ecosystem.
-
-We've created various sponsor tiers in order to be able to
-provide the best value for both, companies and attendees.
-
-Please feel free to [contact us](/contact/) if you want to
-collaborate on ideas which are not covered by our sponsor
-plans. We are open for collaboration!
 
 ## Some Facts
 
@@ -45,13 +34,22 @@ tweet](https://twitter.com/reasonconf/status/954084342086717441):
 - **400** likes
 - **154** retweets
 - ...and attracted **361** followers
+
+## Our Offer
+
+We've created various sponsor tiers in order to be able to
+provide the best value for both, companies and attendees.
+
+Please feel free to [contact us](/contact/) if you want to
+collaborate on ideas which are not covered by our sponsor
+plans. We are open for collaboration!
           |js}
           |> md
         )
       </main>
       <main className="full sponsor-tiers">
-        (
-          Data.sponsorTiers
+        Data.Tier.(
+          sponsorTiers
           |> Array.map(tier => <SponsorTier tier key=tier.id />)
           |> ReasonReact.arrayToElement
         )

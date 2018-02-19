@@ -179,54 +179,61 @@ let schedule: array(Schedule.t) = [|
   Misc({timeslot: "20:30", description: "Open End / Party"})
 |];
 
-type tierData = {
-  id: string,
-  name: string,
-  cost: int,
-  amount: int,
-  taken: int,
-  description: string
-};
-
-let sponsorTiers = [|
-  {
-    id: "main",
-    name: "Main Sponsor",
-    cost: 10000,
-    amount: 1,
-    taken: 0,
-    description: {js|
+module Tier = {
+  type t = {
+    id: string,
+    name: string,
+    cost: int,
+    amount: int,
+    taken: int,
+    description: string
+  };
+  let tiersLeft = (~amount, ~taken) =>
+    switch (amount - taken) {
+    | v when v < 0 => 0
+    | v => v
+    };
+  let sponsorTiers: array(t) = [|
+    {
+      id: "main",
+      name: "Main Sponsor",
+      cost: 10000,
+      amount: 1,
+      taken: 0,
+      description: {js|
 - Banner placement of your choice (stage, entrance and / or catering)
 - Logo on our website in the sponsor headline
 - Logo shown in every talk recording & voiceover with a message of your choice
 - Tweet mention
 - 5 tickets included (1750 EUR)
 - Special cooperation to realize your own ideas at the conference
+  (booth, raffles, games, code-challenges, etc.)
   |js}
-  },
-  {
-    id: "regular",
-    name: "Coffee & Food",
-    cost: 2500,
-    amount: 4,
-    taken: 0,
-    description: {js|
+    },
+    {
+      id: "regular",
+      name: "Coffee & Food",
+      cost: 2500,
+      amount: 4,
+      taken: 0,
+      description: {js|
 - Banner placement at our catering
 - Logo on our website
 - Logo shown in every talk recording
 - Tweet mention
 - 2 tickets included (700 EUR)
     |js}
-  },
-  {
-    id: "supporter",
-    name: "Local Supporter",
-    cost: 500,
-    amount: 10,
-    taken: 0,
-    description: {js|
+    },
+    {
+      id: "supporter",
+      name: "Local Supporter",
+      cost: 500,
+      amount: 10,
+      taken: 0,
+      description: {js|
 - Logo on the Website
 - 1 ticket included (350 EUR)
     |js}
-  }
-|];
+    }
+  |];
+};
