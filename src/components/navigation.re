@@ -26,40 +26,39 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
     let ticketsClassName =
       navigationLocation == Header ? style##ticketsButton : "";
     <nav className=rootClassName>
-
-        (
-          componentOrNull(
-            ! isHomePage,
-            <Link to_="/" className=style##link_home>
-              <img src=Assets.logo alt="Home" className=style##logo />
-            </Link>
-          )
+      (
+        componentOrNull(
+          ! isHomePage,
+          <Link to_="/" className=style##link_home>
+            <img src=Assets.logo alt="Home" className=style##logo />
+          </Link>
         )
-        <ul className=style##list>
-          <li className=style##listItem>
-            <Link to_="/speakers/" className=style##link activeClassName>
-              (s("Speakers"))
-            </Link>
-          </li>
-          <li className=style##listItem>
-            <Link to_="/about/" className=style##link activeClassName>
-              (s("About"))
-            </Link>
-          </li>
-          <li className=style##listItem>
-            <Link to_="/sponsors/" className=style##link activeClassName>
-              (s("For sponsors"))
-            </Link>
-          </li>
-            <li className=style##listItemBuy>
-              <a
-                href="https://ti.to/reason-conf/reason-conf-2018"
-                target="_blank"
-                className=ticketsClassName>
-                (s("Buy a ticket"))
-              </a>
-            </li>
-          </ul>
-      </nav>;
+      )
+      <ul className=style##list>
+        <li className=style##listItem>
+          <Link to_="/speakers/" className=style##link activeClassName>
+            (s("Speakers"))
+          </Link>
+        </li>
+        <li className=style##listItem>
+          <Link to_="/about/" className=style##link activeClassName>
+            (s("About"))
+          </Link>
+        </li>
+        <li className=style##listItem>
+          <Link to_="/sponsors/" className=style##link activeClassName>
+            (s("For Sponsors"))
+          </Link>
+        </li>
+        <li className=style##listItemBuy>
+          <a
+            href="https://ti.to/reason-conf/reason-conf-2018"
+            target="_blank"
+            className=ticketsClassName>
+            (s("Buy a ticket"))
+          </a>
+        </li>
+      </ul>
+    </nav>;
   }
 };

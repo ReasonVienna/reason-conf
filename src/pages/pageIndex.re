@@ -191,11 +191,16 @@ let make = _children => {
       </section>
       <section className="sponsors">
         <div className="container_centered">
-          <h2> ("Sponsors & Partners" |> s) </h2>
+          <h2> ("Sponsors" |> s) </h2>
           <p className="extraText">
             ("Do you want to help us make a better conference? " |> s)
             <Link to_="/sponsors"> ("Become a sponsor!" |> s) </Link>
           </p>
+        </div>
+      </section>
+      <section className="sponsors">
+        <div className="container_centered">
+          <h2> ("Partners" |> s) </h2>
           <ul className="partners">
             (
               Partners.partners

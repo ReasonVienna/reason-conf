@@ -184,6 +184,7 @@ type tierData = {
   name: string,
   cost: int,
   amount: int,
+  taken: int,
   description: string
 };
 
@@ -193,13 +194,14 @@ let sponsorTiers = [|
     name: "Main Sponsor",
     cost: 10000,
     amount: 1,
+    taken: 0,
     description: {js|
-- Banner next to the stage and entrance
-- Headline your logo on the website
-- Mention in every talk recording including voice over
+- Banner placement of your choice (stage, entrance and / or catering)
+- Logo on our website in the sponsor headline
+- Logo shown in every talk recording & voiceover with a message of your choice
 - Tweet mention
-- 5 tickets included
-- Special cooperation with ideas on the Event
+- 5 tickets included (1750 EUR)
+- Special cooperation to realize your own ideas at the conference
   |js}
   },
   {
@@ -207,12 +209,13 @@ let sponsorTiers = [|
     name: "Coffee & Food",
     cost: 2500,
     amount: 4,
+    taken: 0,
     description: {js|
-- Banner next to catering
-- Logo on the Website
+- Banner placement at our catering
+- Logo on our website
 - Logo shown in every talk recording
 - Tweet mention
-- 2 tickets included
+- 2 tickets included (700 EUR)
     |js}
   },
   {
@@ -220,9 +223,10 @@ let sponsorTiers = [|
     name: "Local Supporter",
     cost: 500,
     amount: 10,
+    taken: 0,
     description: {js|
 - Logo on the Website
-- 1 tickets included
+- 1 ticket included (350 EUR)
     |js}
   }
 |];

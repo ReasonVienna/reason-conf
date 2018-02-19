@@ -12,17 +12,40 @@ let make = _children => {
       <main>
         (
           {js|
-ReasonConf is a _not-for-profit_ conference [organized by community efforts](/about/).
-Our goal is to provide great experience for attendees and speakers at an affordable price.
+ReasonConf is a _not-for-profit_ conference [organized by
+community efforts](/about/). Our goal is to provide a great
+experience for attendees and speakers for an affordable
+price.
 
 ## This is why we need your help!
 
-By sponsoring this event, you're not only getting a visibility across
-best developers from around the world but also supporting the future of web-development.
+By sponsoring this event, you're not only increasing your global
+visibility across a community of highly ambitous React / JavaScript
+developers, but you are also empowering the Reason community to
+innovate in the OCaml / React / JavaScript ecosystem.
 
-We've carefully crafted our sponsor tiers in order to be able to provide maximum value for both
-companies and event visitors. That being said, we're open for different ways of collaboration.
-Please feel free to [contact us](/contact/) if you have additional ideas.|js}
+We've created various sponsor tiers in order to be able to
+provide the best value for both, companies and attendees.
+
+Please feel free to [contact us](/contact/) if you want to
+collaborate on ideas which are not covered by our sponsor
+plans. We are open for collaboration!
+
+## Some Facts
+
+We expect around **180 attendees**, including speakers, volunteers.
+Our Early Bird Tickets (40x) were sold out **after just 2 days**.
+
+This is the first conference for ReasonML, so we got some serious
+attention from the JavaScript & React Twitter community. This was the
+tweet activity of our [first
+tweet](https://twitter.com/reasonconf/status/954084342086717441):
+- **143,581** impressions
+- **1,822** engagements
+- **400** likes
+- **154** retweets
+- ...and attracted **361** followers
+          |js}
           |> md
         )
       </main>
