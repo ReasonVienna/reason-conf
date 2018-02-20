@@ -1,11 +1,12 @@
 let component = ReasonReact.statelessComponent("CodeOfConduct");
 
 let ste = ReasonReact.stringToElement;
+
 let ate = ReasonReact.arrayToElement;
 
-let make = (_children) => {
+let make = _children => {
   ...component,
-  render: (_self) =>
+  render: _self =>
     <div>
       <h1> (ste("Conference Code of Conduct")) </h1>
       <p>
@@ -16,14 +17,43 @@ let make = (_children) => {
         )
       </p>
       <h2> (ste("Need Help?")) </h2>
-      <p> (ste("You have our contact details in the emails we’ve sent.")) </p>
+      <p>
+        <div> (ste("Reason Team")) </div>
+        <div>
+          (ste("Twitter "))
+          <a href="https://twitter.com/reasonconf" target="_blank">
+            (ste("@reasonconf"))
+          </a>
+        </div>
+        <div>
+          (ste("Email "))
+          <a href="mailto:hi@reason-conf.com"> (ste("hi@reason-conf.com")) </a>
+        </div>
+      </p>
+      <p>
+        <div> (ste("Niklaus Graf")) </div>
+        <div>
+          (ste("Twitter "))
+          <a href="https://twitter.com/nikgraf" target="_blank">
+            (ste("@nikgraf"))
+          </a>
+        </div>
+        <div>
+          (ste("Email "))
+          <a href="mailto:nik@reason-conf.com">
+            (ste("nik@reason-conf.com"))
+          </a>
+        </div>
+      </p>
       <h2> (ste("The Quick Version")) </h2>
       <p>
         (
           ate([|
-            (ste("Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference ")),
-            <em>(ste("without a refund"))</em>,
-            (ste(" at the discretion of the conference organisers.")),
+            ste(
+              "Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference "
+            ),
+            <em> (ste("without a refund")) </em>,
+            ste(" at the discretion of the conference organisers.")
           |])
         )
       </p>
@@ -59,7 +89,7 @@ let make = (_children) => {
       <p>
         (
           ste(
-            "If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of conference staff immediately. Conference staff can be identified as they’ll be wearing branded clothing and/or badges."
+            "If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of conference staff immediately. Conference staff can be identified as they�\128\153ll be wearing branded clothing and/or badges."
           )
         )
       </p>
@@ -80,4 +110,4 @@ let make = (_children) => {
     </div>
 };
 
-let default = ReasonReact.wrapReasonForJs(~component, (_jsProps) => make([||]));
+let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));
