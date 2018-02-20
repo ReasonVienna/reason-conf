@@ -20,26 +20,26 @@ let make = _children => {
       <p>
         <div> (ste("Reason Team")) </div>
         <div>
-          (ste("Twitter "))
+          (ste("Twitter: "))
           <a href="https://twitter.com/reasonconf" target="_blank">
             (ste("@reasonconf"))
           </a>
         </div>
         <div>
-          (ste("Email "))
+          (ste("Email: "))
           <a href="mailto:hi@reason-conf.com"> (ste("hi@reason-conf.com")) </a>
         </div>
       </p>
       <p>
-        <div> (ste("Niklaus Graf")) </div>
+        <div> (ste("Nikolaus Graf")) </div>
         <div>
-          (ste("Twitter "))
+          (ste("Twitter: "))
           <a href="https://twitter.com/nikgraf" target="_blank">
             (ste("@nikgraf"))
           </a>
         </div>
         <div>
-          (ste("Email "))
+          (ste("Email: "))
           <a href="mailto:nik@reason-conf.com">
             (ste("nik@reason-conf.com"))
           </a>
