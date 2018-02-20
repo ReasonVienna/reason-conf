@@ -139,6 +139,7 @@ article {
   padding-bottom: 30px;
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
+  background-position-y: var(--header-ty);
   color: transparentize(darken($secondaryColor, 55%), 0.1);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 8vmin));
   min-height: 34vmin;
@@ -271,6 +272,7 @@ article {
   position: absolute;
   background: url("../assets/speakers-bg.svg") no-repeat;
   background-size: cover;
+  background-position-y: var(--speakers-ty);
   width: 100%;
   height: 100%;
   z-index: -1;

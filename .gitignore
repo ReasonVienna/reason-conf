@@ -22,3 +22,4 @@ lib/
 # These files are used for JS interop
 !src/layouts/index.js
 !src/pages/index.js
+!src/components/ParallaxScroll.js

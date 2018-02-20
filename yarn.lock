@@ -1197,6 +1197,14 @@ basic-auth@2.0.0:
   dependencies:
     safe-buffer "5.1.1"
 
+basicscroll@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/basicscroll/-/basicscroll-1.2.0.tgz#8471e967df3689d6a752e85683b654a14cc3ef2a"
+  dependencies:
+    eases "^1.0.8"
+    lodash.clonedeep "^4.5.0"
+    parse-unit "^1.0.1"
+
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -2425,6 +2433,10 @@ duplexer3@^0.1.4:
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
+
+eases@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/eases/-/eases-1.0.8.tgz#f1f5069a6b6ed2ea510f9c6110398d63efe9aee6"
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"
@@ -4694,7 +4706,7 @@ lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
 
-lodash.clonedeep@^4.3.2:
+lodash.clonedeep@^4.3.2, lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
 
@@ -5646,6 +5658,10 @@ parse-json@^3.0.0:
 parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
+
+parse-unit@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/parse-unit/-/parse-unit-1.0.1.tgz#7e1bb6d5bef3874c28e392526a2541170291eecf"
 
 parseqs@0.0.5:
   version "0.0.5"
