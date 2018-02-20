@@ -4,7 +4,7 @@ open Util;
 
 let component = ReasonReact.statelessComponent("SpeakerCard");
 
-let make = (~speaker: Data.speakerData, _children) => {
+let make = (~speaker: Data.Speaker.t, _children) => {
   ...component,
   render: _self =>
     <figure className=style##root>

@@ -1,12 +1,10 @@
 open Util;
 
-open Data;
-
 [@bs.module] external style : Js.t({..}) = "./speakerDetails.module.scss";
 
 let component = ReasonReact.statelessComponent("SpeakerDetails");
 
-let make = (~speaker: Data.speakerData, _children) => {
+let make = (~speaker: Data.Speaker.t, _children) => {
   ...component,
   render: _self =>
     <div className=style##root>

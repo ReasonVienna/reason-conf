@@ -15,7 +15,7 @@ module Tickets = Tito.Tickets;
 
 module Link = Gatsby.Link;
 
-let speakerColumn = (speaker: Data.speakerData) =>
+let speakerColumn = (speaker: Data.Speaker.t) =>
   <li className="speaker-list--item">
     <SpeakerCard speaker key=speaker.name />
   </li>;
@@ -165,7 +165,7 @@ let make = _children => {
           <h2> ("Speakers" |> s) </h2>
           <ul className="speaker-list">
             (
-              Data.headlineSpeakers
+              Data.Speaker.headlineSpeakers
               |> Array.map(speakerColumn)
               |> ReasonReact.arrayToElement
             )
