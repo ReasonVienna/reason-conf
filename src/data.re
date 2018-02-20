@@ -198,7 +198,7 @@ module Tier = {
 - Logo on our website in the sponsor headline
 - Logo shown in every talk recording & voiceover with a message of your choice
 - Tweet mention
-- 5 tickets included (1750 EUR)
+- 5 tickets included (1750€)
 - Special cooperation to realize your own ideas at the conference
   (booth, raffles, games, code-challenges, etc.)
   |js}
@@ -213,17 +213,18 @@ module Tier = {
 - Logo on our website
 - Logo shown in every talk recording
 - Tweet mention
-- 2 tickets included (700 EUR)
+- 2 tickets included (700€)
     |js}
     },
     {
       id: "supporter",
       name: "Local Supporter",
-      cost: 500,
+      cost: 1000,
       amount: 10,
       description: {js|
 - Logo on the Website
-- 1 ticket included (350 EUR)
+- 1 sponsoring package for ReactVienna or ReasonVienna meetup (450€)
+- 1 ticket included (350€)
     |js}
     }
   |];
