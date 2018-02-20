@@ -10,30 +10,46 @@ let make = _children => {
       <main>
         (
           {js|
-ReasonConf is the **world's first** conference for [ReasonML](https://reasonml.github.io), a new language meant to replace JavaScript in developing ambitious web applications.
-Despite the fact that ReasonML is young, the conference has gained attention and support from JavaScript community around the world:
+ReasonConf is the **world's first** conference for
+[ReasonML](https://reasonml.github.io), a new language on top of OCaml
+designed to build highly efficient and type-safe React applications.
 
-- The [announcement tweet](https://twitter.com/reasonconf/status/954084342086717441) received **143,581** impressions, **400** likes, and attracted **361** followers
-- All Early Bird Tickets were **sold out in two days**
-- The conference attracted multiple core members of ReasonML community as speakers and attendees
+Although ReasonML is considered early tech, the conference has gained
+quite some attention and support from JavaScript community around the
+world:
+
+- The [announcement
+  tweet](https://twitter.com/reasonconf/status/954084342086717441)
+  received **143,581** impressions, **400** likes, and attracted
+  **361** followers
+- We get support by leading Reason contributors as speakers and mentors
+- Also we'll welcome special guests from OCaml Labs and Cambridge
+  University to talk about OCaml
+- Our Early Bird Tickets were **sold out in just two days**
+
+ReasonConf is a **not-for-profit** conference. [The goal of the
+event](/about/) is to bring the global community together. Around half
+of the tickets are provided to our international communities and
+notable contributors to the Reason ecosystem.
 
 ## ReasonConf Facts
 
-- **World’s first conference** about ReasonML
 - **Three day event** with practical workshops and a single track conference
-- **200 attendees**, including speakers and volunteers
+- We expect **180 attendees**, including speakers and volunteers
 - Speakers include **leading members and visionaries** of the ReasonML, JavaScript, and OCaml communities
-- **International audience** with a strong focus on web-development
+- **International audience** with a strong focus on web-development with React
 - Part of [**Diversity Tickets**](https://diversitytickets.org) by Travis Foundation
 
-ReasonConf is a **not-for-profit** conference. [The goal of the event](/about/) is to bring the global community together. We are giving away half of the tickets to the international communities and notable members who work on the language.
-
 ## 5 Reasons to Sponsor
-1. Connect with leading JavaScript, ReasonML and OCaml  developers and community drivers
-1. Support a growing, vibrant, and diverse ReasonML community
-1. Discover the leading edge of web-development and align your company with it
-1. Improve the skillset of your developers
-1. Attract new talent to your company
+
+1. High brand exposure to a highly skilled and self-motivated crowd of
+   React, JavaScript & OCaml developers
+1. Good networking possibilities and first level connection with the ReasonML community leaders
+1. Improve the skillset of your developers and teach them new ways to improve code-quality of
+   your React & JavaScript applications
+1. Show off Vienna as an attractive hotspot for leading technology
+1. Get a headstart in a high potential technology (while building on
+   the enterprise-ready OCaml platform)
 
 ## Sponsor Tiers
           |js}

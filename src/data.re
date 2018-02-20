@@ -248,7 +248,7 @@ module Tier = {
       amount: 10,
       description: {js|
 - Logo on the Website
-- 1 sponsoring package for ReactVienna or ReasonVienna meetup (450€)
+- 1 sponsoring package for the ReasonVienna meetup
 - 1 ticket included (350€)
     |js}
     }
