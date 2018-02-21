@@ -3,6 +3,7 @@
   "description": "ReasonConf 2018",
   "version": "1.0.0",
   "dependencies": {
+    "basicscroll": "^1.2.0",
     "marked": "^0.3.12",
     "normalize.css": "^7.0.0",
     "re-classnames": "^0.0.3",

@@ -15,6 +15,8 @@ module Tickets = Tito.Tickets;
 
 module Link = Gatsby.Link;
 
+module ParallaxScroll = Gatsby.ParallaxScroll;
+
 let speakerColumn = (speaker: Data.Speaker.t) =>
   <li className="speaker-list--item">
     <SpeakerCard speaker key=speaker.name />
@@ -31,32 +33,42 @@ let make = _children => {
   ...component,
   render: _self =>
     <div>
-      <header className="teaser">
-        <section className="container_centered grid grid-6col">
-          <h1 className="teaser--logo">
-            <img
-              src=Assets.logo
-              alt="ReasonConf 2018"
-              className="teaser--image"
-            />
-          </h1>
-          <nav className="teaser--navigation">
-            <Navigation pathName="/" />
-          </nav>
-          <h2 className="teaser--dates">
-            <time dateTime="2018-05-11/2018-05-13">
-              ({j|11–13 May 2018|j} |> s)
-            </time>
-          </h2>
-          <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
-          <p className="teaser--tagline">
-            (
-              {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
-              |> s
-            )
-          </p>
-        </section>
-      </header>
+      <ParallaxScroll
+        from="top-bottom"
+        to_="bottom-top"
+        props={
+          "--header-ty": {
+            "from": "100px",
+            "to": "-100px"
+          }
+        }>
+        <header className="teaser">
+          <section className="container_centered grid grid-6col">
+            <h1 className="teaser--logo">
+              <img
+                src=Assets.logo
+                alt="ReasonConf 2018"
+                className="teaser--image"
+              />
+            </h1>
+            <nav className="teaser--navigation">
+              <Navigation pathName="/" />
+            </nav>
+            <h2 className="teaser--dates">
+              <time dateTime="2018-05-11/2018-05-13">
+                ({j|11–13 May 2018|j} |> s)
+              </time>
+            </h2>
+            <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
+            <p className="teaser--tagline">
+              (
+                {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
+                |> s
+              )
+            </p>
+          </section>
+        </header>
+      </ParallaxScroll>
       <section className="offering">
         <div className="container_centered grid grid-6col">
           <h2 className="offering--heading">

@@ -96,3 +96,12 @@ module SocialIcon = {
     ReasonReact.wrapJsForReason(~reactClass=linkClass, ~props, _children);
   };
 };
+
+module ParallaxScroll = {
+  [@bs.module "./components/ParallaxScroll"]
+  external linkClass : ReasonReact.reactClass = "ParallaxScroll";
+  let make = (~from: string, ~to_: string, ~props: Js.t({..}), children) => {
+    let props = {"from": from, "to": to_, "props": props};
+    ReasonReact.wrapJsForReason(~reactClass=linkClass, ~props, children);
+  };
+};
