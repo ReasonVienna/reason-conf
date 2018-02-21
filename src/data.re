@@ -215,15 +215,15 @@ module Tier = {
   let sponsorTiers: array(t) = [|
     {
       id: "main",
-      name: "Main Sponsor",
-      cost: 10000,
-      amount: 1,
+      name: "Gold Sponsor",
+      cost: 5000,
+      amount: 2,
       description: {js|
 - Banner placement of your choice (stage, entrance and / or catering)
 - Logo on our website in the sponsor headline
 - Logo shown in every talk recording & voiceover with a message of your choice
 - Tweet mention
-- 5 tickets included (1750€)
+- 3 tickets included (1050€)
 - Special cooperation to realize your own ideas at the conference
   (booth, raffles, games, code-challenges, etc.)
   |js}
