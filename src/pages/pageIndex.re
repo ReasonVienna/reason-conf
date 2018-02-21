@@ -17,7 +17,7 @@ module Link = Gatsby.Link;
 
 module ParallaxScroll = Gatsby.ParallaxScroll;
 
-let speakerColumn = (speaker: Data.speakerData) =>
+let speakerColumn = (speaker: Data.Speaker.t) =>
   <li className="speaker-list--item">
     <SpeakerCard speaker key=speaker.name />
   </li>;
@@ -177,7 +177,7 @@ let make = _children => {
           <h2> ("Speakers" |> s) </h2>
           <ul className="speaker-list">
             (
-              Data.headlineSpeakers
+              Data.Speaker.headlineSpeakers
               |> Array.map(speakerColumn)
               |> ReasonReact.arrayToElement
             )
@@ -199,6 +199,17 @@ let make = _children => {
         <div className="container_centered">
           <h2 id="tickets"> ("Tickets" |> s) </h2>
           <Tickets event="reason-conf/reason-conf-2018" />
+          <p className="extraText">
+            (
+              "We also offer free tickets for underrepresented groups in tech. "
+              |> s
+            )
+            <a
+              href="https://diversitytickets.org/events/153/applications/new?"
+              target="_blank">
+              (s("Apply for a diversity ticket"))
+            </a>
+          </p>
         </div>
       </section>
       <section className="sponsors">

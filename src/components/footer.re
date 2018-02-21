@@ -2,8 +2,6 @@
 
 open Util;
 
-open Data;
-
 module Link = Gatsby.Link;
 
 module SocialIcons = Gatsby.SocialIcons;
@@ -18,7 +16,7 @@ let socialUrls = [|
   "https://www.github.com/reasonvienna"
 |];
 
-let organizerWithPic = ({imgUrl, name, href}: Data.organizerData) =>
+let organizerWithPic = ({imgUrl, name, href}: Data.Organizer.t) =>
   <a href className=style##creator key=name>
     <img src=imgUrl alt={j|Photo of $(name)|j} className=style##userpic />
     (name |> s)

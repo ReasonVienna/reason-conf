@@ -58,7 +58,7 @@ let make = _children => {
       </main>
       <h2> ("Organizers" |> s) </h2>
       <main>
-        <Organizers organizers=Data.organizers />
+        <Organizers organizers=Data.Organizer.organizers />
         <p>
           (
             {js|

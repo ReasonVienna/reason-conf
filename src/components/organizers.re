@@ -1,10 +1,8 @@
 open Util;
 
-open Data;
-
 [@bs.module] external style : Js.t({..}) = "./organizers.module.scss";
 
-let organizerWithPic = ({imgUrl, name, href, twitter}: Data.organizerData) =>
+let organizerWithPic = ({imgUrl, name, href, twitter}: Data.Organizer.t) =>
   <figure key=name className=style##organizer>
     <img src=imgUrl className=style##photo alt={j|Photo of $(name)|j} />
     <figcaption className=style##info>
@@ -15,7 +13,7 @@ let organizerWithPic = ({imgUrl, name, href, twitter}: Data.organizerData) =>
 
 let component = ReasonReact.statelessComponent("Organizers");
 
-let make = (~organizers: list(organizerData), _children) => {
+let make = (~organizers: list(Data.Organizer.t), _children) => {
   ...component,
   render: _self =>
     <div className=style##root>
