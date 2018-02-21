@@ -139,13 +139,13 @@ article {
   padding-bottom: 30px;
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
-  background-position-y: var(--header-ty);
   color: transparentize(darken($secondaryColor, 55%), 0.1);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 8vmin));
   min-height: 34vmin;
 
   @media (min-width: 768px) {
     text-align: left;
+    background-position-y: var(--header-ty);
   }
 
   .grid {
@@ -268,17 +268,22 @@ article {
 }
 
 /* Speakers section */
-.speakers::before {
-  position: absolute;
-  background: url("../assets/speakers-bg.svg") no-repeat;
-  background-size: cover;
-  background-position-y: var(--speakers-ty);
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  content: "";
-  @media (min-width: 425px) {
-    margin-top: -50px;
+.speakers {
+  position: relative;
+  overflow: visible;
+
+  &::before {
+    position: absolute;
+    top: -100px;
+    background: url("../assets/speakers-bg.svg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 1000px;
+    z-index: -1;
+    content: "";
+    @media (min-width: 768px) {
+      background-position-y: calc(var(--speakers-ty) * 1/8);
+    }
   }
 }
 
@@ -289,7 +294,7 @@ article {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   position: relative;
-  margin: 0;
+  margin: 40px 0;
   padding: 0;
   list-style: none;
   width: 100%;
