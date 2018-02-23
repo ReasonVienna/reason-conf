@@ -3,9 +3,11 @@
   "description": "ReasonConf 2018",
   "version": "1.0.0",
   "dependencies": {
-    "basicscroll": "^1.2.0",
+    "eases": "^1.0.8",
+    "lodash.clonedeep": "^4.5.0",
     "marked": "^0.3.12",
     "normalize.css": "^7.0.0",
+    "parse-unit": "^1.0.1",
     "re-classnames": "^0.0.3",
     "react-social-icons": "^2.8.1",
     "reason-react": "^0.3.0"
