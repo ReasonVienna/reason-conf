@@ -21,10 +21,10 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
       };
     /* We don't need active class named in the footer */
     let activeClassName =
-      navigationLocation == Header ? style##link_active : "";
+      navigationLocation == Header ? Some(style##link_active) : None;
     /* Use link style for tickets link in the footer */
     let ticketsClassName =
-      navigationLocation == Header ? style##ticketsButton : "";
+      navigationLocation == Header ? Some(style##ticketsButton) : None;
     <nav className=rootClassName>
       (
         componentOrNull(
@@ -36,17 +36,17 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
       )
       <ul className=style##list>
         <li className=style##listItem>
-          <Link to_="/speakers/" className=style##link activeClassName>
+          <Link to_="/speakers/" className=style##link ?activeClassName>
             (s("Speakers"))
           </Link>
         </li>
         <li className=style##listItem>
-          <Link to_="/about/" className=style##link activeClassName>
+          <Link to_="/about/" className=style##link ?activeClassName>
             (s("About"))
           </Link>
         </li>
         <li className=style##listItem>
-          <Link to_="/sponsors/" className=style##link activeClassName>
+          <Link to_="/sponsors/" className=style##link ?activeClassName>
             (s("For Sponsors"))
           </Link>
         </li>
@@ -54,7 +54,7 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
           <a
             href="https://ti.to/reason-conf/reason-conf-2018"
             target="_blank"
-            className=ticketsClassName>
+            className=?ticketsClassName>
             (s("Buy a ticket"))
           </a>
         </li>

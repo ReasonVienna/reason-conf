@@ -16,12 +16,12 @@ module Tickets = Tito.Tickets;
 module Link = Gatsby.Link;
 
 let speakerColumn = (speaker: Data.Speaker.t) =>
-  <li className="speaker-list--item">
-    <SpeakerCard speaker key=speaker.name />
+  <li className="speaker-list--item" key=speaker.name>
+    <SpeakerCard speaker />
   </li>;
 
 let partnerCard = (partner: Partners.partnerT) =>
-  <li className="partners--listItem">
+  <li className="partners--listItem" key=partner.name>
     <a href=partner.href className="partners--logo" title=partner.name>
       <img src=partner.logoUrl alt=partner.name />
     </a>
