@@ -1,7 +1,7 @@
 module BasicScroll = {
   type t;
-  [@bs.module "basicscroll"]
-  external create :
+  [@bs.module "../../vendor/basicscroll"]
+  external js_create :
     {
       .
       "elem": Dom.element,
@@ -10,7 +10,12 @@ module BasicScroll = {
       "props": Js.t({..})
     } =>
     t =
-    "";
+    "create";
+  let maybeCreate = opts : option(t) =>
+    switch [%external window] {
+    | None => None
+    | Some(_) => Some(js_create(opts))
+    };
   [@bs.send] external update : t => unit = "";
   [@bs.send] external start : t => unit = "";
   [@bs.send] external stop : t => unit = "";
@@ -31,16 +36,19 @@ let initScroll = (~from: string, ~to_: string, ~props: Js.t({..}), state) =>
   | (None, Some(scrollArea)) =>
     open BasicScroll;
     let newInstance =
-      create({"elem": scrollArea, "from": from, "to": to_, "props": props});
-    start(newInstance);
-    state.instance := Some(newInstance);
+      maybeCreate({
+        "elem": scrollArea,
+        "from": from,
+        "to": to_,
+        "props": props
+      });
+    switch newInstance {
+    | Some(instance) =>
+      start(instance);
+      state.instance := Some(instance);
+    | None => ()
+    };
   | (_, _) => ()
-  };
-
-let maybeDo = (fn, instance) =>
-  switch instance^ {
-  | Some(instance) => fn(instance)
-  | None => ()
   };
 
 let make = (~from: string, ~to_: string, ~props: Js.t({..}), children) => {
