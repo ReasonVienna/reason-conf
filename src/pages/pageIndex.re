@@ -38,6 +38,10 @@ let make = _children => {
           "--header-ty": {
             "from": "100px",
             "to": "-100px"
+          },
+          "--header-clip": {
+            "from": "10",
+            "to": "4vw"
           }
         }>
         ...<header className="teaser">
