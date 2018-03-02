@@ -3,13 +3,18 @@
 .tickets {
   .tito-wrapper {
     padding: 0;
-    background: rgba(white, 0.5);
+    background: none;
     border: none;
     font-family: inherit;
   }
 
   .tito-ticket-name-wrapper {
     width: 70%;
+  }
+
+  .tito-submit-wrapper,
+  .tito-ticket.row {
+    margin: 0;
   }
 
   .tito-ticket-price-quantity-wrapper {
