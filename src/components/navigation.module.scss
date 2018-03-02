@@ -6,23 +6,14 @@
 }
 
 .link_active {
-  color: #633;
-  background-image: linear-gradient(
-    transparentize($primaryColor, 0.5),
-    10px,
-    transparent 1px
-  );
-  background-size: 1px 10px;
-  background-position: 0 90%;
+  color: #fff;
+  background-image: linear-gradient(transparentize($primaryColor, 0));
+  background-size: 1px 30px;
+  background-position: 0 0%;
+  transition: background 0.25s;
   &:hover {
-    color: #633;
-    background-image: linear-gradient(
-      transparentize($primaryColor, 0.5),
-      10px,
-      transparent 1px
-    );
-    background-size: 1px 10px;
-    background-position: 0 90%;
+    color: #fff;
+    background-image: linear-gradient(transparentize($primaryColor, 0));
     cursor: default;
   }
 }
@@ -48,6 +39,7 @@
   .link {
     display: inline-block;
     font-family: $displayFontFamily;
+    padding: 0 0.25em;
   }
 }
 
@@ -77,8 +69,6 @@
 
 .ticketsButton {
   composes: root from "./button.module.scss";
-  composes: link;
-  line-height: 1.3;
 }
 
 .root_footer {
