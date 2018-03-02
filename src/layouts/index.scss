@@ -137,7 +137,6 @@ article {
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
   color: transparentize(darken($secondaryColor, 55%), 0.1);
-
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--header-clip)));
   min-height: 40vmin;
 
