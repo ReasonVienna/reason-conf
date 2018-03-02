@@ -79,9 +79,6 @@ article {
       }
       main {
         grid-column: 1 / span 4;
-        //border: 1px solid #000;
-        //width: 768px;
-        //margin: 0 auto;
         &.full {
           grid-column: 1 / span 6;
         }
@@ -136,12 +133,13 @@ article {
 
 /* Home page header section */
 .teaser {
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   background: url(../assets/teaser-bg.jpg) 25% top no-repeat;
   background-size: cover;
   color: transparentize(darken($secondaryColor, 55%), 0.1);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 8vmin));
-  min-height: 34vmin;
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--header-clip)));
+  min-height: 40vmin;
 
   @media (min-width: 768px) {
     text-align: left;
