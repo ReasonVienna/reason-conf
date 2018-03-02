@@ -334,10 +334,10 @@ article {
 }
 
 .subscribe {
-  padding: 5vmin 0 7vmin;
-  margin-bottom: -6vmin;
+  padding: 4vw 0;
+  margin-bottom: -4vw;
   background-color: transparentize($secondaryColor, 0.5);
-  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 4vw, 100% 100%, 0 calc(100% - 4vw));
 
   h2 {
     grid-column: span 2;
