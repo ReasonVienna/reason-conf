@@ -13,7 +13,7 @@ body {
   font: 13pt/1.3 $mainFontFamily;
   color: $textColor;
   @media (min-width: 768px) {
-    font-size: 15pt;
+    font-size: 13pt;
   }
 }
 
@@ -34,7 +34,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 a {
