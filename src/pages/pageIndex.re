@@ -202,6 +202,9 @@ let make = _children => {
           <h2 id="tickets"> ("Tickets" |> s) </h2>
           <Tickets event="reason-conf/reason-conf-2018" />
           <p className="extraText">
+            ("Tickets are not refundable, but re-assignable." |> s)
+          </p>
+          <p className="extraText">
             (
               "We also offer free tickets for underrepresented groups in tech. "
               |> s
