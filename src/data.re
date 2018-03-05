@@ -205,6 +205,10 @@ module Schedule = {
 };
 
 module Tier = {
+  type tier =
+    | Gold
+    | Catering
+    | LocalSupport;
   type t = {
     id: string,
     name: string,
@@ -251,6 +255,61 @@ module Tier = {
 - 1 sponsoring package for the ReasonVienna meetup
 - 1 ticket included (350€)
     |js}
+    }
+  |];
+};
+
+module Job = {
+  type company = {
+    name: string,
+    logo: option(string)
+  };
+  type onsite = {
+    city: string,
+    country: string
+  };
+  type tier = Tier.tier;
+  type location =
+    | RemoteOnly
+    | OnSite(onsite)
+    | RemoteAndOnSite(onsite);
+  type t = {
+    company,
+    location,
+    tier,
+    desc: string,
+    href: string
+  };
+  let data = [|
+    {
+      company: {
+        name: "Gold",
+        logo: None
+      },
+      location: OnSite({city: "Vienna", country: "Austria"}),
+      tier: Gold,
+      desc: "Some Gold Sponsor Job",
+      href: {j|https://www.reason-conf.com|j}
+    },
+    {
+      company: {
+        name: "Catering",
+        logo: None
+      },
+      location: OnSite({city: "Vienna", country: "Austria"}),
+      tier: Catering,
+      desc: "Some Catering Sponsor Job",
+      href: {j|https://www.reason-conf.com|j}
+    },
+    {
+      company: {
+        name: "ReasonConf",
+        logo: None
+      },
+      location: OnSite({city: "Vienna", country: "Austria"}),
+      tier: LocalSupport,
+      desc: "Volunteer position at ReasonConf",
+      href: {j|https://www.reason-conf.com|j}
     }
   |];
 };

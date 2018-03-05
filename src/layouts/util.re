@@ -5,6 +5,8 @@ let componentOrNull = (condition, component) =>
 
 let s = ReasonReact.stringToElement;
 
+let ate = ReasonReact.arrayToElement;
+
 let md = markdownString => {
   let res =
     marked(
