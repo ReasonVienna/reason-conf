@@ -20,6 +20,12 @@ external keiraHodgkisonImg : string = "./assets/keira-hodgkison.jpg";
 
 [@bs.module] external jaredImg : string = "./assets/jared-forsyth.jpg";
 
+[@bs.module] external goldLogo : string = "./assets/gold_logo.svg";
+
+[@bs.module] external silverLogo : string = "./assets/silver_logo.svg";
+
+[@bs.module] external bronzeLogo : string = "./assets/bronze_logo.svg";
+
 /* List.find_opt is not supported by this BuckleScript version yet */
 let find_opt = (fn, l) =>
   try (List.find(fn, l) |> (r => Some(r))) {
@@ -261,8 +267,9 @@ module Tier = {
 
 module Job = {
   type company = {
-    name: string,
-    logo: option(string)
+    logo: string,
+    href: string,
+    descMd: string
   };
   type onsite = {
     city: string,
@@ -273,43 +280,94 @@ module Job = {
     | RemoteOnly
     | OnSite(onsite)
     | RemoteAndOnSite(onsite);
-  type t = {
-    company,
+  type jobAd = {
     location,
-    tier,
     desc: string,
     href: string
   };
-  let data = [|
+  type t = {
+    tier,
+    company,
+    jobAds: array(jobAd)
+  };
+  let data: array(t) = [|
     {
       company: {
-        name: "Gold",
-        logo: None
+        logo: goldLogo,
+        descMd: {js|
+### <a href="https://www.reason-conf.com" target="_blank">Gold Sponsor</a>
+
+This spot is reserved for one of our Gold sponsors.
+
+Go to our [sponsors](/sponsors) page for more info!
+|js},
+        href: {j|https://www.reason-conf.com|j}
       },
-      location: OnSite({city: "Vienna", country: "Austria"}),
       tier: Gold,
-      desc: "Some Gold Sponsor Job",
-      href: {j|https://www.reason-conf.com|j}
+      jobAds: [|
+        {
+          location: OnSite({city: "Vienna", country: "Austria"}),
+          desc: "Position X",
+          href: {j|https://www.reason-conf.com|j}
+        },
+        {
+          location: OnSite({city: "Vienna", country: "Austria"}),
+          desc: "Position Y",
+          href: {j|https://www.reason-conf.com|j}
+        }
+      |]
     },
     {
       company: {
-        name: "Catering",
-        logo: None
+        logo: silverLogo,
+        descMd: {js|
+### <a href="https://www.reason-conf.com" target="_blank">Catering Sponsor</a>
+
+This spot is reserved for one of our Catering sponsors.
+
+Go to our [sponsors](/sponsors) page for more info!
+         |js},
+        href: {j|https://www.reason-conf.com|j}
       },
-      location: OnSite({city: "Vienna", country: "Austria"}),
       tier: Catering,
-      desc: "Some Catering Sponsor Job",
-      href: {j|https://www.reason-conf.com|j}
+      jobAds: [|
+        {
+          location: OnSite({city: "Vienna", country: "Austria"}),
+          desc: "Position X",
+          href: {j|https://www.reason-conf.com|j}
+        },
+        {
+          location: OnSite({city: "Vienna", country: "Austria"}),
+          desc: "Position Y",
+          href: {j|https://www.reason-conf.com|j}
+        }
+      |]
     },
     {
       company: {
-        name: "ReasonConf",
-        logo: None
+        logo: bronzeLogo,
+        descMd: {js|
+### <a href="https://www.reason-conf.com" target="_blank">Catering Sponsor</a>
+
+This spot is reserved for one of our Local Support sponsors.
+
+Go to our [sponsors](/sponsors) page for more info!
+         |js},
+        href: {j|https://www.reason-conf.com|j}
       },
-      location: OnSite({city: "Vienna", country: "Austria"}),
       tier: LocalSupport,
-      desc: "Volunteer position at ReasonConf",
-      href: {j|https://www.reason-conf.com|j}
+      jobAds: [|
+        {
+          location: OnSite({city: "Vienna", country: "Austria"}),
+          desc: "Position X",
+          href: {j|https://www.reason-conf.com|j}
+        },
+        {
+          location: OnSite({city: "Vienna", country: "Austria"}),
+          desc: "Position Y",
+          href: {j|https://www.reason-conf.com|j}
+        }
+      |]
     }
   |];
 };
