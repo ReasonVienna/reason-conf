@@ -20,11 +20,7 @@ external keiraHodgkisonImg : string = "./assets/keira-hodgkison.jpg";
 
 [@bs.module] external jaredImg : string = "./assets/jared-forsyth.jpg";
 
-[@bs.module] external goldLogo : string = "./assets/gold_logo.svg";
-
-[@bs.module] external silverLogo : string = "./assets/silver_logo.svg";
-
-[@bs.module] external bronzeLogo : string = "./assets/bronze_logo.svg";
+[@bs.module] external volunteerLogo : string = "./assets/volunteer-logo.svg";
 
 /* List.find_opt is not supported by this BuckleScript version yet */
 let find_opt = (fn, l) =>
@@ -266,8 +262,12 @@ module Tier = {
 };
 
 module Job = {
+  type logo = {
+    src: string,
+    width: string
+  };
   type company = {
-    logo: string,
+    logo: option(logo),
     href: string,
     descMd: string
   };
@@ -293,65 +293,26 @@ module Job = {
   let data: array(t) = [|
     {
       company: {
-        logo: goldLogo,
+        logo: Some({src: volunteerLogo, width: "300px"}),
         descMd: {js|
-### <a href="https://www.reason-conf.com" target="_blank">Gold Sponsor</a>
+### <a href="https://www.reason-conf.com" target="_blank">ReasonConf</a>
 
-This spot is reserved for one of our Gold sponsors.
+We are still looking for volunteers to help us during the conference.
+As a mentor, you offer your Reason skills to help attendees during the workshop
+and hackathon days (find syntax errors, fix editor problems, etc.).
 
-Go to our [sponsors](/sponsors) page for more info!
-|js},
-        href: {j|https://www.reason-conf.com|j}
-      },
-      tier: Gold,
-      jobAds: [|
-        {
-          location: OnSite({city: "Vienna", country: "Austria"}),
-          desc: "Position X",
-          href: {j|https://www.reason-conf.com|j}
-        },
-        {
-          location: OnSite({city: "Vienna", country: "Austria"}),
-          desc: "Position Y",
-          href: {j|https://www.reason-conf.com|j}
-        }
-      |]
-    },
-    {
-      company: {
-        logo: silverLogo,
-        descMd: {js|
-### <a href="https://www.reason-conf.com" target="_blank">Catering Sponsor</a>
+Also we are looking for local volunteers to help us out with organizational
+tasks, like managing our speakers during their stay in Vienna or assisting
+the organizers during the conference day (giving out lanyards, assisting our
+gold sponsors on site, etc.).
 
-This spot is reserved for one of our Catering sponsors.
+We are also looking for experienced Viennese locals to help us with
+the Vienna tour on the last day.
 
-Go to our [sponsors](/sponsors) page for more info!
-         |js},
-        href: {j|https://www.reason-conf.com|j}
-      },
-      tier: Catering,
-      jobAds: [|
-        {
-          location: OnSite({city: "Vienna", country: "Austria"}),
-          desc: "Position X",
-          href: {j|https://www.reason-conf.com|j}
-        },
-        {
-          location: OnSite({city: "Vienna", country: "Austria"}),
-          desc: "Position Y",
-          href: {j|https://www.reason-conf.com|j}
-        }
-      |]
-    },
-    {
-      company: {
-        logo: bronzeLogo,
-        descMd: {js|
-### <a href="https://www.reason-conf.com" target="_blank">Catering Sponsor</a>
+By volunteering, you get free access to the conference (you can pick
+certain times to have a break and enjoy the conference).
 
-This spot is reserved for one of our Local Support sponsors.
-
-Go to our [sponsors](/sponsors) page for more info!
+Use the links below to apply.
          |js},
         href: {j|https://www.reason-conf.com|j}
       },
@@ -359,13 +320,13 @@ Go to our [sponsors](/sponsors) page for more info!
       jobAds: [|
         {
           location: OnSite({city: "Vienna", country: "Austria"}),
-          desc: "Position X",
-          href: {j|https://www.reason-conf.com|j}
+          desc: "Mentor for Workshop & Hackathon Days",
+          href: {j|mailto:hi@reason-conf.com?subject=Applying as a Mentor|j}
         },
         {
           location: OnSite({city: "Vienna", country: "Austria"}),
-          desc: "Position Y",
-          href: {j|https://www.reason-conf.com|j}
+          desc: "Local Volunteer",
+          href: {j|mailto:hi@reason-conf.com?subject=Applying as a Volunteer|j}
         }
       |]
     }

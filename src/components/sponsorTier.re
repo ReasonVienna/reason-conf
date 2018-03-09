@@ -18,12 +18,12 @@ let make = (~tier: Data.Tier.t, _children) => {
     <a href className>
       <header className=style##header>
         <h3 className=style##name> (tier.name |> s) </h3>
-        <p className=style##amount>
+        <div className=style##amount>
           (tier.amount |> string_of_int |> s)
           ({js| × |js} |> s)
           <h4 className=style##cost> (tier.cost |> string_of_int |> s) </h4>
           ({js|€|js} |> s)
-        </p>
+        </div>
       </header>
       <section className=style##description>
         (tier.description |> md)
