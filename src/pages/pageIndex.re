@@ -184,9 +184,12 @@ let make = _children => {
               |> ReasonReact.arrayToElement
             )
           </ul>
-          <p className="extraText">
+          <p className="extraText"> ("...and many more to come." |> s) </p>
+          <p>
             (
-              "...and many more to come. The final schedule will be announced soon. "
+              {j|The Call for Paper has
+              ended on the 6th of March and we are currently assembling
+              the final schedule. Stay tuned! |j}
               |> s
             )
           </p>

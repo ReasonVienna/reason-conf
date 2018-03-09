@@ -31,13 +31,6 @@ let make = _children => {
         <nav className=style##additional>
           <ul>
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>
-            <li>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSefBd8jbN99Mb5zrk7UePo3GQXgMI0nPSQlMnQ3WQPJtuaIEA/viewform?usp=sf_link"
-                target="_blank">
-                ("Apply for a talk" |> s)
-              </a>
-            </li>
             <li> <a href="/contact/"> ("Contact Us" |> s) </a> </li>
             <li> <Link to_="/imprint/"> ("Imprint" |> s) </Link> </li>
           </ul>
