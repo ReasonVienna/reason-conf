@@ -189,11 +189,6 @@ let make = _children => {
               "...and many more to come. The final schedule will be announced soon. "
               |> s
             )
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSefBd8jbN99Mb5zrk7UePo3GQXgMI0nPSQlMnQ3WQPJtuaIEA/viewform?usp=sf_link"
-              target="_blank">
-              (s("Apply for a talk"))
-            </a>
           </p>
         </div>
       </section>
