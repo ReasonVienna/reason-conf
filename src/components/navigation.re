@@ -50,6 +50,11 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
             (s("For Sponsors"))
           </Link>
         </li>
+        <li className=style##listItem>
+          <Link to_="/jobs/" className=style##link ?activeClassName>
+            (s("Job-Board"))
+          </Link>
+        </li>
         <li className=style##listItemBuy>
           <a
             href="https://ti.to/reason-conf/reason-conf-2018"
