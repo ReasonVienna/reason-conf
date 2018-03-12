@@ -6,7 +6,7 @@ let make = _children => {
   ...component,
   render: _self =>
     <section>
-      <h1> (s("For sponsors")) </h1>
+      <h1> (s("For Sponsors")) </h1>
       <main>
         (
           {js|
