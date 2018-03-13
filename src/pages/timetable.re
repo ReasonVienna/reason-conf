@@ -54,7 +54,7 @@ let make = _children => {
   ...component,
   render: _self =>
     <div>
-      <h1> (s("Schedule")) </h1>
+      <h1> (s("Timetable")) </h1>
       <table>
         <tbody>
           (
