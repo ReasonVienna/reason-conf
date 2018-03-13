@@ -36,23 +36,33 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
       )
       <ul className=style##list>
         <li className=style##listItem>
+          <Link to_="/schedule/" className=style##link ?activeClassName>
+            (s("Timetable"))
+          </Link>
+        </li>
+        <li className=style##listItem>
           <Link to_="/speakers/" className=style##link ?activeClassName>
             (s("Speakers"))
           </Link>
         </li>
         <li className=style##listItem>
-          <Link to_="/about/" className=style##link ?activeClassName>
-            (s("About"))
+          <Link to_="/venue/" className=style##link ?activeClassName>
+            (s("Attendees"))
           </Link>
         </li>
         <li className=style##listItem>
           <Link to_="/sponsors/" className=style##link ?activeClassName>
-            (s("For Sponsors"))
+            (s("Sponsors"))
           </Link>
         </li>
         <li className=style##listItem>
           <Link to_="/jobs/" className=style##link ?activeClassName>
-            (s("Job-Board"))
+            (s("Jobs"))
+          </Link>
+        </li>
+        <li className=style##listItem>
+          <Link to_="/about/" className=style##link ?activeClassName>
+            (s("About"))
           </Link>
         </li>
         <li className=style##listItemBuy>

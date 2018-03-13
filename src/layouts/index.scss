@@ -138,33 +138,25 @@ article {
   background-size: cover;
   color: transparentize(darken($secondaryColor, 55%), 0.1);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - var(--header-clip)));
-  min-height: 40vmin;
 
   @media (min-width: 768px) {
     text-align: left;
     background-position-y: var(--header-ty);
   }
 
-  .grid {
-    position: relative;
-    grid-gap: 10px;
-  }
-
   &--navigation {
     margin-bottom: 20px;
     @media (min-width: 768px) {
-      position: absolute;
-      top: 0;
-      right: 0;
-      margin: 10px 0;
+      grid-column: 1 / span 6;
+      margin-bottom: -40px;
+      z-index: 1;
     }
   }
 
   &--logo {
-    margin: 10px 0 0;
+    margin: 0 0 20px;
     @media (min-width: 768px) {
-      grid-column: 1 / span 4;
-      grid-row: 1;
+      grid-column: 1 / span 3;
       align-self: start;
     }
   }
@@ -182,7 +174,7 @@ article {
     font-size: small;
   }
   &--tagline {
-    margin-top: 0.5rem;
+    margin: 1em 0 0;
     font-size: xx-large;
     font-weight: bold;
     @media (min-width: 768px) {
@@ -190,25 +182,26 @@ article {
       margin: 0.5rem 1rem 2rem 0;
     }
   }
+  &--meta {
+    @media (min-width: 768px) {
+      grid-column: 5 / span 2;
+      grid-row: 3;
+      //align-self: end;
+    }
+  }
   &--dates {
     margin: 0;
     white-space: nowrap;
-
-    @media (min-width: 768px) {
-      grid-column: 5 / span 2;
-      grid-row: 1;
-      align-self: end;
-      font-size: xx-large;
-      line-height: 2.5rem;
-    }
+    font-size: xx-large;
+    line-height: 3rem;
   }
   &--location {
     margin: 0;
-    font-size: 1.5em;
+    font-size: x-large;
+    line-height: 0.8;
     font-weight: bold;
     @media (min-width: 768px) {
       grid-column: 5 / span 2;
-      grid-row: 2;
       align-self: start;
       margin-top: 0.5rem;
     }

@@ -1,8 +1,7 @@
 @import "../layouts/variables.scss";
 
 .root {
-  text-align: left;
-  line-height: 1.5;
+  display: flex;
 }
 
 .link_active {
@@ -28,6 +27,11 @@
   }
 }
 
+.logo {
+  height: 2.2em;
+  margin-top: -0.9em;
+}
+
 .root_header {
   composes: root;
   align-items: center;
@@ -38,8 +42,12 @@
 
   .link {
     display: inline-block;
+    padding: 0.125em 0.25em 0;
     font-family: $displayFontFamily;
-    padding: 0 0.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.65em;
+    letter-spacing: 1px;
   }
 }
 
@@ -56,19 +64,21 @@
 
 .listItem {
   display: inline-block;
-  margin: 0 1em 0 0;
+  margin: 0 0.75em 0 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .listItemBuy {
   composes: listItem;
 }
 
-.logo {
-  height: 2em;
-}
-
 .ticketsButton {
   composes: root from "./button.module.scss";
+  composes: link;
+  padding: 0.5em 0.5em 0.35em !important;
 }
 
 .root_footer {

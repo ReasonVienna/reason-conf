@@ -46,6 +46,9 @@ let make = _children => {
         }>
         ...<header className="teaser">
              <section className="container_centered grid grid-6col">
+               <section className="teaser--navigation">
+                 <Navigation pathName="/" />
+               </section>
                <h1 className="teaser--logo">
                  <img
                    src=Assets.logo
@@ -53,15 +56,14 @@ let make = _children => {
                    className="teaser--image"
                  />
                </h1>
-               <nav className="teaser--navigation">
-                 <Navigation pathName="/" />
-               </nav>
-               <h2 className="teaser--dates">
-                 <time dateTime="2018-05-11/2018-05-13">
-                   ({j|11–13 May 2018|j} |> s)
-                 </time>
-               </h2>
-               <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
+               <div className="teaser--meta">
+                 <h2 className="teaser--dates">
+                   <time dateTime="2018-05-11/2018-05-13">
+                     ({j|11–13 May 2018|j} |> s)
+                   </time>
+                 </h2>
+                 <p className="teaser--location"> ("Vienna, Austria" |> s) </p>
+               </div>
                <p className="teaser--tagline">
                  (
                    {j|World’s first Reason conference for web-developers & OCaml enthusiasts|j}
