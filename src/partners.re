@@ -15,6 +15,9 @@ external reasonviennaLogo : string = "./assets/partners/reasonvienna.svg";
 [@bs.module]
 external scriptConfLogo : string = "./assets/partners/script-conf.svg";
 
+[@bs.module]
+external impactHubLogo : string = "./assets/partners/impacthub-logo.png";
+
 type partnerT = {
   name: string,
   logoUrl: string,
@@ -22,6 +25,11 @@ type partnerT = {
 };
 
 let partners = [|
+  {
+    name: "Impact Hub",
+    logoUrl: impactHubLogo,
+    href: "https://vienna.impacthub.net"
+  },
   {name: "Agent Conf", logoUrl: agentLogo, href: "https://www.agent.sh/"},
   {
     name: "React Amsterdam",
