@@ -80,7 +80,6 @@ let make = _children => {
           <img src=reactViennaLogo alt="React Vienna Logo" />
         </a>
       </aside>
-      <main />
     </section>
 };
 
