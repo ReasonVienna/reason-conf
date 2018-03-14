@@ -13,9 +13,13 @@ let make = _children => {
       <main>
         (
           {js|
-Workshop and hackathon days will take place at [Impact Hub Vienna](https://vienna.impacthub.net).
+Workshop and hackathon days (day 1 & 3) will take place at [Impact Hub Vienna](https://vienna.impacthub.net).
 
 We'll provide you with tables, chairs, power outlets etc.
+
+**Nearby Subway Stations:**
+- U3 Zieglergasse
+- U3 Neubaugasse
 |js}
           |> md
         )
@@ -37,8 +41,14 @@ We'll provide you with tables, chairs, power outlets etc.
       <main>
         (
           {js|
-The conference day will take place at the beautiful Kuppelsaal at the Technical University
+The conference day (day 2) will take place at the beautiful Kuppelsaal at the Technical University
 Vienna.
+
+**Nearby Subway Stations:**
+- U1 Karlsplatz
+- U2 Karlsplatz
+- U4 Karlsplatz
+
 |js}
           |> md
         )
