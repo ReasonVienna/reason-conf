@@ -17,29 +17,23 @@ let miscRow = (misc: Schedule.misc) =>
  */
 let breakRow = miscRow;
 
-let talkRow = (lecture: Schedule.lecture) =>
+let talkRow = ({speaker, timeslot}: Schedule.lecture) =>
   <tr>
-    <td> (lecture.timeslot |> s) </td>
+    <td> (timeslot |> s) </td>
     <td>
-      (
-        switch lecture.speaker {
-        | Some(speaker) =>
-          <div>
-            (
-              switch speaker.talk {
-              | Some(talk) =>
-                <section>
-                  <h2> (talk.title |> s) </h2>
-                  <p> (talk.abstract |> s) </p>
-                </section>
-              | None => ReasonReact.nullElement
-              }
-            )
-            <SpeakerCard speaker />
-          </div>
-        | None => <div> ("Speaker Info not found" |> s) </div>
-        }
-      )
+      <div>
+        (
+          switch speaker.talk {
+          | Some(talk) =>
+            <section>
+              <h2> (talk.title |> s) </h2>
+              <p> (talk.abstract |> s) </p>
+            </section>
+          | None => ReasonReact.nullElement
+          }
+        )
+        <SpeakerCard speaker />
+      </div>
     </td>
   </tr>;
 

@@ -20,6 +20,9 @@ external keiraHodgkisonImg : string = "./assets/keira-hodgkison.jpg";
 
 [@bs.module] external jaredImg : string = "./assets/jared-forsyth.jpg";
 
+[@bs.module]
+external speakerPlaceholder : string = "./assets/speaker-placeholder.svg";
+
 [@bs.module] external volunteerLogo : string = "./assets/volunteer-logo.svg";
 
 /* List.find_opt is not supported by this BuckleScript version yet */
@@ -95,7 +98,8 @@ module Speaker = {
       imgUrl: keiraHodgkisonImg,
       /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
       description: {j|Keira is a developer at Culture Amp, the world's leading culture analytics platform. She works with React, Flow, and Rails on solutions to help customers share, and act upon company employee engagement data. Keira is an advocate for using functional programming techniques to improve the JavaScript coding and refactoring experience. When she's not writing code, she can be found under a large cat.|j},
-      talk: None,
+      talk:
+        Some({title: {j|What's not to love about Reason?|j}, abstract: "TBA"}),
       social: {
         githubUser: Some("keirah"),
         twitterUser: Some("keirasaid"),
@@ -169,15 +173,32 @@ module Speaker = {
       }
     }
   |];
-  let findSpeaker = (name: string) =>
-    Array.to_list(speakers) |> find_opt(s => s.name == name);
+  let createPlaceholder = name => {
+    name,
+    company: "?",
+    imgUrl: speakerPlaceholder,
+    description: "",
+    talk: None,
+    social: {
+      githubUser: None,
+      twitterUser: None,
+      website: None
+    }
+  };
+  let findSpeaker = (name: string) => {
+    let result = Array.to_list(speakers) |> find_opt(s => s.name == name);
+    switch result {
+    | None => createPlaceholder(name)
+    | Some(s) => s
+    };
+  };
 };
 
 module Schedule = {
   type timeslot = string;
   type lecture = {
     timeslot,
-    speaker: option(Speaker.t)
+    speaker: Speaker.t
   };
   type misc = {
     timeslot,
@@ -191,18 +212,23 @@ module Schedule = {
     Misc({timeslot: "09:00", description: "Doors open & Registration"}),
     Talk({timeslot: "10:00", speaker: Speaker.findSpeaker("Cheng Lou")}),
     Break({timeslot: "10:45", description: "30 min break"}),
-    Misc({timeslot: "11:15", description: "Talk 2"}),
-    Break({timeslot: "12:00", description: "15 min break"}),
-    Talk({timeslot: "12:15", speaker: Speaker.findSpeaker("Laura Gaetano")}),
-    Break({timeslot: "13:00", description: "2 hour lunch break"}),
-    Misc({timeslot: "15:00", description: "Talk 4"}),
-    Break({timeslot: "15:45", description: "30 min break"}),
-    Talk({timeslot: "16:15", speaker: Speaker.findSpeaker("Sander Spies")}),
-    Break({timeslot: "17:00", description: "15 min break"}),
-    Misc({timeslot: "17:15", description: "Talk 6"}),
-    Break({timeslot: "18:00", description: "1.5 hour break"}),
-    Misc({timeslot: "19:30", description: "Talk 7"}),
-    Misc({timeslot: "20:30", description: "Open End / Party"})
+    Talk({
+      timeslot: "11:15",
+      speaker: Speaker.findSpeaker("Cristiano Calcagno")
+    }),
+    Talk({timeslot: "12:00", speaker: Speaker.findSpeaker("Laura Gaetano")}),
+    Break({timeslot: "13:15", description: "1.5 hour lunch break"}),
+    Talk({
+      timeslot: "14:00",
+      speaker: Speaker.createPlaceholder("Lightning Talks")
+    }),
+    Break({timeslot: "15:00", description: "30 min break"}),
+    Talk({timeslot: "15:30", speaker: Speaker.createPlaceholder("Talk 6")}),
+    Talk({timeslot: "16:15", speaker: Speaker.createPlaceholder("Talk 7")}),
+    Break({timeslot: "17:00", description: "30 min break"}),
+    Talk({timeslot: "17:45", speaker: Speaker.createPlaceholder("Talk 8")}),
+    Talk({timeslot: "18:30", speaker: Speaker.findSpeaker("Keira Hodgkison")}),
+    Misc({timeslot: "19:15", description: "Open End / Party"})
   |];
 };
 
