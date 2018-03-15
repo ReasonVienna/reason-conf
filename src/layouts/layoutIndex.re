@@ -38,7 +38,7 @@ let make = (~location, children) => {
         componentOrNull(
           ! isThanksPage,
           <footer className="subscribe">
-            <div className="container_centered grid grid-6col">
+            <div className="container_centered grid grid_6cols">
               <h2> ("Subscribe to Newsletter" |> s) </h2>
               <SubscribeForm />
             </div>

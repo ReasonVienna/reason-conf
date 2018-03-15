@@ -9,7 +9,7 @@ let make = _children => {
   render: _self =>
     <div>
       <h1> (s("Contact us")) </h1>
-      <section className="thanks grid grid-6col">
+      <section className="thanks grid grid_6cols">
         <div className="thanks--grid"> <ContactForm /> </div>
       </section>
     </div>

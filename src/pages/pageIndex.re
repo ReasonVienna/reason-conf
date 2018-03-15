@@ -45,7 +45,7 @@ let make = _children => {
           }
         }>
         ...<header className="teaser">
-             <section className="container_centered grid grid-6col">
+             <section className="container_centered grid grid_6cols">
                <section className="teaser--navigation">
                  <Navigation pathName="/" />
                </section>
@@ -74,7 +74,7 @@ let make = _children => {
            </header>
       </ParallaxScroll>
       <section className="offering">
-        <div className="container_centered grid grid-6col">
+        <div className="container_centered grid grid_6cols">
           <h2 className="offering--heading">
             ("Get productive with Reason in 3 days" |> s)
           </h2>

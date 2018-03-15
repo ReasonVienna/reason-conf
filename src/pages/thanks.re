@@ -7,7 +7,7 @@ open Util;
 let make = _children => {
   ...component,
   render: _self =>
-    <section className="thanks grid grid-6col">
+    <section className="thanks grid grid_6cols">
       <div className="thanks--grid">
         <h1> (s("Thank you for your interest!")) </h1>
         <p>

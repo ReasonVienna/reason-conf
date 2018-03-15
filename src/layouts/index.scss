@@ -64,7 +64,7 @@ button {
 article {
   > section {
     @extend .grid;
-    @extend .grid-6col;
+    @extend .grid_6cols;
     @media (min-width: 768px) {
       grid-row-gap: 0 !important;
     }
@@ -128,12 +128,12 @@ article {
     grid-gap: 25px;
   }
 }
-.grid-4col {
+.grid_4cols {
   @media (min-width: 768px) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.grid-6col {
+.grid_6cols {
   @media (min-width: 768px) {
     grid-template-columns: repeat(6, 1fr);
   }

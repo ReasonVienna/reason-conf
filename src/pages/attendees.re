@@ -49,6 +49,7 @@ Lindengasse 56, 1070 Vienna
 The conference day (day 2) will take place at the beautiful Kuppelsaal at the Technical University
 Vienna.
 
+
 ### Nearby Subway Stations
 <span class="subway subway-u1">U1</span> <span class="subway subway-u2">U2</span> <span class="subway subway-u4">U4</span> Karlsplatz
 
