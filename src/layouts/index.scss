@@ -93,7 +93,7 @@ article {
 .leadText {
   font-size: 125%;
   @media (min-width: 768px) {
-    grid-column: 1 / span 5;
+    @extend .grid--5col;
   }
 }
 
@@ -136,6 +136,11 @@ article {
 .grid_6cols {
   @media (min-width: 768px) {
     grid-template-columns: repeat(6, 1fr);
+  }
+  @for $i from 1 through 6 {
+    .grid--#{$i}col {
+      grid-column: span $i;
+    }
   }
 }
 
