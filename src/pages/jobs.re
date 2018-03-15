@@ -60,24 +60,24 @@ let make = _children => {
   ...component,
   render: _self =>
     <section>
-      <main>
-        <h1> ("Jobs" |> s) </h1>
-        <p>
-          (
-            /*
-                       {js|
-                         We are cooperating with companies who are eager to invest in
-                         emerging technologies. They are also looking for new talents!
-                       |js}
-             */
-            {js|
+      <h1> ("Jobs" |> s) </h1>
+      <main className="leadText">
+        (
+          /*
+                     {js|
+                       We are cooperating with companies who are eager to invest in
+                       emerging technologies. They are also looking for new talents!
+                     |js}
+           */
+          {js|
              This job board will show-case job offers of our featured
              sponsors. If you are interested to collaborate with us, please get
              in touch!
             |js}
-            |> s
-          )
-        </p>
+          |> s
+        )
+      </main>
+      <main>
         (
           Array.mapi(
             (i, job) => renderJob(string_of_int(i), job),

@@ -9,6 +9,14 @@ let make = _children => {
   render: _self =>
     <section>
       <h1> ("For Attendees" |> s) </h1>
+      <main className="leadText">
+        (
+          {js|
+ReasonConf is a 3-day event and it will take place at two different places. But don't be afraid, public transportaion in Vienna is great and it's easy to reach everything by the subway, tram or bus.
+|js}
+          |> md
+        )
+      </main>
       <h2> ("Workshop & Hackathon" |> s) </h2>
       <main>
         (
@@ -17,9 +25,9 @@ Workshop and hackathon days (day 1 & 3) will take place at [Impact Hub Vienna](h
 
 We'll provide you with tables, chairs, power outlets etc.
 
-**Nearby Subway Stations:**
-- U3 Zieglergasse
-- U3 Neubaugasse
+### Nearby Subway Stations
+<span class="subway subway-u3">U3</span> Zieglergasse,
+<span class="subway subway-u3">U3</span> Neubaugasse
 |js}
           |> md
         )
@@ -41,10 +49,8 @@ Lindengasse 56, 1070 Vienna
 The conference day (day 2) will take place at the beautiful Kuppelsaal at the Technical University
 Vienna.
 
-**Nearby Subway Stations:**
-- U1 Karlsplatz
-- U2 Karlsplatz
-- U4 Karlsplatz
+### Nearby Subway Stations
+<span class="subway subway-u1">U1</span> <span class="subway subway-u2">U2</span> <span class="subway subway-u4">U4</span> Karlsplatz
 
 |js}
           |> md

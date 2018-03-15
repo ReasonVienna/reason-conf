@@ -7,13 +7,19 @@ let make = _children => {
   render: _self =>
     <section>
       <h1> (s("For Sponsors")) </h1>
+      <main className="leadText">
+        (
+          {js|
+ReasonConf is the _world's first_ conference for
+[ReasonML](https://reasonml.github.io), a new language on top of OCaml
+designed to build highly efficient and type-safe React applications.
+|js}
+          |> md
+        )
+      </main>
       <main>
         (
           {js|
-ReasonConf is the **world's first** conference for
-[ReasonML](https://reasonml.github.io), a new language on top of OCaml
-designed to build highly efficient and type-safe React applications.
-
 Although ReasonML is considered early tech, the conference has gained
 quite some attention and support from JavaScript community around the
 world:

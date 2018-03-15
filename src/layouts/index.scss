@@ -90,6 +90,13 @@ article {
   }
 }
 
+.leadText {
+  font-size: 125%;
+  @media (min-width: 768px) {
+    grid-column: 1 / span 5;
+  }
+}
+
 // Fixed footer
 .page {
   display: flex;
@@ -100,6 +107,7 @@ article {
   margin-top: auto;
 }
 
+/* Container element */
 .container {
   &_centered {
     margin: 0 auto;
@@ -356,5 +364,31 @@ article {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
+  }
+}
+
+/* Subway stations */
+.subway {
+  display: inline-block;
+  padding: 0.25em 0.2em;
+  font-size: small;
+  font-weight: bold;
+  line-height: 0.8rem;
+  vertical-align: 1px;
+  //font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  background: #000;
+
+  &-u1 {
+    background-color: #d8222a;
+  }
+  &-u2 {
+    background-color: #945d97;
+  }
+  &-u3 {
+    background-color: #e7792b;
+  }
+  &-u4 {
+    background-color: #009949;
   }
 }
