@@ -21,18 +21,6 @@ external keiraHodgkisonImg : string = "./assets/keira-hodgkison.jpg";
 [@bs.module] external jaredImg : string = "./assets/jared-forsyth.jpg";
 
 [@bs.module]
-external vladimirKurchatkinImg : string = "./assets/vladimir-kurchatkin.jpg";
-
-[@bs.module]
-external javierChavarriImg : string = "./assets/javier-chavarri.jpg";
-
-[@bs.module] external glennSlotteImg : string = "./assets/glenn-slotte.jpg";
-
-[@bs.module] external lanceHarperImg : string = "./assets/lance-harper.jpg";
-
-[@bs.module] external maximValckeImg : string = "./assets/maxim-valcke.jpg";
-
-[@bs.module]
 external speakerPlaceholder : string = "./assets/speaker-placeholder.svg";
 
 [@bs.module] external volunteerLogo : string = "./assets/volunteer-logo.svg";
@@ -109,28 +97,9 @@ module Speaker = {
       company: "Culture Amp",
       imgUrl: keiraHodgkisonImg,
       /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
-      description: {j|
-Keira is a developer at Culture Amp, the world's
-leading culture analytics platform. She works with React, Flow,
-and Rails on solutions to help customers share, and act upon
-company employee engagement data. Keira is an advocate for using
-functional programming techniques to improve the JavaScript
-coding and refactoring experience. When she's not writing code,
-she can be found under a large cat.
-|j},
+      description: {j|Keira is a developer at Culture Amp, the world's leading culture analytics platform. She works with React, Flow, and Rails on solutions to help customers share, and act upon company employee engagement data. Keira is an advocate for using functional programming techniques to improve the JavaScript coding and refactoring experience. When she's not writing code, she can be found under a large cat.|j},
       talk:
-        Some({
-          title: {j|What's not to love about Reason?|j},
-          abstract: {j|
-Even though Reason looks like JavaScript with a few
-additional functional features and semantics, it's sometimes
-easy to forget that it's a completely different language,
-with different problems.
-
-This talk looks at life on the bleeding edge, as experienced by a
-not-so-functional programmer.
-|j}
-        }),
+        Some({title: {j|What's not to love about Reason?|j}, abstract: "TBA"}),
       social: {
         githubUser: Some("keirah"),
         twitterUser: Some("keirasaid"),
@@ -141,13 +110,8 @@ not-so-functional programmer.
       name: "Cristiano Calcagno",
       company: "Facebook",
       imgUrl: cristianoCalcagnoImg,
-      description: {j|
-Engineer at Facebook.
-Co-creator of @fbinfer, founder of Monoidics, reformed academic.
-Into developer experience, front-end, static analysis, language design.
-Early @reasonml adopter, co-creator of ReasonReact.
-|j},
-      talk: Some({title: "ReasonReact and local state", abstract: "TBA"}),
+      description: {j|Engineer at Facebook.\nCo-creator of @fbinfer, founder of Monoidics, reformed academic.\nInto developer experience, front-end, static analysis, language design.\nEarly @reasonml adopter, co-creator of ReasonReact.|j},
+      talk: None,
       social: {
         githubUser: Some("cristianoc"),
         twitterUser: Some("ccrisccris"),
@@ -159,35 +123,8 @@ Early @reasonml adopter, co-creator of ReasonReact.
       company: "Travis Foundation",
       imgUrl: lauraGaetanoImg,
       /* TODO: CHECK BACK WITH LAURA TO UPDATE THE DESCRIPTION */
-      description: {j|
-Laura is a manager at Travis Foundation and the
-organiser of Rails Girls Summer of Code
-(https://railsgirlssummerofcode.org/) — a 3-month scholarship
-program to support women in the Open Source community. With a
-background in the visual arts and a non-traditional career path,
-she landed in tech as a web developer somewhat by
-accident. Laura is passionate about making things, coaching at
-programming workshops, Open Source software, feminism, music and
-space (as in rockets).
-       |j},
-      talk:
-        Some({
-          title: "Building inclusive Open Source communities",
-          abstract: {j|
-Tech has a diversity problem: marginalised people are being pushed out
-of the industry; their voices and experiences are erased. Open Source
-is particularly bad, with too few contributors who aren’t white, male,
-cisgender and able-bodied.
-
-What if things were different? What if we could create spaces that are
-welcoming, where we show empathy and compassion? What if those
-qualities could reflect in our work, ultimately helping us create
-better software?  In this talk, you will hear stories of first-time
-contributions, successful examples in supporting and mentoring
-newcomers, and find out steps you can take as an Open Source
-contributor or maintainer to make your community more inclusive.
-|j}
-        }),
+      description: {j|Laura is a manager at Travis Foundation and the organiser of Rails Girls Summer of Code (https://railsgirlssummerofcode.org/) — a 3-month scholarship program to support women in the Open Source community. With a background in the visual arts and a non-traditional career path, she landed in tech as a web developer somewhat by accident. Laura is passionate about making things, coaching at programming workshops, Open Source software, feminism, music and space (as in rockets).|j},
+      talk: None,
       social: {
         githubUser: Some("alicetragedy"),
         twitterUser: Some("alicetragedy"),
@@ -198,154 +135,13 @@ contributor or maintainer to make your community more inclusive.
   let otherSpeakers = [|
     {
       name: "Sander Spies",
-      company: "Independent",
+      company: "Freelancer",
       imgUrl: sanderSpiesImg,
-      description: {j|As a developer always focusing on the reader of
-      the code. Fell in love with React in 2013 because of the
-      simplification it brought to state management. Regrets asking
-      for Flux. Big fan of CSS-in-JS and currently lost in
-      OCaml. Strongly believes in the importance of moving developers
-      to Reason as it removes a lot of the burdens that JavaScript
-      developers face daily. Can be blamed for several things in
-      Reason like JSX. Reason fan since day one.|j},
+      description: "As a developer always focusing on the reader of the code. Fell in love with React in 2013 because of the simplification it brought to state management. Regrets asking for Flux. Big fan of CSS-in-JS and currently lost in OCaml. Strongly believes in the importance of moving developers to Reason as it removes a lot of the burdens that JavaScript developers face daily. Can be blamed for several things in Reason like JSX. Reason fan since day one.",
       talk: Some({title: "Down the WebAssembly rabbit hole", abstract: "TBA"}),
       social: {
         githubUser: Some("SanderSpies"),
         twitterUser: Some("Sander_Spies"),
-        website: None
-      }
-    },
-    {
-      name: "Vladimir Kurchatkin",
-      company: {j|Backend Developer at Lazada|j},
-      description: "OCaml enthusiast, Node.js and Flow contributor",
-      imgUrl: vladimirKurchatkinImg,
-      talk:
-        Some({
-          title: "Building native Node.js addons in Reason",
-          abstract: {j|
-Reason community is growing rapidly, and a lot of people are interested in leveraging it on their servers. One way to achieve this is to use native OCaml compiler. It produces exceptionally performant binaries, but the native ecosystem is scarce, and you will struggle with finding solutions for very common tasks.
-Another option is to use BuckleScript and compile everything to
-JavaScript. You would regain access to the vast Node.js ecosystem but
-would have to sacrifice performance.  It seems that you have to choose
-either ecosystem or performance. In this talk, I will show how to
-preserve both by compiling Reason code to native Node.js addons. I
-will present a toolkit that makes it easy and fun, walk through its
-features and examples and talk a bit about its internals and advanced
-OCaml features used.
-|j}
-        }),
-      social: {
-        githubUser: Some("vkurchatkin"),
-        twitterUser: Some("vkurchatkin"),
-        website: None
-      }
-    },
-    {
-      name: {j|Javier Chávarri|j},
-      company: {j|Tech Lead at Webflow|j},
-      description: {j|
-Javi is Tech Lead at Webflow. He also helps improving the Reason IDE tooling, in particular the OCaml language server and the VSCode extension.
-Came to Reason led by the interest in finding better ways to create and maintain software. Stayed for the community (and OCaml!).
-Excited about what will happen when Reason and BuckleScript keep removing boundaries between native and web.
-       |j},
-      imgUrl: javierChavarriImg,
-      talk:
-        Some({
-          title: "State of the Reason Editor integration",
-          abstract: {j|
-We will review the current state of the IDE tooling for Reason:
-- Editors (and OSs) supported
-- How the different parts work (language clients and the main language server) and their repositories
-- Quick review of the differences between ocamlmerlin and bsb when it comes to IDE integration.
-- Finally, we will briefly look into the features that could be built next, steered by the community needs
-|j}
-        }),
-      social: {
-        githubUser: Some("jchavarri"),
-        twitterUser: Some("javierwchavarri"),
-        website: None
-      }
-    },
-    {
-      name: "Glenn Slotte",
-      imgUrl: glennSlotteImg,
-      company: "Freelance Code Monkey",
-      description: {j|
-Creator of redex.github.io and contributor for many important
-BuckleScript bindings.
-|j},
-      talk:
-        Some({
-          title: "On the Reason ecosystem and community",
-          abstract: {j|
-A short tour of the ecosystem and
-community. What is Redex? And
-reasonml-community? How do I contribute,
-find out what needs doing and what
-somebody else is already working on?
-|j}
-        }),
-      social: {
-        githubUser: Some("glennsl"),
-        twitterUser: None,
-        website: None
-      }
-    },
-    {
-      name: "Lance Harper",
-      imgUrl: lanceHarperImg,
-      company: "Arivale, soon to be independent",
-      description: {j| Growth focused engineer who loves building mobile experiences |j},
-      talk:
-        Some({
-          title: {j|Reason coming from F#|j},
-          abstract: {j|
-F# has been a powerful language based on OCaml without mainstream
-adoption. Let's discuss their differences.
-         |j}
-        }),
-      social: {
-        githubUser: Some("lanceharper"),
-        twitterUser: None,
-        website: None
-      }
-    },
-    {
-      name: "Maxim Valcke",
-      imgUrl: maximValckeImg,
-      company: {j|Software engineer at PieSync|j},
-      description: {j|
-Syncing contacts at PieSync by day, submitting PR's to Reason at
-night. When not coding he likes to practise Spanish and get very tired
-doing this thing called triathlon, sometimes simultaneously.
-       |j},
-      talk:
-        Some({
-          title: "Practical Interpretation of Code Formatting",
-          abstract: {j|
-"Today every major language has some kind of library that helps a
-developer formatting his or her code. Tools like Prettier, Gofmt and
-Refmt are setting new standards and have a deep impact on our day to
-day programming. But what does it actually mean to format code? Does
-it mean pressing a magical button to align your code? Is it more than
-the automatic insertion of trailing commas your colleague always seems
-to forget? Why are we even doing it? How is it going to impact us as
-programmers to get better?
-
-""Code formatting"" is an opaque ocean, we’ve done a really poor job
-at explaining what code formatting actually means in today’s
-world. The recent hype around code formatting tools defaults us into
-thinking that we can’t live without them anymore. We need to stop and
-ask why we’re using these tools. Is it really the best course of
-action? Based on my experience contributing to Reason over the past
-1.5 years, this lightning talk will be a short, critical deep dive in
-the past, present & future of our beloved Reason formatter Refmt. "
-|j}
-        }),
-      social: {
-        githubUser: Some("iwankaramazow"),
-        twitterUser: Some("_iwan_refmt"),
         website: None
       }
     }
@@ -354,46 +150,10 @@ the past, present & future of our beloved Reason formatter Refmt. "
   let workshopLeaders: array(t) = [|
     {
       name: "Sean Grove",
-      company: "Co-founder of onegraph.com",
+      company: "onegraph.com",
       imgUrl: seanImg,
-      description: {j|
-Sean's been hacking on devtools, debuggers, unikernels, scrapers,
-graphical tools, and apartment designers in ClojureScript, ReasonML,
-and Rust for years, alongside giving talks on various kinds of tech,
-all while shipping business products that handle millions in
-revenue. It's mostly been luck though, he continues to spend late nights staring at the computer perplexed about how anything he writes works.
-|j},
-      talk:
-        Some({
-          title: "Having your cake and eating it too - End-to-end GraphQL in Reason",
-          abstract: {j|
-Traditionally, soundly typed-language are warm and cozy in their own
-world, but as soon as they have to deal with the outside world (say,
-talking to a REST API), the pain quickly sets in: trying to keep a
-type definition in sync with a moving external service, manual
-conversion back and forth, and lots of boilerplate.
-
-Well no more! Proper GraphQL support in ReasonML libraries means that
-we can have full-stack safety, knowing that if our programs compile,
-the server can satisfy our requirements! And on top of that, we get
-all the other GraphQL goodies, like tooling, in-editor auto-complete,
-and fantastic compile-time optimizations, for free!
-
-But what about the server-side, you ask? There are so many places
-things can go wrong when trying to maintain the promises you give to
-your GraphQL clients, I hear you cry out.
-
-Dry your eyes, friend, for ocaml-graphql-server is here to guide you
-to the happy full-stack GraphQL+Reason world you've been dreaming of,
-where whole classes of errors are eliminated.
-
-As in any good talk however, we'll also take a look at some of the
-painful points of this approach, and how ReasonML might make some
-tasks more difficult, so that you can leave with a confident
-understanding of whether this new frontier is one you want to
-brave any time soon.
-|j}
-        }),
+      description: "",
+      talk: None,
       social: {
         githubUser: Some("sgrove"),
         twitterUser: Some("sgrove"),
@@ -404,31 +164,8 @@ brave any time soon.
       name: "Jared Forsyth",
       company: "Khan Academy",
       imgUrl: jaredImg,
-      description: {j|
-Jared is one of the hosts of the ReasonTown podcast, and
-contributes to Reason core. He works at Khan Academy doing
-mobile and web development, using React and React Native
-alongside native Java and Swift. He loves type systems and
-learning new languages, and is deeply invested in improving the
-experience of programming for everyone.
-|j},
-      talk:
-        Some({
-          title: "Why We're Afraid of Change",
-          abstract: {j|
-Would you rather have a community like npm, where there are hundreds
-of thousands of packages, but very few feel stable, or one like opam,
-with only a few thousand packages and a much more rigorous vetting
-system? How do language and community decisions affect the pull
-between security and freedom, safety and agility? Can we design a
-system that gives us both?
-
-Come learn about how tools, language features, and community
-structures all impact the ""feel"" of a developer community, and what
-tricks Reason could borrow from other communities to ensure that we
-can have freedom to publish without fearing change.
-|j}
-        }),
+      description: "",
+      talk: None,
       social: {
         githubUser: Some("jaredly"),
         twitterUser: Some("jaredforsyth"),
