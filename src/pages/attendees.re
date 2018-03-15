@@ -12,7 +12,10 @@ let make = _children => {
       <main className="leadText">
         (
           {js|
-ReasonConf is a 3-day event and it will take place at two different places. But don't be afraid, public transportaion in Vienna is great and it's easy to reach everything by the subway, tram or bus.
+ReasonConf is a 3-day event and it will take place at two different
+places. But don't worry, public transportation in Vienna is
+great and it's easy to reach everything by the subway, tram or
+bus.
 |js}
           |> md
         )
