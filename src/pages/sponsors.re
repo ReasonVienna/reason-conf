@@ -37,7 +37,14 @@ ReasonConf is a **not-for-profit** conference. [The goal of the
 event](/about/) is to bring the global community together. Around half
 of the tickets are provided to our international communities and
 notable contributors to the Reason ecosystem.
-
+          |js}
+          |> md
+        )
+      </main>
+      <section className="grid--6col grid grid_6cols">
+        <section className="grid--3col">
+          (
+            {js|
 ## ReasonConf Facts
 
 - **Three day event** with practical workshops and a single track conference
@@ -45,7 +52,13 @@ notable contributors to the Reason ecosystem.
 - Speakers include **leading members and visionaries** of the ReasonML, JavaScript, and OCaml communities
 - **International audience** with a strong focus on web-development with React
 - Part of [**Diversity Tickets**](https://diversitytickets.org) by Travis Foundation
-
+          |js}
+            |> md
+          )
+        </section>
+        <section className="grid--3col">
+          (
+            {js|
 ## 5 Reasons to Sponsor
 
 1. High brand exposure to a highly skilled and self-motivated crowd of
@@ -56,12 +69,12 @@ notable contributors to the Reason ecosystem.
 1. Show off Vienna as an attractive hotspot for leading technology
 1. Get a headstart in a high potential technology (while building on
    the enterprise-ready OCaml platform)
-
-## Sponsor Tiers
           |js}
-          |> md
-        )
-      </main>
+            |> md
+          )
+        </section>
+      </section>
+      <h2> ("Sponsor Tiers" |> s) </h2>
       <main className="full sponsor-tiers">
         Data.Tier.(
           sponsorTiers
