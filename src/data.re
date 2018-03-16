@@ -460,47 +460,62 @@ can have freedom to publish without fearing change.
 
 module Schedule = {
   type timeslot = string;
+  type duration = int;
   type lecture = {
     timeslot,
+    duration,
     speaker: Speaker.t
   };
   type misc = {
     timeslot,
+    duration,
     description: string
   };
-  type lightningTalks = {
+  type openEnd = {
     timeslot,
-    speakers: array(Speaker.t)
+    description: string
   };
   type t =
     | Talk(lecture)
     | Misc(misc)
     | Break(misc)
-    | LightningTalks(lightningTalks);
+    | OpenEnd(openEnd);
+  let isLightningTalk = (duration: int) => duration < 20 ? true : false;
   let schedule: array(t) = [|
-    Misc({timeslot: "09:00", description: "Doors open & Registration"}),
-    Talk({timeslot: "10:00", speaker: Speaker.chengLou}),
-    Break({timeslot: "10:45", description: "30 min break"}),
-    Talk({timeslot: "11:15", speaker: Speaker.cristianoCalcagno}),
-    Talk({timeslot: "12:00", speaker: Speaker.lauraGaetano}),
-    Break({timeslot: "12:45", description: "1.5 hour lunch break"}),
-    Talk({timeslot: "13:15", speaker: Speaker.sanderSpies}),
-    LightningTalks({
-      timeslot: "14:00",
-      speakers: [|
-        Speaker.javierChavarri,
-        Speaker.glennSlotte,
-        Speaker.lanceHarper,
-        Speaker.maximValcke
-      |]
+    Misc({
+      timeslot: "09:00",
+      duration: 45,
+      description: "Doors open & Registration"
     }),
-    Break({timeslot: "15:00", description: "30 min break"}),
-    Talk({timeslot: "15:30", speaker: Speaker.seanGrove}),
-    Talk({timeslot: "16:15", speaker: Speaker.vladimirKurchatkin}),
-    Break({timeslot: "17:00", description: "30 min break"}),
-    Talk({timeslot: "17:45", speaker: Speaker.jaredForsyth}),
-    Talk({timeslot: "18:30", speaker: Speaker.keiraHodgkison}),
-    Misc({timeslot: "19:15", description: "Open End / Party"})
+    Talk({timeslot: "10:00", duration: 45, speaker: Speaker.chengLou}),
+    Break({timeslot: "10:45", duration: 30, description: "30 min break"}),
+    Talk({
+      timeslot: "11:15",
+      duration: 45,
+      speaker: Speaker.cristianoCalcagno
+    }),
+    Talk({timeslot: "12:00", duration: 45, speaker: Speaker.lauraGaetano}),
+    Break({
+      timeslot: "12:45",
+      duration: 90,
+      description: "1.5 hour lunch break"
+    }),
+    Talk({timeslot: "13:15", duration: 45, speaker: Speaker.sanderSpies}),
+    Talk({timeslot: "14:00", duration: 15, speaker: Speaker.javierChavarri}),
+    Talk({timeslot: "14:15", duration: 15, speaker: Speaker.glennSlotte}),
+    Talk({timeslot: "14:30", duration: 15, speaker: Speaker.lanceHarper}),
+    Talk({timeslot: "14:45", duration: 15, speaker: Speaker.maximValcke}),
+    Break({timeslot: "15:00", duration: 30, description: "30 min break"}),
+    Talk({timeslot: "15:30", duration: 45, speaker: Speaker.seanGrove}),
+    Talk({
+      timeslot: "16:15",
+      duration: 45,
+      speaker: Speaker.vladimirKurchatkin
+    }),
+    Break({timeslot: "17:00", duration: 30, description: "30 min break"}),
+    Talk({timeslot: "17:45", duration: 45, speaker: Speaker.jaredForsyth}),
+    Talk({timeslot: "18:30", duration: 45, speaker: Speaker.keiraHodgkison}),
+    OpenEnd({timeslot: "19:15", description: "Open End / Party"})
   |];
 };
 
