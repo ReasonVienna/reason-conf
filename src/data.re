@@ -272,20 +272,12 @@ We will review the current state of the IDE tooling for Reason:
       imgUrl: glennSlotteImg,
       company: "Freelance Code Monkey",
       description: {j|
-Creator of redex.github.io and contributor for many important
-BuckleScript bindings.
+Glenn is probably one of the most mysterious figures
+in the Reason community. He contributed essential bindings for the
+Reason and BuckleScript ecosystem (bs-jest, bs-fetch, bs-json,...) and he
+is also the creator of redex.github.io.
 |j},
-      talk:
-        Some({
-          title: "On the Reason ecosystem and community",
-          abstract: {j|
-A short tour of the ecosystem and
-community. What is Redex? And
-reasonml-community? How do I contribute,
-find out what needs doing and what
-somebody else is already working on?
-|j}
-        }),
+      talk: None,
       social: {
         githubUser: Some("glennsl"),
         twitterUser: None,
