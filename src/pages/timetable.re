@@ -2,7 +2,7 @@ open Util;
 
 open Data;
 
-let component = ReasonReact.statelessComponent("Schedule");
+let component = ReasonReact.statelessComponent("Timetable");
 
 let miscRow = (misc: Schedule.misc) =>
   <tr>
