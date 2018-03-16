@@ -46,6 +46,19 @@ img {
   max-width: 100%;
 }
 
+ol,
+ul {
+  padding-left: 0;
+
+  > li {
+    margin: 1em 0;
+  }
+}
+
+ul {
+  list-style-type: square;
+}
+
 input,
 textarea {
   border: 1px solid desaturate(darken($secondaryColor, 20), 30);
