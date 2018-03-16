@@ -1,3 +1,5 @@
+@import "../layouts/variables.scss";
+
 /* Single speaker block */
 .root {
   position: relative;
@@ -11,8 +13,9 @@
     z-index: 1;
     width: 100%;
     height: 100%;
-    @media (min-width: 768px) {
-      transform: translateY(calc(var(--speakers-ty) * 1 / 2));
+    transition: filter 0.25s;
+    &:hover {
+      filter: grayscale(0);
     }
   }
 
@@ -25,9 +28,6 @@
     background: #fff;
     overflow: hidden;
     z-index: 0;
-    @media (min-width: 768px) {
-      transform: translateY(calc(var(--speakers-ty) * 1 / 4 + 20px));
-    }
   }
 }
 
@@ -35,6 +35,7 @@
   margin: 0.25em 0;
   font-size: 1rem;
   line-height: 1;
+  color: $textColor;
 }
 
 .company {

@@ -441,8 +441,9 @@ can have freedom to publish without fearing change.
     lanceHarper,
     maximValcke
   |];
-  let speakers: array(t) = Array.concat([headlineSpeakers, otherSpeakers]);
   let workshopLeaders: array(t) = [|seanGrove, jaredForsyth|];
+  let speakers: array(t) =
+    Array.concat([headlineSpeakers, otherSpeakers, workshopLeaders]);
   let createPlaceholder = name => {
     name,
     company: "?",
