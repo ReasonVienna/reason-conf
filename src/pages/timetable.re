@@ -42,6 +42,9 @@ let createRow = (slot: Data.Schedule.t) =>
   | Break(v) => breakRow(v)
   | Misc(v) => miscRow(v)
   | Talk(v) => talkRow(v)
+  | LightningTalks(v) =>
+    /* TODO: Render lightning talks properly*/
+    miscRow({timeslot: v.timeslot, description: "Lightning Talks"})
   };
 
 let make = _children => {

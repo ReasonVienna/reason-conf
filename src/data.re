@@ -91,75 +91,74 @@ module Speaker = {
     talk: option(talk),
     social
   };
-  let headlineSpeakers = [|
-    {
-      name: "Cheng Lou",
-      company: "Facebook",
-      imgUrl: chengLouImg,
-      description: {j|I work on Reason and Facebook Messenger|j},
-      talk: None,
-      social: {
-        githubUser: Some("chenglou"),
-        twitterUser: Some("_chenglou"),
-        website: None
-      }
-    },
-    {
-      name: "Keira Hodgkison",
-      company: "Culture Amp",
-      imgUrl: keiraHodgkisonImg,
-      /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
-      description: {j|
-Keira is a developer at Culture Amp, the world's
-leading culture analytics platform. She works with React, Flow,
-and Rails on solutions to help customers share, and act upon
-company employee engagement data. Keira is an advocate for using
-functional programming techniques to improve the JavaScript
-coding and refactoring experience. When she's not writing code,
-she can be found under a large cat.
-|j},
-      talk:
-        Some({
-          title: {j|What's not to love about Reason?|j},
-          abstract: {j|
-Even though Reason looks like JavaScript with a few
-additional functional features and semantics, it's sometimes
-easy to forget that it's a completely different language,
-with different problems.
+  let chengLou = {
+    name: "Cheng Lou",
+    company: "Facebook",
+    imgUrl: chengLouImg,
+    description: {j|I work on Reason and Facebook Messenger|j},
+    talk: None,
+    social: {
+      githubUser: Some("chenglou"),
+      twitterUser: Some("_chenglou"),
+      website: None
+    }
+  };
+  let keiraHodgkison = {
+    name: "Keira Hodgkison",
+    company: "Culture Amp",
+    imgUrl: keiraHodgkisonImg,
+    /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
+    description: {j|
+       Keira is a developer at Culture Amp, the world's
+       leading culture analytics platform. She works with React, Flow,
+       and Rails on solutions to help customers share, and act upon
+       company employee engagement data. Keira is an advocate for using
+       functional programming techniques to improve the JavaScript
+       coding and refactoring experience. When she's not writing code,
+       she can be found under a large cat.
+       |j},
+    talk:
+      Some({
+        title: {j|What's not to love about Reason?|j},
+        abstract: {j|
+       Even though Reason looks like JavaScript with a few
+       additional functional features and semantics, it's sometimes
+       easy to forget that it's a completely different language,
+       with different problems.
 
-This talk looks at life on the bleeding edge, as experienced by a
-not-so-functional programmer.
-|j}
-        }),
-      social: {
-        githubUser: Some("keirah"),
-        twitterUser: Some("keirasaid"),
-        website: None
-      }
-    },
-    {
-      name: "Cristiano Calcagno",
-      company: "Facebook",
-      imgUrl: cristianoCalcagnoImg,
-      description: {j|
-Engineer at Facebook.
-Co-creator of @fbinfer, founder of Monoidics, reformed academic.
-Into developer experience, front-end, static analysis, language design.
-Early @reasonml adopter, co-creator of ReasonReact.
-|j},
-      talk: Some({title: "ReasonReact and local state", abstract: "TBA"}),
-      social: {
-        githubUser: Some("cristianoc"),
-        twitterUser: Some("ccrisccris"),
-        website: None
-      }
-    },
-    {
-      name: "Laura Gaetano",
-      company: "Travis Foundation",
-      imgUrl: lauraGaetanoImg,
-      /* TODO: CHECK BACK WITH LAURA TO UPDATE THE DESCRIPTION */
-      description: {j|
+       This talk looks at life on the bleeding edge, as experienced by a
+       not-so-functional programmer.
+       |j}
+      }),
+    social: {
+      githubUser: Some("keirah"),
+      twitterUser: Some("keirasaid"),
+      website: None
+    }
+  };
+  let cristianoCalcagno = {
+    name: "Cristiano Calcagno",
+    company: "Facebook",
+    imgUrl: cristianoCalcagnoImg,
+    description: {j|
+       Engineer at Facebook.
+       Co-creator of @fbinfer, founder of Monoidics, reformed academic.
+       Into developer experience, front-end, static analysis, language design.
+       Early @reasonml adopter, co-creator of ReasonReact.
+       |j},
+    talk: Some({title: "ReasonReact and local state", abstract: "TBA"}),
+    social: {
+      githubUser: Some("cristianoc"),
+      twitterUser: Some("ccrisccris"),
+      website: None
+    }
+  };
+  let lauraGaetano = {
+    name: "Laura Gaetano",
+    company: "Travis Foundation",
+    imgUrl: lauraGaetanoImg,
+    /* TODO: CHECK BACK WITH LAURA TO UPDATE THE DESCRIPTION */
+    description: {j|
 Laura is a manager at Travis Foundation and the
 organiser of Rails Girls Summer of Code
 (https://railsgirlssummerofcode.org/) — a 3-month scholarship
@@ -170,10 +169,10 @@ accident. Laura is passionate about making things, coaching at
 programming workshops, Open Source software, feminism, music and
 space (as in rockets).
        |j},
-      talk:
-        Some({
-          title: "Building inclusive Open Source communities",
-          abstract: {j|
+    talk:
+      Some({
+        title: "Building inclusive Open Source communities",
+        abstract: {j|
 Tech has a diversity problem: marginalised people are being pushed out
 of the industry; their voices and experiences are erased. Open Source
 is particularly bad, with too few contributors who aren’t white, male,
@@ -187,20 +186,18 @@ contributions, successful examples in supporting and mentoring
 newcomers, and find out steps you can take as an Open Source
 contributor or maintainer to make your community more inclusive.
 |j}
-        }),
-      social: {
-        githubUser: Some("alicetragedy"),
-        twitterUser: Some("alicetragedy"),
-        website: Some("http://www.alicetragedy.org/")
-      }
+      }),
+    social: {
+      githubUser: Some("alicetragedy"),
+      twitterUser: Some("alicetragedy"),
+      website: Some("http://www.alicetragedy.org/")
     }
-  |];
-  let otherSpeakers = [|
-    {
-      name: "Sander Spies",
-      company: "Independent",
-      imgUrl: sanderSpiesImg,
-      description: {j|As a developer always focusing on the reader of
+  };
+  let sanderSpies = {
+    name: "Sander Spies",
+    company: "Independent",
+    imgUrl: sanderSpiesImg,
+    description: {j|As a developer always focusing on the reader of
       the code. Fell in love with React in 2013 because of the
       simplification it brought to state management. Regrets asking
       for Flux. Big fan of CSS-in-JS and currently lost in
@@ -208,22 +205,29 @@ contributor or maintainer to make your community more inclusive.
       to Reason as it removes a lot of the burdens that JavaScript
       developers face daily. Can be blamed for several things in
       Reason like JSX. Reason fan since day one.|j},
-      talk: Some({title: "Down the WebAssembly rabbit hole", abstract: "TBA"}),
-      social: {
-        githubUser: Some("SanderSpies"),
-        twitterUser: Some("Sander_Spies"),
-        website: None
-      }
-    },
-    {
-      name: "Vladimir Kurchatkin",
-      company: {j|Backend Developer at Lazada|j},
-      description: "OCaml enthusiast, Node.js and Flow contributor",
-      imgUrl: vladimirKurchatkinImg,
-      talk:
-        Some({
-          title: "Building native Node.js addons in Reason",
-          abstract: {j|
+    talk:
+      Some({
+        title: "Down the WebAssembly rabbit hole",
+        abstract: {j|
+In this talk we go beyond syntax and look at an experimental
+webassembly backend for OCaml / ReasonML.
+|j}
+      }),
+    social: {
+      githubUser: Some("SanderSpies"),
+      twitterUser: Some("Sander_Spies"),
+      website: None
+    }
+  };
+  let vladimirKurchatkin = {
+    name: "Vladimir Kurchatkin",
+    company: {j|Backend Developer at Lazada|j},
+    description: "OCaml enthusiast, Node.js and Flow contributor",
+    imgUrl: vladimirKurchatkinImg,
+    talk:
+      Some({
+        title: "Building native Node.js addons in Reason",
+        abstract: {j|
 Reason community is growing rapidly, and a lot of people are interested in leveraging it on their servers. One way to achieve this is to use native OCaml compiler. It produces exceptionally performant binaries, but the native ecosystem is scarce, and you will struggle with finding solutions for very common tasks.
 Another option is to use BuckleScript and compile everything to
 JavaScript. You would regain access to the vast Node.js ecosystem but
@@ -234,88 +238,88 @@ will present a toolkit that makes it easy and fun, walk through its
 features and examples and talk a bit about its internals and advanced
 OCaml features used.
 |j}
-        }),
-      social: {
-        githubUser: Some("vkurchatkin"),
-        twitterUser: Some("vkurchatkin"),
-        website: None
-      }
-    },
-    {
-      name: {j|Javier Chávarri|j},
-      company: {j|Tech Lead at Webflow|j},
-      description: {j|
+      }),
+    social: {
+      githubUser: Some("vkurchatkin"),
+      twitterUser: Some("vkurchatkin"),
+      website: None
+    }
+  };
+  let javierChavarri = {
+    name: {j|Javier Chávarri|j},
+    company: {j|Tech Lead at Webflow|j},
+    description: {j|
 Javi is Tech Lead at Webflow. He also helps improving the Reason IDE tooling, in particular the OCaml language server and the VSCode extension.
 Came to Reason led by the interest in finding better ways to create and maintain software. Stayed for the community (and OCaml!).
 Excited about what will happen when Reason and BuckleScript keep removing boundaries between native and web.
        |j},
-      imgUrl: javierChavarriImg,
-      talk:
-        Some({
-          title: "State of the Reason Editor integration",
-          abstract: {j|
+    imgUrl: javierChavarriImg,
+    talk:
+      Some({
+        title: "State of the Reason Editor integration",
+        abstract: {j|
 We will review the current state of the IDE tooling for Reason:
 - Editors (and OSs) supported
 - How the different parts work (language clients and the main language server) and their repositories
 - Quick review of the differences between ocamlmerlin and bsb when it comes to IDE integration.
 - Finally, we will briefly look into the features that could be built next, steered by the community needs
 |j}
-        }),
-      social: {
-        githubUser: Some("jchavarri"),
-        twitterUser: Some("javierwchavarri"),
-        website: None
-      }
-    },
-    {
-      name: "Glenn Slotte",
-      imgUrl: glennSlotteImg,
-      company: "Freelance Code Monkey",
-      description: {j|
+      }),
+    social: {
+      githubUser: Some("jchavarri"),
+      twitterUser: Some("javierwchavarri"),
+      website: None
+    }
+  };
+  let glennSlotte = {
+    name: "Glenn Slotte",
+    imgUrl: glennSlotteImg,
+    company: "Freelance Code Monkey",
+    description: {j|
 Glenn is probably one of the most mysterious figures
 in the Reason community. He contributed essential bindings for the
 Reason and BuckleScript ecosystem (bs-jest, bs-fetch, bs-json,...) and he
 is also the creator of redex.github.io.
 |j},
-      talk: None,
-      social: {
-        githubUser: Some("glennsl"),
-        twitterUser: None,
-        website: None
-      }
-    },
-    {
-      name: "Lance Harper",
-      imgUrl: lanceHarperImg,
-      company: "Arivale, soon to be independent",
-      description: {j| Growth focused engineer who loves building mobile experiences |j},
-      talk:
-        Some({
-          title: {j|Reason coming from F#|j},
-          abstract: {j|
+    talk: None,
+    social: {
+      githubUser: Some("glennsl"),
+      twitterUser: None,
+      website: None
+    }
+  };
+  let lanceHarper = {
+    name: "Lance Harper",
+    imgUrl: lanceHarperImg,
+    company: "Arivale, soon to be independent",
+    description: {j| Growth focused engineer who loves building mobile experiences |j},
+    talk:
+      Some({
+        title: {j|Reason coming from F#|j},
+        abstract: {j|
 F# has been a powerful language based on OCaml without mainstream
 adoption. Let's discuss their differences.
          |j}
-        }),
-      social: {
-        githubUser: Some("lanceharper"),
-        twitterUser: None,
-        website: None
-      }
-    },
-    {
-      name: "Maxim Valcke",
-      imgUrl: maximValckeImg,
-      company: {j|Software engineer at PieSync|j},
-      description: {j|
+      }),
+    social: {
+      githubUser: Some("lanceharper"),
+      twitterUser: None,
+      website: None
+    }
+  };
+  let maximValcke = {
+    name: "Maxim Valcke",
+    imgUrl: maximValckeImg,
+    company: {j|Software engineer at PieSync|j},
+    description: {j|
 Syncing contacts at PieSync by day, submitting PR's to Reason at
 night. When not coding he likes to practise Spanish and get very tired
 doing this thing called triathlon, sometimes simultaneously.
        |j},
-      talk:
-        Some({
-          title: "Practical Interpretation of Code Formatting",
-          abstract: {j|
+    talk:
+      Some({
+        title: "Practical Interpretation of Code Formatting",
+        abstract: {j|
 "Today every major language has some kind of library that helps a
 developer formatting his or her code. Tools like Prettier, Gofmt and
 Refmt are setting new standards and have a deep impact on our day to
@@ -334,31 +338,28 @@ action? Based on my experience contributing to Reason over the past
 1.5 years, this lightning talk will be a short, critical deep dive in
 the past, present & future of our beloved Reason formatter Refmt. "
 |j}
-        }),
-      social: {
-        githubUser: Some("iwankaramazow"),
-        twitterUser: Some("_iwan_refmt"),
-        website: None
-      }
+      }),
+    social: {
+      githubUser: Some("iwankaramazow"),
+      twitterUser: Some("_iwan_refmt"),
+      website: None
     }
-  |];
-  let speakers: array(t) = Array.concat([headlineSpeakers, otherSpeakers]);
-  let workshopLeaders: array(t) = [|
-    {
-      name: "Sean Grove",
-      company: "Co-founder of onegraph.com",
-      imgUrl: seanImg,
-      description: {j|
+  };
+  let seanGrove = {
+    name: "Sean Grove",
+    company: "Co-founder of onegraph.com",
+    imgUrl: seanImg,
+    description: {j|
 Sean's been hacking on devtools, debuggers, unikernels, scrapers,
 graphical tools, and apartment designers in ClojureScript, ReasonML,
 and Rust for years, alongside giving talks on various kinds of tech,
 all while shipping business products that handle millions in
 revenue. It's mostly been luck though, he continues to spend late nights staring at the computer perplexed about how anything he writes works.
 |j},
-      talk:
-        Some({
-          title: "Having your cake and eating it too - End-to-end GraphQL in Reason",
-          abstract: {j|
+    talk:
+      Some({
+        title: "Having your cake and eating it too - End-to-end GraphQL in Reason",
+        abstract: {j|
 Traditionally, soundly typed-language are warm and cozy in their own
 world, but as soon as they have to deal with the outside world (say,
 talking to a REST API), the pain quickly sets in: trying to keep a
@@ -385,18 +386,18 @@ tasks more difficult, so that you can leave with a confident
 understanding of whether this new frontier is one you want to
 brave any time soon.
 |j}
-        }),
-      social: {
-        githubUser: Some("sgrove"),
-        twitterUser: Some("sgrove"),
-        website: Some("http://www.riseos.com/")
-      }
-    },
-    {
-      name: "Jared Forsyth",
-      company: "Khan Academy",
-      imgUrl: jaredImg,
-      description: {j|
+      }),
+    social: {
+      githubUser: Some("sgrove"),
+      twitterUser: Some("sgrove"),
+      website: Some("http://www.riseos.com/")
+    }
+  };
+  let jaredForsyth = {
+    name: "Jared Forsyth",
+    company: "Khan Academy",
+    imgUrl: jaredImg,
+    description: {j|
 Jared is one of the hosts of the ReasonTown podcast, and
 contributes to Reason core. He works at Khan Academy doing
 mobile and web development, using React and React Native
@@ -404,10 +405,10 @@ alongside native Java and Swift. He loves type systems and
 learning new languages, and is deeply invested in improving the
 experience of programming for everyone.
 |j},
-      talk:
-        Some({
-          title: "Why We're Afraid of Change",
-          abstract: {j|
+    talk:
+      Some({
+        title: "Why We're Afraid of Change",
+        abstract: {j|
 Would you rather have a community like npm, where there are hundreds
 of thousands of packages, but very few feel stable, or one like opam,
 with only a few thousand packages and a much more rigorous vetting
@@ -420,14 +421,29 @@ structures all impact the ""feel"" of a developer community, and what
 tricks Reason could borrow from other communities to ensure that we
 can have freedom to publish without fearing change.
 |j}
-        }),
-      social: {
-        githubUser: Some("jaredly"),
-        twitterUser: Some("jaredforsyth"),
-        website: Some("https://jaredforsyth.com")
-      }
+      }),
+    social: {
+      githubUser: Some("jaredly"),
+      twitterUser: Some("jaredforsyth"),
+      website: Some("https://jaredforsyth.com")
     }
+  };
+  let headlineSpeakers = [|
+    chengLou,
+    keiraHodgkison,
+    cristianoCalcagno,
+    lauraGaetano
   |];
+  let otherSpeakers = [|
+    sanderSpies,
+    vladimirKurchatkin,
+    javierChavarri,
+    glennSlotte,
+    lanceHarper,
+    maximValcke
+  |];
+  let speakers: array(t) = Array.concat([headlineSpeakers, otherSpeakers]);
+  let workshopLeaders: array(t) = [|seanGrove, jaredForsyth|];
   let createPlaceholder = name => {
     name,
     company: "?",
@@ -439,13 +455,6 @@ can have freedom to publish without fearing change.
       twitterUser: None,
       website: None
     }
-  };
-  let findSpeaker = (name: string) => {
-    let result = Array.to_list(speakers) |> find_opt(s => s.name == name);
-    switch result {
-    | None => createPlaceholder(name)
-    | Some(s) => s
-    };
   };
 };
 
@@ -459,30 +468,38 @@ module Schedule = {
     timeslot,
     description: string
   };
+  type lightningTalks = {
+    timeslot,
+    speakers: array(Speaker.t)
+  };
   type t =
     | Talk(lecture)
     | Misc(misc)
-    | Break(misc);
+    | Break(misc)
+    | LightningTalks(lightningTalks);
   let schedule: array(t) = [|
     Misc({timeslot: "09:00", description: "Doors open & Registration"}),
-    Talk({timeslot: "10:00", speaker: Speaker.findSpeaker("Cheng Lou")}),
+    Talk({timeslot: "10:00", speaker: Speaker.chengLou}),
     Break({timeslot: "10:45", description: "30 min break"}),
-    Talk({
-      timeslot: "11:15",
-      speaker: Speaker.findSpeaker("Cristiano Calcagno")
-    }),
-    Talk({timeslot: "12:00", speaker: Speaker.findSpeaker("Laura Gaetano")}),
-    Break({timeslot: "13:15", description: "1.5 hour lunch break"}),
-    Talk({
+    Talk({timeslot: "11:15", speaker: Speaker.cristianoCalcagno}),
+    Talk({timeslot: "12:00", speaker: Speaker.lauraGaetano}),
+    Break({timeslot: "12:45", description: "1.5 hour lunch break"}),
+    Talk({timeslot: "13:15", speaker: Speaker.sanderSpies}),
+    LightningTalks({
       timeslot: "14:00",
-      speaker: Speaker.createPlaceholder("Lightning Talks")
+      speakers: [|
+        Speaker.javierChavarri,
+        Speaker.glennSlotte,
+        Speaker.lanceHarper,
+        Speaker.maximValcke
+      |]
     }),
     Break({timeslot: "15:00", description: "30 min break"}),
-    Talk({timeslot: "15:30", speaker: Speaker.createPlaceholder("Talk 6")}),
-    Talk({timeslot: "16:15", speaker: Speaker.createPlaceholder("Talk 7")}),
+    Talk({timeslot: "15:30", speaker: Speaker.seanGrove}),
+    Talk({timeslot: "16:15", speaker: Speaker.vladimirKurchatkin}),
     Break({timeslot: "17:00", description: "30 min break"}),
-    Talk({timeslot: "17:45", speaker: Speaker.createPlaceholder("Talk 8")}),
-    Talk({timeslot: "18:30", speaker: Speaker.findSpeaker("Keira Hodgkison")}),
+    Talk({timeslot: "17:45", speaker: Speaker.jaredForsyth}),
+    Talk({timeslot: "18:30", speaker: Speaker.keiraHodgkison}),
     Misc({timeslot: "19:15", description: "Open End / Party"})
   |];
 };
