@@ -4,10 +4,12 @@ open Data;
 
 let component = ReasonReact.statelessComponent("Timetable");
 
-let miscRow = (misc: Schedule.misc) =>
+let toTimeStr = datetime => DateFns.format("HH:mm", datetime);
+
+let miscRow = (~fromTime, ~toTime, ~duration, description) =>
   ReasonReact.arrayToElement([|
-    <dt> (misc.timeslot |> s) </dt>,
-    <dd> (misc.description |> s) </dd>
+    <dt> <time dateTime=""> (toTimeStr(fromTime) |> s) </time> </dt>,
+    <dd> (description |> s) </dd>
   |]);
 
 /*
@@ -17,9 +19,9 @@ let miscRow = (misc: Schedule.misc) =>
  */
 let breakRow = miscRow;
 
-let talkRow = ({speaker, timeslot}: Schedule.lecture) =>
+let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
   ReasonReact.arrayToElement([|
-    <dt> (timeslot |> s) </dt>,
+    <dt> <time dateTime=""> (toTimeStr(fromTime) |> s) </time> </dt>,
     <dd>
       (
         switch speaker.talk {
@@ -35,18 +37,18 @@ let talkRow = ({speaker, timeslot}: Schedule.lecture) =>
     </dd>
   |]);
 
-let openEndRow = ({timeslot, description}: Schedule.openEnd) =>
+let openEndRow = (~fromTime, description) =>
   ReasonReact.arrayToElement([|
-    <dt> (timeslot |> s) </dt>,
+    <dt> <time dateTime=""> (toTimeStr(fromTime) |> s) </time> </dt>,
     <dd> (description |> s) </dd>
   |]);
 
-let createRow = (slot: Data.Schedule.t) =>
-  switch slot {
-  | Break(v) => breakRow(v)
-  | Misc(v) => miscRow(v)
-  | Talk(v) => talkRow(v)
-  | OpenEnd(v) => openEndRow(v)
+let createRow = ({task, fromTime, toTime, duration}: Data.Timetable.entry) =>
+  switch task {
+  | Break(description) => breakRow(~fromTime, ~toTime, ~duration, description)
+  | Misc(description) => miscRow(~fromTime, ~toTime, ~duration, description)
+  | Talk(speaker) => talkRow(~fromTime, ~toTime, ~duration, speaker)
+  | OpenEnd(description) => openEndRow(~fromTime, description)
   };
 
 let make = _children => {
@@ -56,8 +58,9 @@ let make = _children => {
       <h1> (s("Timetable")) </h1>
       <dl>
         (
-          Data.Schedule.schedule
-          |> Array.map(createRow)
+          Data.Timetable.day2Timetable
+          |> List.map(createRow)
+          |> Array.of_list
           |> ReasonReact.arrayToElement
         )
       </dl>

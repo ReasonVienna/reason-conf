@@ -6,7 +6,7 @@
   "name": "reason-conf",
   "reason": { "react-jsx": 2 },
   "refmt": 3,
-  "bs-dependencies": ["reason-react", "re-classnames"],
+  "bs-dependencies": ["bs-date-fns", "reason-react", "re-classnames"],
   "sources": {
     "dir": "src",
     "subdirs": true

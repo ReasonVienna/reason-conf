@@ -107,27 +107,26 @@ module Speaker = {
     name: "Keira Hodgkison",
     company: "Culture Amp",
     imgUrl: keiraHodgkisonImg,
-    /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
     description: {j|
-       Keira is a developer at Culture Amp, the world's
-       leading culture analytics platform. She works with React, Flow,
-       and Rails on solutions to help customers share, and act upon
-       company employee engagement data. Keira is an advocate for using
-       functional programming techniques to improve the JavaScript
-       coding and refactoring experience. When she's not writing code,
-       she can be found under a large cat.
+Keira is a developer at Culture Amp, the world's
+leading culture analytics platform. She works with React, Flow,
+and Rails on solutions to help customers share, and act upon
+company employee engagement data. Keira is an advocate for using
+functional programming techniques to improve the JavaScript
+coding and refactoring experience. When she's not writing code,
+she can be found under a large cat.
        |j},
     talk:
       Some({
         title: {j|What's not to love about Reason?|j},
         abstract: {j|
-       Even though Reason looks like JavaScript with a few
-       additional functional features and semantics, it's sometimes
-       easy to forget that it's a completely different language,
-       with different problems.
+Even though Reason looks like JavaScript with a few
+additional functional features and semantics, it's sometimes
+easy to forget that it's a completely different language,
+with different problems.
 
-       This talk looks at life on the bleeding edge, as experienced by a
-       not-so-functional programmer.
+This talk looks at life on the bleeding edge, as experienced by a
+not-so-functional programmer.
        |j}
       }),
     social: {
@@ -141,10 +140,10 @@ module Speaker = {
     company: "Facebook",
     imgUrl: cristianoCalcagnoImg,
     description: {j|
-       Engineer at Facebook.
-       Co-creator of @fbinfer, founder of Monoidics, reformed academic.
-       Into developer experience, front-end, static analysis, language design.
-       Early @reasonml adopter, co-creator of ReasonReact.
+Engineer at Facebook.
+Co-creator of @fbinfer, founder of Monoidics, reformed academic.
+Into developer experience, front-end, static analysis, language design.
+Early @reasonml adopter, co-creator of ReasonReact.
        |j},
     talk: Some({title: "ReasonReact and local state", abstract: "TBA"}),
     social: {
@@ -458,65 +457,99 @@ can have freedom to publish without fearing change.
   };
 };
 
-module Schedule = {
-  type timeslot = string;
-  type duration = int;
-  type lecture = {
-    timeslot,
-    duration,
-    speaker: Speaker.t
+module Timetable = {
+  type task =
+    | Talk(Speaker.t)
+    | Misc(string)
+    | Break(string)
+    | OpenEnd(string);
+  type step = {
+    task,
+    duration: option(int)
   };
-  type misc = {
-    timeslot,
-    duration,
-    description: string
+  type entry = {
+    task,
+    fromTime: Js.Date.t,
+    toTime: option(Js.Date.t),
+    duration: option(int)
   };
-  type openEnd = {
-    timeslot,
-    description: string
+  let addDuration = (time, duration) =>
+    switch duration {
+    | Some(d) => DateFns.addMinutes(float_of_int(d), time)
+    | None => time
+    };
+  let startEntry = () => {
+    let day2Start = Js.Date.fromString("2018-05-12 08:00:00 GMT+0100");
+    let duration = Some(60);
+    let fromTime = day2Start;
+    let toTime = Some(addDuration(day2Start, duration));
+    {task: Misc("Doors open & Registration"), fromTime, toTime, duration};
   };
-  type t =
-    | Talk(lecture)
-    | Misc(misc)
-    | Break(misc)
-    | OpenEnd(openEnd);
-  let isLightningTalk = (duration: int) => duration < 20 ? true : false;
-  let schedule: array(t) = [|
-    Misc({
-      timeslot: "09:00",
-      duration: 45,
-      description: "Doors open & Registration"
-    }),
-    Talk({timeslot: "10:00", duration: 45, speaker: Speaker.chengLou}),
-    Break({timeslot: "10:45", duration: 30, description: "30 min break"}),
-    Talk({
-      timeslot: "11:15",
-      duration: 45,
-      speaker: Speaker.cristianoCalcagno
-    }),
-    Talk({timeslot: "12:00", duration: 45, speaker: Speaker.lauraGaetano}),
-    Break({
-      timeslot: "12:45",
-      duration: 90,
-      description: "1.5 hour lunch break"
-    }),
-    Talk({timeslot: "13:15", duration: 45, speaker: Speaker.sanderSpies}),
-    Talk({timeslot: "14:00", duration: 15, speaker: Speaker.javierChavarri}),
-    Talk({timeslot: "14:15", duration: 15, speaker: Speaker.glennSlotte}),
-    Talk({timeslot: "14:30", duration: 15, speaker: Speaker.lanceHarper}),
-    Talk({timeslot: "14:45", duration: 15, speaker: Speaker.maximValcke}),
-    Break({timeslot: "15:00", duration: 30, description: "30 min break"}),
-    Talk({timeslot: "15:30", duration: 45, speaker: Speaker.seanGrove}),
-    Talk({
-      timeslot: "16:15",
-      duration: 45,
-      speaker: Speaker.vladimirKurchatkin
-    }),
-    Break({timeslot: "17:00", duration: 30, description: "30 min break"}),
-    Talk({timeslot: "17:45", duration: 45, speaker: Speaker.jaredForsyth}),
-    Talk({timeslot: "18:30", duration: 45, speaker: Speaker.keiraHodgkison}),
-    OpenEnd({timeslot: "19:15", description: "Open End / Party"})
-  |];
+  let steps = [
+    {task: Talk(Speaker.chengLou), duration: Some(45)},
+    {task: Break("30 min break"), duration: Some(30)},
+    {task: Talk(Speaker.cristianoCalcagno), duration: Some(45)},
+    {task: Talk(Speaker.lauraGaetano), duration: Some(45)},
+    {task: Break("1.5 hour lunch break"), duration: Some(90)},
+    {task: Talk(Speaker.sanderSpies), duration: Some(45)},
+    {task: Talk(Speaker.javierChavarri), duration: Some(15)},
+    {task: Talk(Speaker.glennSlotte), duration: Some(15)},
+    {task: Talk(Speaker.lanceHarper), duration: Some(15)},
+    {task: Talk(Speaker.maximValcke), duration: Some(15)},
+    {task: Break("30 min break"), duration: Some(30)},
+    {task: Talk(Speaker.seanGrove), duration: Some(45)},
+    {task: Talk(Speaker.vladimirKurchatkin), duration: Some(45)},
+    {task: Break("30 min break"), duration: Some(30)},
+    {task: Talk(Speaker.jaredForsyth), duration: Some(45)},
+    {task: Talk(Speaker.keiraHodgkison), duration: Some(45)},
+    {task: OpenEnd("Open End / Party"), duration: None}
+  ];
+  let calcStep = (pre: entry, step: step) : entry => {
+    let fromTime = addDuration(pre.fromTime, pre.duration);
+    let toTime =
+      switch step.duration {
+      | None => None
+      | Some(_) => Some(addDuration(fromTime, step.duration))
+      };
+    {task: step.task, duration: step.duration, fromTime, toTime};
+  };
+  let rec calcTimetable = (pre: entry, steps: list(step)) : list(entry) =>
+    switch steps {
+    | [s, ...rest] =>
+      let next = calcStep(pre, s);
+      [next, ...calcTimetable(next, rest)];
+    | [] => []
+    };
+  /* This is just for debugging a table,.. also a good inspiration
+     on how to interpret table data */
+  let logTimetable = (table: list(entry)) : unit =>
+    List.iter(
+      (r: entry) => {
+        let task =
+          switch r.task {
+          | Talk(speaker) => speaker.name
+          | Misc(msg) => msg
+          | Break(msg) => msg
+          | OpenEnd(msg) => msg
+          };
+        let fromTime = DateFns.format("DD.MM, HH:mm", r.fromTime);
+        let duration =
+          switch r.duration {
+          | Some(d) => {j| ($d min)|j}
+          | None => ""
+          };
+        let timeRange =
+          switch r.toTime {
+          | Some(time) =>
+            let toTime = DateFns.format("HH:mm", time);
+            {j|$fromTime - $toTime$duration|j};
+          | None => fromTime
+          };
+        Js.log3(task, " ", timeRange);
+      },
+      table
+    );
+  let day2Timetable = calcTimetable(startEntry(), steps);
 };
 
 module Tier = {
