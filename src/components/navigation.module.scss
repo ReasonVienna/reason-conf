@@ -1,7 +1,7 @@
 @import "../layouts/variables.scss";
 
 .root {
-  display: flex;
+  display: block;
 }
 
 .link_active {
@@ -28,13 +28,16 @@
 }
 
 .logo {
+  margin: 0 0 20px;
   height: 2.2em;
-  margin-top: -0.9em;
+  @media (min-width: 768px) {
+    margin: 0;
+  }
 }
 
 .root_header {
   composes: root;
-  align-items: center;
+  align-items: flex-end;
   @media (min-width: 768px) {
     display: flex;
     text-align: right;

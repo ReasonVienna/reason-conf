@@ -46,9 +46,6 @@ let make = _children => {
         }>
         ...<header className="teaser">
              <section className="container_centered grid grid_6cols">
-               <section className="teaser--navigation">
-                 <Navigation pathName="/" />
-               </section>
                <h1 className="teaser--logo">
                  <img
                    src=Assets.logo
@@ -56,6 +53,9 @@ let make = _children => {
                    className="teaser--image"
                  />
                </h1>
+               <section className="teaser--navigation">
+                 <Navigation pathName="/" />
+               </section>
                <div className="teaser--meta">
                  <h2 className="teaser--dates">
                    <time dateTime="2018-05-11/2018-05-13">

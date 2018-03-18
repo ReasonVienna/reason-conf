@@ -23,10 +23,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0;
+  margin: 0.5em 0;
   font-family: $displayFontFamily;
   font-weight: 700;
+  @media (min-width: 768px) {
+    margin-top: 1.5em;
+  }
 }
 
 h1 {
@@ -140,19 +142,21 @@ article {
   @media (min-width: 768px) {
     grid-gap: 25px;
   }
-}
-.grid_4cols {
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(4, 1fr);
+
+  &_4cols {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
-}
-.grid_6cols {
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(6, 1fr);
-  }
-  @for $i from 1 through 6 {
-    .grid--#{$i}col {
-      grid-column: span $i;
+  &_6cols {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(6, 1fr);
+
+      @for $i from 1 through 6 {
+        .grid--#{$i}col {
+          grid-column: span $i;
+        }
+      }
     }
   }
 }
@@ -171,17 +175,21 @@ article {
   }
 
   &--navigation {
+    position: relative;
+    top: 14px;
     margin-bottom: 20px;
     @media (min-width: 768px) {
       grid-column: 1 / span 6;
+      grid-row: 1;
       margin-bottom: -40px;
       z-index: 1;
     }
   }
 
   &--logo {
-    margin: 0 0 20px;
+    margin: 0;
     @media (min-width: 768px) {
+      margin: 0 0 20px;
       grid-column: 1 / span 3;
       align-self: start;
     }
@@ -205,7 +213,7 @@ article {
     font-weight: bold;
     @media (min-width: 768px) {
       grid-column: 1 / span 4;
-      margin: 0.5rem 1rem 2rem 0;
+      margin: 0.25rem 1rem 2rem 0;
     }
   }
   &--meta {
