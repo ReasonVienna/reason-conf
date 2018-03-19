@@ -13,7 +13,8 @@ let title = "ReasonConf 2018";
 let make = (~location, children) => {
   ...component,
   render: _self => {
-    let isHomepage = location##pathname == "/";
+    let isHomepage =
+      location##pathname == "/" || location##pathname == "/speaker";
     let isThanksPage = location##pathname == "/thanks/";
     <div className="page">
       <Helmet title>
