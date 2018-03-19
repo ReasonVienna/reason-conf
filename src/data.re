@@ -118,7 +118,7 @@ she can be found under a large cat.
        |j},
     talk:
       Some({
-        title: {j|What's not to love about Reason?|j},
+        title: {j|What’s not to love about Reason?|j},
         abstract: {j|
 Even though Reason looks like JavaScript with a few
 additional functional features and semantics, it's sometimes
@@ -206,7 +206,7 @@ contributor or maintainer to make your community more inclusive.
       Reason like JSX. Reason fan since day one.|j},
     talk:
       Some({
-        title: "Down the WebAssembly rabbit hole",
+        title: {j|Down the WebAssembly rabbit hole|j},
         abstract: {j|
 In this talk we go beyond syntax and look at an experimental
 webassembly backend for OCaml / ReasonML.
@@ -225,7 +225,7 @@ webassembly backend for OCaml / ReasonML.
     imgUrl: vladimirKurchatkinImg,
     talk:
       Some({
-        title: "Building native Node.js addons in Reason",
+        title: {j|Building native Node.js addons in Reason|j},
         abstract: {j|
 Reason community is growing rapidly, and a lot of people are interested in leveraging it on their servers. One way to achieve this is to use native OCaml compiler. It produces exceptionally performant binaries, but the native ecosystem is scarce, and you will struggle with finding solutions for very common tasks.
 Another option is to use BuckleScript and compile everything to
@@ -255,7 +255,7 @@ Excited about what will happen when Reason and BuckleScript keep removing bounda
     imgUrl: javierChavarriImg,
     talk:
       Some({
-        title: "State of the Reason Editor integration",
+        title: {j|State of the Reason Editor integration|j},
         abstract: {j|
 We will review the current state of the IDE tooling for Reason:
 - Editors (and OSs) supported
@@ -317,9 +317,9 @@ doing this thing called triathlon, sometimes simultaneously.
        |j},
     talk:
       Some({
-        title: "Practical Interpretation of Code Formatting",
+        title: {j|Practical Interpretation of Code Formatting|j},
         abstract: {j|
-"Today every major language has some kind of library that helps a
+Today every major language has some kind of library that helps a
 developer formatting his or her code. Tools like Prettier, Gofmt and
 Refmt are setting new standards and have a deep impact on our day to
 day programming. But what does it actually mean to format code? Does
@@ -328,14 +328,14 @@ the automatic insertion of trailing commas your colleague always seems
 to forget? Why are we even doing it? How is it going to impact us as
 programmers to get better?
 
-""Code formatting"" is an opaque ocean, we’ve done a really poor job
+"Code formatting" is an opaque ocean, we’ve done a really poor job
 at explaining what code formatting actually means in today’s
 world. The recent hype around code formatting tools defaults us into
 thinking that we can’t live without them anymore. We need to stop and
 ask why we’re using these tools. Is it really the best course of
 action? Based on my experience contributing to Reason over the past
 1.5 years, this lightning talk will be a short, critical deep dive in
-the past, present & future of our beloved Reason formatter Refmt. "
+the past, present & future of our beloved Reason formatter Refmt.
 |j}
       }),
     social: {
@@ -357,7 +357,7 @@ revenue. It's mostly been luck though, he continues to spend late nights staring
 |j},
     talk:
       Some({
-        title: "Having your cake and eating it too - End-to-end GraphQL in Reason",
+        title: {j|Having your cake and eating it too — End-to-end GraphQL in Reason|j},
         abstract: {j|
 Traditionally, soundly typed-language are warm and cozy in their own
 world, but as soon as they have to deal with the outside world (say,
@@ -406,7 +406,7 @@ experience of programming for everyone.
 |j},
     talk:
       Some({
-        title: "Why We're Afraid of Change",
+        title: {j|Why We’re Afraid of Change|j},
         abstract: {j|
 Would you rather have a community like npm, where there are hundreds
 of thousands of packages, but very few feel stable, or one like opam,
@@ -416,7 +416,7 @@ between security and freedom, safety and agility? Can we design a
 system that gives us both?
 
 Come learn about how tools, language features, and community
-structures all impact the ""feel"" of a developer community, and what
+structures all impact the "feel" of a developer community, and what
 tricks Reason could borrow from other communities to ensure that we
 can have freedom to publish without fearing change.
 |j}
