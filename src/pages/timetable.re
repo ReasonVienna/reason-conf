@@ -53,7 +53,7 @@ let breakRow = miscRow;
 
 let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
   ReasonReact.arrayToElement([|
-    <dt className=style##entryTime>
+    <dt className=style##talkTime>
       <time dateTime=(toDurationStr(fromTime, toTime))>
         (toTimeStr(fromTime, toTime) |> s)
       </time>
@@ -63,20 +63,18 @@ let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
         switch speaker.talk {
         | Some(talk) =>
           <section className=style##talkDetails>
+            <Link
+              to_=(
+                "/speakers/#"
+                ++ Js.Option.getWithDefault("", speaker.social.githubUser)
+              )>
+              <SpeakerCard speaker compact=true />
+            </Link>
             (titleAndAbstractToMdString(talk) |> md)
           </section>
         | None => ReasonReact.nullElement
         }
       )
-      <div className=style##speaker>
-        <Link
-          to_=(
-            "/speakers/#"
-            ++ Js.Option.getWithDefault("", speaker.social.githubUser)
-          )>
-          <SpeakerCard speaker />
-        </Link>
-      </div>
     </dd>
   |]);
 

@@ -3,40 +3,51 @@
 $border: 1px dashed lighten($secondaryTextColor, 20);
 $padding: 25px 15px;
 
+:root {
+  --padding: 10px;
+
+  @media (min-width: 768px) {
+    --padding: 15px;
+  }
+}
+
 .entries {
   composes: global(grid);
   composes: global(grid_6cols);
-  grid-row-gap: 0;
+  grid-row-gap: 0 !important;
 }
+
 .entryTime {
   composes: global(grid--1col);
   position: relative;
   margin: 0;
-  padding: $padding;
-  //border-right: $borderColor;
+  padding: var(--padding);
   color: $secondaryTextColor;
 
-  &:not(:last-of-type)::after {
-    position: absolute;
-    right: -25px;
-    bottom: 0;
-    border-bottom: $border;
-    width: calc(100% + 25px);
-    height: 1px;
-    content: "";
+  @media (min-width: 768px) {
+    &:not(:last-of-type)::after {
+      position: absolute;
+      right: -25px;
+      bottom: 0;
+      border-bottom: $border;
+      width: calc(100% + 25px);
+      height: 1px;
+      content: "";
+    }
   }
 }
+
 .entryDescription {
-  //composes: global(grid);
-  //composes: global(grid_4cols);
   composes: global(grid--5col);
-  display: flex;
   position: relative;
   margin: 0;
-  padding: $padding;
-  //color: $secondaryTextColor;
-  //font-weight: bold;
+  padding: var(--padding);
   background-color: #fff;
+
+  @media (max-width: 480px) {
+    padding-top: 0;
+    padding-bottom: calc(var(--padding) * 2);
+  }
 
   &:not(:last-of-type)::after {
     position: absolute;
@@ -49,6 +60,13 @@ $padding: 25px 15px;
   }
 }
 
+@media (max-width: 480px) {
+  .talkTime {
+    composes: entryTime;
+    background-color: desaturate(lighten($secondaryColor, 23), 10);
+  }
+}
+
 .talkDescription {
   composes: entryDescription;
   font-weight: normal;
@@ -57,20 +75,8 @@ $padding: 25px 15px;
 }
 
 .talkDetails {
-  flex: 1 auto;
-  //order: 2;
-  h2 {
-    margin-top: 0;
-    font-size: 1em;
+  :global(.markdown-container) > h2 {
+    margin-top: 0.65em;
+    font-size: 1.25em;
   }
-}
-
-.speaker {
-  flex: 0 0 140px;
-  order: -1;
-  margin-right: 25px;
-  //composes: global(grid--1col);
-  //display: none;
-  //float: left;
-  //width: 140px;
 }

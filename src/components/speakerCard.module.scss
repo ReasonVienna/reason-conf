@@ -31,10 +31,34 @@
   }
 }
 
+.compact {
+  composes: root;
+  display: flex;
+
+  & > img {
+    margin-right: 10px;
+    width: 40px;
+  }
+
+  & > figcaption {
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    z-index: auto;
+    background: none;
+  }
+
+  .name {
+    font-size: 0.85em;
+    color: inherit;
+  }
+}
+
 .name {
   margin: 0.25em 0;
-  font-size: 1rem;
-  line-height: 1;
+  font-size: 1em;
   color: $textColor;
 }
 

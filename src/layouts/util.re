@@ -13,6 +13,11 @@ let md = markdownString => {
       markdownString,
       {"gfm": Js.true_, "smartLists": Js.true_, "smartypants": Js.true_}
     );
-  let props = ReactDOMRe.props(~dangerouslySetInnerHTML={"__html": res}, ());
-  ReactDOMRe.createElement("div", ~props, [||]);
+  let props =
+    ReactDOMRe.props(
+      ~dangerouslySetInnerHTML={"__html": res},
+      ~className="markdown-container",
+      ()
+    );
+  ReactDOMRe.createElement("section", ~props, [||]);
 };
