@@ -6,9 +6,22 @@ let component = ReasonReact.statelessComponent("Timetable");
 
 let toTimeStr = datetime => DateFns.format("HH:mm", datetime);
 
+let toDurationStr = (fromTime, ~toTime) => {
+  let format = "YYYY-MM-DDTHH:mm:ss.SSSZ";
+  switch toTime {
+  | Some(toTime) =>
+    DateFns.format(format, fromTime) ++ "/" ++ DateFns.format(format, toTime)
+  | None => DateFns.format(format, fromTime)
+  };
+};
+
 let miscRow = (~fromTime, ~toTime, ~duration, description) =>
   ReasonReact.arrayToElement([|
-    <dt> <time dateTime=""> (toTimeStr(fromTime) |> s) </time> </dt>,
+    <dt>
+      <time dateTime=(toDurationStr(fromTime, toTime))>
+        (toTimeStr(fromTime) |> s)
+      </time>
+    </dt>,
     <dd> (description |> s) </dd>
   |]);
 
@@ -21,7 +34,11 @@ let breakRow = miscRow;
 
 let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
   ReasonReact.arrayToElement([|
-    <dt> <time dateTime=""> (toTimeStr(fromTime) |> s) </time> </dt>,
+    <dt>
+      <time dateTime=(toDurationStr(fromTime, toTime))>
+        (toTimeStr(fromTime) |> s)
+      </time>
+    </dt>,
     <dd>
       (
         switch speaker.talk {
@@ -39,7 +56,11 @@ let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
 
 let openEndRow = (~fromTime, description) =>
   ReasonReact.arrayToElement([|
-    <dt> <time dateTime=""> (toTimeStr(fromTime) |> s) </time> </dt>,
+    <dt>
+      <time dateTime=(toDurationStr(fromTime, None))>
+        (toTimeStr(fromTime) |> s)
+      </time>
+    </dt>,
     <dd> (description |> s) </dd>
   |]);
 
