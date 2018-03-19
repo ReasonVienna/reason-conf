@@ -480,7 +480,7 @@ module Timetable = {
     | None => time
     };
   let startEntry = {
-    let day2Start = Js.Date.fromString("2018-05-12 08:00:00 GMT+0100");
+    let day2Start = Js.Date.fromString("2018-05-12T09:00:00.000+02:00");
     let duration = Some(60);
     let fromTime = day2Start;
     let toTime = Some(addDuration(day2Start, duration));
