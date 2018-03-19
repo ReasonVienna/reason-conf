@@ -96,7 +96,7 @@ module Speaker = {
     company: "Facebook",
     imgUrl: chengLouImg,
     description: {j|I work on Reason and Facebook Messenger|j},
-    talk: None,
+    talk: Some({title: "Keynote", abstract: ""}),
     social: {
       githubUser: Some("chenglou"),
       twitterUser: Some("_chenglou"),
@@ -479,7 +479,7 @@ module Timetable = {
     | Some(d) => DateFns.addMinutes(float_of_int(d), time)
     | None => time
     };
-  let startEntry = () => {
+  let startEntry = {
     let day2Start = Js.Date.fromString("2018-05-12 08:00:00 GMT+0100");
     let duration = Some(60);
     let fromTime = day2Start;
@@ -550,7 +550,7 @@ module Timetable = {
       },
       table
     );
-  let day2Timetable = calcTimetable(startEntry(), steps);
+  let day2Timetable = [startEntry, ...calcTimetable(startEntry, steps)];
 };
 
 module Tier = {
