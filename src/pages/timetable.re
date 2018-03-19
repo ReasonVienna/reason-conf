@@ -2,9 +2,22 @@ open Util;
 
 open Data;
 
+module Link = Gatsby.Link;
+
+[@bs.module] external style : Js.t({..}) = "./timetable.module.scss";
+
 let component = ReasonReact.statelessComponent("Timetable");
 
-let toTimeStr = datetime => DateFns.format("HH:mm", datetime);
+let toTimeStr = (fromTime, ~toTime) => {
+  let format = "HH:mm";
+  switch toTime {
+  | Some(toTime) =>
+    DateFns.format(format, fromTime)
+    ++ {j| – |j}
+    ++ DateFns.format(format, toTime)
+  | None => DateFns.format(format, fromTime) ++ {j| – ∞|j}
+  };
+};
 
 let toDurationStr = (fromTime, ~toTime) => {
   let format = "YYYY-MM-DDTHH:mm:ss.SSSZ";
@@ -15,14 +28,20 @@ let toDurationStr = (fromTime, ~toTime) => {
   };
 };
 
+let titleAndAbstractToMdString = ({title, abstract}: Data.Speaker.talk) => {j|
+## $title
+
+$abstract
+|j};
+
 let miscRow = (~fromTime, ~toTime, ~duration, description) =>
   ReasonReact.arrayToElement([|
-    <dt>
+    <dt className=style##entryTime>
       <time dateTime=(toDurationStr(fromTime, toTime))>
-        (toTimeStr(fromTime) |> s)
+        (toTimeStr(fromTime, toTime) |> s)
       </time>
     </dt>,
-    <dd> (description |> s) </dd>
+    <dd className=style##entryDescription> (description |> s) </dd>
   |]);
 
 /*
@@ -34,34 +53,41 @@ let breakRow = miscRow;
 
 let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
   ReasonReact.arrayToElement([|
-    <dt>
+    <dt className=style##entryTime>
       <time dateTime=(toDurationStr(fromTime, toTime))>
-        (toTimeStr(fromTime) |> s)
+        (toTimeStr(fromTime, toTime) |> s)
       </time>
     </dt>,
-    <dd>
+    <dd className=style##talkDescription>
       (
         switch speaker.talk {
         | Some(talk) =>
-          <section>
-            <h2> (talk.title |> s) </h2>
-            <p> (talk.abstract |> s) </p>
+          <section className=style##talkDetails>
+            (titleAndAbstractToMdString(talk) |> md)
           </section>
         | None => ReasonReact.nullElement
         }
       )
-      <SpeakerCard speaker />
+      <div className=style##speaker>
+        <Link
+          to_=(
+            "/speakers/#"
+            ++ Js.Option.getWithDefault("", speaker.social.githubUser)
+          )>
+          <SpeakerCard speaker />
+        </Link>
+      </div>
     </dd>
   |]);
 
 let openEndRow = (~fromTime, description) =>
   ReasonReact.arrayToElement([|
-    <dt>
+    <dt className=style##entryTime>
       <time dateTime=(toDurationStr(fromTime, None))>
-        (toTimeStr(fromTime) |> s)
+        (toTimeStr(fromTime, None) |> s)
       </time>
     </dt>,
-    <dd> (description |> s) </dd>
+    <dd className=style##entryDescription> (description |> s) </dd>
   |]);
 
 let createRow = ({task, fromTime, toTime, duration}: Data.Timetable.entry) =>
@@ -77,7 +103,7 @@ let make = _children => {
   render: _self =>
     <div>
       <h1> (s("Timetable")) </h1>
-      <dl>
+      <dl className=style##entries>
         (
           Data.Timetable.day2Timetable
           |> List.map(createRow)

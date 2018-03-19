@@ -280,7 +280,7 @@ in the Reason community. He contributed essential bindings for the
 Reason and BuckleScript ecosystem (bs-jest, bs-fetch, bs-json,...) and he
 is also the creator of redex.github.io.
 |j},
-    talk: None,
+    talk: Some({title: "TBA", abstract: "TBA"}),
     social: {
       githubUser: Some("glennsl"),
       twitterUser: None,
@@ -488,19 +488,19 @@ module Timetable = {
   };
   let steps = [
     {task: Talk(Speaker.chengLou), duration: Some(45)},
-    {task: Break("30 min break"), duration: Some(30)},
+    {task: Break("Coffee break"), duration: Some(30)},
     {task: Talk(Speaker.cristianoCalcagno), duration: Some(45)},
     {task: Talk(Speaker.lauraGaetano), duration: Some(45)},
-    {task: Break("1.5 hour lunch break"), duration: Some(90)},
+    {task: Break("Lunch"), duration: Some(90)},
     {task: Talk(Speaker.sanderSpies), duration: Some(45)},
     {task: Talk(Speaker.javierChavarri), duration: Some(15)},
     {task: Talk(Speaker.glennSlotte), duration: Some(15)},
     {task: Talk(Speaker.lanceHarper), duration: Some(15)},
     {task: Talk(Speaker.maximValcke), duration: Some(15)},
-    {task: Break("30 min break"), duration: Some(30)},
+    {task: Break("Coffee  break"), duration: Some(30)},
     {task: Talk(Speaker.seanGrove), duration: Some(45)},
     {task: Talk(Speaker.vladimirKurchatkin), duration: Some(45)},
-    {task: Break("30 min break"), duration: Some(30)},
+    {task: Break("Coffee  break"), duration: Some(30)},
     {task: Talk(Speaker.jaredForsyth), duration: Some(45)},
     {task: Talk(Speaker.keiraHodgkison), duration: Some(45)},
     {task: OpenEnd("Open End / Party"), duration: None}

@@ -1,0 +1,76 @@
+@import "../layouts/variables.scss";
+
+$border: 1px dashed lighten($secondaryTextColor, 20);
+$padding: 25px 15px;
+
+.entries {
+  composes: global(grid);
+  composes: global(grid_6cols);
+  grid-row-gap: 0;
+}
+.entryTime {
+  composes: global(grid--1col);
+  position: relative;
+  margin: 0;
+  padding: $padding;
+  //border-right: $borderColor;
+  color: $secondaryTextColor;
+
+  &:not(:last-of-type)::after {
+    position: absolute;
+    right: -25px;
+    bottom: 0;
+    border-bottom: $border;
+    width: calc(100% + 25px);
+    height: 1px;
+    content: "";
+  }
+}
+.entryDescription {
+  //composes: global(grid);
+  //composes: global(grid_4cols);
+  composes: global(grid--5col);
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: $padding;
+  //color: $secondaryTextColor;
+  //font-weight: bold;
+  background-color: #fff;
+
+  &:not(:last-of-type)::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: $border;
+    width: 100%;
+    height: 1px;
+    content: "";
+  }
+}
+
+.talkDescription {
+  composes: entryDescription;
+  font-weight: normal;
+  color: $textColor;
+  background-color: desaturate(lighten($secondaryColor, 23), 10);
+}
+
+.talkDetails {
+  flex: 1 auto;
+  //order: 2;
+  h2 {
+    margin-top: 0;
+    font-size: 1em;
+  }
+}
+
+.speaker {
+  flex: 0 0 140px;
+  order: -1;
+  margin-right: 25px;
+  //composes: global(grid--1col);
+  //display: none;
+  //float: left;
+  //width: 140px;
+}
