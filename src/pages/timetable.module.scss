@@ -4,7 +4,7 @@ $border: 1px dashed lighten($secondaryTextColor, 20);
 $padding: 25px 15px;
 
 :root {
-  --padding: 10px;
+  --padding: 10px 20px;
 
   @media (min-width: 768px) {
     --padding: 15px;
@@ -15,6 +15,10 @@ $padding: 25px 15px;
   composes: global(grid);
   composes: global(grid_6cols);
   grid-row-gap: 0 !important;
+  margin: 0 -20px;
+  @media (min-width: 768px) {
+    margin: 0;
+  }
 }
 
 .entryTime {
@@ -25,6 +29,8 @@ $padding: 25px 15px;
   color: $secondaryTextColor;
 
   @media (min-width: 768px) {
+    padding-left: 0;
+
     &:not(:last-of-type)::after {
       position: absolute;
       right: -25px;
@@ -46,7 +52,6 @@ $padding: 25px 15px;
 
   @media (max-width: 480px) {
     padding-top: 0;
-    padding-bottom: calc(var(--padding) * 2);
   }
 
   &:not(:last-of-type)::after {
