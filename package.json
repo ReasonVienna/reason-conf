@@ -22,7 +22,8 @@
     "re:build": "bsb -make-world",
     "re:start": "bsb -make-world -w",
     "re:clean": "bsb -clean-world",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "export:speakers": "node ./scripts/speakers.js"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.4",
