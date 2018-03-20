@@ -2,6 +2,8 @@ open Util;
 
 [@bs.module] external style : Js.t({..}) = "./speakerDetails.module.scss";
 
+module Link = Gatsby.Link;
+
 let talkSlug = Data.Speaker.talkSlug;
 
 let component = ReasonReact.statelessComponent("SpeakerDetails");
@@ -22,7 +24,7 @@ let make = (~speaker: Data.Speaker.t, _children) => {
           | Some(t) =>
             <p>
               ("Talk: " |> s)
-              <a href=("/timetable/#" ++ talkSlug(t))> (t.title |> s) </a>
+              <Link to_=("/timetable/#" ++ talkSlug(t))> (t.title |> s) </Link>
             </p>
           | None => ReasonReact.nullElement
           }
