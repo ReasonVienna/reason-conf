@@ -2,9 +2,9 @@ open Util;
 
 module Link = Gatsby.Link;
 
-[@bs.module] external style : Js.t({..}) = "./timetable.module.scss";
+[@bs.module] external style : Js.t({..}) = "./schedule.module.scss";
 
-let component = ReasonReact.statelessComponent("Timetable");
+let component = ReasonReact.statelessComponent("Schedule");
 
 let toTimeStr = (~fromTime, ~toTime) => {
   let format = "HH:mm";
@@ -99,7 +99,7 @@ let make = _children => {
   ...component,
   render: _self =>
     <div>
-      <h1> ("Timetable" |> s) </h1>
+      <h1> ("Schedule" |> s) </h1>
       <h2> <time dateTime="2018-05-11"> ("11th May, Friday" |> s) </time> </h2>
       <main> ({js|
 Will be announced soon.

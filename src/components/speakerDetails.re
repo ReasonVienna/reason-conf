@@ -24,7 +24,7 @@ let make = (~speaker: Data.Speaker.t, _children) => {
           | Some(t) =>
             <p>
               ("Talk: " |> s)
-              <Link to_=("/timetable/#" ++ talkSlug(t))> (t.title |> s) </Link>
+              <Link to_=("/schedule/#" ++ talkSlug(t))> (t.title |> s) </Link>
             </p>
           | None => ReasonReact.nullElement
           }
