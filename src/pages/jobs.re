@@ -41,6 +41,7 @@ let renderJob = (i: string, {tier, company, jobAds}: Job.t) => {
       | Gold => "gold"
       | Catering => "catering"
       | LocalSupport => "localSupport"
+      | Partner => "partner"
       }
     );
   <div key=(i ++ "_" ++ company.href) className>
