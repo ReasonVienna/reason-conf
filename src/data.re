@@ -91,7 +91,7 @@ module Speaker = {
     talk: option(talk),
     social
   };
-  let createPlaceholder = (~company="?", ~talk=?, ~name="TBA", unit) => {
+  let createPlaceholder = (~company="?", ~talk=?, ~name="TBA", ()) => {
     name,
     company,
     imgUrl: speakerPlaceholder,
