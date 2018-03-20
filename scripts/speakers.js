@@ -7,7 +7,7 @@ const puppeteer = require("puppeteer");
   const elements = await page.$$(
     ".src-pages----speaker-module---teaser---1pAxE"
   );
-  const promises = elements.map(async (el, index) => {
+  const promises = elements.map(async el => {
     const clip = await el.boundingBox();
     const name = await page.evaluate(
       element => element.innerHTML,
@@ -19,8 +19,13 @@ const puppeteer = require("puppeteer");
       clip
     });
   });
-  Promise.all(promises).then(async () => {
-    console.log("All speakers screenshots exported!");
-    await browser.close();
-  });
+  Promise.all(promises)
+    .then(async () => {
+      console.log("All speakers screenshots exported!");
+      await browser.close();
+    })
+    .catch(async err => {
+      console.error(err)
+      await browser.close();
+    });
 })();
