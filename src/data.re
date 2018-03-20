@@ -195,10 +195,12 @@ cisgender and able-bodied.
 What if things were different? What if we could create spaces that are
 welcoming, where we show empathy and compassion? What if those
 qualities could reflect in our work, ultimately helping us create
-better software?  In this talk, you will hear stories of first-time
-contributions, successful examples in supporting and mentoring
-newcomers, and find out steps you can take as an Open Source
-contributor or maintainer to make your community more inclusive.
+better software?
+
+In this talk, you will hear stories of first-time contributions,
+successful examples in supporting and mentoring newcomers, and find
+out steps you can take as an Open Source contributor or maintainer to
+make your community more inclusive.
 |j}
       }),
     social: {
@@ -242,15 +244,21 @@ webassembly backend for OCaml / ReasonML.
       Some({
         title: {j|Building native Node.js addons in Reason|j},
         abstract: {j|
-Reason community is growing rapidly, and a lot of people are interested in leveraging it on their servers. One way to achieve this is to use native OCaml compiler. It produces exceptionally performant binaries, but the native ecosystem is scarce, and you will struggle with finding solutions for very common tasks.
+Reason community is growing rapidly, and a lot of people are
+interested in leveraging it on their servers. One way to achieve this
+is to use native OCaml compiler. It produces exceptionally performant
+binaries, but the native ecosystem is scarce, and you will struggle
+with finding solutions for very common tasks.
+
 Another option is to use BuckleScript and compile everything to
 JavaScript. You would regain access to the vast Node.js ecosystem but
-would have to sacrifice performance.  It seems that you have to choose
-either ecosystem or performance. In this talk, I will show how to
-preserve both by compiling Reason code to native Node.js addons. I
-will present a toolkit that makes it easy and fun, walk through its
-features and examples and talk a bit about its internals and advanced
-OCaml features used.
+would have to sacrifice performance. It seems that you have to choose
+either ecosystem or performance.
+
+In this talk, I will show how to preserve both by compiling Reason
+code to native Node.js addons. I will present a toolkit that makes it
+easy and fun, walk through its features and examples and talk a bit
+about its internals and advanced OCaml features used.
 |j}
       }),
     social: {
@@ -337,20 +345,24 @@ doing this thing called triathlon, sometimes simultaneously.
 Today every major language has some kind of library that helps a
 developer formatting his or her code. Tools like Prettier, Gofmt and
 Refmt are setting new standards and have a deep impact on our day to
-day programming. But what does it actually mean to format code? Does
-it mean pressing a magical button to align your code? Is it more than
-the automatic insertion of trailing commas your colleague always seems
-to forget? Why are we even doing it? How is it going to impact us as
-programmers to get better?
+day programming.
+
+But what does it actually mean to format code?  Does it mean pressing
+a magical button to align your code? Is it more than the automatic
+insertion of trailing commas your colleague always seems to forget?
+Why are we even doing it? How is it going to impact us as programmers
+to get better?
 
 "Code formatting" is an opaque ocean, we’ve done a really poor job
 at explaining what code formatting actually means in today’s
 world. The recent hype around code formatting tools defaults us into
 thinking that we can’t live without them anymore. We need to stop and
 ask why we’re using these tools. Is it really the best course of
-action? Based on my experience contributing to Reason over the past
-1.5 years, this lightning talk will be a short, critical deep dive in
-the past, present & future of our beloved Reason formatter Refmt.
+action?
+
+Based on my experience contributing to Reason over the past 1.5 years,
+this lightning talk will be a short, critical deep dive in the past,
+present & future of our beloved Reason formatter Refmt.
 |j}
       }),
     social: {
@@ -372,7 +384,7 @@ revenue. It's mostly been luck though, he continues to spend late nights staring
 |j},
     talk:
       Some({
-        title: {j|Having your cake and eating it too — End-to-end GraphQL in Reason|j},
+        title: {j|Having your cake and eating it too — GraphQL in Reason|j},
         abstract: {j|
 Traditionally, soundly typed-language are warm and cozy in their own
 world, but as soon as they have to deal with the outside world (say,
