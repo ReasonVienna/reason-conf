@@ -500,7 +500,7 @@ module Timetable = {
     {task: Break("Lunch"), duration: Some(90)},
     {task: Talk(Speaker.sanderSpies), duration: Some(45)},
     {task: Talk(Speaker.javierChavarri), duration: Some(15)},
-    {task: Talk(Speaker.glennSlotte), duration: Some(15)},
+    {task: Talk(Speaker.tbaSpeaker), duration: Some(15)},
     {task: Talk(Speaker.lanceHarper), duration: Some(15)},
     {task: Talk(Speaker.maximValcke), duration: Some(15)},
     {task: Break("Coffee  break"), duration: Some(30)},
