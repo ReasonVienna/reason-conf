@@ -99,8 +99,14 @@ let make = _children => {
   ...component,
   render: _self =>
     <div>
-      <h1> (s("Timetable")) </h1>
-      <h2> (s("Day 2")) </h2>
+      <h1> ("Timetable" |> s) </h1>
+      <h2> <time dateTime="2018-05-11"> ("11th May, Friday" |> s) </time> </h2>
+      <main> ({js|
+Will be announced soon.
+          |js} |> md) </main>
+      <h2>
+        <time dateTime="2018-05-12"> ("12th May, Saturday" |> s) </time>
+      </h2>
       <dl className=style##entries>
         (
           Data.Timetable.day2Timetable
@@ -109,6 +115,10 @@ let make = _children => {
           |> ReasonReact.arrayToElement
         )
       </dl>
+      <h2> <time dateTime="2018-05-13"> ("13th May, Sunday" |> s) </time> </h2>
+      <main> ({js|
+Will be announced soon.
+          |js} |> md) </main>
     </div>
 };
 
