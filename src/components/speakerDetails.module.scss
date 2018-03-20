@@ -1,17 +1,21 @@
 @import "../layouts/variables.scss";
 
 .root {
-  margin: 2rem 0;
-  @media (min-width: 768px) {
-    display: grid;
-    grid-gap: 25px;
-    grid-template-columns: repeat(6, 1fr);
+  composes: global(grid);
+  composes: global(grid_6cols);
+  margin: 2em 0;
+}
+
+.speakerCard {
+  composes: global(grid--1col);
+
+  figcaption {
+    display: none;
   }
 }
 
 .description {
-  grid-column: 2 / span 4;
-  margin-top: 1rem;
+  composes: global(grid--4col);
 }
 
 .figure {
@@ -28,10 +32,10 @@
 
 .name {
   margin: 0;
-  font-size: large;
+  font-size: x-large;
 }
 
 .company {
   margin: 0;
-  color: lighten($textColor, 40);
+  color: $secondaryTextColor;
 }

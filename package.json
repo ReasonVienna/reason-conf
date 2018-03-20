@@ -3,7 +3,9 @@
   "description": "ReasonConf 2018",
   "version": "1.0.0",
   "dependencies": {
+    "bs-date-fns": "^0.1.4",
     "eases": "^1.0.8",
+    "github-slugger": "^1.2.0",
     "lodash.clonedeep": "^4.5.0",
     "marked": "^0.3.12",
     "normalize.css": "^7.0.0",
@@ -21,7 +23,8 @@
     "re:build": "bsb -make-world",
     "re:start": "bsb -make-world -w",
     "re:clean": "bsb -clean-world",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "export:speakers": "node ./scripts/speakers.js"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.4",
@@ -33,7 +36,8 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
-    "prettier": "^1.8.2"
+    "prettier": "^1.8.2",
+    "puppeteer": "^1.2.0"
   },
   "lint-staged": {
     "*.re": ["refmt --in-place", "git add"],

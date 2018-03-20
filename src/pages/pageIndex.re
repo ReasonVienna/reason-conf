@@ -17,7 +17,13 @@ module Link = Gatsby.Link;
 
 let speakerColumn = (speaker: Data.Speaker.t) =>
   <li className="speaker-list--item" key=speaker.name>
-    <SpeakerCard speaker />
+    <Link
+      to_=(
+        "/speakers/#"
+        ++ Js.Option.getWithDefault("", speaker.social.githubUser)
+      )>
+      <SpeakerCard speaker />
+    </Link>
   </li>;
 
 let sponsorLogo = (sponsor: Partners.sponsorT) => {
@@ -197,22 +203,23 @@ let make = _children => {
       <section className="speakers">
         <div className="container_centered">
           <h2> ("Speakers" |> s) </h2>
-          <ul className="speaker-list">
-            (
-              Data.Speaker.headlineSpeakers
-              |> Array.map(speakerColumn)
-              |> ReasonReact.arrayToElement
-            )
-          </ul>
-          <p className="extraText"> ("...and many more to come." |> s) </p>
-          <p>
-            (
-              {j|The Call for Paper has
-              ended on the 6th of March and we are currently assembling
-              the final schedule. Stay tuned! |j}
-              |> s
-            )
-          </p>
+          <ParallaxScroll
+            from="top-bottom"
+            to_="bottom-top"
+            props={
+              "--speakers-ty": {
+                "from": "100px",
+                "to": "-100px"
+              }
+            }>
+            ...<ul className="speaker-list">
+                 (
+                   Data.Speaker.speakers
+                   |> Array.map(speakerColumn)
+                   |> ReasonReact.arrayToElement
+                 )
+               </ul>
+          </ParallaxScroll>
         </div>
       </section>
       <section className="tickets">

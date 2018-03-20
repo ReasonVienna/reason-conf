@@ -91,6 +91,7 @@ module Speaker = {
     talk: option(talk),
     social
   };
+  let talkSlug = ({title}: talk) => GithubSlugger.slug(title);
   let createPlaceholder = (~company="?", ~talk=?, ~name="TBA", ()) => {
     name,
     company,
@@ -108,7 +109,7 @@ module Speaker = {
     company: "Facebook",
     imgUrl: chengLouImg,
     description: {j|I work on Reason and Facebook Messenger|j},
-    talk: None,
+    talk: Some({title: "Keynote", abstract: ""}),
     social: {
       githubUser: Some("chenglou"),
       twitterUser: Some("_chenglou"),
@@ -119,27 +120,26 @@ module Speaker = {
     name: "Keira Hodgkison",
     company: "Culture Amp",
     imgUrl: keiraHodgkisonImg,
-    /* TODO: CHECK BACK WITH KEIRA TO UPDATE THE DESCRIPTION */
     description: {j|
-       Keira is a developer at Culture Amp, the world's
-       leading culture analytics platform. She works with React, Flow,
-       and Rails on solutions to help customers share, and act upon
-       company employee engagement data. Keira is an advocate for using
-       functional programming techniques to improve the JavaScript
-       coding and refactoring experience. When she's not writing code,
-       she can be found under a large cat.
+Keira is a developer at Culture Amp, the world's
+leading culture analytics platform. She works with React, Flow,
+and Rails on solutions to help customers share, and act upon
+company employee engagement data. Keira is an advocate for using
+functional programming techniques to improve the JavaScript
+coding and refactoring experience. When she's not writing code,
+she can be found under a large cat.
        |j},
     talk:
       Some({
-        title: {j|What's not to love about Reason?|j},
+        title: {j|What’s not to love about Reason?|j},
         abstract: {j|
-       Even though Reason looks like JavaScript with a few
-       additional functional features and semantics, it's sometimes
-       easy to forget that it's a completely different language,
-       with different problems.
+Even though Reason looks like JavaScript with a few
+additional functional features and semantics, it's sometimes
+easy to forget that it's a completely different language,
+with different problems.
 
-       This talk looks at life on the bleeding edge, as experienced by a
-       not-so-functional programmer.
+This talk looks at life on the bleeding edge, as experienced by a
+not-so-functional programmer.
        |j}
       }),
     social: {
@@ -153,10 +153,10 @@ module Speaker = {
     company: "Facebook",
     imgUrl: cristianoCalcagnoImg,
     description: {j|
-       Engineer at Facebook.
-       Co-creator of @fbinfer, founder of Monoidics, reformed academic.
-       Into developer experience, front-end, static analysis, language design.
-       Early @reasonml adopter, co-creator of ReasonReact.
+Engineer at Facebook.
+Co-creator of @fbinfer, founder of Monoidics, reformed academic.
+Into developer experience, front-end, static analysis, language design.
+Early @reasonml adopter, co-creator of ReasonReact.
        |j},
     talk: Some({title: "ReasonReact and local state", abstract: "TBA"}),
     social: {
@@ -219,7 +219,7 @@ contributor or maintainer to make your community more inclusive.
       Reason like JSX. Reason fan since day one.|j},
     talk:
       Some({
-        title: "Down the WebAssembly rabbit hole",
+        title: {j|Down the WebAssembly rabbit hole|j},
         abstract: {j|
 In this talk we go beyond syntax and look at an experimental
 webassembly backend for OCaml / ReasonML.
@@ -238,7 +238,7 @@ webassembly backend for OCaml / ReasonML.
     imgUrl: vladimirKurchatkinImg,
     talk:
       Some({
-        title: "Building native Node.js addons in Reason",
+        title: {j|Building native Node.js addons in Reason|j},
         abstract: {j|
 Reason community is growing rapidly, and a lot of people are interested in leveraging it on their servers. One way to achieve this is to use native OCaml compiler. It produces exceptionally performant binaries, but the native ecosystem is scarce, and you will struggle with finding solutions for very common tasks.
 Another option is to use BuckleScript and compile everything to
@@ -268,7 +268,7 @@ Excited about what will happen when Reason and BuckleScript keep removing bounda
     imgUrl: javierChavarriImg,
     talk:
       Some({
-        title: "State of the Reason Editor integration",
+        title: {j|State of the Reason Editor integration|j},
         abstract: {j|
 We will review the current state of the IDE tooling for Reason:
 - Editors (and OSs) supported
@@ -293,7 +293,7 @@ in the Reason community. He contributed essential bindings for the
 Reason and BuckleScript ecosystem (bs-jest, bs-fetch, bs-json,...) and he
 is also the creator of redex.github.io.
 |j},
-    talk: None,
+    talk: Some({title: "TBA", abstract: "TBA"}),
     social: {
       githubUser: Some("glennsl"),
       twitterUser: None,
@@ -330,9 +330,9 @@ doing this thing called triathlon, sometimes simultaneously.
        |j},
     talk:
       Some({
-        title: "Practical Interpretation of Code Formatting",
+        title: {j|Practical Interpretation of Code Formatting|j},
         abstract: {j|
-"Today every major language has some kind of library that helps a
+Today every major language has some kind of library that helps a
 developer formatting his or her code. Tools like Prettier, Gofmt and
 Refmt are setting new standards and have a deep impact on our day to
 day programming. But what does it actually mean to format code? Does
@@ -341,14 +341,14 @@ the automatic insertion of trailing commas your colleague always seems
 to forget? Why are we even doing it? How is it going to impact us as
 programmers to get better?
 
-""Code formatting"" is an opaque ocean, we’ve done a really poor job
+"Code formatting" is an opaque ocean, we’ve done a really poor job
 at explaining what code formatting actually means in today’s
 world. The recent hype around code formatting tools defaults us into
 thinking that we can’t live without them anymore. We need to stop and
 ask why we’re using these tools. Is it really the best course of
 action? Based on my experience contributing to Reason over the past
 1.5 years, this lightning talk will be a short, critical deep dive in
-the past, present & future of our beloved Reason formatter Refmt. "
+the past, present & future of our beloved Reason formatter Refmt.
 |j}
       }),
     social: {
@@ -370,7 +370,7 @@ revenue. It's mostly been luck though, he continues to spend late nights staring
 |j},
     talk:
       Some({
-        title: "Having your cake and eating it too - End-to-end GraphQL in Reason",
+        title: {j|Having your cake and eating it too — End-to-end GraphQL in Reason|j},
         abstract: {j|
 Traditionally, soundly typed-language are warm and cozy in their own
 world, but as soon as they have to deal with the outside world (say,
@@ -419,7 +419,7 @@ experience of programming for everyone.
 |j},
     talk:
       Some({
-        title: "Why We're Afraid of Change",
+        title: {j|Why We’re Afraid of Change|j},
         abstract: {j|
 Would you rather have a community like npm, where there are hundreds
 of thousands of packages, but very few feel stable, or one like opam,
@@ -429,7 +429,7 @@ between security and freedom, safety and agility? Can we design a
 system that gives us both?
 
 Come learn about how tools, language features, and community
-structures all impact the ""feel"" of a developer community, and what
+structures all impact the "feel" of a developer community, and what
 tricks Reason could borrow from other communities to ensure that we
 can have freedom to publish without fearing change.
 |j}
@@ -465,50 +465,99 @@ can have freedom to publish without fearing change.
   let speakers: array(t) = Array.concat([headlineSpeakers, otherSpeakers]);
 };
 
-module Schedule = {
-  type timeslot = string;
-  type lecture = {
-    timeslot,
-    speaker: Speaker.t
+module Timetable = {
+  type task =
+    | Talk(Speaker.t)
+    | Misc(string)
+    | Break(string)
+    | OpenEnd(string);
+  type step = {
+    task,
+    duration: option(int)
   };
-  type misc = {
-    timeslot,
-    description: string
+  type entry = {
+    task,
+    fromTime: Js.Date.t,
+    toTime: option(Js.Date.t),
+    duration: option(int)
   };
-  type lightningTalks = {
-    timeslot,
-    speakers: array(Speaker.t)
+  let addDuration = (time, duration) =>
+    switch duration {
+    | Some(d) => DateFns.addMinutes(float_of_int(d), time)
+    | None => time
+    };
+  let startEntry = {
+    let day2Start = Js.Date.fromString("2018-05-12T09:00:00.000+02:00");
+    let duration = Some(60);
+    let fromTime = day2Start;
+    let toTime = Some(addDuration(day2Start, duration));
+    {task: Misc("Doors open & Registration"), fromTime, toTime, duration};
   };
-  type t =
-    | Talk(lecture)
-    | Misc(misc)
-    | Break(misc)
-    | LightningTalks(lightningTalks);
-  let schedule: array(t) = [|
-    Misc({timeslot: "09:00", description: "Doors open & Registration"}),
-    Talk({timeslot: "10:00", speaker: Speaker.chengLou}),
-    Break({timeslot: "10:45", description: "30 min break"}),
-    Talk({timeslot: "11:15", speaker: Speaker.cristianoCalcagno}),
-    Talk({timeslot: "12:00", speaker: Speaker.lauraGaetano}),
-    Break({timeslot: "12:45", description: "1.5 hour lunch break"}),
-    Talk({timeslot: "13:15", speaker: Speaker.sanderSpies}),
-    LightningTalks({
-      timeslot: "14:00",
-      speakers: [|
-        Speaker.javierChavarri,
-        Speaker.glennSlotte,
-        Speaker.lanceHarper,
-        Speaker.maximValcke
-      |]
-    }),
-    Break({timeslot: "15:00", description: "30 min break"}),
-    Talk({timeslot: "15:30", speaker: Speaker.seanGrove}),
-    Talk({timeslot: "16:15", speaker: Speaker.vladimirKurchatkin}),
-    Break({timeslot: "17:00", description: "30 min break"}),
-    Talk({timeslot: "17:45", speaker: Speaker.jaredForsyth}),
-    Talk({timeslot: "18:30", speaker: Speaker.keiraHodgkison}),
-    Misc({timeslot: "19:15", description: "Open End / Party"})
-  |];
+  let steps = [
+    {task: Talk(Speaker.chengLou), duration: Some(45)},
+    {task: Break("Coffee break"), duration: Some(30)},
+    {task: Talk(Speaker.cristianoCalcagno), duration: Some(45)},
+    {task: Talk(Speaker.lauraGaetano), duration: Some(45)},
+    {task: Break("Lunch"), duration: Some(90)},
+    {task: Talk(Speaker.sanderSpies), duration: Some(45)},
+    {task: Talk(Speaker.javierChavarri), duration: Some(15)},
+    {task: Talk(Speaker.tbaSpeaker), duration: Some(15)},
+    {task: Talk(Speaker.lanceHarper), duration: Some(15)},
+    {task: Talk(Speaker.maximValcke), duration: Some(15)},
+    {task: Break("Coffee  break"), duration: Some(30)},
+    {task: Talk(Speaker.seanGrove), duration: Some(45)},
+    {task: Talk(Speaker.vladimirKurchatkin), duration: Some(45)},
+    {task: Break("Coffee  break"), duration: Some(30)},
+    {task: Talk(Speaker.jaredForsyth), duration: Some(45)},
+    {task: Talk(Speaker.keiraHodgkison), duration: Some(45)},
+    {task: OpenEnd("Open End / Party"), duration: None}
+  ];
+  let calcStep = (pre: entry, step: step) : entry => {
+    let fromTime = addDuration(pre.fromTime, pre.duration);
+    let toTime =
+      switch step.duration {
+      | None => None
+      | Some(_) => Some(addDuration(fromTime, step.duration))
+      };
+    {task: step.task, duration: step.duration, fromTime, toTime};
+  };
+  let rec calcTimetable = (pre: entry, steps: list(step)) : list(entry) =>
+    switch steps {
+    | [s, ...rest] =>
+      let next = calcStep(pre, s);
+      [next, ...calcTimetable(next, rest)];
+    | [] => []
+    };
+  /* This is just for debugging a table,.. also a good inspiration
+     on how to interpret table data */
+  let logTimetable = (table: list(entry)) : unit =>
+    List.iter(
+      (r: entry) => {
+        let task =
+          switch r.task {
+          | Talk(speaker) => speaker.name
+          | Misc(msg) => msg
+          | Break(msg) => msg
+          | OpenEnd(msg) => msg
+          };
+        let fromTime = DateFns.format("DD.MM, HH:mm", r.fromTime);
+        let duration =
+          switch r.duration {
+          | Some(d) => {j| ($d min)|j}
+          | None => ""
+          };
+        let timeRange =
+          switch r.toTime {
+          | Some(time) =>
+            let toTime = DateFns.format("HH:mm", time);
+            {j|$fromTime - $toTime$duration|j};
+          | None => fromTime
+          };
+        Js.log3(task, " ", timeRange);
+      },
+      table
+    );
+  let day2Timetable = [startEntry, ...calcTimetable(startEntry, steps)];
 };
 
 module Tier = {

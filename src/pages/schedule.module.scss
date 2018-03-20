@@ -1,0 +1,87 @@
+@import "../layouts/variables.scss";
+
+$border: 1px dashed lighten($secondaryTextColor, 20);
+$padding: 25px 15px;
+
+:root {
+  --padding: 10px 20px;
+
+  @media (min-width: 768px) {
+    --padding: 15px;
+  }
+}
+
+.entries {
+  composes: global(grid);
+  composes: global(grid_6cols);
+  grid-row-gap: 0 !important;
+  margin: 0 -20px;
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.entryTime {
+  composes: global(grid--1col);
+  position: relative;
+  margin: 0;
+  padding: var(--padding);
+  color: $secondaryTextColor;
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+
+    &:not(:last-of-type)::after {
+      position: absolute;
+      right: -25px;
+      bottom: 0;
+      border-bottom: $border;
+      width: calc(100% + 25px);
+      height: 1px;
+      content: "";
+    }
+  }
+}
+
+.entryDescription {
+  composes: global(grid--5col);
+  position: relative;
+  margin: 0;
+  padding: var(--padding);
+  background-color: #fff;
+
+  @media (max-width: 480px) {
+    padding-top: 0;
+  }
+
+  &:not(:last-of-type)::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: $border;
+    width: 100%;
+    height: 1px;
+    content: "";
+  }
+}
+
+@media (max-width: 480px) {
+  .talkTime {
+    composes: entryTime;
+    background-color: desaturate(lighten($secondaryColor, 23), 10);
+  }
+}
+
+.talkDescription {
+  composes: entryDescription;
+  font-weight: normal;
+  color: $textColor;
+  background-color: desaturate(lighten($secondaryColor, 23), 10);
+}
+
+.talkDetails {
+  :global(.markdown-container) > h2 {
+    margin-top: 0.65em;
+    font-size: 1.25em;
+  }
+}
