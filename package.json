@@ -34,7 +34,8 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
-    "prettier": "^1.8.2"
+    "prettier": "^1.8.2",
+    "puppeteer": "^1.2.0"
   },
   "lint-staged": {
     "*.re": ["refmt --in-place", "git add"],
