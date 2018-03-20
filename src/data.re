@@ -508,7 +508,8 @@ module Tier = {
   type tier =
     | Gold
     | Catering
-    | LocalSupport;
+    | LocalSupport
+    | Partner;
   type t = {
     id: string,
     name: string,
