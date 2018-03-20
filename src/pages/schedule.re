@@ -62,11 +62,7 @@ let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
         | Some(talk) =>
           let id = Data.Speaker.talkSlug(talk);
           <section className=style##talkDetails id>
-            <Link
-              to_=(
-                "/speakers/#"
-                ++ Js.Option.getWithDefault("", speaker.social.githubUser)
-              )>
+            <Link to_=("/speakers/#" ++ Data.Speaker.speakerAnchor(speaker))>
               <SpeakerCard speaker compact=true />
             </Link>
             (titleAndAbstractToMdString(talk) |> md)

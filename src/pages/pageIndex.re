@@ -17,11 +17,7 @@ module Link = Gatsby.Link;
 
 let speakerColumn = (speaker: Data.Speaker.t) =>
   <li className="speaker-list--item" key=speaker.name>
-    <Link
-      to_=(
-        "/speakers/#"
-        ++ Js.Option.getWithDefault("", speaker.social.githubUser)
-      )>
+    <Link to_=("/speakers/#" ++ Data.Speaker.speakerAnchor(speaker))>
       <SpeakerCard speaker />
     </Link>
   </li>;

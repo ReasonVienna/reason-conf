@@ -1,24 +1,25 @@
-<svg width="120" height="120" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>Speaker Placeholder</title>
-<desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(329 1094)">
-<clipPath id="clip-0" clip-rule="evenodd">
-<path d="M -2553 -4342L 6778 -4342L 6778 -939L -2553 -939L -2553 -4342Z" fill="#FFFFFF"/>
-</clipPath>
-<g id="Moodboard" clip-path="url(#clip-0)">
-<path d="M -2553 -4342L 6778 -4342L 6778 -939L -2553 -939L -2553 -4342Z" fill="#FFFFFF"/>
-<g id="Speaker Placeholder">
-<g id="Vector">
-<use xlink:href="#path0_fill" transform="translate(-329 -1094)" fill="#DD4B39"/>
-</g>
-<g id="?">
-<use xlink:href="#path1_fill" transform="translate(-272.63 -1047.26)" fill="#FFFFFF"/>
-</g>
-</g>
-</g>
-</g>
-<defs>
-<path id="path0_fill" d="M 120 0L 0 0L 0 120L 120 120L 120 0Z"/>
-<path id="path1_fill" d="M 19.71 41.31C 19.71 38.31 20.37 35.85 21.69 33.93C 23.01 31.95 24.93 29.79 27.45 27.45C 29.19 25.83 30.48 24.48 31.32 23.4C 32.16 22.26 32.58 21.06 32.58 19.8C 32.58 18.06 31.83 16.68 30.33 15.66C 28.89 14.58 27 14.04 24.66 14.04C 22.26 14.04 20.07 14.61 18.09 15.75C 16.17 16.89 14.61 18.48 13.41 20.52L 0 13.32C 2.46 9.12 5.94 5.85 10.44 3.51C 14.94 1.17 20.37 0 26.73 0C 33.87 0 39.6 1.5 43.92 4.5C 48.3 7.44 50.49 11.58 50.49 16.92C 50.49 19.38 50.07 21.57 49.23 23.49C 48.39 25.35 47.37 26.94 46.17 28.26C 45.03 29.52 43.53 30.96 41.67 32.58C 39.63 34.32 38.13 35.82 37.17 37.08C 36.21 38.28 35.73 39.69 35.73 41.31L 19.71 41.31ZM 27.72 65.07C 24.78 65.07 22.35 64.17 20.43 62.37C 18.51 60.51 17.55 58.26 17.55 55.62C 17.55 52.92 18.48 50.7 20.34 48.96C 22.26 47.22 24.72 46.35 27.72 46.35C 30.72 46.35 33.18 47.22 35.1 48.96C 37.02 50.7 37.98 52.92 37.98 55.62C 37.98 58.26 37.02 60.51 35.1 62.37C 33.18 64.17 30.72 65.07 27.72 65.07Z"/>
-</defs>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Speaker Placeholder</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="speaker-placeholder" transform="translate(-2329.000000, -2757.000000)" fill-rule="nonzero">
+            <g id="Moodboard">
+                <g id="Speaker-Placeholder" transform="translate(2329.000000, 2757.000000)">
+                    <g id="Vector" fill="#DD4B39">
+                        <g id="path0_fill-link">
+                            <polygon id="path0_fill" points="400 0 0 0 0 400 400 400"></polygon>
+                        </g>
+                    </g>
+                    <g id="?" transform="translate(186.666667, 153.333333)" fill="#FFFFFF">
+                        <g id="path1_fill-link" transform="translate(1.233333, 2.466667)">
+                            <path d="M65.7,137.7 C65.7,127.7 67.9,119.5 72.3,113.1 C76.7,106.5 83.1,99.3 91.5,91.5 C97.3,86.1 101.6,81.6 104.4,78 C107.2,74.2 108.6,70.2 108.6,66 C108.6,60.2 106.1,55.6 101.1,52.2 C96.3,48.6 90,46.8 82.2,46.8 C74.2,46.8 66.9,48.7 60.3,52.5 C53.9,56.3 48.7,61.6 44.7,68.4 L0,44.4 C8.2,30.4 19.8,19.5 34.8,11.7 C49.8,3.9 67.9,0 89.1,0 C112.9,0 132,5 146.4,15 C161,24.8 168.3,38.6 168.3,56.4 C168.3,64.6 166.9,71.9 164.1,78.3 C161.3,84.5 157.9,89.8 153.9,94.2 C150.1,98.4 145.1,103.2 138.9,108.6 C132.1,114.4 127.1,119.4 123.9,123.6 C120.7,127.6 119.1,132.3 119.1,137.7 L65.7,137.7 Z M92.4,216.9 C82.6,216.9 74.5,213.9 68.1,207.9 C61.7,201.7 58.5,194.2 58.5,185.4 C58.5,176.4 61.6,169 67.8,163.2 C74.2,157.4 82.4,154.5 92.4,154.5 C102.4,154.5 110.6,157.4 117,163.2 C123.4,169 126.6,176.4 126.6,185.4 C126.6,194.2 123.4,201.7 117,207.9 C110.6,213.9 102.4,216.9 92.4,216.9 Z" id="path1_fill"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>
