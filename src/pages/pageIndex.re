@@ -9,8 +9,6 @@ external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
 
 [@bs.module] external agentLogo : string = "../assets/agent-logo.svg";
 
-[@bs.module] external accentureLogo : string = "../assets/accenture-logo.svg";
-
 let component = ReasonReact.statelessComponent("Home");
 
 module Tickets = Tito.Tickets;
