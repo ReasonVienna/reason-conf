@@ -2,8 +2,6 @@ open Util;
 
 module Job = Data.Job;
 
-[@bs.module] external style : Js.t({..}) = "./jobs.module.scss";
-
 let component = ReasonReact.statelessComponent("Jobs");
 
 let renderLocation = (ad: Job.jobAd) =>
@@ -37,11 +35,14 @@ let renderJobAds = (key: string, ads: array(Job.jobAd)) =>
 
 let renderJob = (i: string, {tier, company, jobAds}: Job.t) => {
   let className =
-    switch tier {
-    | Gold => style##gold
-    | Catering => style##catering
-    | LocalSupport => style##localSupport
-    };
+    "job "
+    ++ (
+      switch tier {
+      | Gold => "gold"
+      | Catering => "catering"
+      | LocalSupport => "localSupport"
+      }
+    );
   <div key=(i ++ "_" ++ company.href) className>
     <a href=company.href>
       (

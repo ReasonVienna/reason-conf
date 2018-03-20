@@ -18,42 +18,66 @@ external scriptConfLogo : string = "./assets/partners/script-conf.svg";
 [@bs.module]
 external impactHubLogo : string = "./assets/partners/impacthub-logo.png";
 
-type partnerT = {
+[@bs.module]
+external accentureLogo : string = "./assets/partners/accenture-logo.svg";
+
+type sponsorT = {
   name: string,
   logoUrl: string,
-  href: string
+  href: string,
+  tier: Data.Tier.tier
 };
+
+let sponsors = [|
+  {
+    name: "Accenture",
+    logoUrl: accentureLogo,
+    href: "https://www.accenture.com",
+    tier: Gold
+  }
+|];
 
 let partners = [|
   {
     name: "Impact Hub",
     logoUrl: impactHubLogo,
-    href: "https://vienna.impacthub.net"
+    href: "https://vienna.impacthub.net",
+    tier: Partner
   },
-  {name: "Agent Conf", logoUrl: agentLogo, href: "https://www.agent.sh/"},
+  {
+    name: "Agent Conf",
+    logoUrl: agentLogo,
+    href: "https://www.agent.sh/",
+    tier: Partner
+  },
   {
     name: "React Amsterdam",
     logoUrl: reactAmsterdamLogo,
-    href: "https://react.amsterdam"
+    href: "https://react.amsterdam",
+    tier: Partner
   },
   {
     name: "React Finland",
     logoUrl: reactFinlandLogo,
-    href: "https://react-finland.fi"
+    href: "https://react-finland.fi",
+    tier: Partner
   },
   {
     name: "React Vienna",
     logoUrl: reactViennaLogo,
-    href: "https://www.meetup.com/ReactVienna/"
+    href: "https://www.meetup.com/ReactVienna/",
+    tier: Partner
   },
   {
     name: "ReasonVienna",
     logoUrl: reasonviennaLogo,
-    href: "https://www.meetup.com/ReasonVienna/"
+    href: "https://www.meetup.com/ReasonVienna/",
+    tier: Partner
   },
   {
     name: "Script Conf",
     logoUrl: scriptConfLogo,
-    href: "https://scriptconf.org"
+    href: "https://scriptconf.org",
+    tier: Partner
   }
 |];

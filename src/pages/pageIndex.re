@@ -26,12 +26,30 @@ let speakerColumn = (speaker: Data.Speaker.t) =>
     </Link>
   </li>;
 
-let partnerCard = (partner: Partners.partnerT) =>
-  <li className="partners--listItem" key=partner.name>
-    <a href=partner.href className="partners--logo" title=partner.name>
-      <img src=partner.logoUrl alt=partner.name />
-    </a>
+let sponsorLogo = (sponsor: Partners.sponsorT) => {
+  let className =
+    switch sponsor.tier {
+    | Gold => "partners--listItem_gold"
+    | Catering => "partners--listItem_catering"
+    | LocalSupport => "partners--listItem_local"
+    | Partner => "partners--listItem_partner"
+    };
+  let title =
+    switch sponsor.tier {
+    | Gold => "Gold Sponsor"
+    | Catering => "Food & Drinks"
+    | LocalSupport => "Local Supporter"
+    | Partner => "Partner"
+    };
+  <li className=("partners--listItem " ++ className) key=sponsor.name>
+    <figure className="partners--figure">
+      <a href=sponsor.href title=sponsor.name target="_blank">
+        <img src=sponsor.logoUrl alt=sponsor.name className="partners--logo" />
+      </a>
+      <figcaption className="partners--caption"> (title |> s) </figcaption>
+    </figure>
   </li>;
+};
 
 let make = _children => {
   ...component,
@@ -226,20 +244,22 @@ let make = _children => {
       </section>
       <section className="sponsors">
         <div className="container_centered">
-          <h2> ("Sponsors" |> s) </h2>
+          <h2> ("Sponsors & Partners" |> s) </h2>
           <p className="extraText">
             ("Do you want to help us make a better conference? " |> s)
             <Link to_="/sponsors"> ("Become a sponsor!" |> s) </Link>
           </p>
-        </div>
-      </section>
-      <section className="sponsors">
-        <div className="container_centered">
-          <h2> ("Partners" |> s) </h2>
+          <ul className="partners">
+            (
+              Partners.sponsors
+              |> Array.map(sponsorLogo)
+              |> ReasonReact.arrayToElement
+            )
+          </ul>
           <ul className="partners">
             (
               Partners.partners
-              |> Array.map(partnerCard)
+              |> Array.map(sponsorLogo)
               |> ReasonReact.arrayToElement
             )
           </ul>
