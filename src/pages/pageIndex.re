@@ -9,6 +9,8 @@ external reasonViennaLogo : string = "../assets/reasonvienna-logo.svg";
 
 [@bs.module] external agentLogo : string = "../assets/agent-logo.svg";
 
+[@bs.module] external accentureLogo : string = "../assets/accenture-logo.svg";
+
 let component = ReasonReact.statelessComponent("Home");
 
 module Tickets = Tito.Tickets;
@@ -219,7 +221,8 @@ let make = _children => {
       </section>
       <section className="sponsors">
         <div className="container_centered">
-          <h2> ("Sponsors" |> s) </h2>
+          <h2> ("Gold Sponsors" |> s) </h2>
+          <p> <img src=accentureLogo className="accentureLogo" /> </p>
           <p className="extraText">
             ("Do you want to help us make a better conference? " |> s)
             <Link to_="/sponsors"> ("Become a sponsor!" |> s) </Link>

@@ -29,8 +29,7 @@ world:
   received **143,581** impressions, **400** likes, and attracted
   **361** followers
 - We get support by leading Reason contributors as speakers and mentors
-- Also we'll welcome special guests from OCaml Labs and Cambridge
-  University to talk about OCaml
+- We invited guests from the OCaml industry, such as Facebook, Bloomberg, JaneStreet & OCaml Labs
 - Our Early Bird Tickets were **sold out in just two days**
 
 ReasonConf is a **not-for-profit** conference. [The goal of the
