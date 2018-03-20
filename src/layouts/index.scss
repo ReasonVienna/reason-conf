@@ -341,22 +341,52 @@ article {
   justify-content: space-around;
   list-style: none;
 
+  a {
+    display: block;
+    background: none !important;
+  }
+
   &--listItem {
     flex: 1 1 auto;
-    max-width: 200px;
-    margin: 10px;
+    max-width: 120px;
+    margin-right: 10px;
     padding: 0;
+    text-align: center;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &--figure {
+    margin: 0;
   }
 
   &--logo {
     display: block;
-    text-align: center;
-    background: none !important;
+    margin-bottom: 0.75em;
+    width: 100%;
+  }
 
-    img {
-      display: inline-block;
-      height: 80px;
+  &--listItem_partner {
+    max-width: 120px;
+
+    .partners--logo {
+      max-height: 50px;
     }
+  }
+
+  &--listItem_gold {
+    min-width: 300px;
+
+    .partners--logo {
+      max-height: 100px;
+    }
+  }
+
+  &--caption {
+    font-size: small;
+    color: lighten($textColor, 50);
   }
 }
 
