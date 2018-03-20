@@ -1,14 +1,12 @@
 open Util;
 
-open Data;
-
 module Link = Gatsby.Link;
 
 [@bs.module] external style : Js.t({..}) = "./timetable.module.scss";
 
 let component = ReasonReact.statelessComponent("Timetable");
 
-let toTimeStr = (fromTime, ~toTime) => {
+let toTimeStr = (~fromTime, ~toTime) => {
   let format = "HH:mm";
   switch toTime {
   | Some(toTime) =>
@@ -19,7 +17,7 @@ let toTimeStr = (fromTime, ~toTime) => {
   };
 };
 
-let toDurationStr = (fromTime, ~toTime) => {
+let toDurationStr = (~fromTime, ~toTime) => {
   let format = "YYYY-MM-DDTHH:mm:ss.SSSZ";
   switch toTime {
   | Some(toTime) =>
@@ -34,11 +32,11 @@ let titleAndAbstractToMdString = ({title, abstract}: Data.Speaker.talk) => {j|
 $abstract
 |j};
 
-let miscRow = (~fromTime, ~toTime, ~duration, description) =>
+let miscRow = (~fromTime, ~toTime, description) =>
   ReasonReact.arrayToElement([|
     <dt className=style##entryTime>
-      <time dateTime=(toDurationStr(fromTime, toTime))>
-        (toTimeStr(fromTime, toTime) |> s)
+      <time dateTime=(toDurationStr(~fromTime, ~toTime))>
+        (toTimeStr(~fromTime, ~toTime) |> s)
       </time>
     </dt>,
     <dd className=style##entryDescription> (description |> s) </dd>
@@ -51,11 +49,11 @@ let miscRow = (~fromTime, ~toTime, ~duration, description) =>
  */
 let breakRow = miscRow;
 
-let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
+let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
   ReasonReact.arrayToElement([|
     <dt className=style##talkTime>
-      <time dateTime=(toDurationStr(fromTime, toTime))>
-        (toTimeStr(fromTime, toTime) |> s)
+      <time dateTime=(toDurationStr(~fromTime, ~toTime))>
+        (toTimeStr(~fromTime, ~toTime) |> s)
       </time>
     </dt>,
     <dd className=style##talkDescription>
@@ -81,18 +79,18 @@ let talkRow = (~fromTime, ~toTime, ~duration, speaker: Data.Speaker.t) =>
 let openEndRow = (~fromTime, description) =>
   ReasonReact.arrayToElement([|
     <dt className=style##entryTime>
-      <time dateTime=(toDurationStr(fromTime, None))>
-        (toTimeStr(fromTime, None) |> s)
+      <time dateTime=(toDurationStr(~fromTime, ~toTime=None))>
+        (toTimeStr(~fromTime, ~toTime=None) |> s)
       </time>
     </dt>,
     <dd className=style##entryDescription> (description |> s) </dd>
   |]);
 
-let createRow = ({task, fromTime, toTime, duration}: Data.Timetable.entry) =>
+let createRow = ({task, fromTime, toTime}: Data.Timetable.entry) =>
   switch task {
-  | Break(description) => breakRow(~fromTime, ~toTime, ~duration, description)
-  | Misc(description) => miscRow(~fromTime, ~toTime, ~duration, description)
-  | Talk(speaker) => talkRow(~fromTime, ~toTime, ~duration, speaker)
+  | Break(description) => breakRow(~fromTime, ~toTime, description)
+  | Misc(description) => miscRow(~fromTime, ~toTime, description)
+  | Talk(speaker) => talkRow(~fromTime, ~toTime, speaker)
   | OpenEnd(description) => openEndRow(~fromTime, description)
   };
 
@@ -101,6 +99,7 @@ let make = _children => {
   render: _self =>
     <div>
       <h1> (s("Timetable")) </h1>
+      <h2> (s("Day 2")) </h2>
       <dl className=style##entries>
         (
           Data.Timetable.day2Timetable
