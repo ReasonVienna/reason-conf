@@ -11,6 +11,7 @@ public/
 src/gatsby.js
 src/assets.js
 src/data.js
+src/GithubSlugger.js
 src/partners.js
 src/tito.js
 src/layouts/*.js

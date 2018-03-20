@@ -2,6 +2,8 @@ open Util;
 
 [@bs.module] external style : Js.t({..}) = "./speakerDetails.module.scss";
 
+let talkSlug = Data.Speaker.talkSlug;
+
 let component = ReasonReact.statelessComponent("SpeakerDetails");
 
 let make = (~speaker: Data.Speaker.t, _children) => {
@@ -17,7 +19,11 @@ let make = (~speaker: Data.Speaker.t, _children) => {
         <p> (speaker.description |> s) </p>
         (
           switch speaker.talk {
-          | Some(t) => <p> ("Talk: " |> s) <a href=""> (t.title |> s) </a> </p>
+          | Some(t) =>
+            <p>
+              ("Talk: " |> s)
+              <a href=("/timetable/#" ++ talkSlug(t))> (t.title |> s) </a>
+            </p>
           | None => ReasonReact.nullElement
           }
         )

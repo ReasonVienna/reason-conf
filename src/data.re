@@ -91,6 +91,7 @@ module Speaker = {
     talk: option(talk),
     social
   };
+  let talkSlug = ({title}: talk) => GithubSlugger.slug(title);
   let createPlaceholder = (~company="?", ~talk=?, ~name="TBA", ()) => {
     name,
     company,

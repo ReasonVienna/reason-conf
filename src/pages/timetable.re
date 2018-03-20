@@ -60,7 +60,8 @@ let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
       (
         switch speaker.talk {
         | Some(talk) =>
-          <section className=style##talkDetails>
+          let id = Data.Speaker.talkSlug(talk);
+          <section className=style##talkDetails id>
             <Link
               to_=(
                 "/speakers/#"
@@ -69,7 +70,7 @@ let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
               <SpeakerCard speaker compact=true />
             </Link>
             (titleAndAbstractToMdString(talk) |> md)
-          </section>
+          </section>;
         | None => ReasonReact.nullElement
         }
       )
