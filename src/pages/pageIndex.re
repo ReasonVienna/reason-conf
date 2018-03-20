@@ -222,7 +222,6 @@ let make = _children => {
       <section className="sponsors">
         <div className="container_centered">
           <h2> ("Gold Sponsors" |> s) </h2>
-          <p> <img src=accentureLogo className="accentureLogo" /> </p>
           <p className="extraText">
             ("Do you want to help us make a better conference? " |> s)
             <Link to_="/sponsors"> ("Become a sponsor!" |> s) </Link>
