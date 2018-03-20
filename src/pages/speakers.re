@@ -18,14 +18,6 @@ let make = _children => {
             |> ReasonReact.arrayToElement
           )
         </section>
-        <section>
-          <h1> ("Workshop Leaders" |> s) </h1>
-          (
-            Data.Speaker.workshopLeaders
-            |> Array.map(toSpeakerDetail)
-            |> ReasonReact.arrayToElement
-          )
-        </section>
       </main>
     </section>
 };

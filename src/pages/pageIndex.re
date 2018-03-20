@@ -37,7 +37,7 @@ let sponsorLogo = (sponsor: Partners.sponsorT) => {
     };
   <li className=("partners--listItem " ++ className) key=sponsor.name>
     <figure className="partners--figure">
-      <a href=sponsor.href title=sponsor.name>
+      <a href=sponsor.href title=sponsor.name target="_blank">
         <img src=sponsor.logoUrl alt=sponsor.name className="partners--logo" />
       </a>
       <figcaption className="partners--caption"> (title |> s) </figcaption>

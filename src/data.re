@@ -91,6 +91,18 @@ module Speaker = {
     talk: option(talk),
     social
   };
+  let createPlaceholder = (~company="?", ~talk=?, ~name="TBA", ()) => {
+    name,
+    company,
+    imgUrl: speakerPlaceholder,
+    description: "Details will be announced reasonably soon!",
+    talk,
+    social: {
+      githubUser: None,
+      twitterUser: None,
+      website: None
+    }
+  };
   let chengLou = {
     name: "Cheng Lou",
     company: "Facebook",
@@ -428,6 +440,12 @@ can have freedom to publish without fearing change.
       website: Some("https://jaredforsyth.com")
     }
   };
+  let tbaSpeaker =
+    createPlaceholder(
+      ~talk={title: "A small enterprise case-study", abstract: "TBA"},
+      ~company="Accenture",
+      ()
+    );
   let headlineSpeakers = [|
     chengLou,
     keiraHodgkison,
@@ -438,24 +456,13 @@ can have freedom to publish without fearing change.
     sanderSpies,
     vladimirKurchatkin,
     javierChavarri,
-    glennSlotte,
+    tbaSpeaker,
     lanceHarper,
-    maximValcke
+    maximValcke,
+    seanGrove,
+    jaredForsyth
   |];
   let speakers: array(t) = Array.concat([headlineSpeakers, otherSpeakers]);
-  let workshopLeaders: array(t) = [|seanGrove, jaredForsyth|];
-  let createPlaceholder = name => {
-    name,
-    company: "?",
-    imgUrl: speakerPlaceholder,
-    description: "",
-    talk: None,
-    social: {
-      githubUser: None,
-      twitterUser: None,
-      website: None
-    }
-  };
 };
 
 module Schedule = {
@@ -522,7 +529,7 @@ module Tier = {
       id: "main",
       name: "Gold Sponsor",
       cost: 5000,
-      amount: 2,
+      amount: 1,
       description: {js|
 - Banner placement of your choice (stage, entrance and / or catering)
 - Logo on our website in the sponsor headline
