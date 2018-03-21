@@ -174,8 +174,8 @@ Early @reasonml adopter, co-creator of ReasonReact.
     /* TODO: CHECK BACK WITH LAURA TO UPDATE THE DESCRIPTION */
     description: {j|
 Laura is a manager at Travis Foundation and the
-organiser of Rails Girls Summer of Code
-(https://railsgirlssummerofcode.org/) — a 3-month scholarship
+organiser of [Rails Girls Summer of Code](https://railsgirlssummerofcode.org/) --
+a 3-month scholarship
 program to support women in the Open Source community. With a
 background in the visual arts and a non-traditional career path,
 she landed in tech as a web developer somewhat by
