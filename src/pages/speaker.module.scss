@@ -1,4 +1,6 @@
 .speakers {
+  margin: 0;
+  padding: 0;
 }
 
 .teaser {
@@ -6,7 +8,8 @@
   margin: 25px;
   padding: 0;
   width: 800px;
-  height: 630px;
+  height: 640px;
+  border: 1px solid transparent;
 
   &::after {
     position: absolute;
@@ -23,15 +26,15 @@
 
 .logo {
   position: relative;
-  margin: 25px auto;
-  width: 300px;
+  margin: 0 auto 20px;
+  width: 400px;
   z-index: 2;
 }
 
 .speakerCard {
   position: relative;
   margin: 0 auto;
-  padding: 0px 0;
+  padding: 0;
   width: 400px;
   z-index: 9999;
 
