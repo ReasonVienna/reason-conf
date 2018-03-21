@@ -4,6 +4,8 @@ module Link = Gatsby.Link;
 
 [@bs.module] external style : Js.t({..}) = "./schedule.module.scss";
 
+let talkSlug = Data.Speaker.talkSlug;
+
 let component = ReasonReact.statelessComponent("Schedule");
 
 let toTimeStr = (~fromTime, ~toTime) => {
@@ -25,12 +27,6 @@ let toDurationStr = (~fromTime, ~toTime) => {
   | None => DateFns.format(format, fromTime)
   };
 };
-
-let titleAndAbstractToMdString = ({title, abstract}: Data.Speaker.talk) => {j|
-## $title #
-
-$abstract
-|j};
 
 let miscRow = (~fromTime, ~toTime, description) =>
   ReasonReact.arrayToElement([|
@@ -65,7 +61,12 @@ let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
             <Link to_=("/speakers/#" ++ Data.Speaker.speakerAnchor(speaker))>
               <SpeakerCard speaker compact=true />
             </Link>
-            (titleAndAbstractToMdString(talk) |> md)
+            <h3 className=style##talkTitle>
+              (talk.title |> s)
+              (" " |> s)
+              <a href=("#" ++ id) title=talk.title> ("#" |> s) </a>
+            </h3>
+            (talk.abstract |> md)
           </section>;
         | None => ReasonReact.nullElement
         }
