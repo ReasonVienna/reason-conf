@@ -96,12 +96,22 @@ let make = _children => {
   render: _self =>
     <div>
       <h1> ("Schedule" |> s) </h1>
-      <h2> <time dateTime="2018-05-11"> ("11th May, Friday" |> s) </time> </h2>
+      <h2>
+        <time dateTime="2018-05-11">
+          ("11" |> s)
+          <sup> ("th" |> s) </sup>
+          (" May, Friday" |> s)
+        </time>
+      </h2>
       <main> ({js|
 Will be announced soon.
           |js} |> md) </main>
       <h2>
-        <time dateTime="2018-05-12"> ("12th May, Saturday" |> s) </time>
+        <time dateTime="2018-05-12">
+          ("12" |> s)
+          <sup> ("th" |> s) </sup>
+          (" May, Saturday" |> s)
+        </time>
       </h2>
       <dl className=style##entries>
         (
@@ -111,7 +121,13 @@ Will be announced soon.
           |> ReasonReact.arrayToElement
         )
       </dl>
-      <h2> <time dateTime="2018-05-13"> ("13th May, Sunday" |> s) </time> </h2>
+      <h2>
+        <time dateTime="2018-05-13">
+          ("13" |> s)
+          <sup> ("th" |> s) </sup>
+          (" May, Sunday" |> s)
+        </time>
+      </h2>
       <main> ({js|
 Will be announced soon.
           |js} |> md) </main>
