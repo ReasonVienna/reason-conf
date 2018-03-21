@@ -27,7 +27,7 @@ let toDurationStr = (~fromTime, ~toTime) => {
 };
 
 let titleAndAbstractToMdString = ({title, abstract}: Data.Speaker.talk) => {j|
-## $title
+## $title #
 
 $abstract
 |j};
