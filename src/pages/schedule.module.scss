@@ -79,9 +79,14 @@ $padding: 25px 15px;
   background-color: desaturate(lighten($secondaryColor, 23), 10);
 }
 
-.talkDetails {
-  :global(.markdown-container) > h2 {
-    margin-top: 0.65em;
-    font-size: 1.25em;
+.talkTitle {
+  margin-top: 0.65em;
+
+  & > a {
+    visibility: hidden;
+  }
+
+  &:hover > a {
+    visibility: visible;
   }
 }

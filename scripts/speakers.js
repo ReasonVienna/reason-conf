@@ -4,6 +4,11 @@ const puppeteer = require("puppeteer");
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto("http://localhost:8000/speaker");
+  await page.setViewport({
+    width: 1024,
+    height: 1024,
+    deviceScaleFactor: 1
+  });
   const elements = await page.$$(
     ".src-pages----speaker-module---teaser---1pAxE"
   );
@@ -25,7 +30,7 @@ const puppeteer = require("puppeteer");
       await browser.close();
     })
     .catch(async err => {
-      console.error(err)
+      console.error(err);
       await browser.close();
     });
 })();
