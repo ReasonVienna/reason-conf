@@ -33,6 +33,9 @@ external javierChavarriImg : string = "./assets/javier-chavarri.jpg";
 [@bs.module] external maximValckeImg : string = "./assets/maxim-valcke.jpg";
 
 [@bs.module]
+external romanSchieferImg : string = "./assets/roman-schiefer.jpg";
+
+[@bs.module]
 external speakerPlaceholder : string = "./assets/speaker-placeholder.svg";
 
 [@bs.module] external volunteerLogo : string = "./assets/volunteer-logo.svg";
@@ -454,6 +457,33 @@ can have freedom to publish without fearing change.
       website: Some("https://jaredforsyth.com")
     }
   };
+  let romanSchiefer = {
+    name: "Roman Schiefer",
+    company: "Accenture",
+    imgUrl: romanSchieferImg,
+    description: {j|
+Roman, based in Vienna, is Technology Architect inside Accenture’s
+Emerging Technologies domain. Together with his domain he brings new
+technologies to large scale enterprises all around the world. Roman’s
+focus lies on Web- and Cloud-Native-Technologies as well as other
+Software-Innovation topics. He is currently managing a Reason
+implementation for a large client.
+       |j},
+    talk:
+      Some({
+        title: "Using Reason in traditional Enterprises",
+        abstract: {j|
+Bringing new technologies to large-scale enterprises is a challenge in
+which we are involved quite often. In this talk we will reflect on our
+current experience with Reason based on a real implementation.
+       |j}
+      }),
+    social: {
+      githubUser: Some("RSchiefer"),
+      twitterUser: Some("RSchiefer"),
+      website: None
+    }
+  };
   let tbaSpeaker =
     createPlaceholder(
       ~talk={title: "A small enterprise case-study", abstract: "TBA"},
@@ -470,7 +500,7 @@ can have freedom to publish without fearing change.
     sanderSpies,
     vladimirKurchatkin,
     javierChavarri,
-    tbaSpeaker,
+    romanSchiefer,
     lanceHarper,
     maximValcke,
     seanGrove,
@@ -515,7 +545,7 @@ module Timetable = {
     {task: Break("Lunch"), duration: Some(90)},
     {task: Talk(Speaker.sanderSpies), duration: Some(45)},
     {task: Talk(Speaker.javierChavarri), duration: Some(15)},
-    {task: Talk(Speaker.tbaSpeaker), duration: Some(15)},
+    {task: Talk(Speaker.romanSchiefer), duration: Some(15)},
     {task: Talk(Speaker.lanceHarper), duration: Some(15)},
     {task: Talk(Speaker.maximValcke), duration: Some(15)},
     {task: Break("Coffee  break"), duration: Some(30)},
