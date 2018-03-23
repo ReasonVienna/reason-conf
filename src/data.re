@@ -598,7 +598,7 @@ module Tier = {
 - Logo on our website in the sponsor headline
 - Logo shown in every talk recording & voiceover with a message of your choice
 - Tweet mention
-- Job offer placement on our [job-board](/jobs)
+- Job offer placement on our job-board
 - 3 tickets included (1050€)
 - Special cooperation to realize your own ideas at the conference
   (booth, raffles, games, code-challenges, etc.)
@@ -614,7 +614,7 @@ module Tier = {
 - Logo on our website
 - Logo shown in every talk recording
 - Tweet mention
-- Job offer placement on our [job-board](/jobs)
+- Job offer placement on our job-board
 - 2 tickets included (700€)
     |js}
     },
@@ -626,7 +626,7 @@ module Tier = {
       description: {js|
 - Logo on the Website
 - 1 sponsoring package for the ReasonVienna meetup
-- Job offer placement on our [job-board](/jobs)
+- Job offer placement on our job-board
 - 1 ticket included (350€)
     |js}
     }
