@@ -8,16 +8,11 @@ let talkSlug = Data.Speaker.talkSlug;
 
 let component = ReasonReact.statelessComponent("Schedule");
 
-let toTimeStr = (~fromTime, ~toTime) => {
-  let format = "HH:mm";
+let toTimeStr = (~fromTime, ~toTime) =>
   switch toTime {
-  | Some(toTime) =>
-    DateFns.format(format, fromTime)
-    ++ {j| – |j}
-    ++ DateFns.format(format, toTime)
-  | None => DateFns.format(format, fromTime) ++ {j| – ∞|j}
+  | Some(toTime) => toHHMM(fromTime) ++ {j| – |j} ++ toHHMM(toTime)
+  | None => toHHMM(fromTime) ++ {j| – ∞|j}
   };
-};
 
 let toDurationStr = (~fromTime, ~toTime) => {
   let format = "YYYY-MM-DDTHH:mm:ss.SSSZ";
