@@ -21,6 +21,9 @@ external impactHubLogo : string = "./assets/partners/impacthub-logo.png";
 [@bs.module]
 external accentureLogo : string = "./assets/partners/accenture-logo.svg";
 
+[@bs.module]
+external janeStreetLogo : string = "./assets/partners/janestreet-logo.svg";
+
 type sponsorT = {
   name: string,
   logoUrl: string,
@@ -34,6 +37,12 @@ let sponsors = [|
     logoUrl: accentureLogo,
     href: "https://www.accenture.com",
     tier: Gold
+  },
+  {
+    name: "JaneStreet",
+    logoUrl: janeStreetLogo,
+    href: "https://www.janestreet.com",
+    tier: Catering
   }
 |];
 

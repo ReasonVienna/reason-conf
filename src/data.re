@@ -638,7 +638,7 @@ module Tier = {
       id: "regular",
       name: "Coffee & Food",
       cost: 2500,
-      amount: 4,
+      amount: 3,
       description: {js|
 - Banner placement at our catering
 - Logo on our website

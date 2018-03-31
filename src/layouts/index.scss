@@ -384,6 +384,14 @@ article {
     }
   }
 
+  &--listItem_catering {
+    min-width: 200px;
+
+    .partners--logo {
+      max-height: 60px;
+    }
+  }
+
   &--caption {
     font-size: small;
     color: lighten($textColor, 50);
