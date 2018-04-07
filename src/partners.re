@@ -24,6 +24,8 @@ external accentureLogo : string = "./assets/partners/accenture-logo.svg";
 [@bs.module]
 external janeStreetLogo : string = "./assets/partners/janestreet-logo.svg";
 
+[@bs.module] external tuCCLogo : string = "./assets/partners/tucc-logo.svg";
+
 type sponsorT = {
   name: string,
   logoUrl: string,
@@ -47,6 +49,12 @@ let sponsors = [|
 |];
 
 let partners = [|
+  {
+    name: "TU Career Center",
+    logoUrl: tuCCLogo,
+    href: "https://www.tucareer.com/",
+    tier: Partner
+  },
   {
     name: "Impact Hub",
     logoUrl: impactHubLogo,
@@ -80,7 +88,7 @@ let partners = [|
   {
     name: "ReasonVienna",
     logoUrl: reasonviennaLogo,
-    href: "https://www.meetup.com/ReasonVienna/",
+    href: "https://www.meetup.com/Reason-Vienna/",
     tier: Partner
   },
   {
