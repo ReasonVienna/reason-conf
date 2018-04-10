@@ -166,7 +166,21 @@ Co-creator of @fbinfer, founder of Monoidics, reformed academic.
 Into developer experience, front-end, static analysis, language design.
 Early @reasonml adopter, co-creator of ReasonReact.
        |j},
-    talk: Some({title: "ReasonReact and local state", abstract: "TBA"}),
+    talk:
+      Some({
+        title: "ReasonReact and local state",
+        abstract: {j|
+The talk introduces ReasonReact and the way it operates on the state
+of React components.  This is illustrated by introducing the notion of
+local state presented via a series of examples.
+
+State is changed by means of reducers, that can operate directly on
+the current component, or on distant components via remote actions.
+
+Further examples illustrate how certain animations can be considered
+instances of local state that can be easily composed.
+|j}
+      }),
     social: {
       githubUser: Some("cristianoc"),
       twitterUser: Some("ccrisccris"),
