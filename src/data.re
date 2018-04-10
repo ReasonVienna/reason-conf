@@ -729,45 +729,6 @@ Amsterdam.
           href: {j|https://www.janestreet.com/open-positions/|j}
         }
       |]
-    },
-    {
-      company: {
-        logo: Some({src: volunteerLogo, width: "300px"}),
-        descMd: {js|
-### <a href="https://www.reason-conf.com" target="_blank">ReasonConf</a>
-
-We are still looking for volunteers to help us during the conference.
-As a mentor, you offer your Reason skills to help attendees during the workshop
-and hackathon days (find syntax errors, fix editor problems, etc.).
-
-Also we are looking for local volunteers to help us out with organizational
-tasks, like managing our speakers during their stay in Vienna or assisting
-the organizers during the conference day (giving out lanyards, assisting our
-gold sponsors on site, etc.).
-
-We are also looking for experienced Viennese locals to help us with
-the Vienna tour on the last day.
-
-By volunteering, you get free access to the conference (you can pick
-certain times to have a break and enjoy the conference).
-
-Use the links below to apply.
-         |js},
-        href: {j|https://www.reason-conf.com|j}
-      },
-      tier: LocalSupport,
-      jobAds: [|
-        {
-          location: OnSite("Vienna, Austria"),
-          desc: "Mentor for Workshop & Hackathon Days",
-          href: {j|mailto:hi@reason-conf.com?subject=Applying as a Mentor|j}
-        },
-        {
-          location: OnSite("Vienna, Austria"),
-          desc: "Local Volunteer",
-          href: {j|mailto:hi@reason-conf.com?subject=Applying as a Volunteer|j}
-        }
-      |]
     }
   |];
 };

@@ -45,7 +45,7 @@ let renderJob = (i: string, {tier, company, jobAds}: Job.t) => {
       }
     );
   <div key=(i ++ "_" ++ company.href) className>
-    <a href=company.href>
+    <a href=company.href target="_blank">
       (
         switch company.logo {
         | None => ReasonReact.nullElement
@@ -65,17 +65,11 @@ let make = _children => {
       <h1> ("Jobs" |> s) </h1>
       <main className="leadText">
         (
-          /*
-                     {js|
-                       We are cooperating with companies who are eager to invest in
-                       emerging technologies. They are also looking for new talents!
-                     |js}
-           */
           {js|
-             This job board will show-case job offers of our featured
-             sponsors. If you are interested to collaborate with us, please get
-             in touch!
-            |js}
+            We are cooperating with companies who are eager to invest
+            in emerging technologies. They are also looking for new
+            talents!
+          |js}
           |> s
         )
       </main>
