@@ -1,4 +1,5 @@
 module Link = {
+  [@bs.module "gatsby-link"] external withPrefix : string => string = "";
   [@bs.module "gatsby-link"]
   external linkClass : ReasonReact.reactClass = "default";
   let make =

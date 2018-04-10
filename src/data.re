@@ -40,6 +40,9 @@ external speakerPlaceholder : string = "./assets/speaker-placeholder.svg";
 
 [@bs.module] external volunteerLogo : string = "./assets/volunteer-logo.svg";
 
+[@bs.module]
+external janeStreetLogo : string = "./assets/partners/janestreet-logo.svg";
+
 /* List.find_opt is not supported by this BuckleScript version yet */
 let find_opt = (fn, l) =>
   try (List.find(fn, l) |> (r => Some(r))) {
@@ -673,15 +676,12 @@ module Job = {
     href: string,
     descMd: string
   };
-  type onsite = {
-    city: string,
-    country: string
-  };
   type tier = Tier.tier;
   type location =
+    | Nothing
     | RemoteOnly
-    | OnSite(onsite)
-    | RemoteAndOnSite(onsite);
+    | OnSite(string)
+    | RemoteAndOnSite(string);
   type jobAd = {
     location,
     desc: string,
@@ -693,6 +693,43 @@ module Job = {
     jobAds: array(jobAd)
   };
   let data: array(t) = [|
+    {
+      company: {
+        logo: Some({src: janeStreetLogo, width: "300px"}),
+        descMd: {js|
+Jane Street is a quantitative trading firm and the largest industrial
+user of OCaml, a functional programming language with a sophisticated
+type system.
+
+The company has more more than 250 developers writing
+OCaml to build reliable, high-performance software at massive scale,
+including critical systems that trade $13 billion in global equities
+every day.
+
+Jane Street developers help define the next generation of
+the OCaml compiler and actively maintain nearly 100 open source
+projects. The company has offices in New York, London, Hong Kong, and
+Amsterdam.
+         |js},
+        href: {j|https://www.janestreet.com/|j}
+      },
+      tier: Catering,
+      jobAds: [|
+        {
+          location: OnSite("NYC, London, Hong Kong"),
+          desc: "Software Developer - Functional Programming",
+          href:
+            Gatsby.Link.withPrefix(
+              {j|jobs/janestreet_software_developer.pdf|j}
+            )
+        },
+        {
+          location: Nothing,
+          desc: "Other open positions",
+          href: {j|https://www.janestreet.com/open-positions/|j}
+        }
+      |]
+    },
     {
       company: {
         logo: Some({src: volunteerLogo, width: "300px"}),
@@ -721,12 +758,12 @@ Use the links below to apply.
       tier: LocalSupport,
       jobAds: [|
         {
-          location: OnSite({city: "Vienna", country: "Austria"}),
+          location: OnSite("Vienna, Austria"),
           desc: "Mentor for Workshop & Hackathon Days",
           href: {j|mailto:hi@reason-conf.com?subject=Applying as a Mentor|j}
         },
         {
-          location: OnSite({city: "Vienna", country: "Austria"}),
+          location: OnSite("Vienna, Austria"),
           desc: "Local Volunteer",
           href: {j|mailto:hi@reason-conf.com?subject=Applying as a Volunteer|j}
         }

@@ -7,10 +7,10 @@ let component = ReasonReact.statelessComponent("Jobs");
 let renderLocation = (ad: Job.jobAd) =>
   Job.(
     switch ad.location {
-    | OnSite({city, country}) => <span> ({j| ($city, $country)|j} |> s) </span>
+    | Nothing => ReasonReact.nullElement
+    | OnSite(city) => <span> ({j| ($city)|j} |> s) </span>
     | RemoteOnly => <span> (" (Remote)" |> s) </span>
-    | RemoteAndOnSite({city, country}) =>
-      <span> ({j| ($city, $country or Remote)|j} |> s) </span>
+    | RemoteAndOnSite(city) => <span> ({j| ($city or Remote)|j} |> s) </span>
     }
   );
 
