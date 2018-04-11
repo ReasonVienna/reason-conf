@@ -41,6 +41,9 @@ external speakerPlaceholder : string = "./assets/speaker-placeholder.svg";
 [@bs.module] external volunteerLogo : string = "./assets/volunteer-logo.svg";
 
 [@bs.module]
+external accentureLogo : string = "./assets/partners/accenture-logo.svg";
+
+[@bs.module]
 external janeStreetLogo : string = "./assets/partners/janestreet-logo.svg";
 
 /* List.find_opt is not supported by this BuckleScript version yet */
@@ -707,6 +710,37 @@ module Job = {
     jobAds: array(jobAd)
   };
   let data: array(t) = [|
+    {
+      company: {
+        logo: Some({src: accentureLogo, width: "300px"}),
+        descMd: {js|
+Accenture is a leading global professional services company, providing
+a broad range of services and solutions in strategy, consulting,
+digital, technology and operations.
+
+Combining unmatched experience and specialized skills across more than
+40 industries and all business functions – underpinned by the world’s
+largest delivery network – Accenture works at the intersection of
+business and technology to help clients improve their performance and
+create sustainable value for their stakeholders.
+
+With approximately 442,000 people serving clients in more than 120
+countries, Accenture drives innovation to improve the way the world
+works and lives.
+
+Visit us at <a href="https://www.accenture.com" target="_blank">www.accenture.com</a>
+         |js},
+        href: {j|https://www.accenture.com/|j}
+      },
+      tier: Gold,
+      jobAds: [|
+        {
+          location: OnSite("Vienna, Austria"),
+          desc: "Consultant / Emerging Technology Innovation",
+          href: {j|https://www.accenture.com/at-de/careers/jobdetails?id=00574672_de&title=Beraterin+%2f+Berater+im+Bereich+Emerging+Technology+Innovation&keyword=HJ_TEC|J_TEC|HJ_JAV|J_JAV|Technologieberaterin|Technologieberater|J_TECARCH|j}
+        }
+      |]
+    },
     {
       company: {
         logo: Some({src: janeStreetLogo, width: "300px"}),
