@@ -336,7 +336,7 @@ is also the creator of redex.github.io.
   let lanceHarper = {
     name: "Lance Harper",
     imgUrl: lanceHarperImg,
-    company: "Arivale, soon to be independent",
+    company: "Independent",
     description: {j| Growth focused engineer who loves building mobile experiences |j},
     talk:
       Some({
