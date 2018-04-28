@@ -9,14 +9,14 @@ let talkSlug = Data.Speaker.talkSlug;
 let component = ReasonReact.statelessComponent("Schedule");
 
 let toTimeStr = (~fromTime, ~toTime) =>
-  switch toTime {
+  switch (toTime) {
   | Some(toTime) => toHHMM(fromTime) ++ {j| – |j} ++ toHHMM(toTime)
   | None => toHHMM(fromTime) ++ {j| – ∞|j}
   };
 
 let toDurationStr = (~fromTime, ~toTime) => {
   let format = "YYYY-MM-DDTHH:mm:ss.SSSZ";
-  switch toTime {
+  switch (toTime) {
   | Some(toTime) =>
     DateFns.format(format, fromTime) ++ "/" ++ DateFns.format(format, toTime)
   | None => DateFns.format(format, fromTime)
@@ -24,13 +24,13 @@ let toDurationStr = (~fromTime, ~toTime) => {
 };
 
 let miscRow = (~fromTime, ~toTime, description) =>
-  ReasonReact.arrayToElement([|
+  ReasonReact.array([|
     <dt className=style##entryTime>
       <time dateTime=(toDurationStr(~fromTime, ~toTime))>
         (toTimeStr(~fromTime, ~toTime) |> s)
       </time>
     </dt>,
-    <dd className=style##entryDescription> (description |> s) </dd>
+    <dd className=style##entryDescription> (description |> s) </dd>,
   |]);
 
 /*
@@ -41,7 +41,7 @@ let miscRow = (~fromTime, ~toTime, description) =>
 let breakRow = miscRow;
 
 let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
-  ReasonReact.arrayToElement([|
+  ReasonReact.array([|
     <dt className=style##talkTime>
       <time dateTime=(toDurationStr(~fromTime, ~toTime))>
         (toTimeStr(~fromTime, ~toTime) |> s)
@@ -49,7 +49,7 @@ let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
     </dt>,
     <dd className=style##talkDescription>
       (
-        switch speaker.talk {
+        switch (speaker.talk) {
         | Some(talk) =>
           let id = Data.Speaker.talkSlug(talk);
           <section className=style##talkDetails id>
@@ -63,24 +63,24 @@ let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
             </h3>
             (talk.abstract |> md)
           </section>;
-        | None => ReasonReact.nullElement
+        | None => ReasonReact.null
         }
       )
-    </dd>
+    </dd>,
   |]);
 
 let openEndRow = (~fromTime, description) =>
-  ReasonReact.arrayToElement([|
+  ReasonReact.array([|
     <dt className=style##entryTime>
       <time dateTime=(toDurationStr(~fromTime, ~toTime=None))>
         (toTimeStr(~fromTime, ~toTime=None) |> s)
       </time>
     </dt>,
-    <dd className=style##entryDescription> (description |> s) </dd>
+    <dd className=style##entryDescription> (description |> s) </dd>,
   |]);
 
 let createRow = ({task, fromTime, toTime}: Data.Timetable.entry) =>
-  switch task {
+  switch (task) {
   | Break(description) => breakRow(~fromTime, ~toTime, description)
   | Misc(description) => miscRow(~fromTime, ~toTime, description)
   | Talk(speaker) => talkRow(~fromTime, ~toTime, speaker)
@@ -114,7 +114,7 @@ Will be announced soon.
           Data.Timetable.day2Timetable
           |> List.map(createRow)
           |> Array.of_list
-          |> ReasonReact.arrayToElement
+          |> ReasonReact.array
         )
       </dl>
       <h2>
@@ -127,7 +127,7 @@ Will be announced soon.
       <main> ({js|
 Will be announced soon.
           |js} |> md) </main>
-    </div>
+    </div>,
 };
 
 let default =

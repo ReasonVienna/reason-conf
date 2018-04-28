@@ -20,7 +20,7 @@ let make = _children => {
             id="name"
             placeholder="John Appleseed"
             className=style##input
-            required=Js.true_
+            required=true
           />
         </div>
         <div className=style##formRow>
@@ -33,7 +33,7 @@ let make = _children => {
             id="email"
             placeholder="name@domain.com"
             className=style##input
-            required=Js.true_
+            required=true
           />
         </div>
         <div className=style##formRow>
@@ -44,13 +44,15 @@ let make = _children => {
             id="message"
             name="message"
             className=style##textarea
-            required=Js.true_
+            required=true
           />
         </div>
-        <Button _type="submit" className=style##submit> (s("Submit")) </Button>
+        <Button _type="submit" className=style##submit>
+          (s("Submit"))
+        </Button>
         <input _type="hidden" name="form-name" value="contact" />
       </form>,
-      ~props={"data-netlify": Js.true_},
-      [||]
-    )
+      ~props={"data-netlify": true},
+      [||],
+    ),
 };

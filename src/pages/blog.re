@@ -1,10 +1,10 @@
 let component = ReasonReact.statelessComponent("Blog");
 
-let s = ReasonReact.stringToElement;
+let s = ReasonReact.string;
 
 let make = _children => {
   ...component,
-  render: _self => <h1> (s("Blog")) </h1>
+  render: _self => <h1> (s("Blog")) </h1>,
 };
 
 let default =

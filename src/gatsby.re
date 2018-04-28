@@ -8,24 +8,24 @@ module Link = {
         ~className: option(string)=?,
         ~activeStyle: option(Js.t({..}))=?,
         ~activeClassName: option(string)=?,
-        children
+        children,
       ) => {
     /*
         React is complaining if activeStyle & activeClassName are translated
         to e.g. activeClassName=undefined inside a JSX tag
      */
     let props =
-      {"to": to_, "className": Js.Nullable.from_opt(className)}
+      {"to": to_, "className": Js.Nullable.fromOption(className)}
       |> (
         p =>
-          switch activeStyle {
+          switch (activeStyle) {
           | Some(v) => Js.Obj.assign(p, {"activeStyle": v})
           | None => p
           }
       )
       |> (
         p =>
-          switch activeClassName {
+          switch (activeClassName) {
           | Some(v) => Js.Obj.assign(p, {"activeClassName": v})
           | None => p
           }
@@ -43,18 +43,18 @@ module Helmet = {
         {
           .
           "name": string,
-          "content": string
-        }
-      )
+          "content": string,
+        },
+      ),
     );
   let make = (~title: option(string)=?, ~meta: metaT=?, children) =>
     ReasonReact.wrapJsForReason(
       ~reactClass=linkClass,
       ~props={
-        "title": Js.Nullable.from_opt(title),
-        "meta": Js.Nullable.from_opt(meta)
+        "title": Js.Nullable.fromOption(title),
+        "meta": Js.Nullable.fromOption(meta),
       },
-      children
+      children,
     );
 };
 
@@ -66,12 +66,12 @@ module SocialIcons = {
         ~urls: array(string),
         ~className: option(string)=?,
         ~color: option(string)=?,
-        _children
+        _children,
       ) => {
     let props = {
       "urls": urls,
-      "className": Js.Nullable.from_opt(className),
-      "color": Js.Nullable.from_opt(color)
+      "className": Js.Nullable.fromOption(className),
+      "color": Js.Nullable.fromOption(color),
     };
     ReasonReact.wrapJsForReason(~reactClass=linkClass, ~props, _children);
   };
@@ -86,13 +86,13 @@ module SocialIcon = {
         ~className: option(string)=?,
         ~color: option(string)=?,
         ~network: option(string)=?,
-        _children
+        _children,
       ) => {
     let props = {
       "url": url,
-      "className": Js.Nullable.from_opt(className),
-      "color": Js.Nullable.from_opt(color),
-      "network": Js.Nullable.from_opt(network)
+      "className": Js.Nullable.fromOption(className),
+      "color": Js.Nullable.fromOption(color),
+      "network": Js.Nullable.fromOption(network),
     };
     ReasonReact.wrapJsForReason(~reactClass=linkClass, ~props, _children);
   };

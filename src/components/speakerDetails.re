@@ -18,15 +18,15 @@ let make = (~speaker: Data.Speaker.t, _children) => {
         <p className=style##company> (speaker.company |> s) </p>
         (speaker.description |> md)
         (
-          switch speaker.talk {
+          switch (speaker.talk) {
           | Some(t) =>
             <strong>
               ({j|🗣|j} |> s)
               <Link to_=("/schedule/#" ++ talkSlug(t))> (t.title |> s) </Link>
             </strong>
-          | None => ReasonReact.nullElement
+          | None => ReasonReact.null
           }
         )
       </section>
-    </section>
+    </section>,
 };

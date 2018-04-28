@@ -78,7 +78,7 @@ notable contributors to the Reason ecosystem.
         Data.Tier.(
           sponsorTiers
           |> Array.map(tier => <SponsorTier tier key=tier.id />)
-          |> ReasonReact.arrayToElement
+          |> ReasonReact.array
         )
       </main>
       <main>
@@ -90,7 +90,7 @@ collaborate on ideas which are not covered by our sponsor plans, please let us k
           |> md
         )
       </main>
-    </section>
+    </section>,
 };
 
 let default =

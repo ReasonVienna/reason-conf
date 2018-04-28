@@ -24,14 +24,14 @@ let speakerColumn = (speaker: Data.Speaker.t) =>
 
 let sponsorLogo = (sponsor: Partners.sponsorT) => {
   let className =
-    switch sponsor.tier {
+    switch (sponsor.tier) {
     | Gold => "partners--listItem_gold"
     | Catering => "partners--listItem_catering"
     | LocalSupport => "partners--listItem_local"
     | Partner => "partners--listItem_partner"
     };
   let title =
-    switch sponsor.tier {
+    switch (sponsor.tier) {
     | Gold => "Gold Sponsor"
     | Catering => "Food & Drinks"
     | LocalSupport => "Local Supporter"
@@ -57,12 +57,12 @@ let make = _children => {
         props={
           "--header-ty": {
             "from": "100px",
-            "to": "-100px"
+            "to": "-100px",
           },
           "--header-clip": {
             "from": "10",
-            "to": "4vw"
-          }
+            "to": "4vw",
+          },
         }>
         ...<header className="teaser">
              <section className="container_centered grid grid_6cols">
@@ -205,14 +205,14 @@ let make = _children => {
             props={
               "--speakers-ty": {
                 "from": "100px",
-                "to": "-100px"
-              }
+                "to": "-100px",
+              },
             }>
             ...<ul className="speaker-list">
                  (
                    Data.Speaker.speakers
                    |> Array.map(speakerColumn)
-                   |> ReasonReact.arrayToElement
+                   |> ReasonReact.array
                  )
                </ul>
           </ParallaxScroll>
@@ -246,22 +246,14 @@ let make = _children => {
             <Link to_="/sponsors"> ("Become a sponsor!" |> s) </Link>
           </p>
           <ul className="partners">
-            (
-              Partners.sponsors
-              |> Array.map(sponsorLogo)
-              |> ReasonReact.arrayToElement
-            )
+            (Partners.sponsors |> Array.map(sponsorLogo) |> ReasonReact.array)
           </ul>
           <ul className="partners">
-            (
-              Partners.partners
-              |> Array.map(sponsorLogo)
-              |> ReasonReact.arrayToElement
-            )
+            (Partners.partners |> Array.map(sponsorLogo) |> ReasonReact.array)
           </ul>
         </div>
       </section>
-    </div>
+    </div>,
 };
 
 let default = ReasonReact.wrapReasonForJs(~component, _jsProps => make([||]));
