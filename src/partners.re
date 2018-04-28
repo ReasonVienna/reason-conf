@@ -24,13 +24,15 @@ external accentureLogo : string = "./assets/partners/accenture-logo.svg";
 [@bs.module]
 external janeStreetLogo : string = "./assets/partners/janestreet-logo.svg";
 
+[@bs.module] external g2iLogo : string = "./assets/partners/g2i-logo.svg";
+
 [@bs.module] external tuCCLogo : string = "./assets/partners/tucc-logo.svg";
 
 type sponsorT = {
   name: string,
   logoUrl: string,
   href: string,
-  tier: Data.Tier.tier
+  tier: Data.Tier.tier,
 };
 
 let sponsors = [|
@@ -38,14 +40,20 @@ let sponsors = [|
     name: "Accenture",
     logoUrl: accentureLogo,
     href: "https://www.accenture.com",
-    tier: Gold
+    tier: Gold,
   },
   {
     name: "JaneStreet",
     logoUrl: janeStreetLogo,
     href: "https://www.janestreet.com",
-    tier: Catering
-  }
+    tier: Catering,
+  },
+  {
+    name: "G2i",
+    logoUrl: g2iLogo,
+    href: "https://www.accenture.com",
+    tier: LocalSupport,
+  },
 |];
 
 let partners = [|
@@ -53,48 +61,48 @@ let partners = [|
     name: "TU Career Center",
     logoUrl: tuCCLogo,
     href: "https://www.tucareer.com/",
-    tier: Partner
+    tier: Partner,
   },
   {
     name: "Impact Hub",
     logoUrl: impactHubLogo,
     href: "https://vienna.impacthub.net",
-    tier: Partner
+    tier: Partner,
   },
   {
     name: "Agent Conf",
     logoUrl: agentLogo,
     href: "https://www.agent.sh/",
-    tier: Partner
+    tier: Partner,
   },
   {
     name: "React Amsterdam",
     logoUrl: reactAmsterdamLogo,
     href: "https://react.amsterdam",
-    tier: Partner
+    tier: Partner,
   },
   {
     name: "React Finland",
     logoUrl: reactFinlandLogo,
     href: "https://react-finland.fi",
-    tier: Partner
+    tier: Partner,
   },
   {
     name: "React Vienna",
     logoUrl: reactViennaLogo,
     href: "https://www.meetup.com/ReactVienna/",
-    tier: Partner
+    tier: Partner,
   },
   {
     name: "ReasonVienna",
     logoUrl: reasonviennaLogo,
     href: "https://www.meetup.com/Reason-Vienna/",
-    tier: Partner
+    tier: Partner,
   },
   {
     name: "Script Conf",
     logoUrl: scriptConfLogo,
     href: "https://scriptconf.org",
-    tier: Partner
-  }
+    tier: Partner,
+  },
 |];

@@ -23,6 +23,7 @@ let speakerColumn = (speaker: Data.Speaker.t) =>
   </li>;
 
 let sponsorLogo = (sponsor: Partners.sponsorT) => {
+  Js.log(sponsor);
   let className =
     switch (sponsor.tier) {
     | Gold => "partners--listItem_gold"
@@ -34,7 +35,7 @@ let sponsorLogo = (sponsor: Partners.sponsorT) => {
     switch (sponsor.tier) {
     | Gold => "Gold Sponsor"
     | Catering => "Food & Drinks"
-    | LocalSupport => "Local Supporter"
+    | LocalSupport => "Supporter"
     | Partner => "Partner"
     };
   <li className=("partners--listItem " ++ className) key=sponsor.name>
