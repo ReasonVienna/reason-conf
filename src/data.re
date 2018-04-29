@@ -46,6 +46,8 @@ external accentureLogo : string = "./assets/partners/accenture-logo.svg";
 [@bs.module]
 external janeStreetLogo : string = "./assets/partners/janestreet-logo.svg";
 
+[@bs.module] external g2iLogo : string = "./assets/partners/g2i-logo.svg";
+
 /* List.find_opt is not supported by this BuckleScript version yet */
 let find_opt = (fn, l) =>
   try (List.find(fn, l) |> (r => Some(r))) {
@@ -57,7 +59,7 @@ module Organizer = {
     name: string,
     imgUrl: string,
     href: string,
-    twitter: string
+    twitter: string,
   };
   /* First in this list should be rendered last */
   let organizers = [
@@ -65,20 +67,20 @@ module Organizer = {
       name: "Patrick Stapfer",
       imgUrl: patrickImg,
       href: "https://twitter.com/ryyppy",
-      twitter: "ryyppy"
+      twitter: "ryyppy",
     },
     {
       name: "Nik Graf",
       imgUrl: nikImg,
       href: "https://twitter.com/nikgraf",
-      twitter: "nikgraf"
+      twitter: "nikgraf",
     },
     {
       name: "Andrey Okonetchnikov",
       imgUrl: andreyImg,
       href: "https://twitter.com/okonetchnikov",
-      twitter: "okonetchnikov"
-    }
+      twitter: "okonetchnikov",
+    },
   ];
 };
 
@@ -86,11 +88,11 @@ module Speaker = {
   type social = {
     twitterUser: option(string),
     githubUser: option(string),
-    website: option(string)
+    website: option(string),
   };
   type talk = {
     title: string,
-    abstract: string
+    abstract: string,
   };
   type t = {
     name: string,
@@ -98,7 +100,7 @@ module Speaker = {
     imgUrl: string,
     description: string,
     talk: option(talk),
-    social
+    social,
   };
   let talkSlug = ({title}: talk) => GithubSlugger.slug(title);
   let speakerAnchor = ({social}) =>
@@ -112,8 +114,8 @@ module Speaker = {
     social: {
       githubUser: None,
       twitterUser: None,
-      website: None
-    }
+      website: None,
+    },
   };
   let chengLou = {
     name: "Cheng Lou",
@@ -124,8 +126,8 @@ module Speaker = {
     social: {
       githubUser: Some("chenglou"),
       twitterUser: Some("_chenglou"),
-      website: None
-    }
+      website: None,
+    },
   };
   let keiraHodgkison = {
     name: "Keira Hodgkison",
@@ -151,13 +153,13 @@ with different problems.
 
 This talk looks at life on the bleeding edge, as experienced by a
 not-so-functional programmer.
-       |j}
+       |j},
       }),
     social: {
       githubUser: Some("keirah"),
       twitterUser: Some("keirasaid"),
-      website: None
-    }
+      website: None,
+    },
   };
   let cristianoCalcagno = {
     name: "Cristiano Calcagno",
@@ -182,13 +184,13 @@ the current component, or on distant components via remote actions.
 
 Further examples illustrate how certain animations can be considered
 instances of local state that can be easily composed.
-|j}
+|j},
       }),
     social: {
       githubUser: Some("cristianoc"),
       twitterUser: Some("ccrisccris"),
-      website: None
-    }
+      website: None,
+    },
   };
   let lauraGaetano = {
     name: "Laura Gaetano",
@@ -224,13 +226,13 @@ In this talk, you will hear stories of first-time contributions,
 successful examples in supporting and mentoring newcomers, and find
 out steps you can take as an Open Source contributor or maintainer to
 make your community more inclusive.
-|j}
+|j},
       }),
     social: {
       githubUser: Some("alicetragedy"),
       twitterUser: Some("alicetragedy"),
-      website: Some("http://www.alicetragedy.org/")
-    }
+      website: Some("http://www.alicetragedy.org/"),
+    },
   };
   let sanderSpies = {
     name: "Sander Spies",
@@ -250,13 +252,13 @@ make your community more inclusive.
         abstract: {j|
 In this talk we go beyond syntax and look at an experimental
 webassembly backend for OCaml / ReasonML.
-|j}
+|j},
       }),
     social: {
       githubUser: Some("SanderSpies"),
       twitterUser: Some("Sander_Spies"),
-      website: None
-    }
+      website: None,
+    },
   };
   let vladimirKurchatkin = {
     name: "Vladimir Kurchatkin",
@@ -282,13 +284,13 @@ In this talk, I will show how to preserve both by compiling Reason
 code to native Node.js addons. I will present a toolkit that makes it
 easy and fun, walk through its features and examples and talk a bit
 about its internals and advanced OCaml features used.
-|j}
+|j},
       }),
     social: {
       githubUser: Some("vkurchatkin"),
       twitterUser: Some("vkurchatkin"),
-      website: None
-    }
+      website: None,
+    },
   };
   let javierChavarri = {
     name: {j|Javier Chávarri|j},
@@ -308,13 +310,13 @@ We will review the current state of the IDE tooling for Reason:
 - How the different parts work (language clients and the main language server) and their repositories
 - Quick review of the differences between ocamlmerlin and bsb when it comes to IDE integration.
 - Finally, we will briefly look into the features that could be built next, steered by the community needs
-|j}
+|j},
       }),
     social: {
       githubUser: Some("jchavarri"),
       twitterUser: Some("javierwchavarri"),
-      website: None
-    }
+      website: None,
+    },
   };
   let glennSlotte = {
     name: "Glenn Slotte",
@@ -330,8 +332,8 @@ is also the creator of redex.github.io.
     social: {
       githubUser: Some("glennsl"),
       twitterUser: None,
-      website: None
-    }
+      website: None,
+    },
   };
   let lanceHarper = {
     name: "Lance Harper",
@@ -344,13 +346,13 @@ is also the creator of redex.github.io.
         abstract: {j|
 F# has been a powerful language based on OCaml without mainstream
 adoption. Let's discuss their differences.
-         |j}
+         |j},
       }),
     social: {
       githubUser: Some("lanceharper"),
       twitterUser: None,
-      website: None
-    }
+      website: None,
+    },
   };
   let maximValcke = {
     name: "Maxim Valcke",
@@ -386,13 +388,13 @@ action?
 Based on my experience contributing to Reason over the past 1.5 years,
 this lightning talk will be a short, critical deep dive in the past,
 present & future of our beloved Reason formatter Refmt.
-|j}
+|j},
       }),
     social: {
       githubUser: Some("iwankaramazow"),
       twitterUser: Some("_iwan_refmt"),
-      website: None
-    }
+      website: None,
+    },
   };
   let seanGrove = {
     name: "Sean Grove",
@@ -434,13 +436,13 @@ painful points of this approach, and how ReasonML might make some
 tasks more difficult, so that you can leave with a confident
 understanding of whether this new frontier is one you want to
 brave any time soon.
-|j}
+|j},
       }),
     social: {
       githubUser: Some("sgrove"),
       twitterUser: Some("sgrove"),
-      website: Some("http://www.riseos.com/")
-    }
+      website: Some("http://www.riseos.com/"),
+    },
   };
   let jaredForsyth = {
     name: "Jared Forsyth",
@@ -469,13 +471,13 @@ Come learn about how tools, language features, and community
 structures all impact the "feel" of a developer community, and what
 tricks Reason could borrow from other communities to ensure that we
 can have freedom to publish without fearing change.
-|j}
+|j},
       }),
     social: {
       githubUser: Some("jaredly"),
       twitterUser: Some("jaredforsyth"),
-      website: Some("https://jaredforsyth.com")
-    }
+      website: Some("https://jaredforsyth.com"),
+    },
   };
   let romanSchiefer = {
     name: "Roman Schiefer",
@@ -496,25 +498,25 @@ implementation for a large client.
 Bringing new technologies to large-scale enterprises is a challenge in
 which we are involved quite often. In this talk we will reflect on our
 current experience with Reason based on a real implementation.
-       |j}
+       |j},
       }),
     social: {
       githubUser: Some("RSchiefer"),
       twitterUser: Some("RSchiefer"),
-      website: None
-    }
+      website: None,
+    },
   };
   let tbaSpeaker =
     createPlaceholder(
       ~talk={title: "A small enterprise case-study", abstract: "TBA"},
       ~company="Accenture",
-      ()
+      (),
     );
   let headlineSpeakers = [|
     chengLou,
     keiraHodgkison,
     cristianoCalcagno,
-    lauraGaetano
+    lauraGaetano,
   |];
   let otherSpeakers = [|
     sanderSpies,
@@ -524,7 +526,7 @@ current experience with Reason based on a real implementation.
     lanceHarper,
     maximValcke,
     seanGrove,
-    jaredForsyth
+    jaredForsyth,
   |];
   let speakers: array(t) = Array.concat([headlineSpeakers, otherSpeakers]);
 };
@@ -537,16 +539,16 @@ module Timetable = {
     | OpenEnd(string);
   type step = {
     task,
-    duration: option(int)
+    duration: option(int),
   };
   type entry = {
     task,
     fromTime: Js.Date.t,
     toTime: option(Js.Date.t),
-    duration: option(int)
+    duration: option(int),
   };
   let addDuration = (time, duration) =>
-    switch duration {
+    switch (duration) {
     | Some(d) => DateFns.addMinutes(float_of_int(d), time)
     | None => time
     };
@@ -574,19 +576,19 @@ module Timetable = {
     {task: Break("Coffee  break"), duration: Some(30)},
     {task: Talk(Speaker.jaredForsyth), duration: Some(45)},
     {task: Talk(Speaker.keiraHodgkison), duration: Some(45)},
-    {task: OpenEnd("Open End / Party"), duration: None}
+    {task: OpenEnd("Open End / Party"), duration: None},
   ];
   let calcStep = (pre: entry, step: step) : entry => {
     let fromTime = addDuration(pre.fromTime, pre.duration);
     let toTime =
-      switch step.duration {
+      switch (step.duration) {
       | None => None
       | Some(_) => Some(addDuration(fromTime, step.duration))
       };
     {task: step.task, duration: step.duration, fromTime, toTime};
   };
   let rec calcTimetable = (pre: entry, steps: list(step)) : list(entry) =>
-    switch steps {
+    switch (steps) {
     | [s, ...rest] =>
       let next = calcStep(pre, s);
       [next, ...calcTimetable(next, rest)];
@@ -598,7 +600,7 @@ module Timetable = {
     List.iter(
       (r: entry) => {
         let task =
-          switch r.task {
+          switch (r.task) {
           | Talk(speaker) => speaker.name
           | Misc(msg) => msg
           | Break(msg) => msg
@@ -606,12 +608,12 @@ module Timetable = {
           };
         let fromTime = DateFns.format("DD.MM, HH:mm", r.fromTime);
         let duration =
-          switch r.duration {
+          switch (r.duration) {
           | Some(d) => {j| ($d min)|j}
           | None => ""
           };
         let timeRange =
-          switch r.toTime {
+          switch (r.toTime) {
           | Some(time) =>
             let toTime = DateFns.format("HH:mm", time);
             {j|$fromTime - $toTime$duration|j};
@@ -619,7 +621,7 @@ module Timetable = {
           };
         Js.log3(task, " ", timeRange);
       },
-      table
+      table,
     );
   let day2Timetable = [startEntry, ...calcTimetable(startEntry, steps)];
 };
@@ -635,7 +637,7 @@ module Tier = {
     name: string,
     cost: int,
     amount: int,
-    description: string
+    description: string,
   };
   let sponsorTiers: array(t) = [|
     {
@@ -652,7 +654,7 @@ module Tier = {
 - 3 tickets included (1050€)
 - Special cooperation to realize your own ideas at the conference
   (booth, raffles, games, code-challenges, etc.)
-  |js}
+  |js},
     },
     {
       id: "regular",
@@ -666,7 +668,7 @@ module Tier = {
 - Tweet mention
 - Job offer placement on our job-board
 - 2 tickets included (700€)
-    |js}
+    |js},
     },
     {
       id: "supporter",
@@ -678,20 +680,20 @@ module Tier = {
 - 1 sponsoring package for the ReasonVienna meetup
 - Job offer placement on our job-board
 - 1 ticket included (350€)
-    |js}
-    }
+    |js},
+    },
   |];
 };
 
 module Job = {
   type logo = {
     src: string,
-    width: string
+    width: string,
   };
   type company = {
     logo: option(logo),
     href: string,
-    descMd: string
+    descMd: string,
   };
   type tier = Tier.tier;
   type location =
@@ -702,12 +704,12 @@ module Job = {
   type jobAd = {
     location,
     desc: string,
-    href: string
+    href: string,
   };
   type t = {
     tier,
     company,
-    jobAds: array(jobAd)
+    jobAds: array(jobAd),
   };
   let data: array(t) = [|
     {
@@ -730,16 +732,16 @@ works and lives.
 
 Visit us at <a href="https://www.accenture.com" target="_blank">www.accenture.com</a>
          |js},
-        href: {j|https://www.accenture.com/|j}
+        href: {j|https://www.accenture.com/|j},
       },
       tier: Gold,
       jobAds: [|
         {
           location: OnSite("Vienna, Austria"),
           desc: "Consultant / Emerging Technology Innovation",
-          href: {j|https://www.accenture.com/at-de/careers/jobdetails?id=00574672_de&title=Beraterin+%2f+Berater+im+Bereich+Emerging+Technology+Innovation&keyword=HJ_TEC|J_TEC|HJ_JAV|J_JAV|Technologieberaterin|Technologieberater|J_TECARCH|j}
-        }
-      |]
+          href: {j|https://www.accenture.com/at-de/careers/jobdetails?id=00574672_de&title=Beraterin+%2f+Berater+im+Bereich+Emerging+Technology+Innovation&keyword=HJ_TEC|J_TEC|HJ_JAV|J_JAV|Technologieberaterin|Technologieberater|J_TECARCH|j},
+        },
+      |],
     },
     {
       company: {
@@ -759,7 +761,7 @@ the OCaml compiler and actively maintain nearly 100 open source
 projects. The company has offices in New York, London, Hong Kong, and
 Amsterdam.
          |js},
-        href: {j|https://www.janestreet.com/|j}
+        href: {j|https://www.janestreet.com/|j},
       },
       tier: Catering,
       jobAds: [|
@@ -768,15 +770,50 @@ Amsterdam.
           desc: "Software Developer - Functional Programming",
           href:
             Gatsby.Link.withPrefix(
-              {j|jobs/janestreet_software_developer.pdf|j}
-            )
+              {j|jobs/janestreet_software_developer.pdf|j},
+            ),
         },
         {
           location: Nothing,
           desc: "Other open positions",
-          href: {j|https://www.janestreet.com/open-positions/|j}
-        }
-      |]
-    }
+          href: {j|https://www.janestreet.com/open-positions/|j},
+        },
+      |],
+    },
+    {
+      company: {
+        logo: Some({src: g2iLogo, width: "80px"}),
+        descMd: {js|
+G2i offers USA, European, and South American based web and mobile
+developers that can become part of your team at reasonable rates.
+
+Our devs are experienced with React, React Native, GraphQL, Node.js,
+and Android/iOS.|js},
+        href: {j|http://g2i.co/|j},
+      },
+      tier: LocalSupport,
+      jobAds: [|
+        {
+          location: OnSite("San Francisco"),
+          desc: "Senior React Engineer",
+          href: {j|https://jobs.lever.co/g2i/d62d9cf2-67d4-42d4-a034-584acd5d277f|j},
+        },
+        {
+          location: RemoteOnly,
+          desc: "React/Redux + Node/Rails Full Stack Developer",
+          href: {j|https://jobs.lever.co/g2i/f6588986-eda0-4192-aa5c-9949ff509fa0|j},
+        },
+        {
+          location: RemoteOnly,
+          desc: "React Native Engineer",
+          href: {j|https://jobs.lever.co/g2i/58bf69ab-f263-4750-9023-9b88bee37159|j},
+        },
+        {
+          location: RemoteOnly,
+          desc: "Remote Node Engineer",
+          href: {j|https://jobs.lever.co/g2i/90988547-6a17-438c-acee-99d27fc94dd9|j},
+        },
+      |],
+    },
   |];
 };
