@@ -48,12 +48,7 @@ let sponsors = [|
     href: "https://www.janestreet.com",
     tier: Catering,
   },
-  {
-    name: "G2i",
-    logoUrl: g2iLogo,
-    href: "https://www.accenture.com",
-    tier: LocalSupport,
-  },
+  {name: "G2i", logoUrl: g2iLogo, href: "https://g2i.co", tier: LocalSupport},
 |];
 
 let partners = [|
