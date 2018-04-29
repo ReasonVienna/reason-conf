@@ -18,7 +18,7 @@ let make = _children => {
         <p className=style##text>
           (
             s(
-              "Get ReasonConf news straight to your inbox. No spam, we promise!"
+              "Get ReasonConf news straight to your inbox. No spam, we promise!",
             )
           )
         </p>
@@ -37,7 +37,7 @@ let make = _children => {
         </div>
         <input _type="hidden" name="form-name" value="newsletter" />
       </form>,
-      ~props={"data-netlify": Js.true_},
-      [||]
-    )
+      ~props={"data-netlify": true},
+      [||],
+    ),
 };

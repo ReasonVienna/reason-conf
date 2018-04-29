@@ -12,7 +12,7 @@
     "parse-unit": "^1.0.1",
     "re-classnames": "^0.0.3",
     "react-social-icons": "^2.8.1",
-    "reason-react": "^0.3.0"
+    "reason-react": "^0.4.1"
   },
   "keywords": ["gatsby"],
   "license": "MIT",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.4",
-    "bs-platform": "^2.1.0",
+    "bs-platform": "^3.0.0",
     "gatsby": "^1.9.128",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-google-analytics": "^1.0.15",

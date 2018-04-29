@@ -1,6 +1,8 @@
-[%%raw "require('normalize.css')"];
+%raw
+"require('normalize.css')";
 
-[%%raw "require('./index.scss')"];
+%raw
+"require('./index.scss')";
 
 open Util;
 
@@ -18,7 +20,7 @@ let make = (~location, children) => {
     let isThanksPage = location##pathname == "/thanks/";
     <div className="page">
       <Helmet title>
-        <script src="https://js.tito.io/v1" async=Js.true_ />
+        <script src="https://js.tito.io/v1" async=true />
         <link
           rel="stylesheet"
           _type="text/css"
@@ -43,12 +45,12 @@ let make = (~location, children) => {
               <h2> ("Subscribe to Newsletter" |> s) </h2>
               <SubscribeForm />
             </div>
-          </footer>
+          </footer>,
         )
       )
       <Footer />
     </div>;
-  }
+  },
 };
 
 let default =

@@ -2,7 +2,7 @@
 
 let component = ReasonReact.statelessComponent("Button");
 
-let s = ReasonReact.stringToElement;
+let s = ReasonReact.string;
 
 let make = (~_type, ~className: option(string)=?, children) => {
   ...component,
@@ -11,7 +11,7 @@ let make = (~_type, ~className: option(string)=?, children) => {
     ReasonReact.createDomElement(
       "button",
       ~props={"type": _type, "className": classNames},
-      children
+      children,
     );
-  }
+  },
 };

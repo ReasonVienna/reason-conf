@@ -19,11 +19,11 @@ let make = _children => {
           (
             Data.Speaker.speakers
             |> Array.map(toSpeakerDetail)
-            |> ReasonReact.arrayToElement
+            |> ReasonReact.array
           )
         </section>
       </main>
-    </section>
+    </section>,
 };
 
 let default =

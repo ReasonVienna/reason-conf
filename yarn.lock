@@ -1436,9 +1436,9 @@ bs-date-fns@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/bs-date-fns/-/bs-date-fns-0.1.4.tgz#9b621e97118f1205c73749e8b07f566fc967e5d9"
 
-bs-platform@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-2.1.0.tgz#63560ff8f7142c9c0631559df1c35590b9f6d8b2"
+bs-platform@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-3.0.0.tgz#38f200730db52fdea37819376b6ac3dfb20244c0"
 
 bser@^2.0.0:
   version "2.0.0"
@@ -6679,8 +6679,8 @@ react-dev-utils@^4.2.1:
     text-table "0.2.0"
 
 "react-dom@>=15.0.0 || >=16.0.0":
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -6763,8 +6763,8 @@ react-social-icons@^2.8.1:
     classnames "^2.2.5"
 
 "react@>=15.0.0 || >=16.0.0":
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
+  version "16.3.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -6873,9 +6873,9 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
-reason-react@^0.3.0:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.3.2.tgz#14574b619bd9bf2b6057d681867a5dfa69f2360f"
+reason-react@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/reason-react/-/reason-react-0.4.1.tgz#f1c8bf0d116be6bf43109912ee4d95e58dd7c64f"
   dependencies:
     react ">=15.0.0 || >=16.0.0"
     react-dom ">=15.0.0 || >=16.0.0"

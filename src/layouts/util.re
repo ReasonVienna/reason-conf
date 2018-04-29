@@ -13,23 +13,23 @@ let toHHMM = date => {
 };
 
 let componentOrNull = (condition, component) =>
-  if (condition) {component} else {ReasonReact.nullElement};
+  if (condition) {component} else {ReasonReact.null};
 
-let s = ReasonReact.stringToElement;
+let s = ReasonReact.string;
 
-let ate = ReasonReact.arrayToElement;
+let ate = ReasonReact.array;
 
 let md = markdownString => {
   let res =
     marked(
       markdownString,
-      {"gfm": Js.true_, "smartLists": Js.true_, "smartypants": Js.true_}
+      {"gfm": true, "smartLists": true, "smartypants": true},
     );
   let props =
     ReactDOMRe.props(
       ~dangerouslySetInnerHTML={"__html": res},
       ~className="markdown-container",
-      ()
+      (),
     );
   ReactDOMRe.createElement("section", ~props, [||]);
 };

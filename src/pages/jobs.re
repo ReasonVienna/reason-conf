@@ -6,8 +6,8 @@ let component = ReasonReact.statelessComponent("Jobs");
 
 let renderLocation = (ad: Job.jobAd) =>
   Job.(
-    switch ad.location {
-    | Nothing => ReasonReact.nullElement
+    switch (ad.location) {
+    | Nothing => ReasonReact.null
     | OnSite(city) => <span> ({j| ($city)|j} |> s) </span>
     | RemoteOnly => <span> (" (Remote)" |> s) </span>
     | RemoteAndOnSite(city) => <span> ({j| ($city or Remote)|j} |> s) </span>
@@ -26,7 +26,7 @@ let renderJobAds = (key: string, ads: array(Job.jobAd)) =>
                 (renderLocation(ad))
               </a>
             </li>,
-          ads
+          ads,
         )
         |> ate
       )
@@ -37,7 +37,7 @@ let renderJob = (i: string, {tier, company, jobAds}: Job.t) => {
   let className =
     "job "
     ++ (
-      switch tier {
+      switch (tier) {
       | Gold => "gold"
       | Catering => "catering"
       | LocalSupport => "localSupport"
@@ -47,8 +47,8 @@ let renderJob = (i: string, {tier, company, jobAds}: Job.t) => {
   <div key=(i ++ "_" ++ company.href) className>
     <a href=company.href target="_blank">
       (
-        switch company.logo {
-        | None => ReasonReact.nullElement
+        switch (company.logo) {
+        | None => ReasonReact.null
         | Some({src, width}) => <img src width />
         }
       )
@@ -77,12 +77,12 @@ let make = _children => {
         (
           Array.mapi(
             (i, job) => renderJob(string_of_int(i), job),
-            Data.Job.data
+            Data.Job.data,
           )
           |> ate
         )
       </main>
-    </section>
+    </section>,
 };
 
 let default =

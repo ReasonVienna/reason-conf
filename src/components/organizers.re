@@ -18,13 +18,13 @@ let make = (~organizers: list(Data.Organizer.t), _children) => {
   render: _self =>
     <div className=style##root>
       (
-        switch organizers {
-        | [] => ReasonReact.nullElement
+        switch (organizers) {
+        | [] => ReasonReact.null
         | orgs =>
           Array.of_list(orgs)
           |> Array.map(organizerWithPic)
-          |> ReasonReact.arrayToElement
+          |> ReasonReact.array
         }
       )
-    </div>
+    </div>,
 };
