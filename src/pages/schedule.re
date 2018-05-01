@@ -69,6 +69,31 @@ let talkRow = (~fromTime, ~toTime, speaker: Data.Speaker.t) =>
     </dd>,
   |]);
 
+let workshopRow = (~fromTime, ~toTime, speakers: list(Data.Speaker.t)) => {
+  let renderSpeaker = speaker =>
+    <Link to_=("/speakers/#" ++ Data.Speaker.speakerAnchor(speaker))>
+      <SpeakerCard speaker compact=true />
+    </Link>;
+  ReasonReact.array([|
+    <dt className=style##talkTime>
+      <time dateTime=(toDurationStr(~fromTime, ~toTime))>
+        (toTimeStr(~fromTime, ~toTime) |> s)
+      </time>
+    </dt>,
+    <dd className=style##talkDescription>
+      <section className=style##talkDetails>
+        <h3 className=style##talkTitle> ("Workshop" |> s) </h3>
+        (
+          speakers
+          |> List.map(renderSpeaker)
+          |> Array.of_list
+          |> ReasonReact.array
+        )
+      </section>
+    </dd>,
+  |]);
+};
+
 let openEndRow = (~fromTime, description) =>
   ReasonReact.array([|
     <dt className=style##entryTime>
@@ -84,6 +109,7 @@ let createRow = ({task, fromTime, toTime}: Data.Timetable.entry) =>
   | Break(description) => breakRow(~fromTime, ~toTime, description)
   | Misc(description) => miscRow(~fromTime, ~toTime, description)
   | Talk(speaker) => talkRow(~fromTime, ~toTime, speaker)
+  | Workshop(speakers) => workshopRow(~fromTime, ~toTime, speakers)
   | OpenEnd(description) => openEndRow(~fromTime, description)
   };
 
@@ -99,9 +125,14 @@ let make = _children => {
           (" May, Friday" |> s)
         </time>
       </h2>
-      <main> ({js|
-Will be announced soon.
-          |js} |> md) </main>
+      <dl className=style##entries>
+        (
+          Data.Timetable.day1Timetable
+          |> List.map(createRow)
+          |> Array.of_list
+          |> ReasonReact.array
+        )
+      </dl>
       <h2>
         <time dateTime="2018-05-12">
           ("12" |> s)

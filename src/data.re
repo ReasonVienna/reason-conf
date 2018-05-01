@@ -536,6 +536,7 @@ module Timetable = {
     | Talk(Speaker.t)
     | Misc(string)
     | Break(string)
+    | Workshop(list(Speaker.t))
     | OpenEnd(string);
   type step = {
     task,
@@ -552,14 +553,38 @@ module Timetable = {
     | Some(d) => DateFns.addMinutes(float_of_int(d), time)
     | None => time
     };
-  let startEntry = {
+  let day1StartEntry = {
+    let day2Start = Js.Date.fromString("2018-05-11T11:00:00.000+02:00");
+    let duration = Some(60);
+    let fromTime = day2Start;
+    let toTime = Some(addDuration(day2Start, duration));
+    {
+      task: Misc("Doors open, Registration & Editor Setup"),
+      fromTime,
+      toTime,
+      duration,
+    };
+  };
+  let day2StartEntry = {
     let day2Start = Js.Date.fromString("2018-05-12T11:00:00.000+02:00");
     let duration = Some(60);
     let fromTime = day2Start;
     let toTime = Some(addDuration(day2Start, duration));
     {task: Misc("Doors open & Registration"), fromTime, toTime, duration};
   };
-  let steps = [
+  let day1Steps = [
+    {
+      task: Workshop([Speaker.seanGrove, Speaker.jaredForsyth]),
+      duration: Some(180),
+    },
+    {task: Break("Lunch"), duration: Some(60)},
+    {
+      task: Workshop([Speaker.seanGrove, Speaker.jaredForsyth]),
+      duration: Some(240),
+    },
+    {task: OpenEnd("Open End"), duration: None},
+  ];
+  let day2Steps = [
     {task: Talk(Speaker.chengLou), duration: Some(45)},
     {task: Break("Coffee break"), duration: Some(30)},
     {task: Talk(Speaker.cristianoCalcagno), duration: Some(45)},
@@ -604,6 +629,10 @@ module Timetable = {
           | Talk(speaker) => speaker.name
           | Misc(msg) => msg
           | Break(msg) => msg
+          | Workshop(speakers) =>
+            speakers
+            |> List.map((speaker: Speaker.t) => speaker.name)
+            |> String.concat(" ")
           | OpenEnd(msg) => msg
           };
         let fromTime = DateFns.format("DD.MM, HH:mm", r.fromTime);
@@ -623,7 +652,14 @@ module Timetable = {
       },
       table,
     );
-  let day2Timetable = [startEntry, ...calcTimetable(startEntry, steps)];
+  let day1Timetable = [
+    day1StartEntry,
+    ...calcTimetable(day2StartEntry, day1Steps),
+  ];
+  let day2Timetable = [
+    day2StartEntry,
+    ...calcTimetable(day2StartEntry, day2Steps),
+  ];
 };
 
 module Tier = {
