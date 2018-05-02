@@ -40,7 +40,7 @@
     "puppeteer": "^1.2.0"
   },
   "lint-staged": {
-    "*.re": ["refmt --in-place", "git add"],
+    "*.re": ["bsrefmt --in-place", "git add"],
     "*.{js,json,md,css,scss}": ["prettier --write", "git add"]
   },
   "browserslist": ["> 1%", "last 2 versions", "IE 11"]
