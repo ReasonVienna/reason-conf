@@ -122,7 +122,7 @@ let make = _children => {
         <time dateTime="2018-05-11">
           ("11" |> s)
           <sup> ("th" |> s) </sup>
-          (" May, Friday" |> s)
+          (" May, Friday at ImpactHub" |> s)
         </time>
       </h2>
       <dl className=style##entries>
@@ -137,7 +137,7 @@ let make = _children => {
         <time dateTime="2018-05-12">
           ("12" |> s)
           <sup> ("th" |> s) </sup>
-          (" May, Saturday" |> s)
+          (" May, Saturday at TU Wien Kuppelsaal" |> s)
         </time>
       </h2>
       <dl className=style##entries>
@@ -152,7 +152,7 @@ let make = _children => {
         <time dateTime="2018-05-13">
           ("13" |> s)
           <sup> ("th" |> s) </sup>
-          (" May, Sunday" |> s)
+          (" May, Sunday at ImpactHub" |> s)
         </time>
       </h2>
       <main> ({js|
