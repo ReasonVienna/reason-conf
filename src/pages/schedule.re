@@ -155,9 +155,55 @@ let make = _children => {
           (" May, Sunday at ImpactHub" |> s)
         </time>
       </h2>
-      <main> ({js|
-Will be announced soon.
-          |js} |> md) </main>
+      <main>
+        <dl className=style##entries>
+          <dt className=style##entryTime>
+            <time> ("9:00 - 10:00" |> s) </time>
+          </dt>
+          <dd className=style##entryDescription>
+            ("Doors open & forming Teams for the Hackathon" |> s)
+          </dd>
+          <dt className=style##talkTime>
+            <time> ("10:00 - 13:00" |> s) </time>
+          </dt>
+          <dd className=style##talkDescription>
+            (
+              {js|
+Choose between:
+
+1. **Open Mic Session** – everyone can come and give a talk. Speakers can opt-in to be recorded and their talk published by our ReasonConf channel.
+2. **Hackathon** – team up with others or work alone on your project of choice
+3. **Vienna Tour** – explore the city center with one of our local volunteers
+            |js}
+              |> md
+            )
+          </dd>
+          <dt className=style##entryTime>
+            <time> ("13:00 - 14:00" |> s) </time>
+          </dt>
+          <dd className=style##entryDescription> ("Lunch" |> s) </dd>
+          <dt className=style##talkTime>
+            <time> ("14:00 - 17:30" |> s) </time>
+          </dt>
+          <dd className=style##talkDescription>
+            (
+              {js|
+Choose between:
+
+1. **Hackathon** – team up with others or work alone on your project of choice
+2. **Vienna Tour** – explore the city center with one of our local volunteers
+            |js}
+              |> md
+            )
+          </dd>
+          <dt className=style##entryTime>
+            <time> ("18:00 - 22:00" |> s) </time>
+          </dt>
+          <dd className=style##entryDescription>
+            ("Get together at a local wine tavern (Heuriger)" |> s)
+          </dd>
+        </dl>
+      </main>
     </div>,
 };
 
