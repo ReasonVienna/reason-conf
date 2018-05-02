@@ -16,7 +16,9 @@ let make = (~location, children) => {
   ...component,
   render: _self => {
     let isHomepage =
-      location##pathname == "/" || location##pathname == "/speaker" || location##pathname =="/badges";
+      location##pathname == "/"
+      || location##pathname == "/speaker"
+      || location##pathname == "/badges";
     let isThanksPage = location##pathname == "/thanks/";
     <div className="page">
       <Helmet title>
