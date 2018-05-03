@@ -85,6 +85,35 @@ Vienna.
           />
         </section>
       </section>
+      <h2 id="after-party-venue"> ("After Party Venue" |> s) </h2>
+      <main>
+        (
+          {js|
+The after party on day (day 2) will take place at Cafe Leopold. You can get food and drinks there and it is in walking distance to the conference venue.
+      |js}
+          |> md
+        )
+      </main>
+      <section className="grid--6col grid grid_6cols">
+        <section className="grid--2col">
+          (
+            {js|
+### Address
+[Museumsplatz 1, Vienna 1070](maps://?q=48.19892,16.369844)
+
+### Nearby Subway Stations
+<span class="subway subway-u2">U2</span> Museumsquartier
+      |js}
+            |> md
+          )
+        </section>
+        <section className="grid--4col">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJby9pPJAHbUcRd37S8sX_eSQ&key=AIzaSyDoRypIIXOZYLExH-dx-xpi_dhpxtCnwo0\n"
+            className=style##map
+          />
+        </section>
+      </section>
     </section>,
 };
 
