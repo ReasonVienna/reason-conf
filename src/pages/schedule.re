@@ -83,6 +83,12 @@ let workshopRow = (~fromTime, ~toTime, speakers: list(Data.Speaker.t)) => {
     <dd className=style##talkDescription>
       <section className=style##talkDetails>
         <h3 className=style##talkTitle> ("Workshop" |> s) </h3>
+        <p>
+          (
+            "An optional workshop to make every beginner and intermediate attendee familiar with the language, the BuckleScript platform as well as ReasonReact."
+            |> s
+          )
+        </p>
         (
           speakers
           |> List.map(renderSpeaker)
