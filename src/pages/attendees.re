@@ -20,7 +20,9 @@ bus.
           |> md
         )
       </main>
-      <h2> ("Workshop Venue" |> s) </h2>
+      <h2 id="workshop-and-hackathon-venue">
+        ("Workshop & Hackathon Venue" |> s)
+      </h2>
       <main>
         (
           {js|
@@ -52,7 +54,7 @@ We'll provide you with tables, chairs, power outlets etc. Please bring your lapt
           />
         </section>
       </section>
-      <h2> ("Conference Venue" |> s) </h2>
+      <h2 id="conference-venue"> ("Conference Venue" |> s) </h2>
       <main>
         (
           {js|
@@ -83,7 +85,7 @@ Vienna.
           />
         </section>
       </section>
-    </section>
+    </section>,
 };
 
 let default =

@@ -128,7 +128,10 @@ let make = _children => {
         <time dateTime="2018-05-11">
           ("11" |> s)
           <sup> ("th" |> s) </sup>
-          (" May, Friday at ImpactHub" |> s)
+          (" May, Friday at " |> s)
+          <Link to_="/attendees/#workshop-and-hackathon-venue">
+            ("ImpactHub" |> s)
+          </Link>
         </time>
       </h2>
       <dl className=style##entries>
@@ -143,7 +146,10 @@ let make = _children => {
         <time dateTime="2018-05-12">
           ("12" |> s)
           <sup> ("th" |> s) </sup>
-          (" May, Saturday at TU Wien Kuppelsaal" |> s)
+          (" May, Saturday at " |> s)
+          <Link to_="/attendees/#conference-venue">
+            ("TU Wien Kuppelsaal" |> s)
+          </Link>
         </time>
       </h2>
       <dl className=style##entries>
@@ -158,7 +164,10 @@ let make = _children => {
         <time dateTime="2018-05-13">
           ("13" |> s)
           <sup> ("th" |> s) </sup>
-          (" May, Sunday at ImpactHub" |> s)
+          (" May, Sunday at " |> s)
+          <Link to_="/attendees/#workshop-and-hackathon-venue">
+            ("ImpactHub" |> s)
+          </Link>
         </time>
       </h2>
       <main>
