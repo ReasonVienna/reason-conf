@@ -89,7 +89,7 @@ Vienna.
       <main>
         (
           {js|
-The after party on day (day 2) will take place at Cafe Leopold. You can get food and drinks there and it is in walking distance to the conference venue.
+The after party on day 2 will take place at Cafe Leopold. You can get food and drinks there and it is in walking distance to the conference venue.
       |js}
           |> md
         )
