@@ -20,7 +20,9 @@ bus.
           |> md
         )
       </main>
-      <h2> ("Workshop Venue" |> s) </h2>
+      <h2 id="workshop-and-hackathon-venue">
+        ("Workshop & Hackathon Venue" |> s)
+      </h2>
       <main>
         (
           {js|
@@ -52,7 +54,7 @@ We'll provide you with tables, chairs, power outlets etc. Please bring your lapt
           />
         </section>
       </section>
-      <h2> ("Conference Venue" |> s) </h2>
+      <h2 id="conference-venue"> ("Conference Venue" |> s) </h2>
       <main>
         (
           {js|
@@ -83,7 +85,62 @@ Vienna.
           />
         </section>
       </section>
-    </section>
+      <h2 id="after-party-venue"> ("After Party Venue" |> s) </h2>
+      <main>
+        (
+          {js|
+The after party on day 2 will take place at Cafe Leopold. You can get food and drinks there and it is in walking distance to the conference venue.
+      |js}
+          |> md
+        )
+      </main>
+      <section className="grid--6col grid grid_6cols">
+        <section className="grid--2col">
+          (
+            {js|
+### Address
+[Museumsplatz 1, Vienna 1070](maps://?q=48.202601,16.358804)
+
+### Nearby Subway Stations
+<span class="subway subway-u2">U2</span> Museumsquartier
+      |js}
+            |> md
+          )
+        </section>
+        <section className="grid--4col">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJby9pPJAHbUcRd37S8sX_eSQ&key=AIzaSyDoRypIIXOZYLExH-dx-xpi_dhpxtCnwo0\n"
+            className=style##map
+          />
+        </section>
+      </section>
+      <h2 id="sunday-dinner-venue"> ("Sunday Dinner Venue" |> s) </h2>
+      <main>
+        (
+          {js|
+After the official end of the conference we suggest to gather at a Viennese wine tavern (Heuriger). You can get food and drinks there.
+      |js}
+          |> md
+        )
+      </main>
+      <section className="grid--6col grid grid_6cols">
+        <section className="grid--2col">
+          (
+            {js|
+### Address
+[Mitterwurzergasse 20, 1190 Wien](maps://?q=48.252773,16.306608)
+      |js}
+            |> md
+          )
+        </section>
+        <section className="grid--4col">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbe4fpu8IbUcR8lRIFVMXEQ4&key=AIzaSyDoRypIIXOZYLExH-dx-xpi_dhpxtCnwo0"
+            className=style##map
+          />
+        </section>
+      </section>
+    </section>,
 };
 
 let default =
