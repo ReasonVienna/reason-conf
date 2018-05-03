@@ -99,7 +99,7 @@ The after party on day (day 2) will take place at Cafe Leopold. You can get food
           (
             {js|
 ### Address
-[Museumsplatz 1, Vienna 1070](maps://?q=48.19892,16.369844)
+[Museumsplatz 1, Vienna 1070](maps://?q=48.202601,16.358804)
 
 ### Nearby Subway Stations
 <span class="subway subway-u2">U2</span> Museumsquartier
@@ -110,6 +110,32 @@ The after party on day (day 2) will take place at Cafe Leopold. You can get food
         <section className="grid--4col">
           <iframe
             src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJby9pPJAHbUcRd37S8sX_eSQ&key=AIzaSyDoRypIIXOZYLExH-dx-xpi_dhpxtCnwo0\n"
+            className=style##map
+          />
+        </section>
+      </section>
+      <h2 id="sunday-dinner-venue"> ("Sunday Dinner Venue" |> s) </h2>
+      <main>
+        (
+          {js|
+After the official end of the conference we suggest to gather at a Viennese wine tavern (Heuriger). You can get food and drinks there.
+      |js}
+          |> md
+        )
+      </main>
+      <section className="grid--6col grid grid_6cols">
+        <section className="grid--2col">
+          (
+            {js|
+### Address
+[Mitterwurzergasse 20, 1190 Wien](maps://?q=48.252773,16.306608)
+      |js}
+            |> md
+          )
+        </section>
+        <section className="grid--4col">
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJbe4fpu8IbUcR8lRIFVMXEQ4&key=AIzaSyDoRypIIXOZYLExH-dx-xpi_dhpxtCnwo0"
             className=style##map
           />
         </section>
