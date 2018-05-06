@@ -1,16 +1,19 @@
 @import "../layouts/variables.scss";
 
-.grid {
+:global(.sheet) {
   display: flex;
   flex-wrap: wrap;
+  @media print {
+    break-after: page;
+  }
 }
+
 .badge {
   position: relative;
-  margin: 1cm auto;
+  margin: auto;
   padding: 0;
-  width: 10cm;
-  height: 14cm;
-  border: 1px dashed #000;
+  width: 10.2cm;
+  height: 14.5cm;
   background: $secondaryColor;
   overflow: hidden;
 
@@ -41,27 +44,26 @@
 
   &::before {
     position: absolute;
-    left: 0;
-    bottom: 2.1cm;
+    left: -5%;
+    bottom: 3cm;
     box-sizing: border-box;
-    width: 100%;
-    //height: 1cm;
-    padding: 1cm;
+    width: 110%;
+    padding: 0.35cm 1.5cm;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.2em;
     text-align: center;
-    color: $bgColor;
+    color: transparentize($bgColor, 0.25);
     background: $primaryColor;
     content: "Volunteer";
     z-index: 2;
-    clip-path: polygon(0 0, 100% 1cm, 100% 100%, 0 calc(100% - 1cm));
+    transform: rotate(5deg);
   }
 }
 
 .logo {
   position: relative;
-  margin: 0.75cm 1cm;
+  margin: 1.25cm 1cm 0.25cm;
   width: calc(100% - 2cm);
 }
 
@@ -100,6 +102,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5cm;
+  margin-top: 0.35cm;
   padding: 0 1cm;
   font-size: 7pt;
   color: lighten($textColor, 30);
@@ -107,14 +110,21 @@
   z-index: 0;
 
   h4 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    text-align: right;
-    transform: translate(-2em, 2em) rotate(-90deg);
-    transform-origin: left top;
-    width: 8.2em;
+    margin-bottom: 0.5em !important;
+  }
+
+  dl {
+    display: flex;
+  }
+
+  dt {
+    margin-right: 0.5em;
+    width: 2.2em;
+  }
+
+  dd {
+    font-family: "Fira Mono", sans-serif;
+    letter-spacing: -0.05em;
   }
 }
 
