@@ -202,8 +202,8 @@ class Badges extends React.Component {
             </Dropzone>
           </div>
         )}
-        {tickets.length &&
-          passwords.length &&
+        {tickets.length > 0 &&
+          passwords.length > 0 &&
           this.renderBadges(tickets, passwords)}
       </section>
     );
