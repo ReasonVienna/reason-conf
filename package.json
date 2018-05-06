@@ -12,6 +12,7 @@
     "normalize.css": "^7.0.0",
     "parse-unit": "^1.0.1",
     "re-classnames": "^0.0.3",
+    "react-dropzone": "^4.2.9",
     "react-social-icons": "^2.8.1",
     "reason-react": "^0.4.1"
   },

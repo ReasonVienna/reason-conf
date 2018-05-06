@@ -10,6 +10,21 @@
   }
 }
 
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  border: 2px dashed #000;
+  border-radius: 8px;
+}
+
+.dropzoneHover {
+  composes: dropzone;
+  border-color: $secondaryColor;
+}
+
 .badge {
   position: relative;
   margin: auto;
