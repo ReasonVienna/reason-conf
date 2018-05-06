@@ -44,7 +44,7 @@ let make = (~location, children) => {
     | NoLayout => <div> <Helmet title /> (children()) </div>
     | Print =>
       <div className="page-print">
-        <Helmet title bodyAttributes={"class": "A4 padding-10mm"}>
+        <Helmet title bodyAttributes={"class": "A4"}>
           <link
             rel="stylesheet"
             _type="text/css"
