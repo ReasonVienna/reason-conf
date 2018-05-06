@@ -3,6 +3,7 @@
 :global(.sheet) {
   display: flex;
   flex-wrap: wrap;
+  height: 11.5in !important; // Adjust for Safari print mode
   @media print {
     break-after: page;
   }
@@ -13,7 +14,7 @@
   margin: auto;
   padding: 0;
   width: 10.2cm;
-  height: 14.5cm;
+  height: 14.4cm;
   background: $secondaryColor;
   overflow: hidden;
 
