@@ -4,11 +4,6 @@ import Dropzone from "react-dropzone";
 import Logo from "../assets/logo.svg";
 import styles from "./badges.module.scss";
 import { isUndefined, flatten, chunk } from "lodash";
-import wlan from "raw!../../data/wifi-tu.csv";
-import raw from "raw!../../data/attendees.csv";
-
-const { data } = Papa.parse(raw, { header: true });
-const { data: passwords } = Papa.parse(wlan, { header: true });
 
 const emptyBadges = 10;
 const emptyOrgBadges = 5;
@@ -34,8 +29,8 @@ const getType = type => {
   }
 };
 
-const convertData = data =>
-  data
+const convertData = (tickets, passwords) =>
+  tickets
     // .splice(0, 5)
     .reduce((res, i) => {
       if (!i["Void Status"]) {
@@ -54,9 +49,13 @@ const convertData = data =>
       }
     }, [])
     .concat(Array(emptyBadges).fill(getEmptyData("Attendee")))
-    .concat(Array(emptyOrgBadges).fill(getEmptyData("Volunteer")));
+    .concat(Array(emptyOrgBadges).fill(getEmptyData("Volunteer")))
+    .map((ticket, idx) => ({
+      ...ticket,
+      ...passwords[idx]
+    }));
 
-const Badge = ({ ticket, idx }) => (
+const Badge = ({ ticket }) => (
   <section className={styles[ticket.type]}>
     <img src={Logo} alt="ReasonConf 2018" className={styles.logo} />
     <div className={styles.content}>
@@ -87,11 +86,11 @@ const Badge = ({ ticket, idx }) => (
         </dl>
         <dl>
           <dt>User.</dt>
-          <dd>{passwords[idx].username}</dd>
+          <dd>{ticket.username}</dd>
         </dl>
         <dl>
           <dt>Pass.</dt>
-          <dd>{passwords[idx].password}</dd>
+          <dd>{ticket.password}</dd>
         </dl>
       </div>
     </section>
@@ -107,68 +106,105 @@ const SplitPage = ({ tickets }) => {
     <div>
       <section className={"sheet " + styles.page}>
         {tickets.map((ticket, idx) => (
-          <Badge ticket={ticket} idx={idx} key={"front-" + idx} />
+          <Badge ticket={ticket} key={"front-" + idx} />
         ))}
       </section>
       <section className={"sheet " + styles.page}>
         {reverse.map((ticket, idx) => (
-          <Badge ticket={ticket} idx={idx} key={"back-" + idx} />
+          <Badge ticket={ticket} key={"back-" + idx} />
         ))}
       </section>
     </div>
   );
 };
 
-class Badges extends React.Component {
-  state = {
-    tickets: []
-  };
-  handleDrop = async acceptedFiles => {
-    const csv = acceptedFiles[0];
+const readFileContents = file => {
+  return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = async () => {
-      const fileAsBinaryString = reader.result;
-      const { data } = await Papa.parse(fileAsBinaryString, { header: true });
-      this.setState({
-        tickets: convertData(data)
-      });
+      resolve(reader.result);
     };
-    reader.onabort = () => console.log("file reading was aborted");
-    reader.onerror = () => console.log("file reading has failed");
-    reader.readAsText(csv, "utf-8");
+    reader.onabort = () => reject("file reading was aborted");
+    reader.onerror = () => reject("file reading has failed");
+    reader.readAsText(file, "utf-8");
+  });
+};
+
+class Badges extends React.Component {
+  state = {
+    tickets: [],
+    passwords: []
   };
 
-  reset = () => {
+  handleTicketsDrop = async acceptedFiles => {
+    const csv = acceptedFiles[0];
+    const content = await readFileContents(csv);
+    const { data: tickets } = await Papa.parse(content, { header: true });
     this.setState({
-      tickets: []
+      tickets
     });
   };
+
+  handlePasswordsDrop = async acceptedFiles => {
+    const csv = acceptedFiles[0];
+    const content = await readFileContents(csv);
+    const { data: passwords } = Papa.parse(content, { header: true });
+    this.setState({
+      passwords
+    });
+  };
+
+  renderBadges(tickets, passwords) {
+    const all = convertData(tickets, passwords);
+    console.log(all);
+    const pages = chunk(all, 4); // 4 badges per page
+    return (
+      <div className={styles.grid}>
+        {pages.map((tickets, idx) => <SplitPage tickets={tickets} key={idx} />)}
+      </div>
+    );
+  }
+
   render() {
-    const { tickets } = this.state;
-    const pages = chunk(tickets, 4); // 4 badges per page
+    const { tickets, passwords } = this.state;
     return (
       <section>
-        {tickets.length === 0 && (
+        {(tickets.length === 0 || passwords.length === 0) && (
           <div className="container container_centered">
             <h2>ReasonConf Badges Generator</h2>
             <Dropzone
+              name="tickets"
               multiple={false}
               disablePreview
-              onDrop={this.handleDrop}
+              onDrop={this.handleTicketsDrop}
               className={styles.dropzone}
               activeClassName={styles.dropzoneHover}
             >
-              <p>Drop ti.to CSV file here...</p>
+              {tickets.length === 0 ? (
+                <p>Drop ti.to CSV file here...</p>
+              ) : (
+                <p>Found {tickets.length} tickets!</p>
+              )}
+            </Dropzone>
+            <Dropzone
+              name="passwords"
+              multiple={false}
+              disablePreview
+              onDrop={this.handlePasswordsDrop}
+              className={styles.dropzone}
+              activeClassName={styles.dropzoneHover}
+            >
+              {passwords.length === 0 ? (
+                <p>Drop passwords CSV file here...</p>
+              ) : (
+                <p>Found {passwords.length} passwords!</p>
+              )}
             </Dropzone>
           </div>
         )}
-        {tickets.length > 0 && (
-          <div className={styles.grid}>
-            {pages.map((tickets, idx) => (
-              <SplitPage tickets={tickets} key={idx} />
-            ))}
-          </div>
-        )}
+        {tickets.length &&
+          passwords.length &&
+          this.renderBadges(tickets, passwords)}
       </section>
     );
   }
