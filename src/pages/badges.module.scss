@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   height: 11.5in !important; // Adjust for Safari print mode
+  -webkit-print-color-adjust: exact;
   @media print {
     break-after: page;
   }
