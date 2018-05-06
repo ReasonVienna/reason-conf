@@ -37,11 +37,12 @@
   }
 }
 
-.normal {
+.Attendee {
   composes: badge;
 }
 
-.organizer {
+.Volunteer,
+.Organizer {
   composes: badge;
 
   &::before {
@@ -53,13 +54,19 @@
     padding: 0.35cm 1.5cm;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.35em;
     text-align: center;
     color: transparentize($bgColor, 0.25);
     background: $primaryColor;
     content: "Volunteer";
     z-index: 2;
     transform: rotate(5deg);
+  }
+}
+
+.Organizer {
+  &::before {
+    content: "Organizer";
   }
 }
 
@@ -92,7 +99,8 @@
   display: block;
 }
 
-.twitter {
+h3.twitter {
+  margin-top: 0.5em !important;
   font-size: 125% !important;
 }
 
