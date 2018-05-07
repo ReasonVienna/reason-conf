@@ -35,8 +35,10 @@ let make = (~location, children) => {
     let pageType =
       switch (location##pathname) {
       | "/" => Home
-      | "/speaker" => NoLayout
-      | "/badges" => Print
+      | "/speaker"
+      | "/speaker/" => NoLayout
+      | "/badges"
+      | "/badges/" => Print
       | _ => Normal
       };
     let isThanksPage = location##pathname == "/thanks/";
