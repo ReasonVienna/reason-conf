@@ -6,11 +6,13 @@
     "bs-date-fns": "^0.1.4",
     "eases": "^1.0.8",
     "github-slugger": "^1.2.0",
+    "lodash": "^4.17.10",
     "lodash.clonedeep": "^4.5.0",
     "marked": "^0.3.12",
     "normalize.css": "^7.0.0",
     "parse-unit": "^1.0.1",
     "re-classnames": "^0.0.3",
+    "react-dropzone": "^4.2.9",
     "react-social-icons": "^2.8.1",
     "reason-react": "^0.4.1"
   },
@@ -36,6 +38,7 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
+    "papaparse": "^4.4.0",
     "prettier": "^1.8.2",
     "puppeteer": "^1.2.0"
   },

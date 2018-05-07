@@ -47,11 +47,13 @@ module Helmet = {
         },
       ),
     );
-  let make = (~title: option(string)=?, ~meta: metaT=?, children) =>
+  let make =
+      (~title: option(string)=?, ~bodyAttributes=?, ~meta: metaT=?, children) =>
     ReasonReact.wrapJsForReason(
       ~reactClass=linkClass,
       ~props={
         "title": Js.Nullable.fromOption(title),
+        "bodyAttributes": Js.Nullable.fromOption(bodyAttributes),
         "meta": Js.Nullable.fromOption(meta),
       },
       children,
