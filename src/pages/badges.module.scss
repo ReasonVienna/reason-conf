@@ -35,6 +35,17 @@
   background: $secondaryColor;
   overflow: hidden;
 
+  &::after {
+    position: absolute;
+    top: 0.7cm;
+    left: 50%;
+    width: 1mm;
+    height: 1mm;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    content: "";
+  }
+
   h2,
   h3,
   h4 {
