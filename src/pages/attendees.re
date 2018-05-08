@@ -149,6 +149,7 @@ After the official end of the conference we suggest to gather at a Viennese wine
 ### Recommended Apps
 
 - [ÖBB App](http://www.oebb.at/en/angebote-ermaessigungen/oebb-app)
+- Google Maps is able to find routes for public transport as well
 
 ### In Vienna (Kernzone 100)
 
@@ -192,6 +193,19 @@ Note: Never use the CAT train, they cost 5 times more and are only 5-8 min faste
 - Take the U3 subway marked with the direction OTTAKRING
 - Get out at station ZIEGLERGASSE
 - From Zieglergasse, it's a [5 minutes walk to the venue](https://www.google.at/maps/dir/Zieglergasse,+Vienna/Impact+Hub+Vienna,+Lindengasse,+Vienna/@48.1978246,16.3449337,17.36z/data=!4m14!4m13!1m5!1m1!1s0x476d078b0e41c487:0x81ce0b32db44873!2m2!1d16.3462028!2d48.1971524!1m5!1m1!1s0x476d078cbc5cf79b:0x3e9197850789a772!2m2!1d16.3458338!2d48.1995264!3e2)
+
+### Wien Hauptbahnhof (main trainstation) -> ImpactHub (Workshop)
+
+**FROM:** Wien Hauptbahnhof / **TO:** Wien Zieglergasse U3
+
+- Go to the subway section and look out for a red U1 sign
+- Find a ticket machine and get a 1-way-ticket (make sure to validate the ticket)
+- Take the U1 subway marked with the direction WIEN LEOPOLDAU
+- Get out at STEPHANSPLATZ (U3 / U1), switch to the U3 subway (orange marks)
+- Take the U3 subway marked with the direction OTTAKRING
+- Get out at station ZIEGLERGASSE
+- From Zieglergasse, it's a [5 minutes walk to the venue](https://www.google.at/maps/dir/Zieglergasse,+Vienna/Impact+Hub+Vienna,+Lindengasse,+Vienna/@48.1978246,16.3449337,17.36z/data=!4m14!4m13!1m5!1m1!1s0x476d078b0e41c487:0x81ce0b32db44873!2m2!1d16.3462028!2d48.1971524!1m5!1m1!1s0x476d078cbc5cf79b:0x3e9197850789a772!2m2!1d16.3458338!2d48.1995264!3e2)
+
 |js}
           |> md
         )
