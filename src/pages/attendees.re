@@ -140,6 +140,86 @@ After the official end of the conference we suggest to gather at a Viennese wine
           />
         </section>
       </section>
+      <h2 id="food-and-catering"> ("Food & Catering" |> s) </h2>
+      <main>
+        (
+          {js|
+During all conference days, we will provide you with lunch, coffee and snacks.
+Also to give you a better idea what to expect, here are the lunch menues for each day:
+
+### Day 1 Menu (Workshop)
+
+Catering is provided by bio kitchen [Issmich](https://www.issmich.at/#home).
+
+**Morning (09:00 - 10:00)**
+
+Coffee & Tea, Refreshments, Danish pastries (sweet & spicy), fruits
+
+**Lunch (13:00 - 14:00)**
+
+- Meal
+  - Mediterranean citrus vegetables with Couscous
+  - Indian Curry with Rice
+  - Red wine goulash with Baguette
+  - Maroccan chicken stew with Couscous
+
+- Dessert
+  - Apple Cake
+  - Dark chocolate cake
+
+
+### Day 2 Menu (Conference)
+
+Catering is provided by our bio & vegetarian friends: [Gaumenfreundinnen](https://www.gaumenfreundinnen.com/).
+Also the whole day will be supported by the great coffee makers [Kaffeemik](https://www.kaffemik.at/) to fuel everyone
+with very high quality coffee.
+
+**Morning (09:00 - 10:00)**
+
+- Rolls with date-and-cheese spread
+- Little danishes filled with apricot or plum jam
+
+**Snacks (10:45 - 11:15)**
+
+- Various fruits, bananas, apples, pears, strawberries
+- Trail mix with nuts and dried fruits
+
+**Lunch (12:45 - 14:15):**
+
+- Bagels
+  - ... filled with humus, basil and grilled aubergines
+  - ... filled with red beets / horseradish spread and red cabbage
+- Salads
+  - Waldorfsalad with walnuts
+  - Colorful apple / vegetable / lentils salad with dijon dressing
+- Meals
+  - Moroccan Tajine with chickpeas and dates
+  - Spinach spaetzle with cheese sauce
+
+**Cake Break! (16:00 - 16:30)**
+
+- Nut-chocolate brownies
+- Rhubarb streusel cake
+
+**Evening Snacks (18:00 - 18:30)**
+
+- Mini cinnamon buns
+- Rolls with orientalic lentils spread and cucumber
+- Rolls with soft goat cheese and pink pepper
+
+### Day 3 Menu (Hackathon)
+
+This day is more casual and we will provide basic needs, like coffee, refreshments and
+some snacks. Since the schedule is very relaxed, feel free to discover the vast amount of
+food places, etc. around the venue as well.
+
+**Lunch (13:00 - 14:00)**
+
+All kinds of Pizzas (also vegetarian and vegan)
+        |js}
+          |> md
+        )
+      </main>
     </section>,
 };
 
