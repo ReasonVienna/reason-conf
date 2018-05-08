@@ -2,6 +2,8 @@ open Util;
 
 [@bs.module] external style : Js.t({..}) = "./attendees.module.scss";
 
+let tarifezonesHref = Gatsby.Link.withPrefix({j|tarifzones.png|j});
+
 let component = ReasonReact.statelessComponent("Attendees");
 
 let make = _children => {
@@ -140,6 +142,154 @@ After the official end of the conference we suggest to gather at a Viennese wine
           />
         </section>
       </section>
+      <h2 id="public-transportation"> ("Public Transportation" |> s) </h2>
+      <main>
+        (
+          {j|
+### Recommended Apps
+
+- [ÖBB App](http://www.oebb.at/en/angebote-ermaessigungen/oebb-app)
+- Google Maps is able to find routes for public transport as well
+
+### In Vienna (Kernzone 100)
+
+All the public transportation in Vienna is operated by [Wiener Linien](https://www.wienerlinien.at/).
+Whenever you are using a tram, bus, subway or S-Bahn (train going through the city), you will need a Wiener Linien ticket:
+
+- **Single ticket:** can be used to go from point A - B. You can also switch between bus / train / etc
+- **24 / 48 / ... hour ticket:** As soon as you validate the ticket, the hours are counting. 24 hours usually pay off after a minimum of 4 trips.
+- **Week tickets:** You won't be able to buy a week ticket for the same week as ReasonConf, since they only allow a start from Monday
+- More infos about the tickets can be found [here](https://www.wienerlinien.at/eportal3/ep/channelView.do/pageTypeId/66533/channelId/-2000544)
+- You can find a useful zone map [here]($tarifezonesHref)
+
+### Beyond the city borders via train
+
+For all stops beyond Kernzone 100 (as seen as the white circle in the [map]($tarifezonesHref))
+trains are operated by ÖBB train services, therefore you need a train ticket.
+You can buy tickets either at ÖBB branded ticket machines or via their app.
+
+**Useful tip:** Whenever you are moving in and out of Kernzone 100 by train, you can use your Wiener Linien ticket from the first station
+the 100 zone border starts, for all the other stations you need the train ticket.
+
+The border station between Vienna and VIE airport is called **Wien Schwechat**.
+        |j}
+          |> md
+        )
+      </main>
+      <h2 id="journey"> ("Journey" |> s) </h2>
+      <main>
+        (
+          {js|### Airport VIE -> ImpactHub (Workshop)
+
+**FROM:** Flughafen Wien / **TO:** Wien Zieglergasse U3
+
+Note: Never use the CAT train, they cost 5 times more and are only 5-8 min faster.
+
+- Go to the train station located at the airport
+- Check the monitor for a train stopping at WIEN MITTE (usually S7 or some R train)
+- Go to the ticket machine and buy a one-way ticket for Vienna Kernzone 100 (make sure to validate it during purchase)
+- Buy a ticket to WIEN SCHWECHAT (city border)
+- Take the train to WIEN MITTE, there you will find the U3 subway (orange marks)
+- Take the U3 subway marked with the direction OTTAKRING
+- Get out at station ZIEGLERGASSE
+- From Zieglergasse, it's a [5 minutes walk to the venue](https://www.google.at/maps/dir/Zieglergasse,+Vienna/Impact+Hub+Vienna,+Lindengasse,+Vienna/@48.1978246,16.3449337,17.36z/data=!4m14!4m13!1m5!1m1!1s0x476d078b0e41c487:0x81ce0b32db44873!2m2!1d16.3462028!2d48.1971524!1m5!1m1!1s0x476d078cbc5cf79b:0x3e9197850789a772!2m2!1d16.3458338!2d48.1995264!3e2)
+
+### Wien Hauptbahnhof (main trainstation) -> ImpactHub (Workshop)
+
+**FROM:** Wien Hauptbahnhof / **TO:** Wien Zieglergasse U3
+
+- Go to the subway section and look out for a red U1 sign
+- Find a ticket machine and get a 1-way-ticket (make sure to validate the ticket)
+- Take the U1 subway marked with the direction WIEN LEOPOLDAU
+- Get out at STEPHANSPLATZ (U3 / U1), switch to the U3 subway (orange marks)
+- Take the U3 subway marked with the direction OTTAKRING
+- Get out at station ZIEGLERGASSE
+- From Zieglergasse, it's a [5 minutes walk to the venue](https://www.google.at/maps/dir/Zieglergasse,+Vienna/Impact+Hub+Vienna,+Lindengasse,+Vienna/@48.1978246,16.3449337,17.36z/data=!4m14!4m13!1m5!1m1!1s0x476d078b0e41c487:0x81ce0b32db44873!2m2!1d16.3462028!2d48.1971524!1m5!1m1!1s0x476d078cbc5cf79b:0x3e9197850789a772!2m2!1d16.3458338!2d48.1995264!3e2)
+
+|js}
+          |> md
+        )
+      </main>
+      <h2 id="food-and-catering"> ("Food & Catering" |> s) </h2>
+      <main>
+        (
+          {js|
+During all conference days, we will provide you with lunch, coffee and snacks.
+Also to give you a better idea what to expect, here are the lunch menues for each day:
+
+### Day 1 Menu (Workshop)
+
+Catering is provided by bio kitchen [Issmich](https://www.issmich.at/#home).
+
+**Morning (09:00 - 10:00)**
+
+Coffee & Tea, Refreshments, Danish pastries (sweet & spicy), fruits
+
+**Lunch (13:00 - 14:00)**
+
+- Meal
+  - Mediterranean citrus vegetables with Couscous
+  - Indian Curry with Rice
+  - Red wine goulash with Baguette
+  - Maroccan chicken stew with Couscous
+
+- Dessert
+  - Apple Cake
+  - Dark chocolate cake
+
+
+### Day 2 Menu (Conference)
+
+Catering is provided by our bio & vegetarian friends: [Gaumenfreundinnen](https://www.gaumenfreundinnen.com/).
+Also the whole day will be supported by the great coffee makers [Kaffeemik](https://www.kaffemik.at/) to fuel everyone
+with very high quality coffee.
+
+**Morning (09:00 - 10:00)**
+
+- Rolls with date-and-cheese spread
+- Little danishes filled with apricot or plum jam
+
+**Snacks (10:45 - 11:15)**
+
+- Various fruits, bananas, apples, pears, strawberries
+- Trail mix with nuts and dried fruits
+
+**Lunch (12:45 - 14:15):**
+
+- Bagels
+  - ... filled with humus, basil and grilled aubergines
+  - ... filled with red beets / horseradish spread and red cabbage
+- Salads
+  - Waldorfsalad with walnuts
+  - Colorful apple / vegetable / lentils salad with dijon dressing
+- Meals
+  - Moroccan Tajine with chickpeas and dates
+  - Spinach spaetzle with cheese sauce
+
+**Cake Break! (16:00 - 16:30)**
+
+- Nut-chocolate brownies
+- Rhubarb streusel cake
+
+**Evening Snacks (18:00 - 18:30)**
+
+- Mini cinnamon buns
+- Rolls with orientalic lentils spread and cucumber
+- Rolls with soft goat cheese and pink pepper
+
+### Day 3 Menu (Hackathon)
+
+This day is more casual and we will provide basic needs, like coffee, refreshments and
+some snacks. Since the schedule is very relaxed, feel free to discover the vast amount of
+food places, etc. around the venue as well.
+
+**Lunch (13:00 - 14:00)**
+
+All kinds of Pizzas (also vegetarian and vegan)
+        |js}
+          |> md
+        )
+      </main>
     </section>,
 };
 
