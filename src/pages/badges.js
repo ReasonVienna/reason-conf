@@ -7,6 +7,7 @@ import { isUndefined, flatten, chunk } from "lodash";
 
 const emptyBadges = 10;
 const emptyOrgBadges = 5;
+const badgesPerPage = 4; // Should be even!
 
 const getEmptyData = type => ({
   firstName: null,
@@ -29,31 +30,32 @@ const getType = type => {
   }
 };
 
-const convertData = (tickets, passwords) =>
-  tickets
-    // .splice(0, 5)
-    .reduce((res, i) => {
-      if (!i["Void Status"]) {
-        return res.concat({
-          firstName: i["Ticket First Name"],
-          lastName: i["Ticket Last Name"],
-          company:
-            i["Ticket Company Name"] &&
-            (!i["Ticket Full Name"].includes(i["Ticket Company Name"]) &&
-              !i["Ticket Company Name"].includes(i["Ticket Full Name"]))
-              ? i["Ticket Company Name"]
-              : null, // Remove company if it's same as the name
-          type: getType(i["Ticket"]),
-          twitter: i["Tags"] ? `@${i["Tags"]}` : null
-        });
-      }
-    }, [])
-    .concat(Array(emptyBadges).fill(getEmptyData("Attendee")))
+const convertData = (tickets, passwords) => {
+  const validTickets = tickets.filter(t => !t["Void Status"]);
+  // Ensure all pages are filled with badges
+  const emptyBadgesFill =
+    badgesPerPage -
+    (validTickets.length + emptyBadges + emptyOrgBadges) % badgesPerPage;
+  return validTickets
+    .map(i => ({
+      firstName: i["Ticket First Name"],
+      lastName: i["Ticket Last Name"],
+      company:
+        i["Ticket Company Name"] &&
+        (!i["Ticket Full Name"].includes(i["Ticket Company Name"]) &&
+          !i["Ticket Company Name"].includes(i["Ticket Full Name"]))
+          ? i["Ticket Company Name"]
+          : null, // Remove company if it's same as the name
+      type: getType(i["Ticket"]),
+      twitter: i["Tags"] ? `@${i["Tags"]}` : null
+    }))
     .concat(Array(emptyOrgBadges).fill(getEmptyData("Volunteer")))
+    .concat(Array(emptyBadges + emptyBadgesFill).fill(getEmptyData("Attendee")))
     .map((ticket, idx) => ({
       ...ticket,
       ...passwords[idx]
     }));
+};
 
 const Badge = ({ ticket }) => (
   <section className={styles[ticket.type]}>
@@ -156,11 +158,12 @@ class Badges extends React.Component {
 
   renderBadges(tickets, passwords) {
     const all = convertData(tickets, passwords);
-    console.log(all);
-    const pages = chunk(all, 4); // 4 badges per page
+    const pages = chunk(all, badgesPerPage);
     return (
       <div className={styles.grid}>
-        {pages.map((tickets, idx) => <SplitPage tickets={tickets} key={idx} />)}
+        {pages.map((pageTickets, idx) => (
+          <SplitPage tickets={pageTickets} key={idx} />
+        ))}
       </div>
     );
   }
