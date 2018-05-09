@@ -1,23 +1,36 @@
 open Util;
 
+module Link = Gatsby.Link;
+
 [@bs.module] external style : Js.t({..}) = "./attendees.module.scss";
 
 let tarifezonesHref = Gatsby.Link.withPrefix({j|tarifzones.png|j});
 
 let component = ReasonReact.statelessComponent("Attendees");
 
+let topHref = text => <a href="#top"> (text |> s) </a>;
+
 let make = _children => {
   ...component,
   render: _self =>
     <section>
-      <h1> ("For Attendees" |> s) </h1>
+      <h1 id="top"> ("For Attendees" |> s) </h1>
       <main className="leadText">
         (
           {js|
 ReasonConf is a 3-day event and it will take place at two different
-places. But don't worry, public transportation in Vienna is
-great and it's easy to reach everything by the subway, tram or
-bus.
+places. This page summarizes all important details about our venues,
+travel details and other useful information:
+
+- <a href="#workshop-and-hackathon-venue">Workshop & Hackathon Venue</a>
+- <a href="#conference-venue">Conference Venue</a>
+- <a href="#after-party-venue">After Party Venue</a>
+- <a href="#sunday-dinner-venue">Sunday Dinner Venue</a>
+- <a href="#public-transportation">Public Transportation</a>
+- <a href="#journey">Journey</a>
+- <a href="#internet-and-sim-cards">Internet & SIM cards</a>
+- <a href="#food-and-catering">Food & Catering</a>
+- <a href="#exploring-vienna">Exploring Vienna</a>
 |js}
           |> md
         )
@@ -210,6 +223,22 @@ Note: Never use the CAT train, they cost 5 times more and are only 5-8 min faste
           |> md
         )
       </main>
+      <h2 id="internet-and-sim-cards"> ("Internet & SIM cards" |> s) </h2>
+      <main>
+        (
+          {js|
+If you are from Europe, you will most likely be able to use your current data plan here in Austria.
+For everyone else outside of Europe, here is a recommended list of cheap prepaid SIM card plans:
+
+- **[HoT](https://www.hot.at/tarife.html)** - 5GB data for 10 Euro, the sim card can be purchased for 2 Euro at all [Hofer](https://www.hofer.at/) stores
+- **[Yesss](https://www.yesss.at/tarife)** - 5GB data for 10 Euro, the sim cards a free at many super markets like Billa, Spar, Merkur
+- **[Drei](https://www.drei.at/de/shop/wertkarte/)** - 14 GB data for 14 Euro, the sim cards with can be purchased at many super markets like Billa, Spar, Merkur
+
+You can also top up the prepaid cards at most super markets like Billa, Spar, Merkur, Hofer.
+      |js}
+          |> md
+        )
+      </main>
       <h2 id="food-and-catering"> ("Food & Catering" |> s) </h2>
       <main>
         (
@@ -289,6 +318,37 @@ All kinds of Pizzas (also vegetarian and vegan)
         |js}
           |> md
         )
+      </main>
+      <h2 id="exploring-vienna"> ("Exploring Vienna" |> s) </h2>
+      <main>
+        (
+          {js|
+Vienna has a lot to offer, especially during summer. We know it's
+not always easy to discover a new city as a foreigner, so our locals compiled
+a nice list to get you started:
+
+|js}
+          |> md
+        )
+        <ul>
+          <li> <Link to_="vienna-guide/food"> ("Food" |> s) </Link> </li>
+          <li>
+            <Link to_="vienna-guide/drinksAndBars">
+              ("Drinks & Bars" |> s)
+            </Link>
+          </li>
+          <li>
+            <Link to_="vienna-guide/coffee">
+              ("Good Coffee Places" |> s)
+            </Link>
+          </li>
+          <li> <Link to_="vienna-guide/culture"> ("Culture" |> s) </Link> </li>
+          <li>
+            <Link to_="vienna-guide/funAndOutside">
+              ("Fun & Outside" |> s)
+            </Link>
+          </li>
+        </ul>
       </main>
     </section>,
 };
