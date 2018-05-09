@@ -582,7 +582,7 @@ module Timetable = {
       task: Workshop([Speaker.seanGrove, Speaker.jaredForsyth]),
       duration: Some(240),
     },
-    {task: OpenEnd("Open End"), duration: None},
+    {task: OpenEnd("Open End until ImpactHub closes"), duration: Some(120)},
   ];
   let day2Steps = [
     {task: Talk(Speaker.chengLou), duration: Some(45)},
@@ -601,7 +601,7 @@ module Timetable = {
     {task: Break("Coffee  break"), duration: Some(30)},
     {task: Talk(Speaker.jaredForsyth), duration: Some(45)},
     {task: Talk(Speaker.keiraHodgkison), duration: Some(45)},
-    {task: OpenEnd("Open End / Party"), duration: None},
+    {task: OpenEnd("After Party at Cafe Leopold"), duration: None},
   ];
   let calcStep = (pre: entry, step: step) : entry => {
     let fromTime = addDuration(pre.fromTime, pre.duration);

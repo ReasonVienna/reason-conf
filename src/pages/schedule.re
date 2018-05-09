@@ -100,11 +100,11 @@ let workshopRow = (~fromTime, ~toTime, speakers: list(Data.Speaker.t)) => {
   |]);
 };
 
-let openEndRow = (~fromTime, description) =>
+let openEndRow = (~fromTime, ~toTime, description) =>
   ReasonReact.array([|
     <dt className=style##entryTime>
       <time dateTime=(toDurationStr(~fromTime, ~toTime=None))>
-        (toTimeStr(~fromTime, ~toTime=None) |> s)
+        (toTimeStr(~fromTime, ~toTime) |> s)
       </time>
     </dt>,
     <dd className=style##entryDescription> (description |> s) </dd>,
@@ -116,7 +116,7 @@ let createRow = ({task, fromTime, toTime}: Data.Timetable.entry) =>
   | Misc(description) => miscRow(~fromTime, ~toTime, description)
   | Talk(speaker) => talkRow(~fromTime, ~toTime, speaker)
   | Workshop(speakers) => workshopRow(~fromTime, ~toTime, speakers)
-  | OpenEnd(description) => openEndRow(~fromTime, description)
+  | OpenEnd(description) => openEndRow(~fromTime, description, ~toTime)
   };
 
 let make = _children => {
