@@ -248,7 +248,7 @@ Also to give you a better idea what to expect, here are the lunch menues for eac
 
 ### Day 1 Menu (Workshop)
 
-Catering is provided by bio kitchen [Issmich](https://www.issmich.at/#home).
+Catering is provided by organic kitchen [Issmich](https://www.issmich.at/#home).
 
 **Morning (09:00 - 10:00)**
 
