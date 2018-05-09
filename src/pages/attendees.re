@@ -188,7 +188,7 @@ Note: Never use the CAT train, they cost 5 times more and are only 5-8 min faste
 - Go to the train station located at the airport
 - Check the monitor for a train stopping at WIEN MITTE (usually S7 or some R train)
 - Go to the ticket machine and buy a one-way ticket for Vienna Kernzone 100 (make sure to validate it during purchase)
-- Buy a ticket to WIEN SCHWECHAT (city border)
+- Buy a ticket to WIEN MITTE, but make sure to **check the extra option** which limits the ticket to the city border
 - Take the train to WIEN MITTE, there you will find the U3 subway (orange marks)
 - Take the U3 subway marked with the direction OTTAKRING
 - Get out at station ZIEGLERGASSE
