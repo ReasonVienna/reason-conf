@@ -16,7 +16,7 @@ src/partners.js
 src/tito.js
 src/layouts/*.js
 src/components/*.js
-src/pages/*.js
+src/pages/**/*.js
 
 lib/
 
