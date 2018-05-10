@@ -70,6 +70,7 @@ We'll provide you with tables, chairs, power outlets etc. Please bring your lapt
             className=style##map
           />
         </section>
+        <div className="grid--2col" />
         <section className="grid--4col"> <img src=impacthubPath /> </section>
       </section>
       <h2 id="conference-venue"> ("Conference Venue" |> s) </h2>
