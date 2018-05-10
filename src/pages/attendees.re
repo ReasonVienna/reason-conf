@@ -4,6 +4,8 @@ module Link = Gatsby.Link;
 
 [@bs.module] external style : Js.t({..}) = "./attendees.module.scss";
 
+[@bs.module] external impacthubPath : string = "../assets/impacthub-path.jpg";
+
 let tarifezonesHref = Gatsby.Link.withPrefix({j|tarifzones.png|j});
 
 let component = ReasonReact.statelessComponent("Attendees");
@@ -68,6 +70,7 @@ We'll provide you with tables, chairs, power outlets etc. Please bring your lapt
             className=style##map
           />
         </section>
+        <section className="grid--4col"> <img src=impacthubPath /> </section>
       </section>
       <h2 id="conference-venue"> ("Conference Venue" |> s) </h2>
       <main>
