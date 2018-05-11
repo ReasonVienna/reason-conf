@@ -599,8 +599,8 @@ module Timetable = {
     {task: Talk(Speaker.seanGrove), duration: Some(45)},
     {task: Talk(Speaker.vladimirKurchatkin), duration: Some(45)},
     {task: Break("Coffee  break"), duration: Some(30)},
-    {task: Talk(Speaker.jaredForsyth), duration: Some(45)},
     {task: Talk(Speaker.keiraHodgkison), duration: Some(45)},
+    {task: Talk(Speaker.jaredForsyth), duration: Some(45)},
     {task: OpenEnd("After Party at Cafe Leopold"), duration: None},
   ];
   let calcStep = (pre: entry, step: step) : entry => {
