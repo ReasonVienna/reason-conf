@@ -15,7 +15,7 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
   render: _self => {
     let isHomePage = pathName == "/";
     let rootClassName =
-      switch navigationLocation {
+      switch (navigationLocation) {
       | Header => style##root_header
       | Footer => style##root_footer
       };
@@ -31,12 +31,12 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
           ! isHomePage,
           <Link to_="/" className=style##link_home>
             <img src=Assets.logo alt="Home" className=style##logo />
-          </Link>
+          </Link>,
         )
       )
       <ul className=style##list>
         <li className=style##listItem>
-          <Link to_="/schedule/" className=style##link ?activeClassName>
+          <Link to_="/schedule/#day2" className=style##link ?activeClassName>
             (s("Schedule"))
           </Link>
         </li>
@@ -75,5 +75,5 @@ let make = (~pathName, ~navigationLocation=Header, _children) => {
         </li>
       </ul>
     </nav>;
-  }
+  },
 };

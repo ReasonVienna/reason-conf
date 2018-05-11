@@ -142,7 +142,7 @@ let make = _children => {
           |> ReasonReact.array
         )
       </dl>
-      <h2>
+      <h2 id="day2">
         <time dateTime="2018-05-12">
           ("12" |> s)
           <sup> ("th" |> s) </sup>
@@ -160,7 +160,7 @@ let make = _children => {
           |> ReasonReact.array
         )
       </dl>
-      <h2>
+      <h2 id="day3">
         <time dateTime="2018-05-13">
           ("13" |> s)
           <sup> ("th" |> s) </sup>
