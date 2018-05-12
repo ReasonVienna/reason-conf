@@ -6,6 +6,10 @@ module Link = Gatsby.Link;
 
 [@bs.module] external impacthubPath : string = "../assets/impacthub-path.jpg";
 
+[@bs.module] external tu1Path : string = "../assets/tu-1.jpg";
+
+[@bs.module] external tu2Path : string = "../assets/tu-2.jpg";
+
 let tarifezonesHref = Gatsby.Link.withPrefix({j|tarifzones.png|j});
 
 let component = ReasonReact.statelessComponent("Attendees");
@@ -103,6 +107,9 @@ Vienna.
             className=style##map
           />
         </section>
+        <div className="grid--2col" />
+        <section className="grid--2col"> <img src=tu1Path /> </section>
+        <section className="grid--2col"> <img src=tu2Path /> </section>
       </section>
       <h2 id="after-party-venue"> ("After Party Venue" |> s) </h2>
       <main>
