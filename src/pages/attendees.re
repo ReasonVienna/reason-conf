@@ -274,7 +274,7 @@ Coffee & Tea, Refreshments, Danish pastries (sweet & spicy), fruits
 ### Day 2 Menu (Conference)
 
 Catering is provided by our organic & vegetarian friends: [Gaumenfreundinnen](https://www.gaumenfreundinnen.com/).
-Also the whole day will be supported by the great coffee makers [Kaffeemik](https://www.kaffemik.at/) to fuel everyone
+Also the whole day will be supported by the great coffee makers [Kaffemik](https://www.kaffemik.at/) to fuel everyone
 with very high quality coffee.
 
 **Morning (09:00 - 10:00)**
