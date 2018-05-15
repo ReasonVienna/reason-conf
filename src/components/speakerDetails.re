@@ -27,6 +27,11 @@ let make = (~speaker: Data.Speaker.t, _children) => {
           | None => ReasonReact.null
           }
         )
+        <div className=style##social>
+          <SocialLink target=Twitter link=speaker.social.twitterUser />
+          <SocialLink target=Github link=speaker.social.githubUser />
+          <SocialLink target=Website link=speaker.social.website />
+        </div>
       </section>
     </section>,
 };

@@ -1,0 +1,18 @@
+.item {
+  margin-bottom: 0.1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.link {
+  position: relative;
+  margin-left: 1.25em;
+
+  i {
+    position: absolute;
+    left: -1.25em;
+    top: 0.22em;
+  }
+}
