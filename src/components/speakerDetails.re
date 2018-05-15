@@ -15,6 +15,11 @@ let make = (~speaker: Data.Speaker.t, _children) => {
       <section className=style##speakerCard> <SpeakerCard speaker /> </section>
       <section className=style##description>
         <h2 className=style##name> (speaker.name |> s) </h2>
+        <div className=style##social>
+          <SocialLink target=Twitter link=speaker.social.twitterUser />
+          <SocialLink target=Github link=speaker.social.githubUser />
+          <SocialLink target=Website link=speaker.social.website />
+        </div>
         <p className=style##company> (speaker.company |> s) </p>
         (speaker.description |> md)
         (
@@ -27,11 +32,6 @@ let make = (~speaker: Data.Speaker.t, _children) => {
           | None => ReasonReact.null
           }
         )
-        <div className=style##social>
-          <SocialLink target=Twitter link=speaker.social.twitterUser />
-          <SocialLink target=Github link=speaker.social.githubUser />
-          <SocialLink target=Website link=speaker.social.website />
-        </div>
       </section>
     </section>,
 };
