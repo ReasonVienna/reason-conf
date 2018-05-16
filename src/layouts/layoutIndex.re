@@ -71,6 +71,7 @@ let make = (~location, children) => {
       </div>
     | Normal =>
       <div className="page">
+        <Helmet title />
         <div className="container container_centered">
           <header> <Navigation pathName=location##pathname /> </header>
           <article> (children()) </article>
