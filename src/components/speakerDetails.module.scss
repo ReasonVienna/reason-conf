@@ -41,5 +41,8 @@
 }
 
 .social {
-  display: flex;
+  display: inline-flex;
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-top: -2px;
 }

@@ -1,4 +1,4 @@
-open Util;
+open Gatsby;
 
 [@bs.module] external style : Js.t({..}) = "./socialLink.module.scss";
 
@@ -15,17 +15,12 @@ let make = (~target: target, ~link: option(string), _children) => {
     switch (link) {
     | None => ReasonReact.null
     | Some(link) =>
-      let (url, iconClass) =
+      let (url, network) =
         switch (target) {
-        | Twitter => ("https://twitter.com/" ++ link, "fab fa-twitter")
-        | Github => ("https://github.com/" ++ link, "fab fa-github")
-        | Website => ("https://twitter.com/", "fas fa-globe")
+        | Twitter => ("https://twitter.com/" ++ link, "twitter")
+        | Github => ("https://github.com/" ++ link, "github")
+        | Website => ("https://twitter.com/", "sharethis")
         };
-      <div className=style##item>
-        <a className=style##link href=url>
-          <i className=iconClass />
-          (link |> s)
-        </a>
-      </div>;
+      <SocialIcon className=style##item network url color="#9eb3bd" />;
     },
 };

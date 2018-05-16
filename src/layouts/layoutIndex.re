@@ -71,14 +71,6 @@ let make = (~location, children) => {
       </div>
     | Normal =>
       <div className="page">
-        <Helmet title>
-          <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
-            integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-            crossorigin=true
-          />
-        </Helmet>
         <div className="container container_centered">
           <header> <Navigation pathName=location##pathname /> </header>
           <article> (children()) </article>
