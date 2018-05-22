@@ -1,0 +1,29 @@
+.item {
+  max-width: 18px;
+  max-height: 18px;
+  margin-right: 5px;
+  background-image: none;
+
+  &:hover {
+    background-image: none;
+
+    g:last-child {
+      fill: #dd4b39 !important;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.link {
+  position: relative;
+  margin-left: 1.25em;
+
+  i {
+    position: absolute;
+    left: -1.25em;
+    top: 0.22em;
+  }
+}
