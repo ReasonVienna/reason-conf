@@ -11,10 +11,12 @@ let make = _children => {
   render: _self =>
     ReasonReact.cloneElement(
       <form
-        name="newsletter"
-        action="/thanks/"
+        action="https://reason-conf.us17.list-manage.com/subscribe/post?u=2ff99718c52457a4fa5219f66&amp;id=3e392893b9"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
         className=style##root
-        method="post">
+        target="_blank">
         <p className=style##text>
           (
             s(
@@ -28,11 +30,19 @@ let make = _children => {
           </label>
           <input
             _type="email"
-            name="email"
-            id="email"
-            placeholder="name@domain.com"
+            name="EMAIL"
             className=style##input
+            id="mce-EMAIL"
+            placeholder="name@domain.com"
+            required=true
           />
+          <div className=style##hiddenInput>
+            <input
+              _type="text"
+              name="b_2ff99718c52457a4fa5219f66_3e392893b9"
+              tabIndex=(-1)
+            />
+          </div>
           <Button _type="submit"> (s("Subscribe")) </Button>
         </div>
         <input _type="hidden" name="form-name" value="newsletter" />
