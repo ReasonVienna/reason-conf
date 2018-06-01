@@ -24,3 +24,8 @@
   margin-right: 0.25em;
   padding: 0.25em;
 }
+
+.hiddenInput {
+  position: absolute;
+  left: -5000px;
+}
