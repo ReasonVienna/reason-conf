@@ -57,14 +57,6 @@ let make = (~location, children) => {
       </div>
     | Home =>
       <div className="page">
-        <Helmet title>
-          <script src="https://js.tito.io/v1" async=true />
-          <link
-            rel="stylesheet"
-            _type="text/css"
-            href="https://css.tito.io/v1.1"
-          />
-        </Helmet>
         <main> (children()) </main>
         (subscribeFormIfNeeded(! isThanksPage))
         <Footer />

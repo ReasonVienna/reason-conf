@@ -219,26 +219,6 @@ let make = _children => {
           </ParallaxScroll>
         </div>
       </section>
-      <section className="tickets">
-        <div className="container_centered">
-          <h2 id="tickets"> ("Tickets" |> s) </h2>
-          <Tickets event="reason-conf/reason-conf-2018" />
-          <p className="extraText">
-            ("Tickets are not refundable, but re-assignable." |> s)
-          </p>
-          <p className="extraText">
-            (
-              "We also offer free tickets for underrepresented groups in tech. "
-              |> s
-            )
-            <a
-              href="https://diversitytickets.org/events/153/applications/new?"
-              target="_blank">
-              (s("Apply for a diversity ticket"))
-            </a>
-          </p>
-        </div>
-      </section>
       <section className="sponsors">
         <div className="container_centered">
           <h2> ("Sponsors & Partners" |> s) </h2>
