@@ -99,7 +99,8 @@ is purchased.
 ### Sirportly
 
 To manage incoming requests via email to hi@reason-conf.com as well as social media correspandance
-we use the service Sirportly.
+we use the service Sirportly. Further information can be found on the
+[Sirportly Privacy Statement](https://sirportly.com/legal/privacy).
 
 ### Yandex
 
