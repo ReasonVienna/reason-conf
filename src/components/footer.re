@@ -13,7 +13,7 @@ let component = ReasonReact.statelessComponent("Footer");
 let socialUrls = [|
   "https://twitter.com/reasonconf",
   "https://www.facebook.com/ReasonConf-1334078980027448/",
-  "https://www.github.com/reasonvienna"
+  "https://www.github.com/reasonvienna",
 |];
 
 let organizerWithPic = ({imgUrl, name, href}: Data.Organizer.t) =>
@@ -31,6 +31,7 @@ let make = _children => {
         <nav className=style##additional>
           <ul>
             <li> <Link to_="/coc/"> ("Code of Conduct" |> s) </Link> </li>
+            <li> <Link to_="/privacy/"> ("Privacy Policy" |> s) </Link> </li>
             <li> <a href="/contact/"> ("Contact Us" |> s) </a> </li>
             <li> <Link to_="/imprint/"> ("Imprint" |> s) </Link> </li>
           </ul>
@@ -54,5 +55,5 @@ Design by [Andrey Okonetchnikov](http://okonet.ru)
           )
         </section>
       </div>
-    </footer>
+    </footer>,
 };
