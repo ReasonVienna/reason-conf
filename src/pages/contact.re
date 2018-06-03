@@ -10,9 +10,22 @@ let make = _children => {
     <div>
       <h1> (s("Contact us")) </h1>
       <section className="thanks grid grid_6cols">
-        <div className="thanks--grid"> <ContactForm /> </div>
+        <div className="thanks--grid">
+          <div>
+            (s("Email: "))
+            <a href="mailto:hi@reason-conf.com">
+              (s("hi@reason-conf.com"))
+            </a>
+          </div>
+          <div>
+            (s("Twitter: "))
+            <a href="https://www.twitter.com/reasonconf">
+              (s("@ReasonConf"))
+            </a>
+          </div>
+        </div>
       </section>
-    </div>
+    </div>,
 };
 
 let default =
