@@ -100,6 +100,8 @@ module Speaker = {
     imgUrl: string,
     description: string,
     talk: option(talk),
+    video: option(string),
+    slides: option(string),
     social,
   };
   let talkSlug = ({title}: talk) => GithubSlugger.slug(title);
@@ -111,6 +113,8 @@ module Speaker = {
     imgUrl: speakerPlaceholder,
     description: "Details will be announced reasonably soon!",
     talk,
+    video: None,
+    slides: None,
     social: {
       githubUser: None,
       twitterUser: None,
@@ -123,6 +127,8 @@ module Speaker = {
     imgUrl: chengLouImg,
     description: {j|I work on Reason and Facebook Messenger|j},
     talk: Some({title: "Keynote", abstract: ""}),
+    video: None,
+    slides: None,
     social: {
       githubUser: Some("chenglou"),
       twitterUser: Some("_chenglou"),
@@ -155,6 +161,8 @@ This talk looks at life on the bleeding edge, as experienced by a
 not-so-functional programmer.
        |j},
       }),
+    video: None,
+    slides: None,
     social: {
       githubUser: Some("keirah"),
       twitterUser: Some("keirasaid"),
@@ -191,6 +199,8 @@ instances of local state that can be easily composed.
       twitterUser: Some("ccrisccris"),
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let lauraGaetano = {
     name: "Laura Gaetano",
@@ -233,6 +243,11 @@ make your community more inclusive.
       twitterUser: Some("alicetragedy"),
       website: Some("http://www.alicetragedy.org/"),
     },
+    video: None,
+    slides:
+      Some(
+        "https://speakerdeck.com/alicetragedy/building-inclusive-open-source-communities-1",
+      ),
   };
   let sanderSpies = {
     name: "Sander Spies",
@@ -259,6 +274,8 @@ webassembly backend for OCaml / ReasonML.
       twitterUser: Some("Sander_Spies"),
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let vladimirKurchatkin = {
     name: "Vladimir Kurchatkin",
@@ -291,6 +308,8 @@ about its internals and advanced OCaml features used.
       twitterUser: Some("vkurchatkin"),
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let javierChavarri = {
     name: {j|Javier Chávarri|j},
@@ -317,6 +336,8 @@ We will review the current state of the IDE tooling for Reason:
       twitterUser: Some("javierwchavarri"),
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let glennSlotte = {
     name: "Glenn Slotte",
@@ -334,6 +355,8 @@ is also the creator of redex.github.io.
       twitterUser: None,
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let lanceHarper = {
     name: "Lance Harper",
@@ -353,6 +376,8 @@ adoption. Let's discuss their differences.
       twitterUser: None,
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let maximValcke = {
     name: "Maxim Valcke",
@@ -395,6 +420,8 @@ present & future of our beloved Reason formatter Refmt.
       twitterUser: Some("_iwan_refmt"),
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let seanGrove = {
     name: "Sean Grove",
@@ -443,6 +470,8 @@ brave any time soon.
       twitterUser: Some("sgrove"),
       website: Some("http://www.riseos.com/"),
     },
+    video: None,
+    slides: None,
   };
   let jaredForsyth = {
     name: "Jared Forsyth",
@@ -478,6 +507,8 @@ can have freedom to publish without fearing change.
       twitterUser: Some("jaredforsyth"),
       website: Some("https://jaredforsyth.com"),
     },
+    video: None,
+    slides: None,
   };
   let romanSchiefer = {
     name: "Roman Schiefer",
@@ -505,6 +536,8 @@ current experience with Reason based on a real implementation.
       twitterUser: Some("RSchiefer"),
       website: None,
     },
+    video: None,
+    slides: None,
   };
   let tbaSpeaker =
     createPlaceholder(
