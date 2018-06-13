@@ -275,7 +275,10 @@ webassembly backend for OCaml / ReasonML.
       website: None,
     },
     video: None,
-    slides: None,
+    slides:
+      Some(
+        "https://drive.google.com/open?id=1HTfQDPvDpcw_3nFUh3y5PA-T3wuRIF11",
+      ),
   };
   let vladimirKurchatkin = {
     name: "Vladimir Kurchatkin",
@@ -337,7 +340,10 @@ We will review the current state of the IDE tooling for Reason:
       website: None,
     },
     video: None,
-    slides: None,
+    slides:
+      Some(
+        "https://drive.google.com/open?id=117HKqWoI2vE8njaJTQ_hbJM2qE36q95F",
+      ),
   };
   let glennSlotte = {
     name: "Glenn Slotte",
