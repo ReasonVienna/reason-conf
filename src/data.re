@@ -161,13 +161,16 @@ This talk looks at life on the bleeding edge, as experienced by a
 not-so-functional programmer.
        |j},
       }),
-    video: None,
-    slides: None,
     social: {
       githubUser: Some("keirah"),
       twitterUser: Some("keirasaid"),
       website: None,
     },
+    video: None,
+    slides:
+      Some(
+        "https://www.slideshare.net/KeiraHodgkison/whats-not-to-love-about-reasonml",
+      ),
   };
   let cristianoCalcagno = {
     name: "Cristiano Calcagno",
@@ -427,7 +430,10 @@ present & future of our beloved Reason formatter Refmt.
       website: None,
     },
     video: None,
-    slides: None,
+    slides:
+      Some(
+        "https://drive.google.com/open?id=1o13RpP1nbqKfYGkc2ko4PiyBW89Tx3YV",
+      ),
   };
   let seanGrove = {
     name: "Sean Grove",
@@ -543,7 +549,10 @@ current experience with Reason based on a real implementation.
       website: None,
     },
     video: None,
-    slides: None,
+    slides:
+      Some(
+        "https://drive.google.com/open?id=1Je6mTfQB4tKDzdMFEhRUUn7--Hb4nScK",
+      ),
   };
   let tbaSpeaker =
     createPlaceholder(
